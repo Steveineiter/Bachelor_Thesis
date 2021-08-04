@@ -1,0 +1,4 @@
+
+Generell Scrapen:
+  Workbench: before in python project ises nice alles mit ipython und dann in normale file speichern -> dann 
+  hat man nid 1000 mal die gleiche query und kann befehl auf seite mehrmals probieren.
