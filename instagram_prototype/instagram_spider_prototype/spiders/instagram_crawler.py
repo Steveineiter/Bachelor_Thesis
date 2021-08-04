@@ -38,12 +38,14 @@ class InstagramCrawlerSpider(scrapy.Spider):
         password.clear()
         username.send_keys("stefandovakin")
         password.send_keys("dragonborn123")
-        sleep(0.5)
+        sleep(2)
 
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()
+        sleep(1)
 
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, '//button[contains(text(), "Not Now")]'))).click()
+        sleep(2)
 
         search_box = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search']")))
@@ -55,9 +57,11 @@ class InstagramCrawlerSpider(scrapy.Spider):
         search_box.send_keys(Keys.ENTER)
         search_box.send_keys(Keys.ENTER)  # OR
         # search_box.send_keys("\n\n")
+        sleep(5)
 
         # self.driver.execute_script("window.scrollBy(0, 50);")  # Variable scrolling -> use for more organic scrolling
         self.driver.execute_script("window.scrollTo(0, 4000);")
+        sleep(1)
 
         # images = self.driver.find_elements_by_tag_name("img")  # TODO Look this up in docu.
         image_urls = self.driver.find_elements_by_xpath('//a')
@@ -70,20 +74,21 @@ class InstagramCrawlerSpider(scrapy.Spider):
         writer.writerow(["description", "hashtags", "likes"])
         path = os.getcwd()
         path = os.path.join(path, "images_test")
-        os.mkdir(path)
+        if not os.path.exists(path):
+            os.mkdir(path)
         counter = 0
 
-        selector = Selector(text=self.driver.page_source)
 
         for image_container_url in cleaned_image_urls:  # TODO Ponder: Better name for image_container_irl
             self.driver.get(image_container_url)
+            sleep(5)
+            selector = Selector(text=self.driver.page_source)  # TODO here should be a bug
 
             # TODO in scrapy here yield i guess
             image_url = self.driver.find_elements_by_tag_name("img")[1].get_attribute("src")
             hashtags = self.driver.find_elements_by_xpath('//a[@class=" xil3i"]')
             hashtags = [hashtag.get_attribute("href") for hashtag in hashtags]
-            description = selector.xpath(
-                '//*[@class="C4VMK"]/span/text()').extract_first()  # TODO can we remove the dynamic values?
+            description = selector.xpath('//*[@class="C4VMK"]/span/text()').extract_first()  # TODO can we remove the dynamic values?
             likes = selector.xpath('//*[@class="zV_Nj"]/span/text()').extract_first()
 
             writer.writerow([description, hashtags, likes])

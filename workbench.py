@@ -27,6 +27,7 @@ password.send_keys("dragonborn123")
 sleep(0.5)
 
 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()
+sleep(2)
 
 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//button[contains(text(), "Not Now")]'))).click()
 
@@ -39,9 +40,11 @@ sleep(1)
 search_box.send_keys(Keys.ENTER)
 search_box.send_keys(Keys.ENTER) # OR 
 # search_box.send_keys("\n\n")
+sleep(5)
 
 # driver.execute_script("window.scrollBy(0, 50);")  # Variable scrolling -> use for more organic scrolling
 driver.execute_script("window.scrollTo(0, 4000);")
+sleep(1)
 
 # images = driver.find_elements_by_tag_name("img")  # TODO Look this up in docu.
 image_urls = driver.find_elements_by_xpath('//a')
@@ -54,6 +57,7 @@ selector = Selector(text=driver.page_source)
 
 for image_container_url in cleaned_image_urls:  # TODO Ponder: Better name for image_container_irl
 	driver.get(image_container_url)
+	sleep(5)
 
 	# TODO in scrapy here yield i guess
 	image = driver.find_elements_by_tag_name("img")[1].get_attribute("src")
