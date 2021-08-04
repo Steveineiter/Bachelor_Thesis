@@ -10,7 +10,6 @@ from parsel import Selector
 # Other imports
 import os
 import wget
-
 import scrapy
 from time import sleep
 
@@ -60,7 +59,8 @@ for image_container_url in cleaned_image_urls:  # TODO Ponder: Better name for i
 	image = driver.find_elements_by_tag_name("img")[1].get_attribute("src")
 	hashtags =  driver.find_elements_by_xpath('//a[@class=" xil3i"]')
 	hashtags = [hashtag.get_attribute("href") for hashtag in hashtags]
-	description = selector.xpath('//*[@class="C4VMK"]/span/text()').extract_first()
+	description = selector.xpath('//*[@class="C4VMK"]/span/text()').extract_first()  # TODO can we remove the dynamic values?
+	likes = selector.xpath('//*[@class="zV_Nj"]/span/text()').extract_first()
 
 
 
