@@ -89,7 +89,7 @@ class InstagramCrawlerSpider(scrapy.Spider):
 
         # Scrap images and safe to csv
         writer = csv.writer(open("crawled_items.csv", "w"))
-        writer.writerow(["description", "hashtags", "likes"])
+        writer.writerow(["URL", "UID", "description", "hashtags", "likes"])
         path = os.getcwd()
         path = os.path.join(path, "images_test")
         if not os.path.exists(path):
@@ -98,7 +98,7 @@ class InstagramCrawlerSpider(scrapy.Spider):
 
         for (
             image_container_url
-        ) in cleaned_image_urls:  # TODO Ponder: Better name for image_container_irl
+        ) in cleaned_image_urls:  # TODO Ponder: Better name for image_container_url
             self.driver.get(image_container_url)
             sleep(utility.WAIT_FOR_RESPONSE_SLEEP)
             selector = Selector(
@@ -106,6 +106,7 @@ class InstagramCrawlerSpider(scrapy.Spider):
             )
 
             # TODO in scrapy here yield i guess
+            UID = image_container_url.split("/p/")[1].split("/")[0]
             image_url = self.driver.find_elements_by_tag_name("img")[1].get_attribute(
                 "src"
             )
@@ -116,8 +117,8 @@ class InstagramCrawlerSpider(scrapy.Spider):
             ).extract()  # TODO can we remove the dynamic values? -> also right now we only get the first paragraph
             likes = selector.xpath('//*[@class="zV_Nj"]/span/text()').extract_first()
 
-            writer.writerow([description, hashtags, likes])
-            save_as = os.path.join(path, "Image" + str(counter) + ".jpg")
+            writer.writerow([image_container_url, UID, description, hashtags, likes])
+            save_as = os.path.join(path, "Marry - " + UID + ".jpg")
             wget.download(image_url, save_as)
             counter += 1
 
