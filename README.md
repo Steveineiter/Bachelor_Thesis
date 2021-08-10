@@ -5,6 +5,7 @@ Crawlers and ML for my Bachelor-thesis.
 - Videos download / what to do with them?
 - Description crawling is wrong -> calrify what we need/don't need.
 - Scrapy schoener machen
+- Array von Usern erstellen (Likes durchgehen)
 
 ## To Clarify
 - Mehrere Kleiner oder ein grosses Projekt (zb eine spider fuer marry, eine fuer menschen)
