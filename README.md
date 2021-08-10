@@ -10,3 +10,5 @@ Crawlers and ML for my Bachelor-thesis.
 ## To Clarify
 - Mehrere Kleiner oder ein grosses Projekt (zb eine spider fuer marry, eine fuer menschen)
 - Wie wichtig ist das schoen / robust ist (wir es reused?)
+- Reicht alles in CSV und "normale" bilder zu speichern? Ab wievielen Daten brauchen wie DB?
+- 
