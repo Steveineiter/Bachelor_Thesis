@@ -89,7 +89,9 @@ class InstagramCrawlerSpider(scrapy.Spider):
 
         # Scrap images and safe to csv
         writer = csv.writer(open("crawled_items.csv", "w"))
-        writer.writerow(["URL", "UID", "description", "hashtags", "likes"])
+        writer.writerow(
+            ["URL", "UID", "description", "hashtags", "likes", "people_liked_post"]
+        )
         path = os.getcwd()
         path = os.path.join(path, "images_test")
         if not os.path.exists(path):
@@ -101,9 +103,7 @@ class InstagramCrawlerSpider(scrapy.Spider):
         ) in cleaned_image_urls:  # TODO Ponder: Better name for image_container_url
             self.driver.get(image_container_url)
             sleep(utility.WAIT_FOR_RESPONSE_SLEEP)
-            selector = Selector(
-                text=self.driver.page_source
-            )
+            selector = Selector(text=self.driver.page_source)
 
             # TODO in scrapy here yield i guess
             UID = image_container_url.split("/p/")[1].split("/")[0]
@@ -117,10 +117,53 @@ class InstagramCrawlerSpider(scrapy.Spider):
             ).extract()  # TODO can we remove the dynamic values? -> also right now we only get the first paragraph
             likes = selector.xpath('//*[@class="zV_Nj"]/span/text()').extract_first()
 
-            writer.writerow([image_container_url, UID, description, hashtags, likes])
+            # people_liked_post_url = self.driver.find_elements_by_xpath('//a[@class="zV_Nj"]')[0].get_attribute("href")  # TODO Ask: why doesn't this work just out of intrest
+            likes_box = self.driver.find_elements_by_xpath('//a[@class="zV_Nj"]')
+            people_liked_post = set()
+            counter = 0
+            if len(likes_box) > 0:
+                likes_box[0].click()
+                sleep(utility.WAIT_FOR_RESPONSE_SLEEP)
+                # TODO ponder, is it worth to get username or just href? search with username may be more organic? Or is it?
+                while (
+                    int(likes) > len(people_liked_post) and counter < 10
+                ):  # TODO smart condition to end if we dont get all people
+                    print("likes: ", likes)
+                    print("people_liked_post: ", len(people_liked_post))
+                    selector = Selector(text=self.driver.page_source)
+                    temp_users = selector.xpath(
+                        '//*[@class="FPmhX notranslate MBL3Z"]/text()'
+                    ).extract()
+                    # [people_liked_post.add(user) for user in temp_users] # TODO Ask: why this doesn't work?
+                    for user in temp_users:
+                        people_liked_post.add(user)
+
+                    elements_inside_popup = self.driver.find_elements_by_xpath(
+                        '//*[@class="FPmhX notranslate MBL3Z"]'
+                    )
+                    element_inside_popup = elements_inside_popup[
+                        len(elements_inside_popup) - 1
+                    ]
+                    element_inside_popup.send_keys(Keys.DOWN * utility.SCROLL_LENGTH)
+                    sleep(utility.CLICK_SLEEP)
+                    counter += 1
+
+            writer.writerow(
+                [
+                    image_container_url,
+                    UID,
+                    description,
+                    hashtags,
+                    likes,
+                    people_liked_post,
+                ]
+            )
             save_as = os.path.join(path, "Marry - " + UID + ".jpg")
             wget.download(image_url, save_as)
             counter += 1
 
-    def parse(selfs):
+    def parse(self):
+        pass
+
+    def crawl_people(self):
         pass
