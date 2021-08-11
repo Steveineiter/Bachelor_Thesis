@@ -14,5 +14,5 @@ Crawlers and ML for my Bachelor-thesis.
 - Reicht alles in CSV und "normale" bilder zu speichern? Ab wievielen Daten brauchen wie DB?
 - Was tun mit hashtags? Nur die woerter oder wollen wir link zu jeweiligen hashtag (wie jetzt)
 - Was ist der hauptfokus? Crawlen? Worauf soll ich mich fokusieren/am schoensten machen -> was ist fuer die Firma am wichtigsten
-- Bis 25. will ich mit Sachen von Firma fertig sein -> Moeglich? Bzw Plan machen
+- Bis 25.8.2021 will ich mit Sachen von Firma fertig sein -> Moeglich? Bzw Plan machen
 
