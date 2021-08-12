@@ -11,7 +11,6 @@ import csv
 import os
 import wget
 from scrapy import Spider
-from scrapy.http import Request
 from scrapy.loader import ItemLoader
 from instagram_scraper.items import InstagramScraperMarryItem
 
@@ -25,11 +24,17 @@ class InstagramMarrySpider(Spider):
     allowed_domains = ["instagram.com"]
     start_urls = ["http://instagram.com/"]
 
-    def start_requests(self):
+    def __init__(self, name=None, **kwargs):
+        super().__init__(name)
         self.driver = webdriver.Chrome(
             "/home/stefan/Knowledge/Bachelor-thesis/chromedriver"
         )
-        self.driver.get("https://www.instagram.com/")
+        self.csv_file = open("../crawled_items.csv", "w")
+        self.writer = csv.writer(self.csv_file)
+
+    def start_requests(self):
+        self.load_web_side(INSTAGRAM_START_PAGE)
+        self.write_csv_header()
 
         self.log_in()
         self.search_for_username(MARRYICETEA_INSTAGRAM_USERNAME)
@@ -37,20 +42,30 @@ class InstagramMarrySpider(Spider):
         cleaned_urls_of_posts = self.cleaned_urls_of_posts()
         for url_of_post in cleaned_urls_of_posts:
             yield self.parse_post(url_of_post)
+        self.csv_file.close()
 
-# TODO HIER WEITER STEFI !!!!
     def parse_post(self, url_of_post):
-        self.driver.get(url_of_post)
-        sleep(next(WAIT_FOR_RESPONSE_SLEEP))
-        selector = Selector(text=self.driver.page_source)
+        self.load_web_side(url_of_post)
+        # TODO Ponder: Is the item loader even worth it? i mean maybe for pipelines but...
         item_loader = ItemLoader(item=InstagramScraperMarryItem())
+        selector = Selector(text=self.driver.page_source)
 
-        post_id = url_of_post.split("/p/")[1].split("/")[0]
+        id_of_post = self.id_of_post(url_of_post)
+        likes_of_post = self.likes_of_post(selector)
+        hashtags_of_post = self.hashtags_of_post()
+        description_of_post = self.description_of_post(selector)
+        post_was_liked_by = self.post_was_liked_by(likes_of_post)
 
-        item_loader.add_value("post_id", post_id)
-        item_loader.add_value("url_of_post", url_of_post)
-
-        item_loader.load_item()
+        self.load_items(
+            item_loader,
+            id_of_post,
+            url_of_post,
+            likes_of_post,
+            hashtags_of_post,
+            description_of_post,
+            post_was_liked_by,
+        )
+        self.write_csv_item(item_loader)
 
     # =========================== Log in ===========================
     def log_in(self):
@@ -64,10 +79,10 @@ class InstagramMarrySpider(Spider):
         accept_all_cookies = WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
             EC.element_to_be_clickable((By.XPATH, '//button[text()="Accept All"]'))
         )
-        accept_all_cookies.click()
-        sleep(next(CLICK_SLEEP))
         # TODO Ponder: Is this nice this way or just work with comments?
         #  -> actually we dont require it because methods right @Thomas?
+        accept_all_cookies.click()
+        sleep(next(CLICK_SLEEP))
 
     def enter_username_and_password(self):
         username = WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
@@ -126,13 +141,29 @@ class InstagramMarrySpider(Spider):
         sleep(next(WAIT_FOR_RESPONSE_SLEEP))
 
     # =========================== Dynamic Scrolling ===========================
-    # TODO Implement: make it dynamically, eg 2/3 times down for 40-60, 1 time up all random
+    # TODO Implement: make it dynamically, eg 2/3 times down for 40-60, 1 time up all random -> AND go to the end of site
     def scroll_down(self):
         self.driver.execute_script("window.scrollTo(0, 4000);")
         sleep(next(ENTER_DATA_SLEEP))
 
+    def scroll_down_popup(self, element_inside_popup):
+
+        element_inside_popup.send_keys(Keys.DOWN * next(SCROLL_LENGTH_INSIDE_POPUP))
+        sleep(next(CLICK_SLEEP))
+
+        return element_inside_popup
+
+    def element_inside_popup(self):
+        elements_inside_popup = self.driver.find_elements_by_xpath(
+            '//*[@class="FPmhX notranslate MBL3Z"]'
+        )
+        element_inside_popup = elements_inside_popup[-1:][0]
+        return element_inside_popup
+
     # =========================== Fetch posts ===========================
-    def cleaned_urls_of_posts(self) -> list: # TODO Ask: Thomas is this worth/nice for readability?
+    def cleaned_urls_of_posts(
+        self,
+    ) -> list:  # TODO Ask: Thomas is this worth/nice for readability?
         urls_of_posts = self.urls_of_posts()
         cleaned_image_urls = [
             cleaned_url for cleaned_url in urls_of_posts if "/p/" in cleaned_url
@@ -143,6 +174,106 @@ class InstagramMarrySpider(Spider):
     def urls_of_posts(self) -> list:
         # images = self.driver.find_elements_by_tag_name("img")  # TODO Refactor: Look this up in docu.
         urls_of_posts = self.driver.find_elements_by_xpath("//a")
-        urls_of_posts = [url_of_post.get_attribute("href") for url_of_post in urls_of_posts]
+        urls_of_posts = [
+            url_of_post.get_attribute("href") for url_of_post in urls_of_posts
+        ]
 
         return urls_of_posts
+
+    # =========================== Crawl for Data ===========================
+    def id_of_post(self, url_of_post):
+        return url_of_post.split("/p/")[1].split("/")[0]
+
+    def likes_of_post(self, selector):
+        return selector.xpath('//*[@class="zV_Nj"]/span/text()').extract_first()
+
+    def hashtags_of_post(self):
+        hashtags = self.driver.find_elements_by_xpath('//a[@class=" xil3i"]')
+        hashtags = [hashtag.get_attribute("innerHTML") for hashtag in hashtags]
+        return hashtags
+
+    def description_of_post(self, selector):
+        return selector.xpath('//*[@class="C4VMK"]/span/text()').extract()
+
+    def post_was_liked_by(self, likes_of_post):
+        likes_box = self.driver.find_elements_by_xpath('//a[@class="zV_Nj"]')
+        post_was_liked_by = set()
+        last_element_inside_popup = None
+        penultimate_element_inside_popup = None
+
+        if len(likes_box) > 0:
+            likes_box[0].click()
+            sleep(next(WAIT_FOR_RESPONSE_SLEEP))
+            while int(likes_of_post) > len(post_was_liked_by):
+                selector = Selector(text=self.driver.page_source)
+                current_users = selector.xpath(
+                    '//*[@class="FPmhX notranslate MBL3Z"]/text()'
+                ).extract()
+                # [people_liked_post.add(user) for user in temp_users] # TODO Ask: why this doesn't work?
+                for user in current_users:
+                    post_was_liked_by.add(user)
+
+                # TODO Ask: better solution @Thomas?
+                current_element_inside_popup = self.element_inside_popup()
+                self.scroll_down_popup(current_element_inside_popup)
+                if (
+                    current_element_inside_popup == last_element_inside_popup
+                    or current_element_inside_popup == penultimate_element_inside_popup
+                ):
+                    break
+                penultimate_element_inside_popup = last_element_inside_popup  # TODO Ask: its so ugly but it always jumped between the last and the last last
+                last_element_inside_popup = current_element_inside_popup
+
+        return post_was_liked_by
+
+        # =========================== Handle CSV and Images ===========================
+
+    def write_csv_header(self):
+        self.writer.writerow(CSV_HEADER_ITEMS)
+
+    def write_csv_item(self, item_loader):
+        # TODO Ask: Is there a better way?
+        item_loader_likes_of_post = item_loader.get_collected_values("likes_of_post")
+        item_loader_post_was_liked_by = item_loader.get_collected_values(
+            "post_was_liked_by"
+        )
+        self.writer.writerow(
+            [
+                " ".join(item_loader.get_collected_values("id_of_post")),
+                " ".join(item_loader.get_collected_values("url_of_post")),
+                " ".join(item_loader_likes_of_post)
+                if len(item_loader_likes_of_post) > 0
+                else None,
+                " ".join(item_loader.get_collected_values("hashtags_of_post")),
+                " ".join(item_loader.get_collected_values("description_of_post")),
+                " ".join(item_loader_post_was_liked_by)
+                if len(item_loader_likes_of_post) > 0
+                else None,
+            ]
+        )
+        self.csv_file.flush()  # TODO maybe delete if we dont need to safe during runtime
+
+    # =========================== Utility ===========================
+    def load_web_side(self, url):
+        self.driver.get(url)
+        sleep(next(WAIT_FOR_RESPONSE_SLEEP))
+
+    def load_items(
+        self,
+        item_loader,
+        id_of_post,
+        url_of_post,
+        likes_of_post,
+        hashtags_of_post,
+        description_of_post,
+        post_was_liked_by,
+    ):
+        # TODO maybe use constants for those
+        item_loader.add_value("id_of_post", id_of_post)
+        item_loader.add_value("url_of_post", url_of_post)
+        item_loader.add_value("likes_of_post", likes_of_post)
+        item_loader.add_value("hashtags_of_post", hashtags_of_post)
+        item_loader.add_value("description_of_post", description_of_post)
+        item_loader.add_value("post_was_liked_by", post_was_liked_by)
+
+        item_loader.load_item()

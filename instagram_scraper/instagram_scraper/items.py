@@ -8,15 +8,9 @@ import scrapy
 
 class InstagramScraperMarryItem(scrapy.Item):
     # define the fields for your item here:
-    post_id = scrapy.Field()
+    id_of_post = scrapy.Field()
     url_of_post = scrapy.Field()
-
-    # TODO get those later
-    # description = scrapy.Field()
-    # hashtags = scrapy.Field()
-    #
-    # likes = scrapy.Field()
-    # people_liked_post = scrapy.Field()
-
-
-
+    likes_of_post = scrapy.Field()
+    hashtags_of_post = scrapy.Field()
+    description_of_post = scrapy.Field()
+    post_was_liked_by = scrapy.Field()
