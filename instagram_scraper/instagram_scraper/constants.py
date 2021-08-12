@@ -13,18 +13,29 @@ def random_int_generator(lower_limit, upper_limit):
         yield random.randint(lower_limit, upper_limit)
 
 
+def random_bool_generator(chance_for_true_result):
+    while True:
+        yield random.random() < chance_for_true_result
+
+
+DURATION_COEFFICIENT = 2  # Used to crawl more safely.
 CLICK_SLEEP = random_double_generator(
-    0.5, 1.5
+    0.5 * DURATION_COEFFICIENT, 1.5 * DURATION_COEFFICIENT
 )  # TODO Ask: can we code it so that CLICK_SLEEP == next(CLICK_SLEEP)?
-ENTER_DATA_SLEEP = random_double_generator(1.5, 3.5)
-WAIT_FOR_RESPONSE_SLEEP = random_double_generator(5, 7.5)
+ENTER_DATA_SLEEP = random_double_generator(1.5 * DURATION_COEFFICIENT, 3.5 * DURATION_COEFFICIENT)
+WAIT_FOR_RESPONSE_SLEEP = random_double_generator(5 * DURATION_COEFFICIENT, 7.5 * DURATION_COEFFICIENT)
 
 SECONDS_UNTIL_TIMEOUT = 10
 
 SCROLL_LENGTH_INSIDE_POPUP = random_int_generator(8, 10)
+SCROLL_LENGTH_ON_WEBSITE = random_int_generator(2000, 6000)  # TODO Ponder: how much can we scroll etc
+SCROLL_UPWARDS = random_bool_generator(0.2)
 
 INSTAGRAM_START_PAGE = "https://www.instagram.com/"
 MARRYICETEA_INSTAGRAM_USERNAME = "marryicetea"
+LOG_IN_PASSWORD = "dragonborn1234"
+LOG_IN_USERNAME = "stefandovakin"
+
 CSV_HEADER_ITEMS = [
     "id_of_post",
     "url_of_post",
@@ -33,3 +44,4 @@ CSV_HEADER_ITEMS = [
     "description_of_post",
     "post_was_liked_by",
 ]
+

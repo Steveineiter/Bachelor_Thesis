@@ -29,32 +29,49 @@ class InstagramMarrySpider(Spider):
         self.driver = webdriver.Chrome(
             "/home/stefan/Knowledge/Bachelor-thesis/chromedriver"
         )
-        self.csv_file = open("../crawled_items.csv", "w")
+        self.csv_file = open("../CSVs/marry_items.csv", "w")
         self.writer = csv.writer(self.csv_file)
+        self.path = os.getcwd()
+        self.path = os.path.join(self.path, os.pardir, "Images_of_Companies/Marry")
 
     def start_requests(self):
-        self.load_web_side(INSTAGRAM_START_PAGE)
+        self.load_web_site(INSTAGRAM_START_PAGE)
         self.write_csv_header()
+        self.create_directory()
 
         self.log_in()
         self.search_for_username(MARRYICETEA_INSTAGRAM_USERNAME)
-        self.scroll_down()
-        cleaned_urls_of_posts = self.cleaned_urls_of_posts()
+
+        # TODO Refactor, its ugly lul
+        cleaned_urls_of_posts = set()
+        while True:
+            self.scroll_down()
+            page_height = self.driver.execute_script("return document.body.scrollHeight")
+            total_scrolled_height = self.driver.execute_script("return window.pageYOffset + window.innerHeight")
+
+            for cleaned_url in self.cleaned_urls_of_posts():
+                cleaned_urls_of_posts.add(cleaned_url)
+            if page_height - 1 <= total_scrolled_height:
+                break
+
         for url_of_post in cleaned_urls_of_posts:
             yield self.parse_post(url_of_post)
         self.csv_file.close()
 
     def parse_post(self, url_of_post):
-        self.load_web_side(url_of_post)
+        self.load_web_site(url_of_post)
         # TODO Ponder: Is the item loader even worth it? i mean maybe for pipelines but...
         item_loader = ItemLoader(item=InstagramScraperMarryItem())
         selector = Selector(text=self.driver.page_source)
 
-        id_of_post = self.id_of_post(url_of_post)
-        likes_of_post = self.likes_of_post(selector)
-        hashtags_of_post = self.hashtags_of_post()
-        description_of_post = self.description_of_post(selector)
-        post_was_liked_by = self.post_was_liked_by(likes_of_post)
+        try:
+            id_of_post = self.id_of_post(url_of_post)
+            likes_of_post = self.likes_of_post(selector)
+            hashtags_of_post = self.hashtags_of_post()
+            description_of_post = self.description_of_post(selector)
+            post_was_liked_by = self.post_was_liked_by(likes_of_post)
+        except IndexError:
+            post_was_liked_by = None
 
         self.load_items(
             item_loader,
@@ -65,7 +82,14 @@ class InstagramMarrySpider(Spider):
             description_of_post,
             post_was_liked_by,
         )
+
         self.write_csv_item(item_loader)
+        # TODO BUG: again, sometimes it doesn't load the whole page, as it was on post_was_liked_by
+        try:
+            url_of_image = self.url_of_image()
+            self.download_images(id_of_post, url_of_image)
+        except IndexError:
+            pass
 
     # =========================== Log in ===========================
     def log_in(self):
@@ -95,8 +119,8 @@ class InstagramMarrySpider(Spider):
 
         username.clear()
         password.clear()
-        username.send_keys("stefandovakin")
-        password.send_keys("dragonborn123")
+        username.send_keys(LOG_IN_USERNAME)
+        password.send_keys(LOG_IN_PASSWORD)
         sleep(next(ENTER_DATA_SLEEP))
 
     def press_submit_button(self):
@@ -142,8 +166,14 @@ class InstagramMarrySpider(Spider):
 
     # =========================== Dynamic Scrolling ===========================
     # TODO Implement: make it dynamically, eg 2/3 times down for 40-60, 1 time up all random -> AND go to the end of site
+    # TODO Ponder: is this even neccessary? Are we even requesting new data? Aka does it even know the difference if we scroll up/down?
     def scroll_down(self):
-        self.driver.execute_script("window.scrollTo(0, 4000);")
+        # for _ in range (10):
+        #     if next(SCROLL_UPWARDS):
+        #         self.driver.execute_script(f"window.scrollBy(0, {-next(SCROLL_LENGTH_ON_WEBSITE)});")
+        #     else:
+        #         self.driver.execute_script(f"window.scrollBy(0, {next(SCROLL_LENGTH_ON_WEBSITE)});")
+        self.driver.execute_script(f"window.scrollBy(0, {next(SCROLL_LENGTH_ON_WEBSITE)});")
         sleep(next(ENTER_DATA_SLEEP))
 
     def scroll_down_popup(self, element_inside_popup):
@@ -157,13 +187,14 @@ class InstagramMarrySpider(Spider):
         elements_inside_popup = self.driver.find_elements_by_xpath(
             '//*[@class="FPmhX notranslate MBL3Z"]'
         )
-        element_inside_popup = elements_inside_popup[-1:][0]
+        element_inside_popup = elements_inside_popup[-1:][0]  # TODO BUG: sometimes the "likes" field doesn't get loaded
         return element_inside_popup
 
     # =========================== Fetch posts ===========================
+    # TODO Ask: Thomas is this worth/nice for readability? with -> list
     def cleaned_urls_of_posts(
         self,
-    ) -> list:  # TODO Ask: Thomas is this worth/nice for readability?
+    ) -> list:
         urls_of_posts = self.urls_of_posts()
         cleaned_image_urls = [
             cleaned_url for cleaned_url in urls_of_posts if "/p/" in cleaned_url
@@ -226,6 +257,9 @@ class InstagramMarrySpider(Spider):
 
         return post_was_liked_by
 
+    def url_of_image(self):
+        return self.driver.find_elements_by_tag_name("img")[1].get_attribute("src")
+
         # =========================== Handle CSV and Images ===========================
 
     def write_csv_header(self):
@@ -253,8 +287,12 @@ class InstagramMarrySpider(Spider):
         )
         self.csv_file.flush()  # TODO maybe delete if we dont need to safe during runtime
 
+    def download_images(self, id_of_post, url_of_image):
+        save_to_location = os.path.join(self.path, "Marry - " + id_of_post + ".jpg")
+        wget.download(url_of_image, save_to_location)
+
     # =========================== Utility ===========================
-    def load_web_side(self, url):
+    def load_web_site(self, url):
         self.driver.get(url)
         sleep(next(WAIT_FOR_RESPONSE_SLEEP))
 
@@ -277,3 +315,7 @@ class InstagramMarrySpider(Spider):
         item_loader.add_value("post_was_liked_by", post_was_liked_by)
 
         item_loader.load_item()
+
+    def create_directory(self):
+        if not os.path.exists(self.path):
+            os.makedirs(self.path)
