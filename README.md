@@ -1,6 +1,9 @@
 # Bachelor-thesis
 Crawlers and ML for my Bachelor-thesis.
 
+## IDEA
+- Einen hard crawler(fotos etc) und einen soft crawler machen(nur description und so) => Weil eig is useless einen eigenen marry crawler zu haben..
+
 ## TODO
 - Videos download / what to do with them?
 - Description crawling is wrong -> calrify what we need/don't need.
