@@ -14,3 +14,4 @@ class InstagramScraperMarryItem(scrapy.Item):
     hashtags_of_post = scrapy.Field()
     description_of_post = scrapy.Field()
     post_was_liked_by = scrapy.Field()
+    date_of_post = scrapy.Field()

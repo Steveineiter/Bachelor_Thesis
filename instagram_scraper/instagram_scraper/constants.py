@@ -43,5 +43,6 @@ CSV_HEADER_ITEMS = [
     "hashtags_of_post",
     "description_of_post",
     "post_was_liked_by",
+    "date_of_post",
 ]
 
