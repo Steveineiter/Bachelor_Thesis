@@ -9,6 +9,7 @@ Crawlers and ML for my Bachelor-thesis.
 
 ## To Clarify
 
+- was tun bei bildserie (zB 3 bilder?), eig brauchen wir die bilder nicht sooo dringend oder?
 - Bis 25.8.2021 will ich mit Sachen von Firma fertig sein -> Moeglich? Bzw Plan machen
 
 ## Clarifyed
