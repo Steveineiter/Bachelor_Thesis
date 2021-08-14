@@ -66,4 +66,6 @@ PROFILE_CSV_HEADER_ITEMS = [
 COMPANY_PATH = "items/companies/"
 CONSUMER_PATH = "items/consumers/"
 
+
 # TODO: Extract all instagram classes -> because they are ugly to read and it would be better to modify.
+INSTAGRAM_POSTS_CLASS_TAG = "g47SY "

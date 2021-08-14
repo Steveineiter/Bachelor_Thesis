@@ -21,19 +21,29 @@ from instagram_scraper.constants import *
 
 # TODO Ask: better one big file with many arguemnts, or 2 files with lots of duplicated code?
 class InstagramDeepSpider(Spider):
-    name = "deep_crawler"
+    name = "instagram_crawler"
     allowed_domains = ["instagram.com"]
     start_urls = ["http://instagram.com/"]
 
     def __init__(
         self,
         username=MARRYICETEA_INSTAGRAM_USERNAME,
-        is_a_company=True,
+        is_a_company: bool = True,
         is_a_deep_crawl=True,
         **kwargs,
     ):
         self.username = username
         self.is_a_company = is_a_company
+        # TODO Ask: it would be nicer with is_a_company.toUpper but on the other hand it needs more lines, what is better?
+        #     Also it doesn't work with arguments :(
+        if (
+            is_a_company == "False"
+            or is_a_company == "false"
+            or is_a_company == "F"
+            or is_a_company == "f"
+            or is_a_company == "0"
+        ):
+            self.is_a_company = False
         self.is_a_deep_crawl = is_a_deep_crawl
         super().__init__(**kwargs)
 
@@ -42,7 +52,7 @@ class InstagramDeepSpider(Spider):
             working_directory, os.pardir, os.pardir, "chromedriver"
         )
         # TODO Ugly AF, but again pycharm would complain otherwise...
-        if is_a_company:
+        if self.is_a_company:
             self.csv_path = os.path.join(
                 working_directory, os.pardir, COMPANY_PATH, username
             )
@@ -51,10 +61,10 @@ class InstagramDeepSpider(Spider):
             )
         else:
             self.csv_path = os.path.join(
-                working_directory, os.pardir, COMPANY_PATH, username
+                working_directory, os.pardir, CONSUMER_PATH, username
             )
             self.image_path = os.path.join(
-                working_directory, os.pardir, COMPANY_PATH, username, "images"
+                working_directory, os.pardir, CONSUMER_PATH, username, "images"
             )
 
         # TODO Aks: Pycharm says i should not create it outside of init why? or is it w/e?
@@ -101,8 +111,8 @@ class InstagramDeepSpider(Spider):
             followers = self.followers(selector)
             following = self.following(selector)
             description_of_profile = self.description_of_profile(selector)
-            hashtags_of_description = self. hashtags_of_description(selector)
-            other_tags_of_description = self. other_tags_of_description(selector)
+            hashtags_of_description = self.hashtags_of_description(selector)
+            other_tags_of_description = self.other_tags_of_description(selector)
             lifestyle_stories = self.lifestyle_stories(selector)
         except IndexError:
             pass
@@ -232,14 +242,13 @@ class InstagramDeepSpider(Spider):
         # =========================== Crawl for profile data ===========================
 
     def number_of_posts(self, selector):
-        return selector.xpath('//*[@class="g47SY "]/text()').extract()[0]
+        return selector.xpath(f'//*[@class="{INSTAGRAM_POSTS_CLASS_TAG}"]/text()').extract()[0]
 
     def followers(self, selector):
         return selector.xpath('//*[@class="g47SY "]/text()').extract()[1]
 
     def following(self, selector):
         return selector.xpath('//*[@class="g47SY "]/text()').extract()[2]
-
 
     def description_of_profile(self, selector):
         return selector.xpath('//*[@class="-vDIg"]/*/text()').extract()
@@ -400,7 +409,6 @@ class InstagramDeepSpider(Spider):
         )
         self.profile_csv_file.flush()
 
-
     def write_csv_post_item(self, item_loader):
         # TODO Ask: Is there a better way?
         item_loader_likes_of_post = item_loader.get_collected_values("likes_of_post")
@@ -463,16 +471,16 @@ class InstagramDeepSpider(Spider):
 
     # TODO Ask: is there a better way? because the code is pretty close
     def load_profile_items(
-            self,
-            item_loader,
-            name_of_profile,
-            number_of_posts,
-            followers,
-            following,
-            description_of_profile,
-            hashtags_of_description,
-            other_tags_of_description,
-            lifestyle_stories,
+        self,
+        item_loader,
+        name_of_profile,
+        number_of_posts,
+        followers,
+        following,
+        description_of_profile,
+        hashtags_of_description,
+        other_tags_of_description,
+        lifestyle_stories,
     ):
         item_loader.add_value("name_of_profile", name_of_profile)
         item_loader.add_value("number_of_posts", number_of_posts)

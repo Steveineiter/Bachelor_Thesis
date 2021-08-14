@@ -23,7 +23,7 @@ password = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SE
 username.clear()
 password.clear()
 username.send_keys("stefandovakin")
-password.send_keys("dragonborn123")
+password.send_keys("dragonborn1234")
 sleep(0.5)
 
 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()
@@ -41,7 +41,14 @@ search_box.send_keys(Keys.ENTER)
 search_box.send_keys(Keys.ENTER) # OR 
 # search_box.send_keys("\n\n")
 sleep(5)
+# =========================================== Profile crawling ============================================
+selector = Selector(text=driver.page_source)
+number_of_posts = selector.xpath('//*[@class="g47SY "]/text()').extract()
+description = selector.xpath('//*[@class="-vDIg"]/text()').extract()
+lifestyle_stories = selector.xpath('//*[@class="eXle2"]/text()').extract()
 
+
+# =========================================== Post crawling ============================================
 # driver.execute_script("window.scrollBy(0, 50);")  # Variable scrolling -> use for more organic scrolling
 driver.execute_script("window.scrollTo(0, 4000);")
 sleep(1)
@@ -59,12 +66,12 @@ image_container_url = cleaned_image_urls[0]
 driver.get(image_container_url)
 sleep(5)
 
-# TODO in scrapy here yield i guess
 image = driver.find_elements_by_tag_name("img")[1].get_attribute("src")
 hashtags =  driver.find_elements_by_xpath('//a[@class=" xil3i"]')
 hashtags = [hashtag.get_attribute("href") for hashtag in hashtags]
 description = selector.xpath('//*[@class="C4VMK"]/span/text()').extract_first()  # TODO can we remove the dynamic values?
 likes = selector.xpath('//*[@class="zV_Nj"]/span/text()').extract_first()
+date_of_post = selector.xpath('//*[@class="_1o9PC Nzb55"]/@datetime').extract_first()
 
 
 
