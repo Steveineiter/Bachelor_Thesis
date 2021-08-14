@@ -6,13 +6,11 @@ Crawlers and ML for my Bachelor-thesis.
 
 ## TODO
 - Videos download / what to do with them?
-- Description crawling is wrong -> calrify what we need/don't need.
-- Scrapy schoener machen
 - Array von Usern erstellen (Likes durchgehen)
 - Generell speichern verbessern
-- Bei csv durchgehen wer liked wie viel -> "stricher liste" damit wir engagedte leute finden
 
 ## To Clarify
+- Description crawling is wrong, calrify what we need/don't need. => It is okey the way we do it atm.
 - Mehrere Kleiner oder ein grosses Projekt (zb eine spider fuer marry, eine fuer menschen) -> JA
 - Wie wichtig ist das schoen / robust ist (wird es reused?) -> Depends, wir wissen noch nid ob gebraucht wird, derweil schoen aber dynamische sachen einfach hardcoden
 - Reicht alles in CSV und "normale" bilder zu speichern? Ab wievielen Daten brauchen wie DB? -> JA
