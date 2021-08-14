@@ -2,10 +2,9 @@
 Crawlers and ML for my Bachelor-thesis.
 
 ## IDEA
-- Einen hard crawler(fotos etc) und einen soft crawler machen(nur description und so) => Weil eig is useless einen eigenen marry crawler zu haben..
 
 ## TODO
--Mehr Objekte, nicht alles im Crawler (zB eigene writer klasse?)
+- Mehr Objekte, nicht alles im Crawler (zB eigene writer klasse?)
 - Autmoatisiseren, zB csv file mit username, is_a_company, is_a_deep_crawl mit marry, true, true und dann eben fuer alle eintraege automatisch crawlen.
 
 ## To Clarify
