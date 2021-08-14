@@ -6,7 +6,7 @@
 import scrapy
 
 
-class InstagramScraperMarryItem(scrapy.Item):
+class PostDataItem(scrapy.Item):
     # define the fields for your item here:
     id_of_post = scrapy.Field()
     url_of_post = scrapy.Field()
@@ -15,3 +15,14 @@ class InstagramScraperMarryItem(scrapy.Item):
     description_of_post = scrapy.Field()
     post_was_liked_by = scrapy.Field()
     date_of_post = scrapy.Field()
+
+
+class ProfileDataItem(scrapy.Item):
+    name_of_profile = scrapy.Field()
+    number_of_posts = scrapy.Field()
+    followers = scrapy.Field()
+    following = scrapy.Field()
+    description_of_profile = scrapy.Field()
+    hashtags_of_description = scrapy.Field()
+    other_tags_of_description = scrapy.Field()
+    lifestyle_stories = scrapy.Field()  # TODO Ask: how is this really called?

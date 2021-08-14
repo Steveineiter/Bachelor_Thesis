@@ -12,7 +12,7 @@ import os
 import wget
 from scrapy import Spider
 from scrapy.loader import ItemLoader
-from instagram_scraper.items import InstagramScraperMarryItem
+from instagram_scraper.items import PostDataItem, ProfileDataItem
 
 
 from time import sleep
@@ -29,51 +29,102 @@ class InstagramDeepSpider(Spider):
         self,
         username=MARRYICETEA_INSTAGRAM_USERNAME,
         is_a_company=True,
-        is_deep_crawl=True,
+        is_a_deep_crawl=True,
         **kwargs,
     ):
         self.username = username
         self.is_a_company = is_a_company
+        self.is_a_deep_crawl = is_a_deep_crawl
         super().__init__(**kwargs)
 
         working_directory = os.getcwd()
-        self.posts_csv_path = os.path.join(
-            working_directory, os.pardir, "items/companies/", username
-        )
-        self.image_path = os.path.join(
-            working_directory, os.pardir, "items/companies/", username, "images"
-        )
         webdriver_path = os.path.join(
             working_directory, os.pardir, os.pardir, "chromedriver"
         )
+        # TODO Ugly AF, but again pycharm would complain otherwise...
+        if is_a_company:
+            self.csv_path = os.path.join(
+                working_directory, os.pardir, COMPANY_PATH, username
+            )
+            self.image_path = os.path.join(
+                working_directory, os.pardir, COMPANY_PATH, username, "images"
+            )
+        else:
+            self.csv_path = os.path.join(
+                working_directory, os.pardir, COMPANY_PATH, username
+            )
+            self.image_path = os.path.join(
+                working_directory, os.pardir, COMPANY_PATH, username, "images"
+            )
 
         # TODO Aks: Pycharm says i should not create it outside of init why? or is it w/e?
         # self.start_webdriver(working_directory)
         self.driver = webdriver.Chrome(webdriver_path)
-        self.create_directory(self.posts_csv_path)
+        self.create_directory(self.csv_path)
         self.create_directory(self.image_path)
 
-        self.posts_csv_file = open(
-            os.path.join(self.posts_csv_path, "posts_data.csv"), "w"
+        self.profile_csv_file = open(
+            os.path.join(self.csv_path, "profile_data.csv"), "w"
         )
-        self.writer = csv.writer(self.posts_csv_file)
+        self.profile_writer = csv.writer(self.profile_csv_file)
+        self.write_csv_header(self.profile_writer, PROFILE_CSV_HEADER_ITEMS)
+
+        if is_a_deep_crawl:
+            self.posts_csv_file = open(
+                os.path.join(self.csv_path, "posts_data.csv"), "w"
+            )
+            self.posts_writer = csv.writer(self.posts_csv_file)
+            self.write_csv_header(self.posts_writer, POSTS_CSV_HEADER_ITEMS)
 
     def start_requests(self):
         self.load_web_site(INSTAGRAM_START_PAGE)
-        self.write_csv_header()
-
         self.log_in()
         self.search_for_username(self.username)
-        urls_of_posts_to_crawl = self.urls_of_posts_to_crawl()
 
-        for url_of_post in urls_of_posts_to_crawl:
-            yield self.parse_post(url_of_post)
-        self.posts_csv_file.close()
+        yield self.parse_profile()
+        self.profile_csv_file.close()
+
+        if self.is_a_deep_crawl:
+            urls_of_posts_to_crawl = self.urls_of_posts_to_crawl()
+
+            for url_of_post in urls_of_posts_to_crawl:
+                yield self.parse_post(url_of_post)
+            self.posts_csv_file.close()
+
+    def parse_profile(self):
+        item_loader = ItemLoader(item=ProfileDataItem())
+        selector = Selector(text=self.driver.page_source)
+
+        try:
+            name_of_profile = self.username
+            number_of_posts = self.number_of_posts(selector)
+            followers = self.followers(selector)
+            following = self.following(selector)
+            description_of_profile = self.description_of_profile(selector)
+            hashtags_of_description = self. hashtags_of_description(selector)
+            other_tags_of_description = self. other_tags_of_description(selector)
+            lifestyle_stories = self.lifestyle_stories(selector)
+        except IndexError:
+            pass
+
+        self.load_profile_items(
+            item_loader,
+            name_of_profile,
+            number_of_posts,
+            followers,
+            following,
+            description_of_profile,
+            hashtags_of_description,
+            other_tags_of_description,
+            lifestyle_stories,
+        )
+
+        self.write_csv_profile_item(item_loader)
 
     def parse_post(self, url_of_post):
         self.load_web_site(url_of_post)
         # TODO Ponder: Is the item loader even worth it? i mean maybe for pipelines but...
-        item_loader = ItemLoader(item=InstagramScraperMarryItem())
+        item_loader = ItemLoader(item=PostDataItem())
         selector = Selector(text=self.driver.page_source)
 
         try:
@@ -86,7 +137,7 @@ class InstagramDeepSpider(Spider):
         except IndexError:
             post_was_liked_by = None
 
-        self.load_items(
+        self.load_post_items(
             item_loader,
             id_of_post,
             url_of_post,
@@ -97,7 +148,7 @@ class InstagramDeepSpider(Spider):
             date_of_post,
         )
 
-        self.write_csv_item(item_loader)
+        self.write_csv_post_item(item_loader)
         # TODO BUG: again, sometimes it doesn't load the whole page, as it was on post_was_liked_by
         try:
             url_of_image = self.url_of_image()
@@ -159,7 +210,7 @@ class InstagramDeepSpider(Spider):
         ).click()
         sleep(next(CLICK_SLEEP))
 
-    # =========================== Search ===========================
+    # =========================== Search and process to user profile ===========================
     def search_for_username(self, username):
         search_box = WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
             EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search']"))
@@ -178,8 +229,35 @@ class InstagramDeepSpider(Spider):
         search_box.send_keys(Keys.ENTER)
         sleep(next(WAIT_FOR_RESPONSE_SLEEP))
 
-    # =========================== Fetch URLs ===========================
+        # =========================== Crawl for profile data ===========================
 
+    def number_of_posts(self, selector):
+        return selector.xpath('//*[@class="g47SY "]/text()').extract()[0]
+
+    def followers(self, selector):
+        return selector.xpath('//*[@class="g47SY "]/text()').extract()[1]
+
+    def following(self, selector):
+        return selector.xpath('//*[@class="g47SY "]/text()').extract()[2]
+
+
+    def description_of_profile(self, selector):
+        return selector.xpath('//*[@class="-vDIg"]/*/text()').extract()
+
+    def hashtags_of_description(self, selector):
+        other_tags = selector.xpath('//*[@class="-vDIg"]/*/*/text()').extract()
+        hashtags = [tag for tag in other_tags if "#" in tag]
+        return hashtags
+
+    def other_tags_of_description(self, selector):
+        other_tags = selector.xpath('//*[@class="-vDIg"]/*/*/text()').extract()
+        other_tags = [tag for tag in other_tags if "#" not in tag]
+        return other_tags
+
+    def lifestyle_stories(self, selector):
+        return selector.xpath('//*[@class="eXle2"]/text()').extract()
+
+    # =========================== Fetch URLs ===========================
     def urls_of_posts_to_crawl(self) -> set:
         cleaned_urls_of_posts = set()
 
@@ -196,7 +274,6 @@ class InstagramDeepSpider(Spider):
                 cleaned_urls_of_posts.add(cleaned_url)
             if page_height - 1 <= total_scrolled_height:
                 break
-            break  # TODO remove after testing
 
         return cleaned_urls_of_posts
 
@@ -251,7 +328,7 @@ class InstagramDeepSpider(Spider):
 
         return urls_of_posts
 
-    # =========================== Crawl for data ===========================
+    # =========================== Crawl for posts data ===========================
     def id_of_post(self, url_of_post):
         return url_of_post.split("/p/")[1].split("/")[0]
 
@@ -305,16 +382,32 @@ class InstagramDeepSpider(Spider):
 
         # =========================== Handle CSV and images ===========================
 
-    def write_csv_header(self):
-        self.writer.writerow(CSV_HEADER_ITEMS)
+    def write_csv_header(self, writer, header_items):
+        writer.writerow(header_items)
 
-    def write_csv_item(self, item_loader):
+    def write_csv_profile_item(self, item_loader):
+        self.profile_writer.writerow(
+            [
+                " ".join(item_loader.get_collected_values("name_of_profile")),
+                " ".join(item_loader.get_collected_values("number_of_posts")),
+                " ".join(item_loader.get_collected_values("followers")),
+                " ".join(item_loader.get_collected_values("following")),
+                " ".join(item_loader.get_collected_values("description_of_profile")),
+                " ".join(item_loader.get_collected_values("hashtags_of_description")),
+                " ".join(item_loader.get_collected_values("other_tags_of_description")),
+                " ".join(item_loader.get_collected_values("lifestyle_stories")),
+            ]
+        )
+        self.profile_csv_file.flush()
+
+
+    def write_csv_post_item(self, item_loader):
         # TODO Ask: Is there a better way?
         item_loader_likes_of_post = item_loader.get_collected_values("likes_of_post")
         item_loader_post_was_liked_by = item_loader.get_collected_values(
             "post_was_liked_by"
         )
-        self.writer.writerow(
+        self.posts_writer.writerow(
             [
                 " ".join(item_loader.get_collected_values("id_of_post")),
                 " ".join(item_loader.get_collected_values("url_of_post")),
@@ -326,15 +419,13 @@ class InstagramDeepSpider(Spider):
                 " ".join(item_loader_post_was_liked_by)
                 if len(item_loader_likes_of_post) > 0
                 else None,
-                " ".join(item_loader.get_collected_values("date_of_post"))
+                " ".join(item_loader.get_collected_values("date_of_post")),
             ]
         )
         self.posts_csv_file.flush()  # TODO maybe delete if we dont need to safe during runtime
 
     def download_images(self, id_of_post, url_of_image):
-        save_to_location = os.path.join(
-            self.image_path, id_of_post + ".jpg"
-        )
+        save_to_location = os.path.join(self.image_path, id_of_post + ".jpg")
         wget.download(url_of_image, save_to_location)
 
     # =========================== Utility ===========================
@@ -348,7 +439,7 @@ class InstagramDeepSpider(Spider):
         self.driver.get(url)
         sleep(next(WAIT_FOR_RESPONSE_SLEEP))
 
-    def load_items(
+    def load_post_items(
         self,
         item_loader,
         id_of_post,
@@ -367,6 +458,30 @@ class InstagramDeepSpider(Spider):
         item_loader.add_value("description_of_post", description_of_post)
         item_loader.add_value("post_was_liked_by", post_was_liked_by)
         item_loader.add_value("date_of_post", date_of_post)
+
+        item_loader.load_item()
+
+    # TODO Ask: is there a better way? because the code is pretty close
+    def load_profile_items(
+            self,
+            item_loader,
+            name_of_profile,
+            number_of_posts,
+            followers,
+            following,
+            description_of_profile,
+            hashtags_of_description,
+            other_tags_of_description,
+            lifestyle_stories,
+    ):
+        item_loader.add_value("name_of_profile", name_of_profile)
+        item_loader.add_value("number_of_posts", number_of_posts)
+        item_loader.add_value("followers", followers)
+        item_loader.add_value("following", following)
+        item_loader.add_value("description_of_profile", description_of_profile)
+        item_loader.add_value("hashtags_of_description", hashtags_of_description)
+        item_loader.add_value("other_tags_of_description", other_tags_of_description)
+        item_loader.add_value("lifestyle_stories", lifestyle_stories)
 
         item_loader.load_item()
 
