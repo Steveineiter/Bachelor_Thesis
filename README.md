@@ -5,6 +5,7 @@ Crawlers and ML for my Bachelor-thesis.
 - Einen hard crawler(fotos etc) und einen soft crawler machen(nur description und so) => Weil eig is useless einen eigenen marry crawler zu haben..
 
 ## TODO
+- Datum von Posts !
 - Videos download / what to do with them?
 - Array von Usern erstellen (Likes durchgehen)
 - Generell speichern verbessern
