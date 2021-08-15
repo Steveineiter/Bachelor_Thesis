@@ -19,7 +19,7 @@ from time import sleep
 from instagram_scraper.constants import *
 
 
-# TODO Ask: better one big file with many arguemnts, or 2 files with lots of duplicated code?
+# TODO Ask: better one big file with many arguments, or 2 files with lots of duplicated code?
 class InstagramDeepSpider(Spider):
     name = "instagram_crawler"
     allowed_domains = ["instagram.com"]
@@ -34,6 +34,7 @@ class InstagramDeepSpider(Spider):
     ):
         self.username = username
         self.is_a_company = is_a_company
+        self.is_a_deep_crawl = is_a_deep_crawl
         # TODO Ask: it would be nicer with is_a_company.toUpper but on the other hand it needs more lines, what is better?
         #     Also it doesn't work with arguments :(
         if (
@@ -44,7 +45,15 @@ class InstagramDeepSpider(Spider):
             or is_a_company == "0"
         ):
             self.is_a_company = False
-        self.is_a_deep_crawl = is_a_deep_crawl
+        if (
+            is_a_deep_crawl == "False"
+            or is_a_deep_crawl == "false"
+            or is_a_deep_crawl == "F"
+            or is_a_deep_crawl == "f"
+            or is_a_deep_crawl == "0"
+        ):
+            self.is_a_deep_crawl = False
+
         super().__init__(**kwargs)
 
         working_directory = os.getcwd()
@@ -100,6 +109,9 @@ class InstagramDeepSpider(Spider):
             for url_of_post in urls_of_posts_to_crawl:
                 yield self.parse_post(url_of_post)
             self.posts_csv_file.close()
+
+        sleep(next(CRAWL_FINISHED_SLEEP))
+        self.driver.close()
 
     def parse_profile(self):
         item_loader = ItemLoader(item=ProfileDataItem())
@@ -223,7 +235,7 @@ class InstagramDeepSpider(Spider):
     # =========================== Search and process to user profile ===========================
     def search_for_username(self, username):
         search_box = WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
-            EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Search']"))
+            EC.element_to_be_clickable((By.XPATH, XPATH_TO_SEARCH_FOR_USERNAME_BOX))
         )
         sleep(next(CLICK_SLEEP))
         self.enter_username_in_search_box(search_box, username)
@@ -242,29 +254,29 @@ class InstagramDeepSpider(Spider):
         # =========================== Crawl for profile data ===========================
 
     def number_of_posts(self, selector):
-        return selector.xpath(f'//*[@class="{INSTAGRAM_POSTS_CLASS_TAG}"]/text()').extract()[0]
+        return selector.xpath(XPATH_TO_PROFILE_NUMBER_OF_POSTS).extract()[0]
 
     def followers(self, selector):
-        return selector.xpath('//*[@class="g47SY "]/text()').extract()[1]
+        return selector.xpath(XPATH_TO_PROFILE_FOLLOWERS).extract()[1]
 
     def following(self, selector):
-        return selector.xpath('//*[@class="g47SY "]/text()').extract()[2]
+        return selector.xpath(XPATH_TO_PROFILE_FOLLOWING).extract()[2]
 
     def description_of_profile(self, selector):
-        return selector.xpath('//*[@class="-vDIg"]/*/text()').extract()
+        return selector.xpath(XPATH_TO_PROFILE_DESCRIPTION).extract()
 
     def hashtags_of_description(self, selector):
-        other_tags = selector.xpath('//*[@class="-vDIg"]/*/*/text()').extract()
+        other_tags = selector.xpath(XPATH_TO_PROFILE_HASHTAGS).extract()
         hashtags = [tag for tag in other_tags if "#" in tag]
         return hashtags
 
     def other_tags_of_description(self, selector):
-        other_tags = selector.xpath('//*[@class="-vDIg"]/*/*/text()').extract()
+        other_tags = selector.xpath(XPATH_TO_PROFILE_OTHER_TAGS).extract()
         other_tags = [tag for tag in other_tags if "#" not in tag]
         return other_tags
 
     def lifestyle_stories(self, selector):
-        return selector.xpath('//*[@class="eXle2"]/text()').extract()
+        return selector.xpath(XPATH_TO_PROFILE_LIFESTYLE_STORIES).extract()
 
     # =========================== Fetch URLs ===========================
     def urls_of_posts_to_crawl(self) -> set:
@@ -272,11 +284,9 @@ class InstagramDeepSpider(Spider):
 
         while True:
             self.scroll_down()
-            page_height = self.driver.execute_script(
-                "return document.body.scrollHeight"
-            )
+            page_height = self.driver.execute_script(PAGE_HEIGHT_SCRIPT)
             total_scrolled_height = self.driver.execute_script(
-                "return window.pageYOffset + window.innerHeight"
+                TOTAL_SCROLLED_HEIGHT_SCRIPT
             )
 
             for cleaned_url in self.cleaned_urls_of_posts():
@@ -286,7 +296,7 @@ class InstagramDeepSpider(Spider):
 
         return cleaned_urls_of_posts
 
-    # =========================== Dynamic scrolling ===========================
+    # =========================== Scrolling ===========================
     # TODO Implement: make it dynamically, eg 2/3 times down for 40-60, 1 time up all random -> AND go to the end of site
     # TODO Ponder: is this even neccessary? Are we even requesting new data? Aka does it even know the difference if we scroll up/down?
     def scroll_down(self):
@@ -309,7 +319,7 @@ class InstagramDeepSpider(Spider):
 
     def element_inside_popup(self):
         elements_inside_popup = self.driver.find_elements_by_xpath(
-            '//*[@class="FPmhX notranslate MBL3Z"]'
+            XPATH_TO_POST_ELEMENT_INSIDE_POPUP
         )
         element_inside_popup = elements_inside_popup[-1:][
             0
@@ -323,9 +333,10 @@ class InstagramDeepSpider(Spider):
     ) -> list:
         urls_of_posts = self.urls_of_posts()
         cleaned_image_urls = [
-            cleaned_url for cleaned_url in urls_of_posts if "/p/" in cleaned_url
+            cleaned_url
+            for cleaned_url in urls_of_posts
+            if "/p/" in cleaned_url  # "/p/" indicates that it is a post href
         ]
-
         return cleaned_image_urls
 
     def urls_of_posts(self) -> list:
@@ -342,18 +353,18 @@ class InstagramDeepSpider(Spider):
         return url_of_post.split("/p/")[1].split("/")[0]
 
     def likes_of_post(self, selector):
-        return selector.xpath('//*[@class="zV_Nj"]/span/text()').extract_first()
+        return selector.xpath(XPATH_TO_POST_LIKES).extract_first()
 
     def hashtags_of_post(self):
-        hashtags = self.driver.find_elements_by_xpath('//a[@class=" xil3i"]')
+        hashtags = self.driver.find_elements_by_xpath(XPATH_TO_POST_HASHTAGS)
         hashtags = [hashtag.get_attribute("innerHTML") for hashtag in hashtags]
         return hashtags
 
     def description_of_post(self, selector):
-        return selector.xpath('//*[@class="C4VMK"]/span/text()').extract()
+        return selector.xpath(XPATH_TO_POST_DESCRIPTION).extract()
 
     def post_was_liked_by(self, likes_of_post):
-        likes_box = self.driver.find_elements_by_xpath('//a[@class="zV_Nj"]')
+        likes_box = self.driver.find_elements_by_xpath(XPATH_TO_POST_LIKES_BOX)
         post_was_liked_by = set()
         last_element_inside_popup = None
         penultimate_element_inside_popup = None
@@ -364,7 +375,7 @@ class InstagramDeepSpider(Spider):
             while int(likes_of_post) > len(post_was_liked_by):
                 selector = Selector(text=self.driver.page_source)
                 current_users = selector.xpath(
-                    '//*[@class="FPmhX notranslate MBL3Z"]/text()'
+                    XPATH_TO_POST_USERS_WHO_LIKED_IT
                 ).extract()
                 # [people_liked_post.add(user) for user in temp_users] # TODO Ask: why this doesn't work?
                 for user in current_users:
@@ -378,13 +389,14 @@ class InstagramDeepSpider(Spider):
                     or current_element_inside_popup == penultimate_element_inside_popup
                 ):
                     break
-                penultimate_element_inside_popup = last_element_inside_popup  # TODO Ask: its so ugly but it always jumped between the last and the last last
+                # TODO Ask: its so ugly but it always jumped between the last and the last last, any idea why?
+                penultimate_element_inside_popup = last_element_inside_popup
                 last_element_inside_popup = current_element_inside_popup
 
         return post_was_liked_by
 
     def date_of_post(self, selector):
-        return selector.xpath('//*[@class="_1o9PC Nzb55"]/@datetime').extract_first()
+        return selector.xpath(XPATH_TO_POST_DATE).extract_first()
 
     def url_of_image(self):
         return self.driver.find_elements_by_tag_name("img")[1].get_attribute("src")
@@ -397,37 +409,37 @@ class InstagramDeepSpider(Spider):
     def write_csv_profile_item(self, item_loader):
         self.profile_writer.writerow(
             [
-                " ".join(item_loader.get_collected_values("name_of_profile")),
-                " ".join(item_loader.get_collected_values("number_of_posts")),
-                " ".join(item_loader.get_collected_values("followers")),
-                " ".join(item_loader.get_collected_values("following")),
-                " ".join(item_loader.get_collected_values("description_of_profile")),
-                " ".join(item_loader.get_collected_values("hashtags_of_description")),
-                " ".join(item_loader.get_collected_values("other_tags_of_description")),
-                " ".join(item_loader.get_collected_values("lifestyle_stories")),
+                " ".join(item_loader.get_collected_values(NAME_OF_PROFILE)),
+                " ".join(item_loader.get_collected_values(NUMBER_OF_POSTS)),
+                " ".join(item_loader.get_collected_values(FOLLOWERS)),
+                " ".join(item_loader.get_collected_values(FOLLOWING)),
+                " ".join(item_loader.get_collected_values(DESCRIPTION_OF_PROFILE)),
+                " ".join(item_loader.get_collected_values(HASHTAGS_OF_DESCRIPTION)),
+                " ".join(item_loader.get_collected_values(OTHER_TAGS_OF_DESCRIPTION)),
+                " ".join(item_loader.get_collected_values(LIFESTYLE_STORIES)),
             ]
         )
         self.profile_csv_file.flush()
 
     def write_csv_post_item(self, item_loader):
-        # TODO Ask: Is there a better way?
-        item_loader_likes_of_post = item_loader.get_collected_values("likes_of_post")
+        # TODO Ask: Is there a better way for the next 2 lines?
+        item_loader_likes_of_post = item_loader.get_collected_values(LIKES_OF_POST)
         item_loader_post_was_liked_by = item_loader.get_collected_values(
-            "post_was_liked_by"
+            POST_WAS_LIKED_BY
         )
         self.posts_writer.writerow(
             [
-                " ".join(item_loader.get_collected_values("id_of_post")),
-                " ".join(item_loader.get_collected_values("url_of_post")),
+                " ".join(item_loader.get_collected_values(ID_OF_POST)),
+                " ".join(item_loader.get_collected_values(URL_OF_POST)),
                 " ".join(item_loader_likes_of_post)
                 if len(item_loader_likes_of_post) > 0
                 else None,
-                " ".join(item_loader.get_collected_values("hashtags_of_post")),
-                " ".join(item_loader.get_collected_values("description_of_post")),
+                " ".join(item_loader.get_collected_values(HASHTAGS_OF_POST)),
+                " ".join(item_loader.get_collected_values(DESCRIPTION_OF_POST)),
                 " ".join(item_loader_post_was_liked_by)
                 if len(item_loader_likes_of_post) > 0
                 else None,
-                " ".join(item_loader.get_collected_values("date_of_post")),
+                " ".join(item_loader.get_collected_values(DATE_OF_POST)),
             ]
         )
         self.posts_csv_file.flush()  # TODO maybe delete if we dont need to safe during runtime
@@ -458,14 +470,15 @@ class InstagramDeepSpider(Spider):
         post_was_liked_by,
         date_of_post,
     ):
-        # TODO maybe use constants for those
-        item_loader.add_value("id_of_post", id_of_post)
-        item_loader.add_value("url_of_post", url_of_post)
-        item_loader.add_value("likes_of_post", likes_of_post)
-        item_loader.add_value("hashtags_of_post", hashtags_of_post)
-        item_loader.add_value("description_of_post", description_of_post)
-        item_loader.add_value("post_was_liked_by", post_was_liked_by)
-        item_loader.add_value("date_of_post", date_of_post)
+        # TODO Refactor: maybe a function or something? eg string + data in a dict then iteratre over it?
+        # TODO Ask: Thomas best solution?
+        item_loader.add_value(ID_OF_POST, id_of_post)
+        item_loader.add_value(URL_OF_POST, url_of_post)
+        item_loader.add_value(LIKES_OF_POST, likes_of_post)
+        item_loader.add_value(HASHTAGS_OF_POST, hashtags_of_post)
+        item_loader.add_value(DESCRIPTION_OF_POST, description_of_post)
+        item_loader.add_value(POST_WAS_LIKED_BY, post_was_liked_by)
+        item_loader.add_value(DATE_OF_POST, date_of_post)
 
         item_loader.load_item()
 
@@ -482,14 +495,14 @@ class InstagramDeepSpider(Spider):
         other_tags_of_description,
         lifestyle_stories,
     ):
-        item_loader.add_value("name_of_profile", name_of_profile)
-        item_loader.add_value("number_of_posts", number_of_posts)
-        item_loader.add_value("followers", followers)
-        item_loader.add_value("following", following)
-        item_loader.add_value("description_of_profile", description_of_profile)
-        item_loader.add_value("hashtags_of_description", hashtags_of_description)
-        item_loader.add_value("other_tags_of_description", other_tags_of_description)
-        item_loader.add_value("lifestyle_stories", lifestyle_stories)
+        item_loader.add_value(NAME_OF_PROFILE, name_of_profile)
+        item_loader.add_value(NUMBER_OF_POSTS, number_of_posts)
+        item_loader.add_value(FOLLOWERS, followers)
+        item_loader.add_value(FOLLOWING, following)
+        item_loader.add_value(DESCRIPTION_OF_PROFILE, description_of_profile)
+        item_loader.add_value(HASHTAGS_OF_DESCRIPTION, hashtags_of_description)
+        item_loader.add_value(OTHER_TAGS_OF_DESCRIPTION, other_tags_of_description)
+        item_loader.add_value(LIFESTYLE_STORIES, lifestyle_stories)
 
         item_loader.load_item()
 
