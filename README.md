@@ -3,7 +3,7 @@ Crawlers and ML for my Bachelor-thesis.
 
 ## How to run it
 Install scrapy, selenium, chromedriver.
-You maybe need to adapt the chromedriver path in the __init__ function in the InstagramSpider.
+You maybe need to adapt the chromedriver path in the ```__init__``` function in the InstagramSpider.
 
 To run it in Pycharm get configurations like this: 
 ![image](https://user-images.githubusercontent.com/53307237/129472345-02f5f040-1ee5-4eef-af74-6181e8f059bf.png)
