@@ -6,6 +6,7 @@ Crawlers and ML for my Bachelor-thesis.
 ## TODO
 - Mehr Objekte, nicht alles im Crawler (zB eigene writer klasse?)
 - Autmoatisiseren, zB csv file mit username, is_a_company, is_a_deep_crawl mit marry, true, true und dann eben fuer alle eintraege automatisch crawlen.
+- We dont crawl for hashtags inside of descrption of posts, should we do that?
 
 ## To Clarify
 
