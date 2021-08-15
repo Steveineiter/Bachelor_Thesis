@@ -1,6 +1,22 @@
 # Bachelor-thesis
 Crawlers and ML for my Bachelor-thesis.
 
+## How to run it
+Install scrapy, selenium, chromedriver.
+You maybe need to adapt the chromedriver path in the __init__ function in the InstagramSpider.
+
+To run it in Pycharm get configurations like this: 
+![image](https://user-images.githubusercontent.com/53307237/129472345-02f5f040-1ee5-4eef-af74-6181e8f059bf.png)
+
+To run it in Pycharm with arguments:
+![image](https://user-images.githubusercontent.com/53307237/129472352-99c67a38-3634-46cd-bbb8-0287847615c1.png)
+
+Arguments can be:
+- username => The Username we want to scrape.
+- is_a_company => True if the user we scrape is a company, where we want to get data, like Marry or Makava. False otherwise.
+- is_a_deep_crawl => True if we want to crawl data from posts, not only the profile. Needs MUCH longer if set on True.
+
+
 ## IDEA
 
 ## TODO
