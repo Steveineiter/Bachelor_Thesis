@@ -40,7 +40,7 @@ SECONDS_UNTIL_TIMEOUT = 10
 
 # ===================================== Scrolling =================================================
 # TODO Ponder: how much can we scroll etc
-SCROLL_LENGTH_INSIDE_POPUP = random_int_generator(8, 10)
+SCROLL_LENGTH_INSIDE_POPUP = random_int_generator(5, 8)
 SCROLL_LENGTH_ON_WEBSITE = random_int_generator(2000, 6000)
 SCROLL_UPWARDS = random_bool_generator(0.2)
 
@@ -68,6 +68,9 @@ XPATH_TO_PROFILE_DESCRIPTION = '//*[@class="-vDIg"]/*/text()'
 XPATH_TO_PROFILE_HASHTAGS = '//*[@class="-vDIg"]/*/*/text()'
 XPATH_TO_PROFILE_OTHER_TAGS = '//*[@class="-vDIg"]/*/*/text()'
 XPATH_TO_PROFILE_LIFESTYLE_STORIES = '//*[@class="eXle2"]/text()'
+XPATH_TO_POST_FOLLOWING_BOX = '//*[@class="g47SY "]'
+XPATH_TO_POST_USERS_WHO_ARE_FOLLOWED = '//*[@class="FPmhX notranslate  _0imsa "]/text()'
+XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWING_POPUP = '//*[@class="Jv7Aj mArmR MqpiF  "]/*'
 
 XPATH_TO_POST_LIKES = '//*[@class="zV_Nj"]/span/text()'
 XPATH_TO_POST_HASHTAGS = '//a[@class=" xil3i"]'
@@ -75,7 +78,7 @@ XPATH_TO_POST_DESCRIPTION = '//*[@class="C4VMK"]/span/text()'
 XPATH_TO_POST_USERS_WHO_LIKED_IT = '//*[@class="FPmhX notranslate MBL3Z"]/text()'
 XPATH_TO_POST_DATE = '//*[@class="_1o9PC Nzb55"]/@datetime'
 XPATH_TO_POST_LIKES_BOX = '//a[@class="zV_Nj"]'
-XPATH_TO_POST_ELEMENT_INSIDE_POPUP = '//*[@class="FPmhX notranslate MBL3Z"]'
+XPATH_TO_POST_ELEMENT_INSIDE_LIKES_POPUP = '//*[@class="FPmhX notranslate MBL3Z"]'
 
 # ===================================== Scripts ===================================================
 PAGE_HEIGHT_SCRIPT = "return document.body.scrollHeight"
@@ -93,6 +96,7 @@ DESCRIPTION_OF_PROFILE = "description_of_profile"
 HASHTAGS_OF_DESCRIPTION = "hashtags_of_description"
 OTHER_TAGS_OF_DESCRIPTION = "other_tags_of_description"
 LIFESTYLE_STORIES = "lifestyle_stories"
+FOLLOWING_NAMES = "following_names"
 
 # PostDataItem
 ID_OF_POST = "id_of_post"
@@ -113,6 +117,7 @@ PROFILE_CSV_HEADER_ITEMS = [
     HASHTAGS_OF_DESCRIPTION,
     OTHER_TAGS_OF_DESCRIPTION,
     LIFESTYLE_STORIES,
+    FOLLOWING_NAMES,
 ]
 
 POSTS_CSV_HEADER_ITEMS = [

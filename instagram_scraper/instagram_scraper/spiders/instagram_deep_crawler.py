@@ -20,7 +20,7 @@ from instagram_scraper.constants import *
 
 
 # TODO Ask: better one big file with many arguments, or 2 files with lots of duplicated code?
-class InstagramDeepSpider(Spider):
+class InstagramSpider(Spider):
     name = "instagram_crawler"
     allowed_domains = ["instagram.com"]
     start_urls = ["http://instagram.com/"]
@@ -126,6 +126,8 @@ class InstagramDeepSpider(Spider):
             hashtags_of_description = self.hashtags_of_description(selector)
             other_tags_of_description = self.other_tags_of_description(selector)
             lifestyle_stories = self.lifestyle_stories(selector)
+            if self.is_a_deep_crawl:
+                following_names = self.following_names(following)
         except IndexError:
             pass
 
@@ -139,6 +141,7 @@ class InstagramDeepSpider(Spider):
             hashtags_of_description,
             other_tags_of_description,
             lifestyle_stories,
+            following_names,
         )
 
         self.write_csv_profile_item(item_loader)
@@ -251,8 +254,7 @@ class InstagramDeepSpider(Spider):
         search_box.send_keys(Keys.ENTER)
         sleep(next(WAIT_FOR_RESPONSE_SLEEP))
 
-        # =========================== Crawl for profile data ===========================
-
+    # =========================== Crawl for profile data ===========================
     def number_of_posts(self, selector):
         return selector.xpath(XPATH_TO_PROFILE_NUMBER_OF_POSTS).extract()[0]
 
@@ -277,6 +279,39 @@ class InstagramDeepSpider(Spider):
 
     def lifestyle_stories(self, selector):
         return selector.xpath(XPATH_TO_PROFILE_LIFESTYLE_STORIES).extract()
+
+    def following_names(self, following):  # TODO Refactor, pretty close to post_was_liked_by
+        # TODO Ask: if we would extract the method there would be many attributes, what is the pythonic way?
+        following_box = self.driver.find_elements_by_xpath(XPATH_TO_POST_FOLLOWING_BOX)
+        following_names = set()
+        last_element_inside_popup = None
+        penultimate_element_inside_popup = None
+        counter = 0  # TODO delete
+
+        following_box[2].click()
+        sleep(next(WAIT_FOR_RESPONSE_SLEEP))
+        while int(following) > len(following_names):
+            selector = Selector(text=self.driver.page_source)
+            current_users = selector.xpath(
+                XPATH_TO_POST_USERS_WHO_ARE_FOLLOWED
+            ).extract()
+            for user in current_users:
+                following_names.add(user)
+
+            current_element_inside_popup = self.element_inside_following_popup()
+            self.scroll_down_popup(current_element_inside_popup)
+            if (
+                    current_element_inside_popup == last_element_inside_popup
+                    or current_element_inside_popup == penultimate_element_inside_popup
+            ):
+                break
+                # TODO Ask: its so ugly but it always jumped between the last and the last last, any idea why?
+            penultimate_element_inside_popup = last_element_inside_popup
+            last_element_inside_popup = current_element_inside_popup
+            counter += 1  # TODO delete
+
+        self.driver.find_elements_by_xpath('//*[@class="QBdPU "]')[1].click()
+        return following_names
 
     # =========================== Fetch URLs ===========================
     def urls_of_posts_to_crawl(self) -> set:
@@ -311,19 +346,27 @@ class InstagramDeepSpider(Spider):
         sleep(next(ENTER_DATA_SLEEP))
 
     def scroll_down_popup(self, element_inside_popup):
-
         element_inside_popup.send_keys(Keys.DOWN * next(SCROLL_LENGTH_INSIDE_POPUP))
         sleep(next(CLICK_SLEEP))
 
         return element_inside_popup
 
-    def element_inside_popup(self):
+    def element_inside_likes_popup(self):
         elements_inside_popup = self.driver.find_elements_by_xpath(
-            XPATH_TO_POST_ELEMENT_INSIDE_POPUP
+            XPATH_TO_POST_ELEMENT_INSIDE_LIKES_POPUP
         )
         element_inside_popup = elements_inside_popup[-1:][
             0
         ]  # TODO BUG: sometimes the "likes" field doesn't get loaded
+        return element_inside_popup
+
+    def element_inside_following_popup(self):  # TODO Refactor, pretty close to element_inside_likes_popup
+        elements_inside_popup = self.driver.find_elements_by_xpath(
+            XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWING_POPUP
+        )
+        element_inside_popup = elements_inside_popup[-1:][
+            0
+        ]  # TODO BUG: sometimes the "following" field doesn't get loaded
         return element_inside_popup
 
     # =========================== Fetch posts ===========================
@@ -382,7 +425,7 @@ class InstagramDeepSpider(Spider):
                     post_was_liked_by.add(user)
 
                 # TODO Ask: better solution @Thomas?
-                current_element_inside_popup = self.element_inside_popup()
+                current_element_inside_popup = self.element_inside_likes_popup()
                 self.scroll_down_popup(current_element_inside_popup)
                 if (
                     current_element_inside_popup == last_element_inside_popup
@@ -417,6 +460,7 @@ class InstagramDeepSpider(Spider):
                 " ".join(item_loader.get_collected_values(HASHTAGS_OF_DESCRIPTION)),
                 " ".join(item_loader.get_collected_values(OTHER_TAGS_OF_DESCRIPTION)),
                 " ".join(item_loader.get_collected_values(LIFESTYLE_STORIES)),
+                " ".join(item_loader.get_collected_values(FOLLOWING_NAMES)),
             ]
         )
         self.profile_csv_file.flush()
@@ -494,6 +538,7 @@ class InstagramDeepSpider(Spider):
         hashtags_of_description,
         other_tags_of_description,
         lifestyle_stories,
+            following_names,
     ):
         item_loader.add_value(NAME_OF_PROFILE, name_of_profile)
         item_loader.add_value(NUMBER_OF_POSTS, number_of_posts)
@@ -503,6 +548,7 @@ class InstagramDeepSpider(Spider):
         item_loader.add_value(HASHTAGS_OF_DESCRIPTION, hashtags_of_description)
         item_loader.add_value(OTHER_TAGS_OF_DESCRIPTION, other_tags_of_description)
         item_loader.add_value(LIFESTYLE_STORIES, lifestyle_stories)
+        item_loader.add_value(FOLLOWING_NAMES, following_names)
 
         item_loader.load_item()
 

@@ -5,7 +5,7 @@ while [ "$row_entry" ]; do
   echo "Working on $username, is a company: $is_a_company, is a deep crawl: $is_a_deep_crawl."
 
   cd /home/stefan/Knowledge/Bachelor-thesis/instagram_scraper/instagram_scraper || exit
-  sleep 2
+  sleep 1
   scrapy crawl instagram_crawler -a username="$username" -a is_a_company="$is_a_company" -a is_a_deep_crawl="$is_a_deep_crawl"
 
   cd /home/stefan/Knowledge/Bachelor-thesis/instagram_scraper || exit
