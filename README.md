@@ -22,6 +22,8 @@ Arguments can be:
 ## TODO
 - Mehr Objekte, nicht alles im Crawler (zB eigene writer klasse?)
 - We dont crawl for hashtags inside of descrption of posts, should we do that?
+- Neuesten Post Crawlen von Marry - Jeden Tag -> Crawler effizienter machen passt zu things to improve.
+- Marry Followed by crawlen -> um zu sehen ob uns wer entfolgt hat.
 
 ## To clarify
 
