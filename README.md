@@ -25,7 +25,7 @@ Arguments can be:
 - We dont crawl for hashtags inside of descrption of posts, should we do that?
 - Neuesten Post Crawlen von Marry - Jeden Tag -> Crawler effizienter machen passt zu things to improve.
 - Marry Followed by crawlen -> um zu sehen ob uns wer entfolgt hat.
-- What if someone has no posts? Like on Johannes Ladreiter profile
+- Maximum von 100 posts bei consumenten
 
 ## To clarify
 
