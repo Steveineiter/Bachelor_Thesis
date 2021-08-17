@@ -20,6 +20,7 @@ Arguments can be:
 ## Ideas
 
 ## TODO
+- Ist es zu auffaellig das ich mich jedes mal neu einlogge nach einem crawl?
 - Mehr Objekte, nicht alles im Crawler (zB eigene writer klasse?)
 - We dont crawl for hashtags inside of descrption of posts, should we do that?
 - Neuesten Post Crawlen von Marry - Jeden Tag -> Crawler effizienter machen passt zu things to improve.
