@@ -2,8 +2,6 @@ import random
 
 
 # ===================================== Generators ================================================
-# TODO Ask: can we put the random stuffs in a generator? because atm they are static right?
-#    Like this:
 def random_double_generator(lower_limit, upper_limit):
     while True:
         yield round(random.uniform(lower_limit, upper_limit), 2)
@@ -33,7 +31,7 @@ WAIT_FOR_RESPONSE_SLEEP = random_double_generator(
     5 * DURATION_COEFFICIENT, 7.5 * DURATION_COEFFICIENT
 )
 CRAWL_FINISHED_SLEEP = random_double_generator(
-    2.5 * 60 * DURATION_COEFFICIENT, 7.5 * 60 * DURATION_COEFFICIENT
+    2 * 60 * DURATION_COEFFICIENT, 4 * 60 * DURATION_COEFFICIENT
 )
 
 SECONDS_UNTIL_TIMEOUT = 10
@@ -44,9 +42,13 @@ SCROLL_LENGTH_INSIDE_POPUP = random_int_generator(5, 8)
 SCROLL_LENGTH_ON_WEBSITE = random_int_generator(2000, 6000)
 SCROLL_UPWARDS = random_bool_generator(0.2)
 
-# ===================================== Instagram Login ===========================================
-LOG_IN_PASSWORD = "dragonborn1234"
-LOG_IN_USERNAME = "stefandovakin"
+# ===================================== Instagram Login ============================= ==============
+# LOG_IN_USERNAME = "stefandovakin"
+# LOG_IN_PASSWORD = "dragonborn1234"
+
+# Temp Mail.org
+LOG_IN_USERNAME = "kowap79973@cytsl.com"
+LOG_IN_PASSWORD = "crawler_69"
 
 # ===================================== Default values ============================================
 INSTAGRAM_START_PAGE = "https://www.instagram.com/"
@@ -56,8 +58,6 @@ MARRYICETEA_INSTAGRAM_USERNAME = "marryicetea"
 COMPANY_PATH = "items/companies/"
 CONSUMER_PATH = "items/consumers/"
 
-
-# TODO: Extract all instagram classes -> because they are ugly to read and it would be better to modify.
 # ===================================== Xpath constants ===========================================
 XPATH_TO_SEARCH_FOR_USERNAME_BOX = "//input[@placeholder='Search']"
 
@@ -68,9 +68,11 @@ XPATH_TO_PROFILE_DESCRIPTION = '//*[@class="-vDIg"]/*/text()'
 XPATH_TO_PROFILE_HASHTAGS = '//*[@class="-vDIg"]/*/*/text()'
 XPATH_TO_PROFILE_OTHER_TAGS = '//*[@class="-vDIg"]/*/*/text()'
 XPATH_TO_PROFILE_LIFESTYLE_STORIES = '//*[@class="eXle2"]/text()'
+XPATH_TO_PROFILE_IS_PRIVATE = '//*[contains(text(), "This Account is Private")]'
 XPATH_TO_POST_FOLLOWING_BOX = '//*[@class="g47SY "]'
 XPATH_TO_POST_USERS_WHO_ARE_FOLLOWED = '//*[@class="FPmhX notranslate  _0imsa "]/text()'
 XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWING_POPUP = '//*[@class="Jv7Aj mArmR MqpiF  "]/*'
+XPATH_TO_PROFILE_FOLLOWING_EXIT_BUTTON = '//*[@class="QBdPU "]'
 
 XPATH_TO_POST_LIKES = '//*[@class="zV_Nj"]/span/text()'
 XPATH_TO_POST_HASHTAGS = '//a[@class=" xil3i"]'
@@ -96,6 +98,7 @@ DESCRIPTION_OF_PROFILE = "description_of_profile"
 HASHTAGS_OF_DESCRIPTION = "hashtags_of_description"
 OTHER_TAGS_OF_DESCRIPTION = "other_tags_of_description"
 LIFESTYLE_STORIES = "lifestyle_stories"
+IS_PRIVATE = "is_private"
 FOLLOWING_NAMES = "following_names"
 
 # PostDataItem
@@ -117,6 +120,7 @@ PROFILE_CSV_HEADER_ITEMS = [
     HASHTAGS_OF_DESCRIPTION,
     OTHER_TAGS_OF_DESCRIPTION,
     LIFESTYLE_STORIES,
+    IS_PRIVATE,
     FOLLOWING_NAMES,
 ]
 

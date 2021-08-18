@@ -35,10 +35,13 @@ class InstagramSpider(Spider):
         self.username = username
         self.is_a_company = is_a_company
         self.is_a_deep_crawl = is_a_deep_crawl
+        self.already_crawled_urls = set()
+
         # TODO Ask: it would be nicer with is_a_company.toUpper but on the other hand it needs more lines, what is better?
         #     Also it doesn't work with arguments :(
         if (
             is_a_company == "False"
+            or is_a_company == "FALSE"
             or is_a_company == "false"
             or is_a_company == "F"
             or is_a_company == "f"
@@ -47,6 +50,7 @@ class InstagramSpider(Spider):
             self.is_a_company = False
         if (
             is_a_deep_crawl == "False"
+            or is_a_deep_crawl == "FALSE"
             or is_a_deep_crawl == "false"
             or is_a_deep_crawl == "F"
             or is_a_deep_crawl == "f"
@@ -82,36 +86,50 @@ class InstagramSpider(Spider):
         self.create_directory(self.csv_path)
         self.create_directory(self.image_path)
 
-        self.profile_csv_file = open(
-            os.path.join(self.csv_path, "profile_data.csv"), "w"
-        )
-        self.profile_writer = csv.writer(self.profile_csv_file)
-        self.write_csv_header(self.profile_writer, PROFILE_CSV_HEADER_ITEMS)
+        csv_profile_path = os.path.join(self.csv_path, "profile_data.csv")
+        self.has_profile_data = os.path.isfile(csv_profile_path)
+        if not self.has_profile_data or is_a_company:
+            self.profile_csv_file = open(
+                os.path.join(self.csv_path, "profile_data.csv"), "w"
+            )
+            self.profile_writer = csv.writer(self.profile_csv_file)
+            self.write_csv_header(self.profile_writer, PROFILE_CSV_HEADER_ITEMS)
 
         if is_a_deep_crawl:
+            csv_post_path = os.path.join(self.csv_path, "posts_data.csv")
+            has_file_entries = os.path.isfile(csv_post_path)
+            if has_file_entries:
+                with open(csv_post_path,) as posts_csv_file:
+                    dict_reader = csv.DictReader(posts_csv_file)
+                    for row in dict_reader:
+                        self.already_crawled_urls.add(row["url_of_post"])
+
             self.posts_csv_file = open(
-                os.path.join(self.csv_path, "posts_data.csv"), "w"
+                csv_post_path, "a"
             )
             self.posts_writer = csv.writer(self.posts_csv_file)
-            self.write_csv_header(self.posts_writer, POSTS_CSV_HEADER_ITEMS)
+            if not has_file_entries:
+                self.write_csv_header(self.posts_writer, POSTS_CSV_HEADER_ITEMS)
 
     def start_requests(self):
         self.load_web_site(INSTAGRAM_START_PAGE)
         self.log_in()
         self.search_for_username(self.username)
 
-        yield self.parse_profile()
-        self.profile_csv_file.close()
+        if not self.has_profile_data or self.is_a_company:
+            yield self.parse_profile()
+            self.profile_csv_file.close()
 
         if self.is_a_deep_crawl:
             urls_of_posts_to_crawl = self.urls_of_posts_to_crawl()
+            urls_of_posts_to_crawl = urls_of_posts_to_crawl - self.already_crawled_urls
 
             for url_of_post in urls_of_posts_to_crawl:
                 yield self.parse_post(url_of_post)
             self.posts_csv_file.close()
 
-        sleep(next(CRAWL_FINISHED_SLEEP))
         self.driver.close()
+        sleep(next(CRAWL_FINISHED_SLEEP))
 
     def parse_profile(self):
         item_loader = ItemLoader(item=ProfileDataItem())
@@ -126,25 +144,36 @@ class InstagramSpider(Spider):
             hashtags_of_description = self.hashtags_of_description(selector)
             other_tags_of_description = self.other_tags_of_description(selector)
             lifestyle_stories = self.lifestyle_stories(selector)
-            if self.is_a_deep_crawl:
+            is_private = self.is_private(selector)
+            if self.is_a_deep_crawl and not is_private:
                 following_names = self.following_names(following)
+            if self.is_a_deep_crawl and self.is_a_company:
+                # TODO Implement this after Refactor because it should be the same as following_names
+                followers_names = self.followers_name(followers)
+
+            if is_private:
+                is_private = "TRUE"
+                following_names = None
+            else:
+                is_private = ""
+
+            self.load_profile_items(
+                item_loader,
+                name_of_profile,
+                number_of_posts,
+                followers,
+                following,
+                description_of_profile,
+                hashtags_of_description,
+                other_tags_of_description,
+                lifestyle_stories,
+                is_private,
+                following_names,
+            )
+
+            self.write_csv_profile_item(item_loader)
         except IndexError:
             pass
-
-        self.load_profile_items(
-            item_loader,
-            name_of_profile,
-            number_of_posts,
-            followers,
-            following,
-            description_of_profile,
-            hashtags_of_description,
-            other_tags_of_description,
-            lifestyle_stories,
-            following_names,
-        )
-
-        self.write_csv_profile_item(item_loader)
 
     def parse_post(self, url_of_post):
         self.load_web_site(url_of_post)
@@ -157,25 +186,26 @@ class InstagramSpider(Spider):
             likes_of_post = self.likes_of_post(selector)
             hashtags_of_post = self.hashtags_of_post()
             description_of_post = self.description_of_post(selector)
-            post_was_liked_by = self.post_was_liked_by(likes_of_post)
+            if self.is_a_company:
+                post_was_liked_by = self.post_was_liked_by(likes_of_post)
+            else:
+                post_was_liked_by = None
             date_of_post = self.date_of_post(selector)
-        except IndexError:
-            post_was_liked_by = None
 
-        self.load_post_items(
-            item_loader,
-            id_of_post,
-            url_of_post,
-            likes_of_post,
-            hashtags_of_post,
-            description_of_post,
-            post_was_liked_by,
-            date_of_post,
-        )
+            self.load_post_items(
+                item_loader,
+                id_of_post,
+                url_of_post,
+                likes_of_post,
+                hashtags_of_post,
+                description_of_post,
+                post_was_liked_by,
+                date_of_post,
+            )
 
-        self.write_csv_post_item(item_loader)
-        # TODO BUG: again, sometimes it doesn't load the whole page, as it was on post_was_liked_by
-        try:
+            self.write_csv_post_item(item_loader)
+            # TODO BUG: again, sometimes it doesn't load the whole page, as it was on post_was_liked_by
+
             url_of_image = self.url_of_image()
             self.download_images(id_of_post, url_of_image)
         except IndexError:
@@ -190,12 +220,15 @@ class InstagramSpider(Spider):
         self.deny_turn_on_notifications()
 
     def accept_cookies(self):
-        accept_all_cookies = WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
-            EC.element_to_be_clickable((By.XPATH, '//button[text()="Accept All"]'))
-        )
-        # TODO Ponder: Is this nice this way or just work with comments?
-        #  -> actually we dont require it because methods right @Thomas?
-        accept_all_cookies.click()
+        try:
+            accept_all_cookies = WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
+                EC.element_to_be_clickable((By.XPATH, '//button[text()="Accept All"]'))
+            )
+            # TODO Ponder: Is this nice this way or just work with comments?
+            #  -> actually we dont require it because methods right @Thomas?
+            accept_all_cookies.click()
+        except EC.WebDriverException:
+            pass
         sleep(next(CLICK_SLEEP))
 
     def enter_username_and_password(self):
@@ -280,13 +313,21 @@ class InstagramSpider(Spider):
     def lifestyle_stories(self, selector):
         return selector.xpath(XPATH_TO_PROFILE_LIFESTYLE_STORIES).extract()
 
-    def following_names(self, following):  # TODO Refactor, pretty close to post_was_liked_by
+    def is_private(self, selector):
+        is_private_field_set = selector.xpath(XPATH_TO_PROFILE_IS_PRIVATE).extract()
+        if is_private_field_set:
+            return True
+        else:
+            return False
+
+    def following_names(
+        self, following
+    ):  # TODO Refactor, pretty close to post_was_liked_by
         # TODO Ask: if we would extract the method there would be many attributes, what is the pythonic way?
         following_box = self.driver.find_elements_by_xpath(XPATH_TO_POST_FOLLOWING_BOX)
         following_names = set()
         last_element_inside_popup = None
         penultimate_element_inside_popup = None
-        counter = 0  # TODO delete
 
         following_box[2].click()
         sleep(next(WAIT_FOR_RESPONSE_SLEEP))
@@ -301,17 +342,21 @@ class InstagramSpider(Spider):
             current_element_inside_popup = self.element_inside_following_popup()
             self.scroll_down_popup(current_element_inside_popup)
             if (
-                    current_element_inside_popup == last_element_inside_popup
-                    or current_element_inside_popup == penultimate_element_inside_popup
+                current_element_inside_popup == last_element_inside_popup
+                or current_element_inside_popup == penultimate_element_inside_popup
             ):
                 break
                 # TODO Ask: its so ugly but it always jumped between the last and the last last, any idea why?
             penultimate_element_inside_popup = last_element_inside_popup
             last_element_inside_popup = current_element_inside_popup
-            counter += 1  # TODO delete
 
-        self.driver.find_elements_by_xpath('//*[@class="QBdPU "]')[1].click()
+        self.driver.find_elements_by_xpath(XPATH_TO_PROFILE_FOLLOWING_EXIT_BUTTON)[
+            1
+        ].click()
         return following_names
+
+    def followers_name(self, followers):
+        return "Foo"
 
     # =========================== Fetch URLs ===========================
     def urls_of_posts_to_crawl(self) -> set:
@@ -360,7 +405,9 @@ class InstagramSpider(Spider):
         ]  # TODO BUG: sometimes the "likes" field doesn't get loaded
         return element_inside_popup
 
-    def element_inside_following_popup(self):  # TODO Refactor, pretty close to element_inside_likes_popup
+    def element_inside_following_popup(
+        self,
+    ):  # TODO Refactor, pretty close to element_inside_likes_popup
         elements_inside_popup = self.driver.find_elements_by_xpath(
             XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWING_POPUP
         )
@@ -460,10 +507,10 @@ class InstagramSpider(Spider):
                 " ".join(item_loader.get_collected_values(HASHTAGS_OF_DESCRIPTION)),
                 " ".join(item_loader.get_collected_values(OTHER_TAGS_OF_DESCRIPTION)),
                 " ".join(item_loader.get_collected_values(LIFESTYLE_STORIES)),
+                " ".join(item_loader.get_collected_values(IS_PRIVATE)),
                 " ".join(item_loader.get_collected_values(FOLLOWING_NAMES)),
             ]
         )
-        self.profile_csv_file.flush()
 
     def write_csv_post_item(self, item_loader):
         # TODO Ask: Is there a better way for the next 2 lines?
@@ -526,7 +573,9 @@ class InstagramSpider(Spider):
 
         item_loader.load_item()
 
-    # TODO Ask: is there a better way? because the code is pretty close
+    # TODO Ask: is there a better way? because the code is pretty much the same aka terrible xD
+    #    my solutions: - just add those couple of lines in the upper function, so altogether it is less code
+    #                  - use a Dict and only one load_items function -> but it is a bit more complex for reading right?
     def load_profile_items(
         self,
         item_loader,
@@ -538,7 +587,8 @@ class InstagramSpider(Spider):
         hashtags_of_description,
         other_tags_of_description,
         lifestyle_stories,
-            following_names,
+        is_private,
+        following_names,
     ):
         item_loader.add_value(NAME_OF_PROFILE, name_of_profile)
         item_loader.add_value(NUMBER_OF_POSTS, number_of_posts)
@@ -548,6 +598,7 @@ class InstagramSpider(Spider):
         item_loader.add_value(HASHTAGS_OF_DESCRIPTION, hashtags_of_description)
         item_loader.add_value(OTHER_TAGS_OF_DESCRIPTION, other_tags_of_description)
         item_loader.add_value(LIFESTYLE_STORIES, lifestyle_stories)
+        item_loader.add_value(IS_PRIVATE, is_private)
         item_loader.add_value(FOLLOWING_NAMES, following_names)
 
         item_loader.load_item()
