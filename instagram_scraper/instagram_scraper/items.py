@@ -15,9 +15,10 @@ class ProfileDataItem(scrapy.Item):
     description_of_profile = scrapy.Field()
     hashtags_of_description = scrapy.Field()
     other_tags_of_description = scrapy.Field()
-    lifestyle_stories = scrapy.Field()  # TODO Ask: how is this really called?
+    lifestyle_stories = scrapy.Field()
     is_private = scrapy.Field()
     following_names = scrapy.Field()
+    followers_names = scrapy.Field()
 
 
 class PostDataItem(scrapy.Item):

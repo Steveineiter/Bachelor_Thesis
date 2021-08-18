@@ -54,6 +54,8 @@ LOG_IN_PASSWORD = "crawler_69"
 INSTAGRAM_START_PAGE = "https://www.instagram.com/"
 MARRYICETEA_INSTAGRAM_USERNAME = "marryicetea"
 
+MAXIMAL_POSTS_OF_CONSUMERS = 100
+
 # ===================================== Paths =====================================================
 COMPANY_PATH = "items/companies/"
 CONSUMER_PATH = "items/consumers/"
@@ -100,6 +102,7 @@ OTHER_TAGS_OF_DESCRIPTION = "other_tags_of_description"
 LIFESTYLE_STORIES = "lifestyle_stories"
 IS_PRIVATE = "is_private"
 FOLLOWING_NAMES = "following_names"
+FOLLOWERS_NAMES = "followers_names"
 
 # PostDataItem
 ID_OF_POST = "id_of_post"
@@ -122,6 +125,7 @@ PROFILE_CSV_HEADER_ITEMS = [
     LIFESTYLE_STORIES,
     IS_PRIVATE,
     FOLLOWING_NAMES,
+    FOLLOWERS_NAMES,
 ]
 
 POSTS_CSV_HEADER_ITEMS = [
