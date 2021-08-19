@@ -15,6 +15,7 @@ Arguments can be:
 - username => The Username we want to scrape.
 - is_a_company => True if the user we scrape is a company, where we want to get data, like Marry or Makava. False otherwise.
 - is_a_deep_crawl => True if we want to crawl data from posts, not only the profile. Needs MUCH longer if set on True.
+- path_to_useres_to_crawl_csv => If we use a CSV and the bash script for automatically scarping users, you need to pass the absolute path as argument so that the csv gets updatet after each scrape.
 
 
 ## Ideas
