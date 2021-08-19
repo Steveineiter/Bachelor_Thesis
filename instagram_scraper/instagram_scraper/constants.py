@@ -19,16 +19,16 @@ def random_bool_generator(chance_for_true_result):
 
 # ===================================== Random sleeping, to make it more organic ==================
 # TODO Ask: can we code it so that CLICK_SLEEP = next(CLICK_SLEEP)?
-DURATION_COEFFICIENT = 2  # Used to crawl more safely.
+DURATION_COEFFICIENT = 3  # Used to crawl more safely.
 
 CLICK_SLEEP = random_double_generator(
-    0.5 * DURATION_COEFFICIENT, 1.5 * DURATION_COEFFICIENT
+    1 * DURATION_COEFFICIENT, 2 * DURATION_COEFFICIENT
 )
 ENTER_DATA_SLEEP = random_double_generator(
-    1.5 * DURATION_COEFFICIENT, 3.5 * DURATION_COEFFICIENT
+    2 * DURATION_COEFFICIENT, 4 * DURATION_COEFFICIENT
 )
 WAIT_FOR_RESPONSE_SLEEP = random_double_generator(
-    5 * DURATION_COEFFICIENT, 7.5 * DURATION_COEFFICIENT
+    5 * DURATION_COEFFICIENT, 10 * DURATION_COEFFICIENT
 )
 CRAWL_FINISHED_SLEEP = random_double_generator(
     2 * 60 * DURATION_COEFFICIENT, 4 * 60 * DURATION_COEFFICIENT
@@ -39,7 +39,7 @@ SECONDS_UNTIL_TIMEOUT = 10
 # ===================================== Scrolling =================================================
 # TODO Ponder: how much can we scroll etc
 SCROLL_LENGTH_INSIDE_POPUP = random_int_generator(5, 8)
-SCROLL_LENGTH_ON_WEBSITE = random_int_generator(2000, 6000)
+SCROLL_LENGTH_ON_WEBSITE = random_int_generator(2000, 4000)
 SCROLL_UPWARDS = random_bool_generator(0.2)
 
 # ===================================== Instagram Login ============================= ==============
@@ -47,7 +47,7 @@ SCROLL_UPWARDS = random_bool_generator(0.2)
 # LOG_IN_PASSWORD = "dragonborn1234"
 
 # Temp Mail.org
-LOG_IN_USERNAME = "kowap79973@cytsl.com"
+LOG_IN_USERNAME = "corifij459@cytsl.com"
 LOG_IN_PASSWORD = "crawler_69"
 
 # ===================================== Default values ============================================
@@ -55,6 +55,9 @@ INSTAGRAM_START_PAGE = "https://www.instagram.com/"
 MARRYICETEA_INSTAGRAM_USERNAME = "marryicetea"
 
 MAXIMAL_POSTS_OF_CONSUMERS = 100
+POSITION_OF_LIKES_BOX = 0
+POSITION_OF_FOLLOWERS_BOX = 1
+POSITION_OF_FOLLOWING_BOX = 2
 
 # ===================================== Paths =====================================================
 COMPANY_PATH = "items/companies/"
@@ -72,9 +75,12 @@ XPATH_TO_PROFILE_OTHER_TAGS = '//*[@class="-vDIg"]/*/*/text()'
 XPATH_TO_PROFILE_LIFESTYLE_STORIES = '//*[@class="eXle2"]/text()'
 XPATH_TO_PROFILE_IS_PRIVATE = '//*[contains(text(), "This Account is Private")]'
 XPATH_TO_POST_FOLLOWING_BOX = '//*[@class="g47SY "]'
-XPATH_TO_POST_USERS_WHO_ARE_FOLLOWED = '//*[@class="FPmhX notranslate  _0imsa "]/text()'
+XPATH_TO_POST_USERS_WHO_WE_FOLLOW = '//*[@class="FPmhX notranslate  _0imsa "]/text()'
 XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWING_POPUP = '//*[@class="Jv7Aj mArmR MqpiF  "]/*'
-XPATH_TO_PROFILE_FOLLOWING_EXIT_BUTTON = '//*[@class="QBdPU "]'
+XPATH_TO_POST_FOLLOWERS_BOX = '//*[@class="g47SY "]'
+XPATH_TO_POST_USERS_WHO_FOLLOW_US = '//*[@class="FPmhX notranslate  _0imsa "]/text()'
+XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWERS_POPUP = '//*[@class="Jv7Aj mArmR MqpiF  "]/*'
+XPATH_TO_PROFILE_POPUP_EXIT_BUTTON = '//*[@class="QBdPU "]'
 
 XPATH_TO_POST_LIKES = '//*[@class="zV_Nj"]/span/text()'
 XPATH_TO_POST_HASHTAGS = '//a[@class=" xil3i"]'

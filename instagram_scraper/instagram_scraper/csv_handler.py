@@ -1,4 +1,6 @@
 import csv
+
+import pandas as pd
 from instagram_scraper.constants import *
 
 
@@ -30,6 +32,7 @@ class CSVHandler:
                 " ".join(item_loader.get_collected_values(LIFESTYLE_STORIES)),
                 " ".join(item_loader.get_collected_values(IS_PRIVATE)),
                 " ".join(item_loader.get_collected_values(FOLLOWING_NAMES)),
+                " ".join(item_loader.get_collected_values(FOLLOWERS_NAMES)),
             ]
         )
 
@@ -83,3 +86,9 @@ class CSVHandler:
             for row in dict_reader:
                 already_crawled_urls.add(row["url_of_post"])
         return already_crawled_urls
+
+    @staticmethod
+    def delete_row_from_user_to_crawl_csv(path_to_users_to_crawl_csv):
+        data_frame = pd.read_csv(path_to_users_to_crawl_csv)
+        data_frame = data_frame.iloc[1:]
+        data_frame.to_csv(path_to_users_to_crawl_csv)

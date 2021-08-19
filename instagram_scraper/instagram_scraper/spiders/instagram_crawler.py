@@ -1,56 +1,52 @@
+# Project classes
+from instagram_scraper.csv_handler import CSVHandler
+from instagram_scraper.items import PostDataItem, ProfileDataItem
+from instagram_scraper.constants import *
+from instagram_scraper.file_manager import FileManager
+
 # Selenium imports
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from parsel import Selector
-import csv
 
 # Other imports
 import os
-import wget
-from scrapy import Spider
-from scrapy.loader import ItemLoader
-
-from instagram_scraper.csv_handler import CSVHandler
-from instagram_scraper.items import PostDataItem, ProfileDataItem
-
-
+from abc import ABC
 from time import sleep
-from instagram_scraper.constants import *
-
-from instagram_scraper.file_manager import FileManager
+from scrapy import Spider
+from parsel import Selector
+from scrapy.loader import ItemLoader
 
 
 # TODO Ask: better one big file with many arguments, or 2 files with lots of duplicated code?
+# TODO Ask: What to do with all the static methods?
 # TODO Ponder: do we really need those time outs by accept fields etc.? actually they are annoying.
-class InstagramSpider(Spider):
+#  -> should we just ALWAYS wait 10-15 seconds?
+class InstagramSpider(Spider, ABC):
     name = "instagram_crawler"
     allowed_domains = ["instagram.com"]
-    start_urls = ["http://instagram.com/"]
+    start_urls = ["https://instagram.com/"]
 
     def __init__(
         self,
         username=MARRYICETEA_INSTAGRAM_USERNAME,
         is_a_company="True",
         is_a_deep_crawl="True",
+        path_to_users_to_crawl_csv=None,
         **kwargs,
     ):
-        self.username = username
-        self.is_a_company = is_a_company
-        self.is_a_deep_crawl = is_a_deep_crawl
-        self.already_crawled_urls = set()
-        self.profile_item_loader = ItemLoader(item=ProfileDataItem())
-        self.post_items_loader = ItemLoader(item=PostDataItem())
-        self.csv_handler = CSVHandler()
-
-        # TODO Ask: How to pass bool arguments in bash? Eg false?
-        self.is_a_company = self.input_to_bool(self.is_a_company)
-        self.is_a_deep_crawl = self.input_to_bool(self.is_a_deep_crawl)
-
         super().__init__(**kwargs)
+        self.username = username
+        # TODO Ask: How to pass bool arguments in bash? Eg false?
+        self.is_a_company = self.input_to_bool(is_a_company)
+        self.is_a_deep_crawl = self.input_to_bool(is_a_deep_crawl)
+        self.already_crawled_urls = set()
+        self.csv_handler = CSVHandler()
         self.file_manager = FileManager(self.is_a_company, username)
+        self.file_manager.create_directories()
+        self.path_to_user_to_crawl_csv = path_to_users_to_crawl_csv
 
         working_directory = os.getcwd()
         webdriver_path = os.path.join(
@@ -67,25 +63,25 @@ class InstagramSpider(Spider):
         self.log_in()
         self.search_for_username(self.username)
 
-        if not self.file_manager.has_profile_data() or self.is_a_company:
+        if self.is_a_company or not self.file_manager.has_profile_data():
             yield self.parse_profile()
 
         if self.is_a_deep_crawl:
             urls_of_posts_to_crawl = (
                 self.urls_of_posts_to_crawl() - self.already_crawled_urls
             )
-
             for url_of_post in urls_of_posts_to_crawl:
                 yield self.parse_post(url_of_post)
 
-        self.file_manager.save_crawled_data(
-            self.profile_item_loader, self.post_items_loader
-        )
+        if self.path_to_user_to_crawl_csv:
+            self.file_manager.delete_row_from_user_to_crawl_csv(
+                self.path_to_user_to_crawl_csv
+            )
         self.driver.close()
         sleep(next(CRAWL_FINISHED_SLEEP))
 
     def parse_profile(self):
-        # item_loader = ItemLoader(item=ProfileDataItem())
+        profile_item_loader = ItemLoader(item=ProfileDataItem())
         selector = Selector(text=self.driver.page_source)
 
         try:
@@ -105,20 +101,23 @@ class InstagramSpider(Spider):
                 if self.is_a_deep_crawl and not profile_item[IS_PRIVATE]
                 else None
             )
-            # TODO Implement this after Refactor because it should be the same as following_names
+            sleep(next(WAIT_FOR_RESPONSE_SLEEP))
             profile_item[FOLLOWERS_NAMES] = (
                 self.followers_name(profile_item[FOLLOWERS])
                 if self.is_a_deep_crawl and self.is_a_company
                 else None
             )
 
-            self.load_item_from_dictionary(self.profile_item_loader, profile_item)
+            self.load_item_from_dictionary(profile_item_loader, profile_item)
+            self.file_manager.safe_profile_data(profile_item_loader)
+
         except IndexError:
             pass
 
     def parse_post(self, url_of_post):
         self.load_web_site(url_of_post)
         selector = Selector(text=self.driver.page_source)
+        post_items_loader = ItemLoader(item=PostDataItem())
 
         try:
             post_items = {
@@ -135,7 +134,9 @@ class InstagramSpider(Spider):
                 else None
             )
 
-            self.load_item_from_dictionary(self.post_items_loader, post_items)
+            self.load_item_from_dictionary(post_items_loader, post_items)
+            self.file_manager.safe_post_data(post_items_loader)
+            self.file_manager.safe_image(post_items_loader)
         except IndexError:
             pass
 
@@ -147,30 +148,31 @@ class InstagramSpider(Spider):
         try:
             self.deny_save_login_info()
             self.deny_turn_on_notifications()
-        except EC.WebDriverException:
+        except expected_conditions.WebDriverException:
             pass
 
     def accept_cookies(self):
         try:
-            accept_all_cookies = WebDriverWait(
-                self.driver, SECONDS_UNTIL_TIMEOUT
-            ).until(
-                EC.element_to_be_clickable((By.XPATH, '//button[text()="Accept All"]'))
-            )
-            # TODO Ponder: Is this nice this way or just work with comments?
-            #  -> actually we dont require it because methods right @Thomas?
-            accept_all_cookies.click()
-        except EC.WebDriverException:
+            WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
+                expected_conditions.element_to_be_clickable(
+                    (By.XPATH, '//button[text()="Accept All"]')
+                )
+            ).click()
+        except expected_conditions.WebDriverException:
             pass
         sleep(next(CLICK_SLEEP))
 
     def enter_username_and_password(self):
         log_in_username = WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='username']"))
+            expected_conditions.element_to_be_clickable(
+                (By.CSS_SELECTOR, "input[name='username']")
+            )
         )
 
         log_in_password = WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='password']"))
+            expected_conditions.element_to_be_clickable(
+                (By.CSS_SELECTOR, "input[name='password']")
+            )
         )
 
         log_in_username.clear()
@@ -181,13 +183,15 @@ class InstagramSpider(Spider):
 
     def press_submit_button(self):
         WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))
+            expected_conditions.element_to_be_clickable(
+                (By.CSS_SELECTOR, "button[type='submit']")
+            )
         ).click()
         sleep(next(CLICK_SLEEP))
 
     def deny_save_login_info(self):
         WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
-            EC.element_to_be_clickable(
+            expected_conditions.element_to_be_clickable(
                 (By.XPATH, '//button[contains(text(), "Not Now")]')
             )
         ).click()
@@ -195,7 +199,7 @@ class InstagramSpider(Spider):
 
     def deny_turn_on_notifications(self):
         WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
-            EC.element_to_be_clickable(
+            expected_conditions.element_to_be_clickable(
                 (By.XPATH, '//button[contains(text(), "Not Now")]')
             )
         ).click()
@@ -204,98 +208,100 @@ class InstagramSpider(Spider):
     # =========================== Search and process to user profile ===========================
     def search_for_username(self, username):
         search_box = WebDriverWait(self.driver, SECONDS_UNTIL_TIMEOUT).until(
-            EC.element_to_be_clickable((By.XPATH, XPATH_TO_SEARCH_FOR_USERNAME_BOX))
+            expected_conditions.element_to_be_clickable(
+                (By.XPATH, XPATH_TO_SEARCH_FOR_USERNAME_BOX)
+            )
         )
         sleep(next(CLICK_SLEEP))
         self.enter_username_in_search_box(search_box, username)
         self.process_to_profile(search_box)
 
-    def enter_username_in_search_box(self, search_box, username):
+    @staticmethod
+    def enter_username_in_search_box(search_box, username):
         search_box.clear()
         search_box.send_keys(username)
         sleep(next(ENTER_DATA_SLEEP))
 
-    def process_to_profile(self, search_box):
+    @staticmethod
+    def process_to_profile(search_box):
         search_box.send_keys(Keys.ENTER)
         search_box.send_keys(Keys.ENTER)
         sleep(next(WAIT_FOR_RESPONSE_SLEEP))
 
     # =========================== Crawl for profile data ===========================
-    def number_of_posts(self, selector):
+    @staticmethod
+    def number_of_posts(selector):
         return selector.xpath(XPATH_TO_PROFILE_NUMBER_OF_POSTS).extract()[0]
 
-    def followers(self, selector):
+    @staticmethod
+    def followers(selector):
         return selector.xpath(XPATH_TO_PROFILE_FOLLOWERS).extract()[1]
 
-    def following(self, selector):
+    @staticmethod
+    def following(selector):
         return selector.xpath(XPATH_TO_PROFILE_FOLLOWING).extract()[2]
 
-    def description_of_profile(self, selector):
+    @staticmethod
+    def description_of_profile(selector):
         return selector.xpath(XPATH_TO_PROFILE_DESCRIPTION).extract()
 
-    def hashtags_of_description(self, selector):
+    @staticmethod
+    def hashtags_of_description(selector):
         other_tags = selector.xpath(XPATH_TO_PROFILE_HASHTAGS).extract()
         hashtags = [tag for tag in other_tags if "#" in tag]
         return hashtags
 
-    def other_tags_of_description(self, selector):
+    @staticmethod
+    def other_tags_of_description(selector):
         other_tags = selector.xpath(XPATH_TO_PROFILE_OTHER_TAGS).extract()
         other_tags = [tag for tag in other_tags if "#" not in tag]
         return other_tags
 
-    def lifestyle_stories(self, selector):
+    @staticmethod
+    def lifestyle_stories(selector):
         return selector.xpath(XPATH_TO_PROFILE_LIFESTYLE_STORIES).extract()
 
-    def is_private(self, selector):
+    @staticmethod
+    def is_private(selector):
         is_private_field_set = selector.xpath(XPATH_TO_PROFILE_IS_PRIVATE).extract()
         if is_private_field_set:
             return True
         else:
             return False
 
-    def following_names(
-        self, following
-    ):  # TODO Refactor, pretty close to post_was_liked_by
-        # TODO sometimes it doesnt get loaded, we need more sleep?
-        # TODO Ask: if we would extract the method there would be many attributes, what is the pythonic way?
-        following_box = self.driver.find_elements_by_xpath(XPATH_TO_POST_FOLLOWING_BOX)
-        following_names = set()
-        last_element_inside_popup = None
-        penultimate_element_inside_popup = None
-
-        following_box[2].click()
-        sleep(next(WAIT_FOR_RESPONSE_SLEEP))
-        while int(following) > len(following_names):
-            selector = Selector(text=self.driver.page_source)
-            current_users = selector.xpath(
-                XPATH_TO_POST_USERS_WHO_ARE_FOLLOWED
-            ).extract()
-            for user in current_users:
-                following_names.add(user)
-
-            current_element_inside_popup = self.element_inside_following_popup()
-            self.scroll_down_popup(current_element_inside_popup)
-            if (
-                current_element_inside_popup == last_element_inside_popup
-                or current_element_inside_popup == penultimate_element_inside_popup
-            ):
-                break
-                # TODO Ask: its so ugly but it always jumped between the last and the last last, any idea why?
-            penultimate_element_inside_popup = last_element_inside_popup
-            last_element_inside_popup = current_element_inside_popup
-            sleep(next(CLICK_SLEEP))
-
-        self.driver.find_elements_by_xpath(XPATH_TO_PROFILE_FOLLOWING_EXIT_BUTTON)[
+    def following_names(self, following):
+        following_names = self.user_names_from_pop_up(
+            XPATH_TO_POST_FOLLOWING_BOX,
+            XPATH_TO_POST_USERS_WHO_WE_FOLLOW,
+            POSITION_OF_FOLLOWING_BOX,
+            int(following),
+            XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWING_POPUP,
+        )
+        self.driver.find_elements_by_xpath(XPATH_TO_PROFILE_POPUP_EXIT_BUTTON)[
             1
         ].click()
+
         return following_names
 
     def followers_name(self, followers):
-        return "Foo"
+        followers = "".join([digit for digit in followers if digit.isdigit()])
+        followers_name = self.user_names_from_pop_up(
+            XPATH_TO_POST_FOLLOWERS_BOX,
+            XPATH_TO_POST_USERS_WHO_FOLLOW_US,
+            POSITION_OF_FOLLOWERS_BOX,
+            int(followers),
+            XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWERS_POPUP,
+        )
+        self.driver.find_elements_by_xpath(XPATH_TO_PROFILE_POPUP_EXIT_BUTTON)[
+            1
+        ].click()
+
+        return followers_name
 
     # =========================== Fetch URLs ===========================
     def urls_of_posts_to_crawl(self) -> set:
         cleaned_urls_of_posts = set()
+        is_post_limit_reached = False
 
         while True:
             self.scroll_down()
@@ -308,59 +314,40 @@ class InstagramSpider(Spider):
                 cleaned_urls_of_posts.add(cleaned_url)
                 if (
                     not self.is_a_company
-                    and len(cleaned_urls_of_posts) >= MAXIMAL_POSTS_OF_CONSUMERS  # TODO REFACTOR
+                    and len(cleaned_urls_of_posts) >= MAXIMAL_POSTS_OF_CONSUMERS
                 ):
+                    is_post_limit_reached = True
                     break
-            if page_height - 1 <= total_scrolled_height or (
-                not self.is_a_company
-                and len(cleaned_urls_of_posts) >= MAXIMAL_POSTS_OF_CONSUMERS
-            ):
+            if page_height - 1 <= total_scrolled_height or is_post_limit_reached:
                 break
 
         return cleaned_urls_of_posts
 
     # =========================== Scrolling ===========================
-    # TODO Implement: make it dynamically, eg 2/3 times down for 40-60, 1 time up all random -> AND go to the end of site
-    # TODO Ponder: is this even neccessary? Are we even requesting new data? Aka does it even know the difference if we scroll up/down?
     def scroll_down(self):
-        # for _ in range (10):
-        #     if next(SCROLL_UPWARDS):
-        #         self.driver.execute_script(f"window.scrollBy(0, {-next(SCROLL_LENGTH_ON_WEBSITE)});")
-        #     else:
-        #         self.driver.execute_script(f"window.scrollBy(0, {next(SCROLL_LENGTH_ON_WEBSITE)});")
+        # TODO Ask: it doesnt make difference if we scroll up/down or just down right? because the request
+        #  will come anyway
         self.driver.execute_script(
             f"window.scrollBy(0, {next(SCROLL_LENGTH_ON_WEBSITE)});"
         )
         sleep(next(ENTER_DATA_SLEEP))
 
-    def scroll_down_popup(self, element_inside_popup):
+    @staticmethod
+    def scroll_down_popup(element_inside_popup):
         element_inside_popup.send_keys(Keys.DOWN * next(SCROLL_LENGTH_INSIDE_POPUP))
         sleep(next(CLICK_SLEEP))
 
         return element_inside_popup
 
-    def element_inside_likes_popup(self):
+    def element_inside_popup(self, xpath_to_element_inside_popup):
+        # TODO BUG: sometimes the "following" field doesn't get loaded
         elements_inside_popup = self.driver.find_elements_by_xpath(
-            XPATH_TO_POST_ELEMENT_INSIDE_LIKES_POPUP
+            xpath_to_element_inside_popup
         )
-        element_inside_popup = elements_inside_popup[-1:][
-            0
-        ]  # TODO BUG: sometimes the "likes" field doesn't get loaded
-        return element_inside_popup
-
-    def element_inside_following_popup(
-        self,
-    ):  # TODO Refactor, pretty close to element_inside_likes_popup
-        elements_inside_popup = self.driver.find_elements_by_xpath(
-            XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWING_POPUP
-        )
-        element_inside_popup = elements_inside_popup[-1:][
-            0
-        ]  # TODO BUG: sometimes the "following" field doesn't get loaded
+        element_inside_popup = elements_inside_popup[-1:][0]
         return element_inside_popup
 
     # =========================== Fetch posts ===========================
-    # TODO Ask: Thomas is this worth/nice for readability? with -> list
     def cleaned_urls_of_posts(
         self,
     ) -> list:
@@ -373,7 +360,6 @@ class InstagramSpider(Spider):
         return cleaned_image_urls
 
     def urls_of_posts(self) -> list:
-        # images = self.driver.find_elements_by_tag_name("img")  # TODO Refactor: Look this up in docu.
         urls_of_posts = self.driver.find_elements_by_xpath("//a")
         urls_of_posts = [
             url_of_post.get_attribute("href") for url_of_post in urls_of_posts
@@ -382,10 +368,12 @@ class InstagramSpider(Spider):
         return urls_of_posts
 
     # =========================== Crawl for posts data ===========================
-    def id_of_post(self, url_of_post):
+    @staticmethod
+    def id_of_post(url_of_post):
         return url_of_post.split("/p/")[1].split("/")[0]
 
-    def likes_of_post(self, selector):
+    @staticmethod
+    def likes_of_post(selector):
         return selector.xpath(XPATH_TO_POST_LIKES).extract_first()
 
     def hashtags_of_post(self):
@@ -393,29 +381,52 @@ class InstagramSpider(Spider):
         hashtags = [hashtag.get_attribute("innerHTML") for hashtag in hashtags]
         return hashtags
 
-    def description_of_post(self, selector):
+    @staticmethod
+    def description_of_post(selector):
         return selector.xpath(XPATH_TO_POST_DESCRIPTION).extract()
 
     def post_was_liked_by(self, likes_of_post):
-        likes_box = self.driver.find_elements_by_xpath(XPATH_TO_POST_LIKES_BOX)
-        post_was_liked_by = set()
+        return self.user_names_from_pop_up(
+            XPATH_TO_POST_LIKES_BOX,
+            XPATH_TO_POST_USERS_WHO_LIKED_IT,
+            POSITION_OF_LIKES_BOX,
+            int(likes_of_post),
+            XPATH_TO_POST_ELEMENT_INSIDE_LIKES_POPUP,
+        )
+
+    @staticmethod
+    def date_of_post(selector):
+        return selector.xpath(XPATH_TO_POST_DATE).extract_first()
+
+    def url_of_image(self):
+        return self.driver.find_elements_by_tag_name("img")[1].get_attribute("src")
+
+    # =========================== Other crawling stuff ===========================
+    def user_names_from_pop_up(
+        self,
+        xpath_to_box,
+        xpath_to_users,
+        position_of_box,
+        users_count,
+        xpath_to_element_inside_popup,
+    ):
+        box_to_click = self.driver.find_elements_by_xpath(xpath_to_box)
+        user_names = set()
         last_element_inside_popup = None
         penultimate_element_inside_popup = None
 
-        if len(likes_box) > 0:
-            likes_box[0].click()
+        if len(box_to_click) > 0:
+            box_to_click[position_of_box].click()
             sleep(next(WAIT_FOR_RESPONSE_SLEEP))
-            while int(likes_of_post) > len(post_was_liked_by):
+            while int(users_count) > len(user_names):
                 selector = Selector(text=self.driver.page_source)
-                current_users = selector.xpath(
-                    XPATH_TO_POST_USERS_WHO_LIKED_IT
-                ).extract()
-                # [people_liked_post.add(user) for user in temp_users] # TODO Ask: why this doesn't work?
+                current_users = selector.xpath(xpath_to_users).extract()
                 for user in current_users:
-                    post_was_liked_by.add(user)
+                    user_names.add(user)
 
-                # TODO Ask: better solution @Thomas?
-                current_element_inside_popup = self.element_inside_likes_popup()
+                current_element_inside_popup = self.element_inside_popup(
+                    xpath_to_element_inside_popup
+                )
                 self.scroll_down_popup(current_element_inside_popup)
                 if (
                     current_element_inside_popup == last_element_inside_popup
@@ -426,13 +437,7 @@ class InstagramSpider(Spider):
                 penultimate_element_inside_popup = last_element_inside_popup
                 last_element_inside_popup = current_element_inside_popup
 
-        return post_was_liked_by
-
-    def date_of_post(self, selector):
-        return selector.xpath(XPATH_TO_POST_DATE).extract_first()
-
-    def url_of_image(self):
-        return self.driver.find_elements_by_tag_name("img")[1].get_attribute("src")
+        return user_names
 
     # =========================== Utility ===========================
     @staticmethod
@@ -462,6 +467,7 @@ class InstagramSpider(Spider):
             item_loader.add_value(key, value)
         item_loader.load_item()
 
-    def create_directory(self, path):
+    @staticmethod
+    def create_directory(path):
         if not os.path.exists(path):
             os.makedirs(path)
