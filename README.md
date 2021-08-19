@@ -26,6 +26,7 @@ Arguments can be:
 
 ## To clarify
 - We dont crawl for hashtags inside of descrption of posts, should we do that?
+- Do i need liked by from our customers?
 - was tun bei bildserie (zB 3 bilder?), eig brauchen wir die bilder nicht sooo dringend oder?
 - Bis 25.8.2021 will ich mit Sachen von Firma fertig sein -> Moeglich? Bzw Plan machen
 
