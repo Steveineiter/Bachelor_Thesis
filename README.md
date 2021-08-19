@@ -25,6 +25,7 @@ Arguments can be:
 - Crawler schwerer zu entdecken machen
 
 ## To clarify
+- On list of followers / following we do not get all -> is it even usefull then? eg our followers since sometimes the user can be on the list sometimes not?
 - We dont crawl for hashtags inside of descrption of posts, should we do that?
 - Do i need liked by from our customers?
 - was tun bei bildserie (zB 3 bilder?), eig brauchen wir die bilder nicht sooo dringend oder?
