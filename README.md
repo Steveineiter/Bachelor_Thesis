@@ -21,14 +21,10 @@ Arguments can be:
 
 ## TODO
 - Ist es zu auffaellig das ich mich jedes mal neu einlogge nach einem crawl?
-- Mehr Objekte, nicht alles im Crawler (zB eigene writer klasse?)
-- We dont crawl for hashtags inside of descrption of posts, should we do that?
-- Neuesten Post Crawlen von Marry - Jeden Tag -> Crawler effizienter machen passt zu things to improve.
-- Marry Followed by crawlen -> um zu sehen ob uns wer entfolgt hat.
-- Maximum von 100 posts bei consumenten
+- Crawler schwerer zu entdecken machen
 
 ## To clarify
-
+- We dont crawl for hashtags inside of descrption of posts, should we do that?
 - was tun bei bildserie (zB 3 bilder?), eig brauchen wir die bilder nicht sooo dringend oder?
 - Bis 25.8.2021 will ich mit Sachen von Firma fertig sein -> Moeglich? Bzw Plan machen
 
@@ -42,5 +38,3 @@ Arguments can be:
 - Was ist der hauptfokus? Crawlen? Worauf soll ich mich fokusieren/am schoensten machen -> was ist fuer die Firma am wichtigsten => Crawling, benutzer kennen lernen, Neukundnegwinnung
 
 ## Things to improve:
-- More objects
-- more efficient, eg if a post already got cralwed don't crawl it again. Don't always create a new CSV. so if we crawled like 150 posts on marry we dont want to crawl again for 151, but only crawl the last one.
