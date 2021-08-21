@@ -54,8 +54,9 @@ class FileManager:
         id_of_posts = post_items.get_collected_values(ID_OF_POST)
         try:
             self._download_images(id_of_posts, urls_of_images)
-        except HTTPError:
-            pass
+        except HTTPError as exception:
+            print("Download was not possible - the exception:")
+            print(exception)
 
     def _download_images(self, id_of_posts, urls_of_images):
         for id_of_post, url_of_image in zip(id_of_posts, urls_of_images):
@@ -87,3 +88,10 @@ class FileManager:
 
     def delete_row_from_user_to_crawl_csv(self, path_to_users_to_crawl_csv):
         self.csv_handler.delete_row_from_user_to_crawl_csv(path_to_users_to_crawl_csv)
+
+    def users_from_csv(self, users_to_load_from_csv):
+        working_directory = os.getcwd()
+        path_to_users_to_crawl_csv = os.path.join(working_directory, os.pardir, "users_to_crawl.csv")
+
+        return self.csv_handler.users_from_csv(path_to_users_to_crawl_csv, users_to_load_from_csv)
+

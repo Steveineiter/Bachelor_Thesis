@@ -19,19 +19,20 @@ def random_bool_generator(chance_for_true_result):
 
 # ===================================== Random sleeping, to make it more organic ==================
 # TODO Ask: can we code it so that CLICK_SLEEP = next(CLICK_SLEEP)?
-DURATION_COEFFICIENT = 3  # Used to crawl more safely.
+DURATION_COEFFICIENT = 1  # Used to crawl more safely.
+MINUTE = 60
 
 CLICK_SLEEP = random_double_generator(
-    1 * DURATION_COEFFICIENT, 2 * DURATION_COEFFICIENT
+    5 * DURATION_COEFFICIENT, 7.5 * DURATION_COEFFICIENT
 )
 ENTER_DATA_SLEEP = random_double_generator(
-    2 * DURATION_COEFFICIENT, 4 * DURATION_COEFFICIENT
+    7.5 * DURATION_COEFFICIENT, 15 * DURATION_COEFFICIENT
 )
 WAIT_FOR_RESPONSE_SLEEP = random_double_generator(
-    5 * DURATION_COEFFICIENT, 10 * DURATION_COEFFICIENT
+    15 * DURATION_COEFFICIENT, 20 * DURATION_COEFFICIENT
 )
 CRAWL_FINISHED_SLEEP = random_double_generator(
-    2 * 60 * DURATION_COEFFICIENT, 4 * 60 * DURATION_COEFFICIENT
+    5 * MINUTE * DURATION_COEFFICIENT, 10 * MINUTE * DURATION_COEFFICIENT
 )
 
 SECONDS_UNTIL_TIMEOUT = 10
@@ -47,14 +48,15 @@ SCROLL_UPWARDS = random_bool_generator(0.2)
 # LOG_IN_PASSWORD = "dragonborn1234"
 
 # Temp Mail.org
-LOG_IN_USERNAME = "corifij459@cytsl.com"
+LOG_IN_USERNAMES = ["xeyos10054@5sword.com"]
+LOG_IN_USERNAME = LOG_IN_USERNAMES[0]
 LOG_IN_PASSWORD = "crawler_69"
 
 # ===================================== Default values ============================================
 INSTAGRAM_START_PAGE = "https://www.instagram.com/"
 MARRYICETEA_INSTAGRAM_USERNAME = "marryicetea"
 
-MAXIMAL_POSTS_OF_CONSUMERS = 100
+MAXIMAL_POSTS_OF_CONSUMERS = 25
 POSITION_OF_LIKES_BOX = 0
 POSITION_OF_FOLLOWERS_BOX = 1
 POSITION_OF_FOLLOWING_BOX = 2
