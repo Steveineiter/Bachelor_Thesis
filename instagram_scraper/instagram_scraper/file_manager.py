@@ -91,7 +91,7 @@ class FileManager:
 
     def users_from_csv(self, users_to_load_from_csv):
         working_directory = os.getcwd()
-        path_to_users_to_crawl_csv = os.path.join(working_directory, os.pardir, "users_to_crawl.csv")
+        path_to_users_to_crawl_csv = os.path.join(working_directory, "users_to_crawl.csv")
 
         return self.csv_handler.users_from_csv(path_to_users_to_crawl_csv, users_to_load_from_csv)
 
