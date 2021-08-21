@@ -19,6 +19,8 @@ Arguments can be:
 
 
 ## Ideas
+# For scaling
+We can look at posts even if we are NOT logged in!! That means we could 1. get all the post urls and 2. get stuff like desciption etc. -> on the other side we dont get the name of likes.
 
 ## TODO
 - Ist es zu auffaellig das ich mich jedes mal neu einlogge nach einem crawl?
