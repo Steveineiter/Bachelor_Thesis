@@ -49,6 +49,7 @@ class InstagramSpider(Spider, ABC):
             )
 
         if is_raspberry_pi:
+            # Uncomment the next 2 lines if you want to have a window on the raspberry.
             display = Display(visible=False, size=(1600, 1200))
             display.start()
             webdriver_path = "/usr/lib/chromium-browser/chromedriver"
@@ -353,7 +354,7 @@ class InstagramSpider(Spider, ABC):
     @staticmethod
     def scroll_down_popup(element_inside_popup):
         element_inside_popup.send_keys(Keys.DOWN * next(SCROLL_LENGTH_INSIDE_POPUP))
-        sleep(next(CLICK_SLEEP))
+        sleep(next(ENTER_DATA_SLEEP))
 
         return element_inside_popup
 
