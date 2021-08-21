@@ -48,8 +48,8 @@ SCROLL_UPWARDS = random_bool_generator(0.2)
 # LOG_IN_PASSWORD = "dragonborn1234"
 
 # Temp Mail.org
-LOG_IN_USERNAMES = ["xeyos10054@5sword.com"]
-LOG_IN_USERNAME = LOG_IN_USERNAMES[0]
+LOG_IN_USERNAMES = ["xeyos10054@5sword.com", "kelexey345@kibwot.com"]
+LOG_IN_USERNAME = LOG_IN_USERNAMES[random.randint(0, len(LOG_IN_USERNAMES) - 1)]
 LOG_IN_PASSWORD = "crawler_69"
 
 # ===================================== Default values ============================================
@@ -57,15 +57,12 @@ INSTAGRAM_START_PAGE = "https://www.instagram.com/"
 MARRYICETEA_INSTAGRAM_USERNAME = "marryicetea"
 
 MAXIMAL_POSTS_OF_CONSUMERS = 25
-POSITION_OF_LIKES_BOX = 0
-POSITION_OF_FOLLOWERS_BOX = 1
-POSITION_OF_FOLLOWING_BOX = 2
-
 # ===================================== Paths =====================================================
 COMPANY_PATH = "items/companies/"
 CONSUMER_PATH = "items/consumers/"
 
 # ===================================== Xpath constants ===========================================
+# TODO Refactor / rename a few, eg why is line 78 XPATH_TO_POST_USERS_WHO_WE_FOLLOW but it is in profile right?
 XPATH_TO_SEARCH_FOR_USERNAME_BOX = "//input[@placeholder='Search']"
 
 XPATH_TO_PROFILE_NUMBER_OF_POSTS = '//*[@class="g47SY "]/text()'
@@ -77,9 +74,11 @@ XPATH_TO_PROFILE_OTHER_TAGS = '//*[@class="-vDIg"]/*/*/text()'
 XPATH_TO_PROFILE_LIFESTYLE_STORIES = '//*[@class="eXle2"]/text()'
 XPATH_TO_PROFILE_IS_PRIVATE = '//*[contains(text(), "This Account is Private")]'
 XPATH_TO_POST_FOLLOWING_BOX = '//*[@class="g47SY "]'
+POSITION_OF_FOLLOWING_BOX = 2
 XPATH_TO_POST_USERS_WHO_WE_FOLLOW = '//*[@class="FPmhX notranslate  _0imsa "]/text()'
 XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWING_POPUP = '//*[@class="Jv7Aj mArmR MqpiF  "]/*'
 XPATH_TO_POST_FOLLOWERS_BOX = '//*[@class="g47SY "]'
+POSITION_OF_FOLLOWERS_BOX = 1
 XPATH_TO_POST_USERS_WHO_FOLLOW_US = '//*[@class="FPmhX notranslate  _0imsa "]/text()'
 XPATH_TO_POST_ELEMENT_INSIDE_FOLLOWERS_POPUP = '//*[@class="Jv7Aj mArmR MqpiF  "]/*'
 XPATH_TO_PROFILE_POPUP_EXIT_BUTTON = '//*[@class="QBdPU "]'
@@ -90,6 +89,7 @@ XPATH_TO_POST_DESCRIPTION = '//*[@class="C4VMK"]/span/text()'
 XPATH_TO_POST_USERS_WHO_LIKED_IT = '//*[@class="FPmhX notranslate MBL3Z"]/text()'
 XPATH_TO_POST_DATE = '//*[@class="_1o9PC Nzb55"]/@datetime'
 XPATH_TO_POST_LIKES_BOX = '//a[@class="zV_Nj"]'
+POSITION_OF_LIKES_BOX = 0
 XPATH_TO_POST_ELEMENT_INSIDE_LIKES_POPUP = '//*[@class="FPmhX notranslate MBL3Z"]'
 
 # ===================================== Scripts ===================================================
