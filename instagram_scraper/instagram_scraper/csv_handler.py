@@ -94,10 +94,10 @@ class CSVHandler:
         data_frame.to_csv(path_to_users_to_crawl_csv)
 
     @staticmethod
-    def users_from_csv(csv_post_path, users_to_load_from_csv: int):
+    def users_from_csv(csv_path, users_to_load_from_csv: int):
         users_to_crawl = set()
         with open(
-                csv_post_path,
+                csv_path,
         ) as posts_csv_file:
             dict_reader = csv.DictReader(posts_csv_file)
             for row in dict_reader:

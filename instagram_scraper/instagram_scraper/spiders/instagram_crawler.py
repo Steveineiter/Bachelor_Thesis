@@ -30,7 +30,7 @@ class InstagramSpider(Spider, ABC):
         username=MARRYICETEA_INSTAGRAM_USERNAME,
         is_a_company="True",
         is_a_deep_crawl="True",
-        users_to_load_from_csv=0,
+        user_count_to_load_from_csv=0,
         path_to_users_to_crawl_csv=None,
         is_raspberry_pi=False,
         **kwargs,
@@ -39,60 +39,66 @@ class InstagramSpider(Spider, ABC):
         self.usernames = [username]
         self.is_a_company = self.input_to_bool(is_a_company)
         self.is_a_deep_crawl = self.input_to_bool(is_a_deep_crawl)
-        self.users_to_load_from_csv = int(users_to_load_from_csv)
+        self.user_count_to_load_from_csv = int(user_count_to_load_from_csv)
         self.already_crawled_urls = set()
         self.csv_handler = CSVHandler()
-        self.file_manager = FileManager(self.is_a_company, username)
-        self.file_manager.create_directories()
         self.path_to_user_to_crawl_csv = path_to_users_to_crawl_csv
 
-        working_directory = os.getcwd()
+        self.working_directory = os.getcwd()
         if is_raspberry_pi:
             webdriver_path = "/usr/lib/chromium-browser/chromedriver"
         else:
             webdriver_path = os.path.join(
-                working_directory, os.pardir, "chromedriver"
+                self.working_directory, os.pardir, "chromedriver"
             )
-
         self.driver = webdriver.Chrome(webdriver_path)
-
-        if is_a_deep_crawl:
-            self.already_crawled_urls = self.file_manager.already_crawled_urls()
 
     def start_requests(self):
         self.load_web_site(INSTAGRAM_START_PAGE)
         self.log_in()
 
-        if self.users_to_load_from_csv:
-            self.usernames = self.file_manager.users_from_csv(self.users_to_load_from_csv)
+        if self.user_count_to_load_from_csv:
+            # TODO Refactor
+            path_to_users_to_crawl_csv = os.path.join(
+                self.working_directory, "users_to_crawl.csv"
+            )
+            self.usernames = self.csv_handler.users_from_csv(
+                path_to_users_to_crawl_csv, self.user_count_to_load_from_csv
+            )
+
         for username in self.usernames:
+            file_manager = FileManager(self.is_a_company, username)
+            file_manager.create_directories()
+
             self.search_for_username(username)
 
-            if self.is_a_company or not self.file_manager.has_profile_data():
-                yield self.parse_profile()
+            if self.is_a_company or not file_manager.has_profile_data():
+                yield self.parse_profile(username, file_manager)
 
             if self.is_a_deep_crawl:
+                already_crawled_urls = file_manager.already_crawled_urls()
+
                 urls_of_posts_to_crawl = (
-                    self.urls_of_posts_to_crawl() - self.already_crawled_urls
+                    self.urls_of_posts_to_crawl() - already_crawled_urls
                 )
                 for url_of_post in urls_of_posts_to_crawl:
-                    yield self.parse_post(url_of_post)
+                    yield self.parse_post(url_of_post, file_manager)
 
             if self.path_to_user_to_crawl_csv:
-                self.file_manager.delete_row_from_user_to_crawl_csv(
+                file_manager.delete_row_from_user_to_crawl_csv(
                     self.path_to_user_to_crawl_csv
                 )
             sleep(next(CRAWL_FINISHED_SLEEP))
 
         self.driver.close()
 
-    def parse_profile(self):
+    def parse_profile(self, username, file_manager):
         profile_item_loader = ItemLoader(item=ProfileDataItem())
         selector = Selector(text=self.driver.page_source)
 
         try:
             profile_item = {
-                NAME_OF_PROFILE: self.usernames,
+                NAME_OF_PROFILE: username,
                 NUMBER_OF_POSTS: self.number_of_posts(selector),
                 FOLLOWERS: self.followers(selector),
                 FOLLOWING: self.following(selector),
@@ -119,13 +125,14 @@ class InstagramSpider(Spider, ABC):
             )
 
             self.load_item_from_dictionary(profile_item_loader, profile_item)
-            self.file_manager.safe_profile_data(profile_item_loader)
+            file_manager.safe_profile_data(profile_item_loader)
 
         except IndexError:
             pass
 
-    def parse_post(self, url_of_post):
+    def parse_post(self, url_of_post, file_manager):
         self.load_web_site(url_of_post)
+        sleep(next(WAIT_FOR_RESPONSE_SLEEP))
         selector = Selector(text=self.driver.page_source)
         post_items_loader = ItemLoader(item=PostDataItem())
 
@@ -138,15 +145,17 @@ class InstagramSpider(Spider, ABC):
                 DESCRIPTION_OF_POST: self.description_of_post(selector),
                 DATE_OF_POST: self.date_of_post(selector),
             }
+            sleep(next(WAIT_FOR_RESPONSE_SLEEP))
             post_items[POST_WAS_LIKED_BY] = (
                 self.post_was_liked_by(post_items[LIKES_OF_POST])
                 if self.is_a_company
                 else None
             )
+            sleep(next(WAIT_FOR_RESPONSE_SLEEP))
 
             self.load_item_from_dictionary(post_items_loader, post_items)
-            self.file_manager.safe_post_data(post_items_loader)
-            self.file_manager.safe_image(post_items_loader)
+            file_manager.safe_post_data(post_items_loader)
+            file_manager.safe_image(post_items_loader)
         except IndexError:
             pass
 
@@ -458,12 +467,6 @@ class InstagramSpider(Spider, ABC):
         ):
             return False
         return True
-
-    def start_webdriver(self, working_directory):
-        webdriver_path = os.path.join(
-            working_directory, os.pardir, os.pardir, "chromedriver"
-        )
-        self.driver = webdriver.Chrome(webdriver_path)
 
     def load_web_site(self, url):
         self.driver.get(url)

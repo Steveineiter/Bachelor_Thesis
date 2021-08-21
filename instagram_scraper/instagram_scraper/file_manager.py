@@ -20,17 +20,17 @@ class FileManager:
 
         if is_a_company:
             self.csv_path = os.path.join(
-                working_directory, os.pardir, COMPANY_PATH, username
+                working_directory, COMPANY_PATH, username
             )
             self.image_path = os.path.join(
-                working_directory, os.pardir, COMPANY_PATH, username, "images"
+                working_directory, COMPANY_PATH, username, "images"
             )
         else:
             self.csv_path = os.path.join(
-                working_directory, os.pardir, CONSUMER_PATH, username
+                working_directory, CONSUMER_PATH, username
             )
             self.image_path = os.path.join(
-                working_directory, os.pardir, CONSUMER_PATH, username, "images"
+                working_directory, CONSUMER_PATH, username, "images"
             )
 
         self.csv_profile_path = os.path.join(self.csv_path, "profile_data.csv")
