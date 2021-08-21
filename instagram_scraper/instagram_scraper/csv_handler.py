@@ -95,13 +95,13 @@ class CSVHandler:
 
     @staticmethod
     def users_from_csv(csv_path, users_to_load_from_csv: int):
-        users_to_crawl = set()
+        users_to_crawl = list()
         with open(
                 csv_path,
         ) as posts_csv_file:
             dict_reader = csv.DictReader(posts_csv_file)
             for row in dict_reader:
-                users_to_crawl.add(row["username"])
+                users_to_crawl.append(row["username"])
                 if len(users_to_crawl) >= users_to_load_from_csv:
                     break
         return users_to_crawl
