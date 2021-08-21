@@ -91,7 +91,7 @@ class CSVHandler:
     def delete_row_from_user_to_crawl_csv(path_to_users_to_crawl_csv):
         data_frame = pd.read_csv(path_to_users_to_crawl_csv)
         data_frame = data_frame.iloc[1:]
-        data_frame.to_csv(path_to_users_to_crawl_csv)
+        data_frame.to_csv(path_to_users_to_crawl_csv, index=False)
 
     @staticmethod
     def users_from_csv(csv_path, users_to_load_from_csv: int):
