@@ -32,6 +32,7 @@ class InstagramSpider(Spider, ABC):
         is_a_deep_crawl="True",
         users_to_load_from_csv=0,
         path_to_users_to_crawl_csv=None,
+        is_raspberry_pi=False,
         **kwargs,
     ):
         super().__init__(**kwargs)
@@ -46,9 +47,12 @@ class InstagramSpider(Spider, ABC):
         self.path_to_user_to_crawl_csv = path_to_users_to_crawl_csv
 
         working_directory = os.getcwd()
-        webdriver_path = os.path.join(
-            working_directory, os.pardir, "chromedriver"
-        )
+        if is_raspberry_pi:
+            webdriver_path = "/usr/lib/chromium-browser/chromedriver"
+        else:
+            webdriver_path = os.path.join(
+                working_directory, os.pardir, "chromedriver"
+            )
 
         self.driver = webdriver.Chrome(webdriver_path)
 
