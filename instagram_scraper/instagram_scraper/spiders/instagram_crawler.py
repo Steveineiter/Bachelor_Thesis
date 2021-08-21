@@ -63,10 +63,8 @@ class InstagramSpider(Spider, ABC):
             self.usernames = self.csv_handler.users_from_csv(
                 self.path_to_users_to_crawl_csv, self.user_count_to_load_from_csv
             )
-        print(self.usernames)
-        return()  # TODO remove me
-        # self.load_web_site(INSTAGRAM_START_PAGE)
-        # self.log_in()
+        self.load_web_site(INSTAGRAM_START_PAGE)
+        self.log_in()
 
         for username in self.usernames:
 
