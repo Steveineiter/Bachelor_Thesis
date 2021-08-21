@@ -20,10 +20,6 @@ from parsel import Selector
 from scrapy.loader import ItemLoader
 
 
-# TODO Ask: better one big file with many arguments, or 2 files with lots of duplicated code?
-# TODO Ask: What to do with all the static methods?
-# TODO Ponder: do we really need those time outs by accept fields etc.? actually they are annoying.
-#  -> should we just ALWAYS wait 10-15 seconds?
 class InstagramSpider(Spider, ABC):
     name = "instagram_crawler"
     allowed_domains = ["instagram.com"]
@@ -34,14 +30,15 @@ class InstagramSpider(Spider, ABC):
         username=MARRYICETEA_INSTAGRAM_USERNAME,
         is_a_company="True",
         is_a_deep_crawl="True",
+        users_to_load_from_csv=0,
         path_to_users_to_crawl_csv=None,
         **kwargs,
     ):
         super().__init__(**kwargs)
-        self.username = username
-        # TODO Ask: How to pass bool arguments in bash? Eg false?
+        self.usernames = [username]
         self.is_a_company = self.input_to_bool(is_a_company)
         self.is_a_deep_crawl = self.input_to_bool(is_a_deep_crawl)
+        self.users_to_load_from_csv = int(users_to_load_from_csv)
         self.already_crawled_urls = set()
         self.csv_handler = CSVHandler()
         self.file_manager = FileManager(self.is_a_company, username)
@@ -50,7 +47,7 @@ class InstagramSpider(Spider, ABC):
 
         working_directory = os.getcwd()
         webdriver_path = os.path.join(
-            working_directory, os.pardir, os.pardir, "chromedriver"
+            working_directory, os.pardir, "chromedriver"
         )
 
         self.driver = webdriver.Chrome(webdriver_path)
@@ -61,24 +58,29 @@ class InstagramSpider(Spider, ABC):
     def start_requests(self):
         self.load_web_site(INSTAGRAM_START_PAGE)
         self.log_in()
-        self.search_for_username(self.username)
 
-        if self.is_a_company or not self.file_manager.has_profile_data():
-            yield self.parse_profile()
+        if self.users_to_load_from_csv:
+            self.usernames = self.file_manager.users_from_csv(self.users_to_load_from_csv)
+        for username in self.usernames:
+            self.search_for_username(username)
 
-        if self.is_a_deep_crawl:
-            urls_of_posts_to_crawl = (
-                self.urls_of_posts_to_crawl() - self.already_crawled_urls
-            )
-            for url_of_post in urls_of_posts_to_crawl:
-                yield self.parse_post(url_of_post)
+            if self.is_a_company or not self.file_manager.has_profile_data():
+                yield self.parse_profile()
 
-        if self.path_to_user_to_crawl_csv:
-            self.file_manager.delete_row_from_user_to_crawl_csv(
-                self.path_to_user_to_crawl_csv
-            )
+            if self.is_a_deep_crawl:
+                urls_of_posts_to_crawl = (
+                    self.urls_of_posts_to_crawl() - self.already_crawled_urls
+                )
+                for url_of_post in urls_of_posts_to_crawl:
+                    yield self.parse_post(url_of_post)
+
+            if self.path_to_user_to_crawl_csv:
+                self.file_manager.delete_row_from_user_to_crawl_csv(
+                    self.path_to_user_to_crawl_csv
+                )
+            sleep(next(CRAWL_FINISHED_SLEEP))
+
         self.driver.close()
-        sleep(next(CRAWL_FINISHED_SLEEP))
 
     def parse_profile(self):
         profile_item_loader = ItemLoader(item=ProfileDataItem())
@@ -86,7 +88,7 @@ class InstagramSpider(Spider, ABC):
 
         try:
             profile_item = {
-                NAME_OF_PROFILE: self.username,
+                NAME_OF_PROFILE: self.usernames,
                 NUMBER_OF_POSTS: self.number_of_posts(selector),
                 FOLLOWERS: self.followers(selector),
                 FOLLOWING: self.following(selector),
@@ -96,16 +98,20 @@ class InstagramSpider(Spider, ABC):
                 LIFESTYLE_STORIES: self.lifestyle_stories(selector),
                 IS_PRIVATE: "True" if self.is_private(selector) else None,
             }
+            sleep(next(WAIT_FOR_RESPONSE_SLEEP))
+            # TODO ponder make it with flag? for POC we don't need them at users.
             profile_item[FOLLOWING_NAMES] = (
-                self.following_names(profile_item[FOLLOWING])
-                if self.is_a_deep_crawl and not profile_item[IS_PRIVATE]
-                else None
+                # self.following_names(profile_item[FOLLOWING])
+                # if self.is_a_deep_crawl and not profile_item[IS_PRIVATE]
+                # else None
+                None
             )
             sleep(next(WAIT_FOR_RESPONSE_SLEEP))
             profile_item[FOLLOWERS_NAMES] = (
-                self.followers_name(profile_item[FOLLOWERS])
-                if self.is_a_deep_crawl and self.is_a_company
-                else None
+                # self.followers_name(profile_item[FOLLOWERS])
+                # if self.is_a_deep_crawl and self.is_a_company
+                # else None
+                None
             )
 
             self.load_item_from_dictionary(profile_item_loader, profile_item)
@@ -325,8 +331,6 @@ class InstagramSpider(Spider, ABC):
 
     # =========================== Scrolling ===========================
     def scroll_down(self):
-        # TODO Ask: it doesnt make difference if we scroll up/down or just down right? because the request
-        #  will come anyway
         self.driver.execute_script(
             f"window.scrollBy(0, {next(SCROLL_LENGTH_ON_WEBSITE)});"
         )
