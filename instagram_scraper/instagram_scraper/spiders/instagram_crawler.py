@@ -18,6 +18,7 @@ from time import sleep
 from scrapy import Spider
 from parsel import Selector
 from scrapy.loader import ItemLoader
+from pyvirtualdisplay import Display
 
 
 class InstagramSpider(Spider, ABC):
@@ -42,10 +43,14 @@ class InstagramSpider(Spider, ABC):
         self.user_count_to_load_from_csv = int(user_count_to_load_from_csv)
         self.already_crawled_urls = set()
         self.csv_handler = CSVHandler()
-        self.path_to_user_to_crawl_csv = path_to_users_to_crawl_csv
-
         self.working_directory = os.getcwd()
+        self.path_to_users_to_crawl_csv = os.path.join(
+                self.working_directory, "users_to_crawl.csv"
+            )
+
         if is_raspberry_pi:
+            display = Display(visible=False, size=(1600, 1200))
+            display.start()
             webdriver_path = "/usr/lib/chromium-browser/chromedriver"
         else:
             webdriver_path = os.path.join(
@@ -54,19 +59,17 @@ class InstagramSpider(Spider, ABC):
         self.driver = webdriver.Chrome(webdriver_path)
 
     def start_requests(self):
-        self.load_web_site(INSTAGRAM_START_PAGE)
-        self.log_in()
-
         if self.user_count_to_load_from_csv:
-            # TODO Refactor
-            path_to_users_to_crawl_csv = os.path.join(
-                self.working_directory, "users_to_crawl.csv"
-            )
             self.usernames = self.csv_handler.users_from_csv(
-                path_to_users_to_crawl_csv, self.user_count_to_load_from_csv
+                self.path_to_users_to_crawl_csv, self.user_count_to_load_from_csv
             )
+        print(self.usernames)
+        return()  # TODO remove me
+        # self.load_web_site(INSTAGRAM_START_PAGE)
+        # self.log_in()
 
         for username in self.usernames:
+
             file_manager = FileManager(self.is_a_company, username)
             file_manager.create_directories()
 
@@ -84,9 +87,9 @@ class InstagramSpider(Spider, ABC):
                 for url_of_post in urls_of_posts_to_crawl:
                     yield self.parse_post(url_of_post, file_manager)
 
-            if self.path_to_user_to_crawl_csv:
+            if self.path_to_users_to_crawl_csv:
                 file_manager.delete_row_from_user_to_crawl_csv(
-                    self.path_to_user_to_crawl_csv
+                    self.path_to_users_to_crawl_csv
                 )
             sleep(next(CRAWL_FINISHED_SLEEP))
 
