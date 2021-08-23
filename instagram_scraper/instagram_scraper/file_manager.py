@@ -31,7 +31,7 @@ class FileManager:
             )
 
         current_date = datetime.datetime.now()
-        csv_file_name = f"profile_data - {current_date.day}.{current_date.month}.{current_date.year}.csv"
+        csv_file_name = f"profile_data_{current_date.day}-{current_date.month}-{current_date.year}.csv"
         self.csv_profile_path = os.path.join(self.csv_path, csv_file_name)
 
     # ===================================== Safe Items ============================================
