@@ -71,6 +71,7 @@ class InstagramSpider(Spider, ABC):
 
             file_manager = FileManager(self.is_a_company, username)
             file_manager.create_directories()
+            file_manager.create_information_file(username, self.usernames)  # TODO test this.
 
             self.search_for_username(username)
 

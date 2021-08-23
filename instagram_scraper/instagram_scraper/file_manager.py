@@ -19,16 +19,12 @@ class FileManager:
         self.csv_handler = CSVHandler()
 
         if is_a_company:
-            self.csv_path = os.path.join(
-                working_directory, COMPANY_PATH, username
-            )
+            self.csv_path = os.path.join(working_directory, COMPANY_PATH, username)
             self.image_path = os.path.join(
                 working_directory, COMPANY_PATH, username, "images"
             )
         else:
-            self.csv_path = os.path.join(
-                working_directory, CONSUMER_PATH, username
-            )
+            self.csv_path = os.path.join(working_directory, CONSUMER_PATH, username)
             self.image_path = os.path.join(
                 working_directory, CONSUMER_PATH, username, "images"
             )
@@ -91,7 +87,19 @@ class FileManager:
 
     def users_from_csv(self, users_to_load_from_csv):
         working_directory = os.getcwd()
-        path_to_users_to_crawl_csv = os.path.join(working_directory, "users_to_crawl.csv")
+        path_to_users_to_crawl_csv = os.path.join(
+            working_directory, "users_to_crawl.csv"
+        )
 
-        return self.csv_handler.users_from_csv(path_to_users_to_crawl_csv, users_to_load_from_csv)
+        return self.csv_handler.users_from_csv(
+            path_to_users_to_crawl_csv, users_to_load_from_csv
+        )
 
+    @staticmethod
+    def create_information_file(username, usernames):
+
+        with open("information.txt", "w") as file:
+            file.write(f"We are logged in as: {LOG_IN_USERNAME}.\n"
+                       f"Currently we are scraping {username}.\n"
+                       f"He is on position {usernames.index(username) + 1} / {len(usernames)}."
+                       )
