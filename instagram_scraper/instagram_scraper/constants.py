@@ -48,7 +48,7 @@ SCROLL_UPWARDS = random_bool_generator(0.2)
 # LOG_IN_PASSWORD = "dragonborn1234"
 
 # Temp Mail.org
-LOG_IN_USERNAMES = ["xeyos10054@5sword.com", "kelexey345@kibwot.com"]
+LOG_IN_USERNAMES = ["xeyos10054@5sword.com",]
 LOG_IN_USERNAME = LOG_IN_USERNAMES[random.randint(0, len(LOG_IN_USERNAMES) - 1)]
 LOG_IN_PASSWORD = "crawler_69"
 
