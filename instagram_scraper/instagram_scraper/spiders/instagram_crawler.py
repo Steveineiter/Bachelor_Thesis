@@ -32,7 +32,6 @@ class InstagramSpider(Spider, ABC):
         is_a_company="True",
         is_a_deep_crawl="True",
         user_count_to_load_from_csv=0,
-        path_to_users_to_crawl_csv=None,
         is_raspberry_pi=False,
         **kwargs,
     ):
@@ -45,8 +44,8 @@ class InstagramSpider(Spider, ABC):
         self.csv_handler = CSVHandler()
         self.working_directory = os.getcwd()
         self.path_to_users_to_crawl_csv = os.path.join(
-                self.working_directory, "users_to_crawl.csv"
-            )
+            self.working_directory, "users_to_crawl.csv"
+        )
 
         if is_raspberry_pi:
             # Uncomment the next 2 lines if you want to have a window on the raspberry.
@@ -71,7 +70,9 @@ class InstagramSpider(Spider, ABC):
 
             file_manager = FileManager(self.is_a_company, username)
             file_manager.create_directories()
-            file_manager.create_information_file(username, self.usernames)  # TODO test this.
+            file_manager.create_information_file(
+                username, self.usernames
+            )  # TODO test this.
 
             self.search_for_username(username)
 
@@ -114,17 +115,17 @@ class InstagramSpider(Spider, ABC):
             sleep(next(WAIT_FOR_RESPONSE_SLEEP))
             # TODO ponder make it with flag? for POC we don't need them at users.
             profile_item[FOLLOWING_NAMES] = (
-                # self.following_names(profile_item[FOLLOWING])
-                # if self.is_a_deep_crawl and not profile_item[IS_PRIVATE]
-                # else None
-                None
+                self.following_names(profile_item[FOLLOWING])
+                if self.is_a_deep_crawl
+                and self.is_a_company
+                and not profile_item[IS_PRIVATE]
+                else None
             )
             sleep(next(WAIT_FOR_RESPONSE_SLEEP))
             profile_item[FOLLOWERS_NAMES] = (
-                # self.followers_name(profile_item[FOLLOWERS])
-                # if self.is_a_deep_crawl and self.is_a_company
-                # else None
-                None
+                self.followers_name(profile_item[FOLLOWERS])
+                if self.is_a_deep_crawl and self.is_a_company
+                else None
             )
 
             self.load_item_from_dictionary(profile_item_loader, profile_item)

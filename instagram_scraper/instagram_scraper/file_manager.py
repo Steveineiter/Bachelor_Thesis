@@ -1,3 +1,4 @@
+import datetime
 import os
 from time import sleep
 
@@ -29,7 +30,9 @@ class FileManager:
                 working_directory, CONSUMER_PATH, username, "images"
             )
 
-        self.csv_profile_path = os.path.join(self.csv_path, "profile_data.csv")
+        current_date = datetime.datetime.now()
+        csv_file_name = f"profile_data - {current_date.day}.{current_date.month}.{current_date.year}.csv"
+        self.csv_profile_path = os.path.join(self.csv_path, csv_file_name)
 
     # ===================================== Safe Items ============================================
     def safe_profile_data(self, profile_item):
@@ -99,7 +102,8 @@ class FileManager:
     def create_information_file(username, usernames):
 
         with open("information.txt", "w") as file:
-            file.write(f"We are logged in as: {LOG_IN_USERNAME}.\n"
-                       f"Currently we are scraping {username}.\n"
-                       f"He is on position {usernames.index(username) + 1} / {len(usernames)}."
-                       )
+            file.write(
+                f"We are logged in as: {LOG_IN_USERNAME}.\n"
+                f"Currently we are scraping {username}.\n"
+                f"He is on position {usernames.index(username) + 1} / {len(usernames)}."
+            )
