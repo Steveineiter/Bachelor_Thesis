@@ -150,7 +150,7 @@ class InstagramSpider(Spider, ABC):
             sleep(next(WAIT_FOR_RESPONSE_SLEEP))
             post_items[POST_WAS_LIKED_BY] = (
                 self.post_was_liked_by(post_items[LIKES_OF_POST])
-                if self.is_a_company
+                if self.is_a_company and post_items[LIKES_OF_POST]
                 else None
             )
             sleep(next(WAIT_FOR_RESPONSE_SLEEP))
