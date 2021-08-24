@@ -6,7 +6,7 @@ class checklistCreator:
         # TODO Ask: what is in this case smarter? static methods like this or just as pycharm
         #  would handle it (extract it from class)?
         id_of_post_to_post_was_liked_by = (
-            checklist_creator.id_of_post_to_post_was_liked_by()
+            self.id_of_post_to_post_was_liked_by()
         )
         user_to_liked_posts_count_and_id = self.user_to_liked_posts_count_and_id(
             id_of_post_to_post_was_liked_by
