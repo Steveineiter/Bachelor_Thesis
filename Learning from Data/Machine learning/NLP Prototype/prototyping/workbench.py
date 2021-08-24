@@ -17,7 +17,7 @@ from sklearn.model_selection import train_test_split
 
 
 def id_of_post_to_data() -> dict:
-    with open("../marry_items.csv", newline="") as marry_csv_file:
+    with open("../../marry_items.csv", newline="") as marry_csv_file:
         dict_reader = csv.DictReader(marry_csv_file)
         # Put CSV data in dict (ID: liked by)
         id_of_post_to_data = dict()
@@ -35,7 +35,7 @@ def id_of_post_to_data() -> dict:
 # First bag of words, look if there is any correlation of some words and likes
 def bag_of_words():
     # dataset = pd.DataFrame(id_of_post_to_data)
-    dataset = pd.read_csv("../marry_items.csv")
+    dataset = pd.read_csv("../../marry_items.csv")
     print(dataset)
 
     corpus = []
@@ -151,7 +151,7 @@ def post_tager(id_of_post_to_data):
         for id_of_post, values in id_of_post_to_data.items():
             _, _, description_of_post = values
 
-            tagged_text = nltk.pos_tag(nltk.Text(nltk.word_tokenize(some_string)))
+            tagged_text = nltk.pos_tag(nltk.Text(nltk.word_tokenize(description_of_post)))
             bar_dict = dict()
             for foo in tagged_text:
                 if foo[1] in bar_dict:

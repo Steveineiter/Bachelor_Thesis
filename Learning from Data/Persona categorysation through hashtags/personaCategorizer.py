@@ -21,6 +21,8 @@ HASHTAGS_CLAUDIA = (
 
 
 # TODO Discuss: Should we also include the lifestyle stories? Also it may be better if they would be on german as well?
+# TODO BUG: some # have no space in between, eg " ['#verrücktnachmarry#zischfrischamtisch', "
+#  -> the first one of marryicetea.
 class personaCategorizer:
     def create_categorization(self):
         usernames_to_hashtags = self.usernames_to_hashtags()
