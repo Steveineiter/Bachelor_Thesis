@@ -58,7 +58,6 @@ class PostsCSVDataCreator:
 
         return information_of_users
 
-    # TODO are false positiv or false negative worse? we could say eg at least 2 names FOR a gender else its "other"
     @staticmethod
     def gender_of_user(user_name):
         male_names = names.words('male.txt')

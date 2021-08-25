@@ -1,5 +1,6 @@
 import csv
 import glob
+import re
 
 HASHTAGS_LINDA = (
     "#local #cooking #bouldering #sports #lesssugar #traveling #healthy "
@@ -21,8 +22,6 @@ HASHTAGS_CLAUDIA = (
 
 
 # TODO Discuss: Should we also include the lifestyle stories? Also it may be better if they would be on german as well?
-# TODO BUG: some # have no space in between, eg " ['#verrücktnachmarry#zischfrischamtisch', "
-#  -> the first one of marryicetea.
 class personaCategorizer:
     def create_categorization(self):
         usernames_to_hashtags = self.usernames_to_hashtags()
@@ -63,12 +62,18 @@ class personaCategorizer:
                         else:
                             usernames_to_hashtags[username] = row["hashtags_of_post"]
 
+        for username, hashtags in usernames_to_hashtags.items():
+            hashtags = hashtags.split("#")[1:]
+            for index in range(len(hashtags)):
+                hashtags[index] = "#" + hashtags[index].strip()
+            usernames_to_hashtags[username] = hashtags
+
         return usernames_to_hashtags
 
     def usernames_to_personas_and_hashtags(self, usernames_to_hashtags):
         usernames_to_personas_and_hashtags = dict()
         for username, hashtags in usernames_to_hashtags.items():
-            hashtags_of_user_without_duplicates = list(dict.fromkeys(hashtags.split(" ")))
+            hashtags_of_user_without_duplicates = list(dict.fromkeys(hashtags))
             like_linda = self.like_persona(hashtags_of_user_without_duplicates, HASHTAGS_LINDA)
             like_karl_peter = self.like_persona(hashtags_of_user_without_duplicates, HASHTAGS_KARL_PETER)
             like_sandy = self.like_persona(hashtags_of_user_without_duplicates, HASHTAGS_SANDY)
