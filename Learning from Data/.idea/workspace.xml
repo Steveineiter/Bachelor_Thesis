@@ -5,98 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4e611f-c37d-49d5-b431-ed5802fb74c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/personas_with_hashtags/hashtags_analyser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checklist how often a person liked our post/checklistCreator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checklist how often a person liked our post/marry_checklist.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checklist how often a person liked our post/marry_items.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/.idea/NLP Prototype.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/id_to_tags.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/nltk_tagger.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/prototyping/prototype_correlation.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/prototyping/prototype_tagged_stuff.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/prototyping/workbench.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/NLP Prototype/tag_regressor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Machine learning/marry_items.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/_feiertag_/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/_feiertag_/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/_katrina_melanja_/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/_katrina_melanja_/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/_punk_platypus_/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/_punk_platypus_/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/andreas_future_visions/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/andreas_future_visions/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/austriadiscover/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/austriadiscover/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/billardcafe_immervoll/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/billardcafe_immervoll/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/caryf90/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/cc_pippo_lly/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/cc_pippo_lly/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/davpro90/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/davpro90/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/denisevorraber/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/denisevorraber/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/eisteefreunde/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/eisteefreunde/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/elisabethdrobar/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/falstaff.profi/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/falstaff.profi/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/frederic.schramm/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/frederic.schramm/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/ideentriebwerk/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/ideentriebwerk/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/insta_kevin/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/insta_kevin/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/kilian.mittendorfer/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/kubo_app/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/kubo_app/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/lora.ulz/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/lora.ulz/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/lucamagdalenaulz/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/lucamagdalenaulz/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/maja.autumn/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/maja.autumn/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/marryicetea/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/marryicetea/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/mayernaut/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/mayernaut/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/mockerymia/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/mockerymia/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/mr.renderer/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/mr.renderer/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/pichler.tom97/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/simon_reindl_/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/simon_reindl_/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/soundhorn/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/soundhorn/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/veg_matey/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/veg_matey/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/waltraudfeiertag/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/xiaoao.tea/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/xiaoao.tea/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/zita_martus/posts_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/data/zita_martus/profile_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/personaCategorizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persona categorysation through hashtags/persona_categorization.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/.idea/csv fuer html post darstellung.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/PostsCSVDataCreator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/data_for_html.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/female.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/male.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv fuer html post darstellung/marry_items.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/personas_with_hashtags/persona_categorization.csv" beforeDir="false" afterPath="$PROJECT_DIR$/personas_with_hashtags/persona_categorization.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personas_with_hashtags/used_hashtags.csv" beforeDir="false" afterPath="$PROJECT_DIR$/personas_with_hashtags/used_hashtags.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../instagram_scraper/instagram_scraper/spiders/instagram_crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../instagram_scraper/instagram_scraper/spiders/instagram_crawler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,6 +98,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="personaCategorizer (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Learning from Data" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/personas_with_hashtags" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/personas_with_hashtags/personaCategorizer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="personaCategorizer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Learning from Data" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -231,35 +164,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="workbench" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Learning from Data" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Machine learning/NLP Prototype" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Machine learning/NLP Prototype/prototyping/workbench.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.hashtags_analyser" />
+        <item itemvalue="Python.personaCategorizer (1)" />
         <item itemvalue="Python.personaCategorizer" />
         <item itemvalue="Python.tag_regressor" />
         <item itemvalue="Python.nltk_tagger" />
-        <item itemvalue="Python.workbench" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +185,8 @@
       <workItem from="1628833774278" duration="4946000" />
       <workItem from="1629783634887" duration="13600000" />
       <workItem from="1629809471935" duration="459000" />
-      <workItem from="1629869108106" duration="7607000" />
+      <workItem from="1629869108106" duration="7730000" />
+      <workItem from="1630212862094" duration="1160000" />
     </task>
     <servers />
   </component>
@@ -308,8 +220,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Learning_from_Data$workbench.coverage" NAME="workbench Coverage Results" MODIFIED="1629795039414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Machine learning/NLP Prototype" />
     <SUITE FILE_PATH="coverage/Learning_from_Data$checklistCreator.coverage" NAME="checklistCreator Coverage Results" MODIFIED="1628837492797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Checklist how often a person liked our post" />
-    <SUITE FILE_PATH="coverage/Learning_from_Data$hashtags_analyser.coverage" NAME="hashtags_analyser Coverage Results" MODIFIED="1629874233867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/personas_with_hashtags" />
+    <SUITE FILE_PATH="coverage/Learning_from_Data$hashtags_analyser.coverage" NAME="hashtags_analyser Coverage Results" MODIFIED="1630213414668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/personas_with_hashtags" />
     <SUITE FILE_PATH="coverage/Learning_from_Data$personaCategorizer.coverage" NAME="personaCategorizer Coverage Results" MODIFIED="1629871277008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Persona categorysation through hashtags" />
+    <SUITE FILE_PATH="coverage/Learning_from_Data$personaCategorizer__1_.coverage" NAME="personaCategorizer (1) Coverage Results" MODIFIED="1630213411077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/personas_with_hashtags" />
     <SUITE FILE_PATH="coverage/Learning_from_Data$tag_regressor.coverage" NAME="tag_regressor Coverage Results" MODIFIED="1629798634641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Machine learning/NLP Prototype" />
     <SUITE FILE_PATH="coverage/Learning_from_Data$nltk_tagger.coverage" NAME="nltk_tagger Coverage Results" MODIFIED="1629798019637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Machine learning/NLP Prototype" />
   </component>
