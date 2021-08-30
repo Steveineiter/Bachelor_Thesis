@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1f4e611f-c37d-49d5-b431-ed5802fb74c6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personas_with_hashtags/persona_categorization.csv" beforeDir="false" afterPath="$PROJECT_DIR$/personas_with_hashtags/persona_categorization.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personas_with_hashtags/used_hashtags.csv" beforeDir="false" afterPath="$PROJECT_DIR$/personas_with_hashtags/used_hashtags.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../instagram_scraper/instagram_scraper/spiders/instagram_crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../instagram_scraper/instagram_scraper/spiders/instagram_crawler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checklist/checklistCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/checklist/checklistCreator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checklist/marry_checklist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/checklist/marry_checklist.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,29 @@
       <recent name="$PROJECT_DIR$/Machine learning/NLP Prototype/prototyping" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.hashtags_analyser">
+  <component name="RunManager" selected="Python.checklistCreator">
+    <configuration name="checklistCreator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Learning from Data" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/checklist" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/checklist/checklistCreator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="hashtags_analyser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Learning from Data" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -68,28 +89,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/personas_with_hashtags/hashtags_analyser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="nltk_tagger" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Learning from Data" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Machine learning/NLP Prototype" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Machine learning/NLP Prototype/nltk_tagger.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.checklistCreator" />
         <item itemvalue="Python.hashtags_analyser" />
         <item itemvalue="Python.personaCategorizer (1)" />
         <item itemvalue="Python.personaCategorizer" />
         <item itemvalue="Python.tag_regressor" />
-        <item itemvalue="Python.nltk_tagger" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +186,7 @@
       <workItem from="1629809471935" duration="459000" />
       <workItem from="1629869108106" duration="7730000" />
       <workItem from="1630212862094" duration="1160000" />
+      <workItem from="1630317340078" duration="823000" />
     </task>
     <servers />
   </component>
@@ -219,7 +219,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Learning_from_Data$workbench.coverage" NAME="workbench Coverage Results" MODIFIED="1629795039414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Machine learning/NLP Prototype" />
-    <SUITE FILE_PATH="coverage/Learning_from_Data$checklistCreator.coverage" NAME="checklistCreator Coverage Results" MODIFIED="1628837492797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Checklist how often a person liked our post" />
+    <SUITE FILE_PATH="coverage/Learning_from_Data$checklistCreator.coverage" NAME="checklistCreator Coverage Results" MODIFIED="1630317551539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/checklist" />
     <SUITE FILE_PATH="coverage/Learning_from_Data$hashtags_analyser.coverage" NAME="hashtags_analyser Coverage Results" MODIFIED="1630213414668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/personas_with_hashtags" />
     <SUITE FILE_PATH="coverage/Learning_from_Data$personaCategorizer.coverage" NAME="personaCategorizer Coverage Results" MODIFIED="1629871277008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Persona categorysation through hashtags" />
     <SUITE FILE_PATH="coverage/Learning_from_Data$personaCategorizer__1_.coverage" NAME="personaCategorizer (1) Coverage Results" MODIFIED="1630213411077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/personas_with_hashtags" />
