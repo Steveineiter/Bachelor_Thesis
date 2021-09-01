@@ -1,8 +1,9 @@
 # Project classes
-from instagram_scraper.csv_handler import CSVHandler
-from instagram_scraper.items import PostDataItem, ProfileDataItem
-from instagram_scraper.constants import *
-from instagram_scraper.file_manager import FileManager
+from instagram_scraper.instagram_scraper.csv_handler import CSVHandler
+
+from instagram_scraper.instagram_scraper.items import PostDataItem, ProfileDataItem
+from instagram_scraper.instagram_scraper.constants import *
+from instagram_scraper.instagram_scraper.file_manager import FileManager
 
 # Selenium imports
 from selenium import webdriver
