@@ -86,7 +86,7 @@ class FileManager:
         return set()
 
     def delete_row_from_user_to_crawl_csv(self, path_to_users_to_crawl_csv):
-        self.csv_handler.delete_row_from_user_to_crawl_csv(path_to_users_to_crawl_csv)
+        self.csv_handler.delete_row_from_twitter_usernames_and_urls_csv(path_to_users_to_crawl_csv)
 
     def users_from_csv(self, users_to_load_from_csv):
         working_directory = os.getcwd()

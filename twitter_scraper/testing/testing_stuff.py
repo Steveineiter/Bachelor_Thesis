@@ -43,6 +43,7 @@
 #
 #     print(content)
 # =============================================================================================
+import csv
 
 from Scweet.scweet import scrape
 from Scweet.user import get_user_information, get_users_following, get_users_followers
@@ -52,7 +53,30 @@ from Scweet.user import get_user_information, get_users_following, get_users_fol
 # 	headless=True, display_type="Top", save_images=False,
 # 	resume=False, filter_replies=True, proximity=True)
 
-env_path = ".env"
-users = ["lipton"]
 
-followers = get_users_followers(users=users, env=env_path, verbose=0, headless=True, wait=2, limit=50, file_path=None)
+users = set()
+counter = 1
+with open(
+        "/home/stefan/Knowledge/Bachelor-thesis/twitter_scraper/twitter_scraper/items/twitter_usernames_and_urls.csv",
+        "r", newline=""
+) as twitter_usernames_and_urls_csv_file:
+    dict_reader = csv.DictReader(twitter_usernames_and_urls_csv_file)
+    for row in dict_reader:
+        user = row["username"]
+        users.add(user)
+        if counter >= 10:
+            break
+        counter += 1
+
+
+# data = get_user_information(users)
+for user in users:
+    print("\n\nNow scraping: ", user)
+    data = scrape(from_account=user, since="2021-06-01", headless=False, interval=15)
+
+# data = scrape(from_account="Kingrecs", since="2021-04-28", headless=False)
+
+# env_path = ".env"
+# users = ["lipton"]
+#
+# followers = get_users_followers(users=users, env=env_path, verbose=0, headless=True, wait=2, limit=50, file_path=None)

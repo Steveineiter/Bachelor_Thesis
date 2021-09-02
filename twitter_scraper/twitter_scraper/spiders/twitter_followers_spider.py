@@ -19,24 +19,19 @@ from time import sleep
 from ..constants import *
 
 
-class TwitterUserSpider(scrapy.Spider):
-    name = "twitter_user_spider"
+class TwitterFollowersSpider(scrapy.Spider):
+    name = "twitter_followers_spider"
     allowed_domains = ["twitter.com"]
-    start_urls = ["https://twitter.com/Lipton"]
+    start_urls = ["https://twitter.com"]
 
     def __init__(self):
+        super().__init__()
         self.working_directory = os.getcwd()
         webdriver_path = os.path.join(self.working_directory, os.pardir, "chromedriver")
         self.driver = webdriver.Chrome(webdriver_path)
 
     def start_requests(self):
         self.driver.get(TWITTER_START_PAGE)
-
-        # Logging in
-        # login_xpath = '//*[@class="css-4rbku5 css-18t94o4 css-1dbjc4n r-1m3jxhj r-42olwf r-sdzlij r-1phboty r-rs99b7 r-1loqt21 r-1mnahxq r-19yznuf r-64el8z r-1ny4l3l r-1dye5f7 r-o7ynqc r-6416eg r-lrvibr"]'
-        # WebDriverWait(self.driver, 20).until(
-        #     EC.element_to_be_clickable((By.XPATH, login_xpath))
-        # ).click()
 
         username_field = WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(
@@ -51,9 +46,9 @@ class TwitterUserSpider(scrapy.Spider):
         username_field.clear()
         password_field.clear()
 
-        username_field.send_keys("s.schoerkmeier@gmx.at")
+        username_field.send_keys("steveineiter")
         password_field.send_keys("!23Juli1996!")
-        sleep(0.5)
+        sleep(2)
 
         login_field_xpath = '//*[@class="css-18t94o4 css-1dbjc4n r-42olwf r-sdzlij r-1phboty r-rs99b7 r-1fz3rvf r-usiww2 r-19yznuf r-64el8z r-1ny4l3l r-1dye5f7 r-o7ynqc r-6416eg r-lrvibr"]'
         WebDriverWait(self.driver, 10).until(
@@ -66,37 +61,16 @@ class TwitterUserSpider(scrapy.Spider):
         sleep(next(WAIT_FOR_RESPONSE_SLEEP))
 
         # Load followers page
-        followers_xpath = '//*[@class="css-4rbku5 css-18t94o4 css-901oao r-18jsvk2 r-1loqt21 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0"]'
-        self.driver.find_elements_by_xpath(followers_xpath)[1].click()
+        followers_xpath = '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/div[2]/div/div/div[1]/div/div[5]/div[2]/a'
+        self.driver.find_element_by_xpath(followers_xpath).click()
         sleep(2)
 
-        urls_of_users_following = self.urls_of_users_following()
-
-        self.safe_in_csv(urls_of_users_following)
+        self.urls_of_users_following()
 
         self.driver.close()
 
-    def safe_in_csv(self, urls_of_users_following):
-        with open(
-            "/home/stefan/Knowledge/Bachelor-thesis/twitter_scraper/twitter_scraper/items/twitter_usernames_and_urls.csv", "w", newline=""
-        ) as hashtags_likes_correlation_csv_file:
-            fieldnames = ["username", "url"]
-            dict_writer = csv.DictWriter(
-                hashtags_likes_correlation_csv_file, fieldnames=fieldnames
-            )
-
-            dict_writer.writeheader()
-            for url in urls_of_users_following:
-                username = url.split("https://twitter.com/")[1]
-                dict_writer.writerow(
-                    {
-                        "username": username,
-                        "url": url,
-                    }
-                )
-
     # ========================== Utility ===========================
-    def urls_of_users_following(self) -> set:
+    def urls_of_users_following(self):
         urls_of_users = set()
         is_post_limit_reached = False
 
@@ -115,7 +89,31 @@ class TwitterUserSpider(scrapy.Spider):
             if page_height - 1 <= total_scrolled_height or is_post_limit_reached:
                 break
 
-        return urls_of_users
+            if len(urls_of_users) >= 500:
+                print("\nSAFING DATA\n")
+                print("len(urls) before: ", len(urls_of_users))
+                self.safe_in_csv(urls_of_users)
+                urls_of_users = set()
+                print("len(urls) after: ", len(urls_of_users))
+
+
+    def safe_in_csv(self, urls_of_users_following):
+        with open(
+            "/home/stefan/Knowledge/Bachelor-thesis/twitter_scraper/twitter_scraper/items/twitter_usernames_and_urls.csv", "a", newline=""
+        ) as hashtags_likes_correlation_csv_file:
+            fieldnames = ["username", "url"]
+            dict_writer = csv.DictWriter(
+                hashtags_likes_correlation_csv_file, fieldnames=fieldnames
+            )
+
+            for url in urls_of_users_following:
+                username = url.split("https://twitter.com/")[1]
+                dict_writer.writerow(
+                    {
+                        "username": username,
+                        "url": url,
+                    }
+                )
 
     def _urls_of_users(self) -> list:
         urls_of_users = self.driver.find_elements_by_xpath(

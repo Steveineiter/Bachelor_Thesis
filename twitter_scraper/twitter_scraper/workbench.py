@@ -26,6 +26,8 @@ def random_double_generator(lower_limit, upper_limit):
     while True:
         yield round(random.uniform(lower_limit, upper_limit), 2)
 
+
+# ======================= Followers workbench ==============================
 # Constants:
 TWITTER_START_PAGE = "https://twitter.com/login"
 TWITTER_LIPTON_PAGE = "https://www.twitter.com/lipton"
@@ -37,9 +39,7 @@ ENTER_DATA_SLEEP = random_double_generator(
     1, 3
 )
 
-
-
-# =====================================================
+# Webdriver
 driver = webdriver.Chrome("/home/stefan/Knowledge/Bachelor-thesis/chromedriver")
 driver.get(TWITTER_START_PAGE)
 
@@ -75,9 +75,7 @@ WebDriverWait(driver, 20).until(
 ).click()
 sleep(2)
 
-
-
-# =====================================================
+# ----- Utility -----
 def urls_of_posts_to_crawl(self) -> set:
     urls_of_users = set()
     is_post_limit_reached = False
@@ -110,3 +108,12 @@ def scroll_down(self):
         f"window.scrollBy(0, {next(SCROLL_LENGTH_ON_WEBSITE)});"
     )
     sleep(next(ENTER_DATA_SLEEP))
+
+
+# ======================= User workbench ==============================
+# Constants:
+TWITTER_USER_PAGE = "https://twitter.com/login"
+
+
+driver = webdriver.Chrome("/home/stefan/Knowledge/Bachelor-thesis/chromedriver")
+driver.get(TWITTER_START_PAGE)

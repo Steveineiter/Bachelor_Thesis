@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = 'twitter_scraper.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = USER_AGENTS = [
+USER_AGENTS = [
     (
         "Mozilla/5.0 (X11; Linux x86_64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -51,6 +51,11 @@ USER_AGENT = USER_AGENTS = [
         "Safari/537.36"
     ),  # chrome
 ]
+
+DOWNLOADER_MIDDLEWARES = {
+    "scrapy.downloadermiddlewares.useragent.UserAgentMiddleware": None,
+    "scrapy_useragents.downloadermiddlewares.useragents.UserAgentsMiddleware": 500,
+}
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
