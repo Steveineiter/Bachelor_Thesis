@@ -23,13 +23,10 @@ with open(
     for row in dict_reader:
         user = row["username"]
         users.append(user)
-        if counter >= 10:
-            break
-        counter += 1
 
 for user in users:
     print("\n\nNow scraping: ", user)
     # Limit is per interval.
-    data = scrape(from_account=user, since="2020-01-01", headless=True, interval=15, limit=30)
+    data = scrape(from_account=user, since="2021-01-01", headless=True, interval=15)
     delete_row_from_twitter_usernames_and_urls_csv(USERNAMES_CSV_FILE)
 
