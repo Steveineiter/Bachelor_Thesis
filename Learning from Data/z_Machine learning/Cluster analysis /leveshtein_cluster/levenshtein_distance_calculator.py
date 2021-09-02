@@ -1,3 +1,5 @@
+import pandas as pd
+
 class LevenshteinDistanceCalculator:
     @staticmethod
     def levenshtein_distance_of_words(first_word, second_word):
@@ -30,7 +32,7 @@ class LevenshteinDistanceCalculator:
 
         return sub_problem_matrix[-1][-1]
 
-    def levenshtein_distances_matrix(self, list_of_words):
+    def levenshtein_distances_matrix(self, list_of_words, is_safe_enabled):
         number_of_words = len(list_of_words)
         levenshtein_distances_matrix = [
             [0] * (number_of_words) for _ in range(number_of_words)
@@ -39,13 +41,21 @@ class LevenshteinDistanceCalculator:
         for index_first_word in range(number_of_words):
             for index_second_word in range(number_of_words):
                 levenshtein_distances_matrix[index_first_word][index_second_word] = self.levenshtein_distance_of_words(list_of_words[index_first_word], list_of_words[index_second_word])
-        self.print_levenshtein_matrix(list_of_words, levenshtein_distances_matrix)
+        # self.print_levenshtein_matrix(list_of_words, levenshtein_distances_matrix)
+        if is_safe_enabled:
+            self.safe_levenshtein_matrix_to_csv(list_of_words, levenshtein_distances_matrix)
+
 
     @staticmethod
     def print_levenshtein_matrix(list_of_words, levenshtein_distances_matrix):
         print(list_of_words)
         for distances_of_words in levenshtein_distances_matrix:
             print(distances_of_words)
+
+    @staticmethod
+    def safe_levenshtein_matrix_to_csv(list_of_words, levenshtein_distances_matrix):
+        data_frame = pd.DataFrame(levenshtein_distances_matrix, columns=list_of_words)
+        data_frame.to_csv("levenshtein_matrix.csv", index=False)
 
 
 if __name__ == "__main__":

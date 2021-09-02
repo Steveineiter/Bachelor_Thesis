@@ -55,21 +55,22 @@ class Graph:
         print("Minimum Spanning Tree", minimumCost)
 
 
-list_of_words = ["Zelda", "Link", "Foo", "Bar", "Risk", "Think"]
-lenght_of_words = len(list_of_words)
-g = Graph(lenght_of_words ** 2 - lenght_of_words)
-
-matrix = [
-    [0, 5, 5, 5, 5, 5],
-    [5, 0, 4, 4, 2, 2],
-    [5, 4, 0, 3, 4, 5],
-    [5, 4, 3, 0, 4, 5],
-    [5, 2, 4, 4, 0, 3],
-    [5, 2, 5, 5, 3, 0],
-]
-
-for i in range(lenght_of_words):
-    for j in range(lenght_of_words):
-        if i != j:
-            g.add_edge(i, j, matrix[i][j])
-g.kruskal_minimum_spanning_tree()
+## Testing:
+# list_of_words = ["Zelda", "Link", "Foo", "Bar", "Risk", "Think"]
+# lenght_of_words = len(list_of_words)
+# g = Graph(lenght_of_words ** 2 - lenght_of_words)
+#
+# matrix = [
+#     [0, 5, 5, 5, 5, 5],
+#     [5, 0, 4, 4, 2, 2],
+#     [5, 4, 0, 3, 4, 5],
+#     [5, 4, 3, 0, 4, 5],
+#     [5, 2, 4, 4, 0, 3],
+#     [5, 2, 5, 5, 3, 0],
+# ]
+#
+# for i in range(lenght_of_words):
+#     for j in range(lenght_of_words):
+#         if i != j:
+#             g.add_edge(i, j, matrix[i][j])
+# g.kruskal_minimum_spanning_tree()
