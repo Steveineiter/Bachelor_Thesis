@@ -11,8 +11,8 @@ from levenshtein_distance_calculator import LevenshteinDistanceCalculator
 from kruskals_mst import Graph
 
 # Constants to adjust
-MAX_HASHTAGS = 100
-WEIGHT_THRESHOLD = 2
+MAX_HASHTAGS = 1500
+WEIGHT_THRESHOLD = 3
 
 # Constants
 SOURCE = 0
@@ -87,21 +87,6 @@ class ClusterAnalyser:
     def spanning_tree_without_duplicates(graph):
         cleaned_graph = list()
 
-        # for edge in graph:
-        #     is_already_in_cleaned_graph = False
-        #
-        #     if len(cleaned_graph) == 0:
-        #         cleaned_graph.append(edge)
-        #         continue
-        #
-        #     for cleaned_edge in cleaned_graph:
-        #         if edge[SOURCE] == cleaned_edge[DESTINATION] and edge[DESTINATION] == cleaned_edge[SOURCE]:
-        #             is_already_in_cleaned_graph = True
-        #     if not is_already_in_cleaned_graph:
-        #         cleaned_graph.append(edge)
-        #
-        # return cleaned_graph
-
         dictionary = {}
         for (source, destination, weight) in graph:
             if (destination, source, weight) in dictionary:
@@ -167,12 +152,10 @@ class ClusterAnalyser:
                 counter += 1
 
 
-
-
 if __name__ == "__main__":
     cluster_analyser = ClusterAnalyser()
     cluster_analyser.hashtags_from_csv()
-    # cluster_analyser.create_levenshtein_matrix()
+    cluster_analyser.create_levenshtein_matrix()
     cluster_analyser.levenshtein_matrix_from_csv("levenshtein_matrix.csv")
     print("Creating minimum spanning tree")
     cluster_analyser.create_minimum_spanning_tree()
@@ -182,29 +165,3 @@ if __name__ == "__main__":
     cluster_analyser.create_cluster()
     print("safe clusters in csv")
     cluster_analyser.safe_clusters_in_csv()
-
-
-# TODO find out how to use this output
-# Output for 10: [
-# [7, 8, 2], [8, 7, 2], [2, 7, 3], [2, 8, 3], [6, 8, 3], [7, 2, 3],
-# [7, 9, 3], [8, 2, 3], [8, 6, 3], [9, 7, 3], [0, 9, 4], [2, 6, 4],
-# [5, 8, 4], [6, 2, 4], [6, 7, 4], [7, 6, 4], [8, 5, 4], [9, 0, 4],
-# [1, 4, 5], [1, 7, 5], [1, 9, 5], [2, 5, 5], [2, 9, 5], [4, 1, 5],
-# [4, 9, 5], [5, 2, 5], [5, 7, 5], [6, 9, 5], [7, 1, 5], [7, 5, 5],
-# [8, 9, 5], [9, 1, 5], [9, 2, 5], [9, 4, 5], [9, 6, 5], [9, 8, 5],
-# [0, 1, 6], [0, 6, 6], [0, 7, 6], [1, 0, 6], [1, 6, 6], [4, 5, 6],
-# [5, 4, 6], [5, 6, 6], [5, 9, 6], [6, 0, 6], [6, 1, 6], [6, 5, 6],
-# [7, 0, 6], [9, 5, 6], [0, 2, 7], [0, 5, 7], [0, 8, 7], [1, 2, 7],
-# [1, 5, 7], [1, 8, 7], [2, 0, 7], [2, 1, 7], [2, 4, 7], [3, 8, 7],
-# [4, 2, 7], [4, 6, 7], [4, 7, 7], [4, 8, 7], [5, 0, 7], [5, 1, 7],
-# [6, 4, 7], [7, 4, 7], [8, 0, 7], [8, 1, 7], [8, 3, 7], [8, 4, 7],
-# [0, 4, 8], [1, 3, 8], [2, 3, 8], [3, 1, 8], [3, 2, 8], [3, 4, 8],
-# [3, 5, 8], [3, 6, 8], [3, 7, 8], [4, 0, 8], [4, 3, 8], [5, 3, 8],
-# [6, 3, 8], [7, 3, 8], [3, 9, 9], [9, 3, 9], [0, 3, 10], [3, 0, 10]]
-
-# Output for 5: [
-# [1, 4, 5], [4, 1, 5], [0, 1, 6], [1, 0, 6], [0, 2, 7], [1, 2, 7],
-# [2, 0, 7], [2, 1, 7], [2, 4, 7], [4, 2, 7], [0, 4, 8], [1, 3, 8],
-# [2, 3, 8], [3, 1, 8], [3, 2, 8], [3, 4, 8], [4, 0, 8], [4, 3, 8],
-# [0, 3, 10], [3, 0, 10]
-# ]
