@@ -16,7 +16,7 @@ def delete_row_from_twitter_usernames_and_urls_csv(path_to_users_to_crawl_csv):
 users = list()
 counter = 1
 with open(
-        "/home/stefan/Knowledge/Bachelor-thesis/twitter_scraper/twitter_scraper/items/twitter_usernames_and_urls.csv",
+        USERNAMES_CSV_FILE,
         "r", newline=""
 ) as twitter_usernames_and_urls_csv_file:
     dict_reader = csv.DictReader(twitter_usernames_and_urls_csv_file)
@@ -26,7 +26,6 @@ with open(
 
 for user in users:
     print("\n\nNow scraping: ", user)
-    # Limit is per interval.
-    data = scrape(from_account=user, since="2021-01-01", headless=True, interval=15)
+    data = scrape(from_account=user, since="2021-01-01", headless=True, interval=30)
     delete_row_from_twitter_usernames_and_urls_csv(USERNAMES_CSV_FILE)
 
