@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 class LevenshteinDistanceCalculator:
     @staticmethod
     def levenshtein_distance_of_words(first_word, second_word):

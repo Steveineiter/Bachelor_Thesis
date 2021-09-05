@@ -2,7 +2,8 @@
 # 1. get K random hashtags
 # 2. calculate levenshtein disctances to those centroids
 # 3. cluster it up
-# 4. calculate the best new centroid in cluster (which hashtag has the smallest total number of levenshtein distances) # TODO Ponder if necessary
+# 4. calculate the best new centroid in cluster
+#    (which hashtag has the smallest total number of levenshtein distances) # TODO Ponder if necessary
 # 5. Repeat 2-5 until the centroid stays the same or MAX_ITERATIONS is reached
 # 6. Return clusters aka personas
 
@@ -138,14 +139,17 @@ class KMeanClusterer:
     def print_clustering_result(self):
         for cluster in self.clusters:
             print("*" * 40)
-            print("Cluster Centroid: ", cluster.get_centroid(), "\nCluster members:", cluster.get_members())
+            print(
+                "Cluster Centroid: ",
+                cluster.get_centroid(),
+                "\nCluster members:",
+                cluster.get_members(),
+            )
 
     def safe_clusters_in_csv(self):
         with open("clustering_results.csv", "w", newline="") as clusters_csv_file:
             fieldnames = ["cluster", "centroid", "used_hashtags"]
-            dict_writer = csv.DictWriter(
-                clusters_csv_file, fieldnames=fieldnames
-            )
+            dict_writer = csv.DictWriter(clusters_csv_file, fieldnames=fieldnames)
             dict_writer.writeheader()
 
             counter = 1
@@ -159,7 +163,7 @@ class KMeanClusterer:
                     {
                         "cluster": f"cluster {counter}",
                         "centroid": cluster.get_centroid(),
-                        "used_hashtags": hashtags
+                        "used_hashtags": hashtags,
                     }
                 )
                 counter += 1

@@ -99,9 +99,6 @@ class ClusterAnalyser:
 
         return cleaned_graph
 
-
-
-
     def delete_elements_with_too_large_weight(self, threshold):
         self.minimum_spanning_tree = [item for item in self.minimum_spanning_tree if item[WEIGHT] <= threshold]
 
