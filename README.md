@@ -23,8 +23,8 @@ Arguments can be:
 We can look at posts even if we are NOT logged in!! That means we could 1. get all the post urls and 2. get stuff like desciption etc. -> on the other side we dont get the name of likes.
 
 ## TODO
-- Ist es zu auffaellig das ich mich jedes mal neu einlogge nach einem crawl?
-- Crawler schwerer zu entdecken machen
+- Ponder: eig gibt es nur begreznte anzahl and hashtags, wir haben schon nur von insta 8000... macht es sinn mit twitter auch die personas einteilen oder waere es nid eig besser die hashtags von twitter her nehmen und shcuane ob wir jetzt mit neu gemachten personas mehr uebereinstimmungen haben?
+
 
 ## To clarify
 - On list of followers / following we do not get all -> is it even usefull then? eg our followers since sometimes the user can be on the list sometimes not?
