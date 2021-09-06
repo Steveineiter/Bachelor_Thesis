@@ -156,13 +156,14 @@ class KMeanClusterer:
             counter = 1
             for cluster in self.clusters:
                 members = cluster.members
-                hashtags = list()
-                for member in members:
-                    hashtags.append("#" + member)
+                hashtags = members
+                # hashtags = list()
+                # for member in members:
+                #     hashtags.append("#" + member)
 
                 dict_writer.writerow(
                     {
-                        "cluster": f"cluster {counter}",
+                        "cluster": f"k mean cluster {counter}",
                         "centroid": cluster.get_centroid(),
                         "used_hashtags": hashtags,
                     }

@@ -145,7 +145,7 @@ class ClusterAnalyser:
 
                 dict_writer.writerow(
                     {
-                        "cluster": f"cluster {counter}",
+                        "cluster": f"levenshtein cluster {counter}",
                         "used_hashtags": hashtags
                     }
                 )

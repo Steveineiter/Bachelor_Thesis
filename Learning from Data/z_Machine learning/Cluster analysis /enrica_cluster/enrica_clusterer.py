@@ -146,11 +146,10 @@ class CommunitiesClusterAnalyser:
             counter = 1
             for cluster in self.clusters:
                 elements = cluster.elements
-                hashtags = list()
 
                 dict_writer.writerow(
                     {
-                        "cluster": f"cluster {counter}",
+                        "cluster": f"community cluster {counter}",
                         "used_hashtags": elements
                     }
                 )
