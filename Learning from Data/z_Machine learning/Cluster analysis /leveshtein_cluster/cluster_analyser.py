@@ -126,7 +126,7 @@ class ClusterAnalyser:
         self.clusters = clusters
 
     def safe_clusters_in_csv(self):
-        with open("clusters.csv", "w", newline="") as clusters_csv_file:
+        with open("clustering_results.csv", "w", newline="") as clusters_csv_file:
             fieldnames = ["cluster", "used_hashtags"]
             dict_writer = csv.DictWriter(
                 clusters_csv_file, fieldnames=fieldnames

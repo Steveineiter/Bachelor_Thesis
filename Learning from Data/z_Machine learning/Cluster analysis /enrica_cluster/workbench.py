@@ -7,8 +7,6 @@ import re
 
 from nltk.corpus import stopwords
 
-# TODO ergebnisse checken / Debugen
-
 
 # Constants
 PERSONAS_WITH_HASHTAGS_CSV = "persona_categorization.csv"
@@ -18,6 +16,7 @@ WEIGHT = 2
 
 # Constants to tune
 THRESHOLD = 2  # if value is greater then this, add to graph.
+MAXIMAL_ITEMS_PER_CLUSTER = 20
 
 
 class Cluster:
@@ -122,6 +121,8 @@ class CommunitiesClusterAnalyser:
                 clusters.append(new_cluster)
 
             for cluster in clusters:
+                if len(cluster.edges) >= MAXIMAL_ITEMS_PER_CLUSTER:
+                    continue
                 if cluster.is_edge_connected(source, destination):
                     cluster.add_to_cluster(source, destination, weight)
                     is_in_a_cluster = True

@@ -16,6 +16,7 @@ from levenshtein_distance_calculator import (
 
 MAX_HASHTAGS = 200
 MAX_ITERATION = 5
+K = 100
 
 
 class Cluster:
@@ -195,8 +196,8 @@ class KMeanClusterAnalyser:
                         self.index_to_word[str(hashtag_counter)] = hashtag
                         hashtag_counter += 1
 
-    def initiate_k_mean_clusters(self, k):
-        self.clusterer = KMeanClusterer(self.list_of_hashtags, k)
+    def initiate_k_mean_clusters(self):
+        self.clusterer = KMeanClusterer(self.list_of_hashtags, K)
 
     def perform_k_mean_clustering(self):
         self.clusterer.perform_clustering()
@@ -211,7 +212,7 @@ class KMeanClusterAnalyser:
 if __name__ == "__main__":
     cluster_analyser = KMeanClusterAnalyser()
     cluster_analyser.hashtags_from_csv()
-    cluster_analyser.initiate_k_mean_clusters(5)
+    cluster_analyser.initiate_k_mean_clusters()
     cluster_analyser.perform_k_mean_clustering()
     cluster_analyser.print_clustering_result()
     cluster_analyser.safe_clusters_in_csv()
