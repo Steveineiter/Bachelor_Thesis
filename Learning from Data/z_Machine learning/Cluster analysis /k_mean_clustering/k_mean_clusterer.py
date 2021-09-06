@@ -14,9 +14,9 @@ from levenshtein_distance_calculator import (
     LevenshteinDistanceCalculator,
 )  # Import from levenshtein cluster didn't work
 
-MAX_HASHTAGS = 200
+MAX_HASHTAGS = 20000
 MAX_ITERATION = 5
-K = 100
+K = 1000
 
 
 class Cluster:
