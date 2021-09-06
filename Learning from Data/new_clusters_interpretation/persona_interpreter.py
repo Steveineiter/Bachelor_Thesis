@@ -27,7 +27,7 @@ LEVENSHTEIN_CLUSTER_RESULTS = "/home/stefan/Knowledge/Bachelor-thesis/Learning f
 NUMBER_OF_HASHTAGS_FACTOR = 0.05
 NUMBER_OF_HASHTAGS_BASELINE = 20
 # For cases where a hashtag gets used all the time, eg "Graz", # so that it doesnt get overwhelming.
-MAXIMUM_SCORE_PER_HASHTAG = 5000  # TODO make it dynamic, eg mean of all hashtags.
+MAXIMUM_SCORE_PER_HASHTAG = 1  # TODO make it dynamic, eg mean of all hashtags.
 NUMBER_OF_BEST_CLUSTERS = 20
 
 # Constants
