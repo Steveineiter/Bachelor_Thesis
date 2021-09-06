@@ -10,14 +10,15 @@ import pandas as pd
 from levenshtein_distance_calculator import LevenshteinDistanceCalculator
 from kruskals_mst import Graph
 
-# Constants to adjust
-MAX_HASHTAGS = 1500
-WEIGHT_THRESHOLD = 3
-
 # Constants
 SOURCE = 0
 DESTINATION = 1
 WEIGHT = 2
+
+# Constants to adjust
+MAX_HASHTAGS = 1500
+WEIGHT_THRESHOLD = 3
+MAXIMAL_ITEMS_PER_CLUSTER = 20
 
 
 class Cluster:
@@ -113,6 +114,8 @@ class ClusterAnalyser:
                 clusters.append(new_cluster)
 
             for cluster in clusters:
+                if len(cluster.edges) >= MAXIMAL_ITEMS_PER_CLUSTER:
+                    continue
                 if cluster.is_edge_connected(edge):
                     cluster.add_to_cluster(edge)
                     is_in_a_cluster = True

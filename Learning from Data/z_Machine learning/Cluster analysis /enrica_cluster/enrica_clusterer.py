@@ -14,7 +14,7 @@ SOURCE = 0
 DESTINATION = 1
 WEIGHT = 2
 
-# Constants to tune
+# Constants to adjust
 THRESHOLD = 2  # if value is greater then this, add to graph.
 MAXIMAL_ITEMS_PER_CLUSTER = 20
 
