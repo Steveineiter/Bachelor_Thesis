@@ -1,0 +1,101 @@
+cluster,centroid,used_hashtags
+k mean cluster 1,summervibes,[]
+k mean cluster 2,happyweekend,['happynewyear']
+k mean cluster 3,krkisland,['danielabt']
+k mean cluster 4,sunshine,"['sharmelsheikh', 'vitaminsea', 'sunflower']"
+k mean cluster 5,happiness,"['valentinesday', 'happydunes', 'philippines']"
+k mean cluster 6,sandytoes,"['sandplatz', 'sevenworldwonders']"
+k mean cluster 7,sailinglife,"['sailingboat', 'wildlife', 'enjoyinglife', 'stillablondie']"
+k mean cluster 8,amazing,"['pyramids', 'ancient']"
+k mean cluster 9,mylove,"['gymlife', 'nye2021', 'explore', 'smile']"
+k mean cluster 10,dubailife,['uaelife']
+k mean cluster 11,travel,"['redbull', 'pyramid', 'travelphotography', 'travelgram', 'giraffe']"
+k mean cluster 12,masaimara,"['1yearanniversary', 'animals']"
+k mean cluster 13,giraffesanctuary,[]
+k mean cluster 14,holiday,"['photooftheday', 'history', 'photography']"
+k mean cluster 15,dubailife,[]
+k mean cluster 16,green,"['great', 'friends', 'graz', 'greece', 'athens', 'dream', '35gradforthewin', 'igers']"
+k mean cluster 17,ohduwunderschöneszist,[]
+k mean cluster 18,liebstefotoblume,[]
+k mean cluster 19,beachdays,"['nextrichpiana', 'beachwaves', 'beachlife']"
+k mean cluster 20,bf,"['blue', 'best', 'tb', 'nye', 'dxb']"
+k mean cluster 21,austria,"['aufschlag', 'africa', 'pyramidsofgiza', 'bestfriend', 'girlstrip', 'roadtrip', 'roadtrippin']"
+k mean cluster 22,egyptology,['egiptologia']
+k mean cluster 23,sunkissed,['sunglasses']
+k mean cluster 24,sailing,"['hiking', 'spielberg', 'skiing', 'horseriding']"
+k mean cluster 25,happysaturday,"['blackouttuesday', 'sunsetsaturday', 'happyhappyhappy']"
+k mean cluster 26,sphinx,[]
+k mean cluster 27,sunset,"['soulmate', 'nurheute']"
+k mean cluster 28,desert,"['perfect', 'bestes']"
+k mean cluster 29,lifeinmiddleeast,[]
+k mean cluster 30,pool,[]
+k mean cluster 31,summer,[]
+k mean cluster 32,desert,[]
+k mean cluster 33,love,"['home', 'life']"
+k mean cluster 34,happy,"['chipsy', 'happyme']"
+k mean cluster 35,teafarm,['safari']
+k mean cluster 36,bcodospan,[]
+k mean cluster 37,stayhome,['instagood']
+k mean cluster 38,bf,[]
+k mean cluster 39,igersaustria,"['richtigetouristenpics', 'meinvorhanghängtimbild']"
+k mean cluster 40,grünersee,['grübchenonfleek']
+k mean cluster 41,krk,[]
+k mean cluster 42,weather,"['wetter', 'blacklivesmatter']"
+k mean cluster 43,lifeinmiddleeast,[]
+k mean cluster 44,usa,"['uae', 'giza']"
+k mean cluster 45,sunset,[]
+k mean cluster 46,usa,[]
+k mean cluster 47,losinj,['lebanon']
+k mean cluster 48,green,[]
+k mean cluster 49,dubai,"['mydubai', 'downtowndubai', 'educate', 'zerogravitydubai']"
+k mean cluster 50,sun,[]
+k mean cluster 51,holiday,[]
+k mean cluster 52,beautiful,"['beautifulafrica', 'beautifulmoments']"
+k mean cluster 53,little,['italy']
+k mean cluster 54,nature,[]
+k mean cluster 55,favoriteplace,"['favouritebeachboy', 'favoriteplaceonearth', 'favoriteperson', 'canwegobackplease']"
+k mean cluster 56,jp,[]
+k mean cluster 57,australia,['burjkhalifa']
+k mean cluster 58,wow,"['snow', 'town', 'view', 'grow']"
+k mean cluster 59,nature,[]
+k mean cluster 60,sunday,"['oprnabay', 'sundayfunday', 'instadaily']"
+k mean cluster 61,venice,"['veli', 'nice']"
+k mean cluster 62,losinj,[]
+k mean cluster 63,tennis,[]
+k mean cluster 64,sunset,[]
+k mean cluster 65,emirates,[]
+k mean cluster 66,giraffesanctuary,[]
+k mean cluster 67,homesweethome,[]
+k mean cluster 68,sea,"['kenya', 'tea', 'beach']"
+k mean cluster 69,kempinski,[]
+k mean cluster 70,bay,[]
+k mean cluster 71,shorthairdontcare,[]
+k mean cluster 72,bulking,['clubbing']
+k mean cluster 73,little,[]
+k mean cluster 74,simplyhappy,[]
+k mean cluster 75,sleepy,[]
+k mean cluster 76,cat,['croatia']
+k mean cluster 77,egipto,"['egypt', 'egyptian', 'egitto']"
+k mean cluster 78,inlove,[]
+k mean cluster 79,nairobi,['nairobikenya']
+k mean cluster 80,igersaustria,[]
+k mean cluster 81,india,[]
+k mean cluster 82,cairo,['cairoegypt']
+k mean cluster 83,formulae,[]
+k mean cluster 84,beautiful,[]
+k mean cluster 85,austria,[]
+k mean cluster 86,kempinski,[]
+k mean cluster 87,sunkissed,[]
+k mean cluster 88,brrrt,[]
+k mean cluster 89,dubai,[]
+k mean cluster 90,happyplace,[]
+k mean cluster 91,pool,[]
+k mean cluster 92,firststop,[]
+k mean cluster 93,visitegypt,"['ancientegypt', 'thisisegypt']"
+k mean cluster 94,dubailife,[]
+k mean cluster 95,vacation,"['kroatien', 'vacationmode']"
+k mean cluster 96,mountains,[]
+k mean cluster 97,happyiris,"['gizapyramids', 'onehappyiris', 'happygirl']"
+k mean cluster 98,happyweekend,[]
+k mean cluster 99,wonderfullife,"['7wondersoftheworld', 'adventureofmylife']"
+k mean cluster 100,memories,['palmtrees']
