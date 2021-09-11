@@ -76,6 +76,7 @@ class TwitterFollowersSpider(scrapy.Spider):
 
         while True:
             self.scroll_down()
+            sleep(next(WAIT_FOR_RESPONSE_SLEEP))
             page_height = self.driver.execute_script(PAGE_HEIGHT_SCRIPT)
             total_scrolled_height = self.driver.execute_script(
                 TOTAL_SCROLLED_HEIGHT_SCRIPT
