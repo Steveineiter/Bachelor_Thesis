@@ -31,16 +31,12 @@ MAX_ITER of 5: More would be better but too slow
 ### Community cluster:
 Threshold of 2: Tried other values, 2 archived best results.
 
-# New clusters interpretation:
+### New clusters interpretation:
 NUMBER_OF_HASHTAGS_BASELINE of 8: Because the mena of marry personas was 7.8 => ~8 hashtags.
 NUMBER_OF_HASHTAGS_FACTOR of 1 / NUMBER_OF_HASHTAGS_BASELINE: Because it should get more reward the fewer hashtags it used. This approach is nice because of mean.
 MAXIMUM_SCORE_PER_HASHTAG of inf: "Bruteforce".
 NUMBER_OF_BEST_CLUSTERS of 6: Because Marry also uses 6 personas.
 HASHTAGS_WITH_TOO_HIGH_USAGE with ("graz", "austira", "summer"): Because other wise those values would appear in each of the best clusters.
-
-
-
-
 
 
 ## Ideas
