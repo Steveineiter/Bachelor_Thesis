@@ -16,7 +16,7 @@ WEIGHT = 2
 
 # Constants to adjust
 THRESHOLD = 2  # if value is greater then this, add to graph.
-MAXIMAL_ITEMS_PER_CLUSTER = 20
+MAXIMAL_ITEMS_PER_CLUSTER = 7  # Somehow if i use 8 it has sometimes 9 items. With 7 it works.
 
 
 class Cluster:

@@ -21,7 +21,7 @@ HASHTAGS_CLAUDIA = (
     "#family #mum #local #familienleben #decoration #handmade #nature".split(" ")
 )
 
-CLUSER_INTERPRETATION_CSV = "/home/stefan/Knowledge/Bachelor-thesis/learning_from_data/personas_with_hashtags/twitter/clusters/clustering_interpretation_max_score_5_results.csv"
+CLUSER_INTERPRETATION_CSV = "/home/stefan/Knowledge/Bachelor-thesis/learning_from_data/personas_with_hashtags/twitter/clusters/clustering_interpretation_results.csv"
 
 
 class personaCategorizer:
@@ -191,8 +191,9 @@ class personaCategorizer:
                 "like_kevin",
                 "like_martin",
                 "like_claudia",
-                "like_best_cluster_of_all",
-                "like_best_cluster_of_top_20",
+                # "like_best_cluster_of_all",
+                "like_best_cluster_of_top_6",
+                "cluster_name",
                 "used_hashtags",
             ]
             dict_writer = csv.DictWriter(
@@ -233,10 +234,9 @@ class personaCategorizer:
                         "like_kevin": str(like_kevin) + "%",
                         "like_martin": str(like_martin) + "%",
                         "like_claudia": str(like_claudia) + "%",
-                        "like_best_cluster_of_all": None,  # TODO should we implement this? maybe worth for new clusters
-                        "like_best_cluster_of_top_20": str(
-                            f"{cluster_data[1]}%, Cluster: {cluster_data[0]}"
-                        ),
+                        # "like_best_cluster_of_all": None,  # TODO should we implement this? maybe worth for new clusters
+                        "like_best_cluster_of_top_6": str(f"{cluster_data[1]}%"),
+                        "cluster_name": str(cluster_data[0]) if cluster_data[1] != 0 else None,
                         "used_hashtags": str(used_hashtags),
                     }
                 )
@@ -248,9 +248,11 @@ class personaCategorizer:
                     like_kevin,
                     like_martin,
                     like_claudia,
-                    )
-            print(f"Aggregated % of cluster: {score_of_cluster:.2f}\n"
-                  f"Aggregated % of best persona: {score_of_old_persona:.2f}")
+                )
+            print(
+                f"Aggregated % of cluster: {score_of_cluster:.2f}\n"
+                f"Aggregated % of best persona: {score_of_old_persona:.2f}"
+            )
 
 
 if __name__ == "__main__":

@@ -19,18 +19,20 @@ import re
 from nltk.corpus import stopwords
 
 # Constants to adjust
-USED_HASHTAGS_CSV_PATH = "/home/stefan/Knowledge/Bachelor-thesis/Learning from Data/new_clusters_interpretation/data/used_hashtags.csv"
-COMMUNITY_CLUSTER_RESULTS = "/home/stefan/Knowledge/Bachelor-thesis/Learning from Data/new_clusters_interpretation/data/community_clustering_results.csv"
-K_MEAN_CLUSTER_RESULTS = "/home/stefan/Knowledge/Bachelor-thesis/Learning from Data/new_clusters_interpretation/data/k_mean_clustering_results.csv"
-LEVENSHTEIN_CLUSTER_RESULTS = "/home/stefan/Knowledge/Bachelor-thesis/Learning from Data/new_clusters_interpretation/data/levenshtein_clustering_results.csv"
+USED_HASHTAGS_CSV_PATH = "/home/stefan/Knowledge/Bachelor-thesis/learning_from_data/new_clusters_interpretation/data/used_hashtags.csv"
+COMMUNITY_CLUSTER_RESULTS = "/home/stefan/Knowledge/Bachelor-thesis/learning_from_data/new_clusters_interpretation/data/community_clustering_results.csv"
+K_MEAN_CLUSTER_RESULTS = "/home/stefan/Knowledge/Bachelor-thesis/learning_from_data/new_clusters_interpretation/data/k_mean_clustering_results.csv"
+LEVENSHTEIN_CLUSTER_RESULTS = "/home/stefan/Knowledge/Bachelor-thesis/learning_from_data/new_clusters_interpretation/data/mst_clustering_results.csv"
 # Determines how much a cluster should be rewarded if it has fewer hashtags.
-NUMBER_OF_HASHTAGS_FACTOR = 0.05
-NUMBER_OF_HASHTAGS_BASELINE = 20
+NUMBER_OF_HASHTAGS_BASELINE = 8
+NUMBER_OF_HASHTAGS_FACTOR = 1 / NUMBER_OF_HASHTAGS_BASELINE
 # For cases where a hashtag gets used all the time, eg "Graz", # so that other results won't get overwhelmed.
-MAXIMUM_SCORE_PER_HASHTAG = 1
-NUMBER_OF_BEST_CLUSTERS = 20
+MAXIMUM_SCORE_PER_HASHTAG = float("inf")
+NUMBER_OF_BEST_CLUSTERS = 6
 
-# Constants
+# Some hashtags get used all the time eg #Graz, those should be excluded.
+# Be careful: insert words without hashtags eg: "graz".
+HASHTAGS_WITH_TOO_HIGH_USAGE = ("graz", "austria", "summer")
 
 
 class persona_Interpreter:
@@ -73,6 +75,8 @@ class persona_Interpreter:
 
             difference = NUMBER_OF_HASHTAGS_BASELINE - len(hashtags)
             score *= 1 + (difference * NUMBER_OF_HASHTAGS_FACTOR)
+            if score < 0:
+                score = 0
 
             clusters[cluster] = (hashtags, score)
 
@@ -86,6 +90,8 @@ class persona_Interpreter:
                 number_of_users_who_used_it = row["number_of_users_who_used_it"]
                 if hashtag != "" and hashtag != " ":
                     if hashtag in all_stopwords:
+                        continue
+                    if hashtag in HASHTAGS_WITH_TOO_HIGH_USAGE:
                         continue
 
                     self.used_hashtags_to_occurrences[
@@ -110,7 +116,7 @@ class persona_Interpreter:
 
     def safe_interpretation_in_csv(self):
         with open(
-            "clustering_interpretation_results.csv", "w", newline=""
+                "clustering_interpretation_results.csv", "w", newline=""
         ) as clustering_interpretation_results:
             fieldnames = [
                 "community_clusters",

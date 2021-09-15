@@ -18,7 +18,7 @@ WEIGHT = 2
 # Constants to adjust
 MAX_HASHTAGS = 1500  # Otherwise it won't compute -> too big MST
 WEIGHT_THRESHOLD = 3  # Edges with a larger weight then this will get removed.
-MAXIMAL_ITEMS_PER_CLUSTER = 20  # So that one cluster won't have the majority of the items.
+MAXIMAL_ITEMS_PER_CLUSTER = 8  # So that one cluster won't have the majority of the items.
 
 
 class Cluster:
