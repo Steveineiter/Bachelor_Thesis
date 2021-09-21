@@ -17,7 +17,7 @@ Arguments can be:
 - is_a_deep_crawl => True if we want to crawl data from posts, not only the profile. Needs MUCH longer if set on True.
 - path_to_useres_to_crawl_csv => If we use a CSV and the bash script for automatically scarping users, you need to pass the absolute path as argument so that the csv gets updatet after each scrape.
 
-## Reasoning at algorithms:
+## Reasoning for algorithms:
 ### All:
 Cluster size of 8: Because the mean of marry personas was 7.8 => ~8.
 
