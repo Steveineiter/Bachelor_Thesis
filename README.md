@@ -17,26 +17,26 @@ Arguments can be:
 - is_a_deep_crawl => True if we want to crawl data from posts, not only the profile. Needs MUCH longer if set on True.
 - path_to_useres_to_crawl_csv => If we use a CSV and the bash script for automatically scarping users, you need to pass the absolute path as argument so that the csv gets updatet after each scrape.
 
-## Reasoning at algorithms:
+## Reasoning for algorithms:
 ### All:
 Cluster size of 8: Because the mean of marry personas was 7.8 => ~8.
 
 ### MST cluster:
-Weight threshold of 3: Tried other values, 3 archived best results.
+Weight threshold of 3: Tried other values, 3 archived best results.  
 
 ### K mean cluster:
-K of 1000: More would be better but too slow
-MAX_ITER of 5: More would be better but too slow
+K of 1000: More would be better but too slow  
+MAX_ITER of 5: More would be better but too slow  
 
 ### Community cluster:
-Threshold of 2: Tried other values, 2 archived best results.
+Threshold of 2: Tried other values, 2 archived best results.  
 
 ### New clusters interpretation:
-NUMBER_OF_HASHTAGS_BASELINE of 8: Because the mena of marry personas was 7.8 => ~8 hashtags.
-NUMBER_OF_HASHTAGS_FACTOR of 1 / NUMBER_OF_HASHTAGS_BASELINE: Because it should get more reward the fewer hashtags it used. This approach is nice because of mean.
-MAXIMUM_SCORE_PER_HASHTAG of inf: "Bruteforce".
-NUMBER_OF_BEST_CLUSTERS of 6: Because Marry also uses 6 personas.
-HASHTAGS_WITH_TOO_HIGH_USAGE with ("graz", "austira", "summer"): Because other wise those values would appear in each of the best clusters.
+NUMBER_OF_HASHTAGS_BASELINE of 8: Because the mena of marry personas was 7.8 => ~8 hashtags.  
+NUMBER_OF_HASHTAGS_FACTOR of 1 / NUMBER_OF_HASHTAGS_BASELINE: Because it should get more reward the fewer hashtags it used. This approach is nice because of mean.  
+MAXIMUM_SCORE_PER_HASHTAG of inf: "Bruteforce".  
+NUMBER_OF_BEST_CLUSTERS of 6: Because Marry also uses 6 personas.  
+HASHTAGS_WITH_TOO_HIGH_USAGE with ("graz", "austira", "summer"): Because other wise those values would appear in each of the best clusters.  
 
 
 ## Ideas
