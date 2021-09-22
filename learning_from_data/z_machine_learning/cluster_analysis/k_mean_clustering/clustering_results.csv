@@ -1,0 +1,1001 @@
+cluster,centroid,used_hashtags
+k mean cluster 1,socialmediamanagement,"['krisenmanagement', 'socialmediaauftritt', 'communitymanagement', 'socialmediamanager', 'arbeitsschutzmanagement']"
+k mean cluster 2,kessler,"['weather', 'kesslercrane', 'nextlevel', 'reststop', 'herzklar', 'techleader', 'resilenz', 'nussfarm', 'nussoel', 'jerusalem', 'musslos', 'patissier', 'wasser', 'tester', 'yessafira', 'lesssugar', 'tierischer', 'jewellery', 'knowledge', 'köstlich', 'herbstbier', 'mikkeller', 'festbier', 'helles', 'teaser']"
+k mean cluster 3,mentalhealthawareness,"['theniamexactlywhereineedtobe', 'SpectiveEarthianEternity']"
+k mean cluster 4,granattor,"['manfrotto', 'ginandtonic', 'organiccotton', 'jadranskomore', 'schnittwoch', 'keramikstore', 'bergdoktor', 'konditor', 'juanamador', 'glaunandich', 'girlswithtattoos', 'zrmanjacanyon', 'zrmanjariver', 'girlsontour', 'traktor', 'enziangranatsteig', 'peanutbutter', 'urbanart', 'afghanistan']"
+k mean cluster 5,takemoreadventures,"['gottzuehrdemnächstenzurwehr', 'outdooradventures', 'JaPercebeuQueQuandoEuSorrio', 'femaleempowermentproject', 'worldwideadventures', 'ausdemgartenaufdenteller', 'austriaadventures']"
+k mean cluster 6,reeloqcommunity,"['travelcommunity', 'outdoorcommunity', 'diplomsommelier', 'vegancommunity']"
+k mean cluster 7,fruit,"['brrrt', 'africa', 'pyramid', 'india', 'feuer', 'artist', 'YUMMY', 'vfxartist', 'arbeit', 'trump', 'frühstück', 'forest', 'fruits', 'split', 'freude', 'frauen', 'frausein', 'kürbis', 'fruitboom', 'fruitboomde', 'fruechte', 'frudist', 'frucht', 'frudism', 'driedfruits', 'portrait', 'farfetch', 'nofront', 'fit', 'blut', 'ansitz', 'nurmut', 'fresh', 'fruchtig', 'fruity', 'freitag', 'frisch', 'CLUSE', 'COFFEE', 'jumpsuit', 'portait', 'quiz', 'wholefruit', 'trust', 'fruhling', 'frisur', 'kraft', 'feethurt', 'prgirl', 'fachgruppeubit', 'first', 'COVID', 'fürmich', 'wirfürkurz', 'fernitz', 'ididit', 'Grapefruit', 'grapefruit', 'craft', 'flint', 'anuncio', 'moabit']"
+k mean cluster 8,agile,"['venice', 'nice', 'smile', 'family', 'office', 'cgi', 'cargirl', 'like', 'apple', 'grill', 'magazine', 'ice', 'acireale', 'dive', 'bowle', 'oscarwilde', 'style', 'otdmagazine', 'ajde', 'adobe', 'nike', 'gaypride', 'lgbtq', 'vanille', 'wolle', 'agave', 'live', 'candle', 'agilegraz', 'huila', 'bagels', 'langeweile', 'aeijst', 'uncle', 'magic', 'yasmintee', 'paradise', 'familie', 'pagisland', 'wagyubeef', 'time', 'attitude', 'magritte', 'teilen', 'pilze', 'allergie', 'ängste', 'juice', 'alsace', 'eisdiele', 'alley', 'stagbettle', 'paleale', 'apples', 'Ale']"
+k mean cluster 9,internekommunikation,"['bookrecommendations', 'wiedereröffnungnachcorona', 'unternehmenskommunikation', 'corporatecommunication', 'corporatecommunications', 'externekommunikation', 'starkekommunikation', 'consumercommunication', 'eventkommunikation', 'wirliebenkommunikation', 'markenkommunikation', 'Businesskommunikation', 'erfolgreichekommunikation', 'krisenkommunikation']"
+k mean cluster 10,contemporaryart,"['idontneedbodyguards', 'dontworrybemarry', 'geniessereiammarkt', 'centerforamericanstudies', 'contemporaryvienna']"
+k mean cluster 11,summerinthecity,"['summerclothing', 'bucketlisthike2021', 'summerinthecitygraz', 'summeringreece', 'explorethecity']"
+k mean cluster 12,FamilyFriday,"['alldayeveryday', 'feetupfriday']"
+k mean cluster 13,köln,"['veli', 'krk', 'öbb', 'yolo', 'röd', 'glögg', 'kelag', 'kohlrabi', 'koeln', 'Vela', 'kevin', 'july', 'kids', 'vly', 'vcl', 'abkühlung', 'kribbeln', 'prickeln', 'nudeln', 'LOVE', 'cola']"
+k mean cluster 14,brazilnuts,"['brutaleultras', 'hazelnut', 'brasileira', 'brenebrownquotes', 'macadamianuss', 'justaminute', 'purergenuss', 'brisbanecity', 'breakingnews']"
+k mean cluster 15,kreuzberg,"['kumberg', 'ffkumberg', 'forbes30under30', 'krimibücher', 'andreasberger', 'lorenzbox', 'kreuzteich']"
+k mean cluster 16,flyingrabbit,"['flyinggarden', 'hikinggadget', 'aufstellungsarbeit', 'flyinthesky', 'flyinginnature', 'flyingprivate']"
+k mean cluster 17,womenshoes,"['homesweethome', 'weekendvibes', 'atomosshogun', 'rocketespresso', 'swedenshots', 'dancingshoes', 'workshops', 'womanhood', 'womeninbusiness', 'womenintech', 'womenincoffee', 'womenfashion', 'goldenhour', 'womensday', 'comebackstronger', 'wochenende', 'wochenstart', 'comeandplay', 'workshop', 'bloomcoffeeschool', 'foundersvoices', 'womenonstage', 'videoshoot', 'momentefesthalten', 'wohlfühlen', 'datenschutz', 'wimhofmethod', 'agameoftones', 'romanshorn', 'blackshoes', 'popupstores', 'statementshoes', 'wedgesshoes', 'pumpshoes', 'pumpshoe', 'fancyshoes', 'luxuryshoes', 'damenschuhe', 'brandnewshoes', 'wbwersonst', 'womensrights', 'womeninmusicbusiness']"
+k mean cluster 18,booom,"['bcodospan', 'enjoy', 'bourbon', 'cookie', 'mushroom', 'foodism', 'book', 'besos', 'tudook', 'sheconomy', 'bowl', 'gowow', 'bowlup', 'rooftop', 'ootd', '4x100m', 'autonom', 'foto', 'xiaomi', 'followme', 'aboutBook', 'rooibos', 'hoops', 'bloom', 'bookkisa', 'colombia', 'sogood', 'bowls', 'oott', 'boudoir', 'oldbooks', 'boots', 'blooming', 'boston', 'roots', 'foody', 'bozen', 'roiboos', 'slowmo', 'boho', '1852m', 'bologna', 'bathroom']"
+k mean cluster 19,wald,"['gala', 'c4d', 'alps', 'a7s', 'haídi', 'cold', 'windy', 'wood', 'sale', 'wildsoul', 'wsnh', 'wildeacai', 'goals', 'workhard', 'bass', 'wahle', 'bali', 'capi', 'wach', 'band', 'back', 'fotd', 'gold', 'walkies', 'word', 'water', 'cbd', 'bad', 'wifiwalk', 'thewild', 'gowilalm', 'calm', 'naah', 'world', 'wagyu', 'leechwald', 'café', 'wanda']"
+k mean cluster 20,shoebrand,"['schöcklland', 'beyourownbrand', 'schenegegend', 'stockholmsbränneri', 'foodtrend', 'probrands', 'shorelineband', 'edsheeran', 'shepreneur', 'unruhestand', 'schokolade', 'sourdoughbread', 'holland', 'skateboarden', 'skateboard', 'snowboarding', 'stayhomebaby', 'memyselfandI', 'schilcherland', 'schönbrunn', 'schoenbrunn', 'burgenland', 'schreiberling', 'shoedangle', 'shoegasm', 'shoeporn', 'shoefan', 'greenbrain', 'Greenbrain', 'rhodeisland', 'rhodesisland', 'rhodesgrandeblue', 'rhodosisland', 'igersrhodeisland']"
+k mean cluster 21,bakery,"['nairobikenya', 'baderhaus', 'razer', 'lakes', 'luxury', 'makesmehappy', 'habaneros', 'barbecue', 'habanero', 'backhendl', 'badbunny', 'backen', 'laktosefrei', 'energy', 'madebyme', 'babyboy', 'blazer', 'Marry', 'raspberry', 'takeaway', 'TapeArt', 'bäckerin', 'barkeeper', 'bewerb', 'takeit', 'cranberry', 'mayermayer', 'Factory', 'blackfriday', 'backless', 'berry', 'barbershop', 'makeup', 'warmerdays', 'budapest', 'garry', 'bäckerei', 'baddays', 'daheim', 'larry', 'carry', 'sneakpeek', 'kukuruz', 'behappy', 'mockerymia', 'mockery', 'lakegram', 'lakeview', 'lager']"
+k mean cluster 22,vielglück,"['mutzurlücke', 'vöcklabruck', 'voecklabruck', 'VielGluck', 'VielGlück', 'erfolgistkeinglück', 'sonntagsglück']"
+k mean cluster 23,morgenfrei,"['longtimenoselfie', 'morningview', 'kärntnerei', 'demherzenfolgen', 'stoppgewaltgegenfrauen', 'schuldenfrei', 'flouridfrei', 'flouridefree', 'glutenfrei', 'mirrorselfie', 'Morgenstund', 'farbenfroh', 'lohbergerandfriends', 'vortragsreihe', 'morningtea', 'crueltyfree', 'meilenstein', 'hortensien', 'farbenfrohewelt', 'markenstrategie', 'barrierefrei', 'barrierfrei', 'tierleidfrei']"
+k mean cluster 24,diedohnal,"['hplederhaas', 'warmemorial', 'noaddedsugar', 'deixaeladançar', 'dreiuhrnachts', 'onepotmeal', 'driedfruitsnacks', 'dahoamisdahoam', 'themountain', 'personal', 'diekraftderrituale', 'lockdownalltag', 'upsidedown', 'käferbohnensalat', 'discount', 'historical', 'miejskadżungla']"
+k mean cluster 25,gründermesse,"['grünersee', 'ohduwunderschöneszist', 'grübchenonfleek', 'therenderers', 'rinderwahnwien', 'immerwiedergerne', 'lgvgärtnergemüse', 'gründerinnen', 'gründerinnennetzwerk', 'gründermütter', 'gründerstory', 'arunnerseye', 'grünerveltliner', 'grünertee', 'holunderbeere', 'gründerszene', 'grundermesse', 'grunderszene', 'glucklichermensch', 'vorderergosausee', 'erdbeerdessert', 'freundetreffen', 'kapuzinerkresse', 'tierleidfreiessen', 'grandebluerhodes', 'trinktmehrwasser']"
+k mean cluster 26,project,"['perfect', 'presents', 'progress', 'protein', 'present', 'brotzeit', 'butperfect', 'products', 'prtexte', 'promocode', 'präbichl']"
+k mean cluster 27,jan,"['sun', 'jp', 'cat', 'bay', 'uae', 'tbt', 'rain', 'TOP', 'fun', 'sdg', '5tag', 'gin', 'santa', 'bar', 'japan', 'jumpman', 'tan', 'acai', 'hanf', 'grz', 'car', 'run', 'cb7', 'fbf', 'BMW', 'gay', 'Ott', 'jury', 'job', 'ott', 'namen', 'rap', 'mjam', 'süß', 'HG3', 'jeans', 'clean', 'açaí', 'NEW', 'rdy', 'urban', 'orf', '007', 'plane', 'tbf', 'fancy', 'danke', 'mtb', 'jobs', 'pag', 'Graz', 'BBQ', 'juhuu', 'tjJFS', 'iam', 'bat', 'ramen', 'raw', 'mai', 'USA']"
+k mean cluster 28,afternoon,"['eastersippen', 'afternoontea', 'bestbarintown', 'interior', 'afterwork', 'superfood', 'burgerporn', 'afterlockdown', 'afterworkaperol', 'bestburgerintown', 'luftballon', 'aftercoronatime', 'aftercorona', 'motherhood', 'waterbomb', 'wasserbombe', 'youarethereason', 'afghanwomen']"
+k mean cluster 29,ginlove,"['explore', 'mylove', 'inlove', 'catlover', 'carlover', 'gündorf', 'ginfluencer', 'gintime', 'swedenlove', 'gintonica', 'gintonic', 'ginlovers', 'ginlover', 'ginbottle', 'friedlove', 'fermentedlove', 'felizanonovo', 'syonlounge', 'girlpower', 'winelover', 'likelouis', 'meinewoche', 'selflove', 'shinemore', 'gaylove', 'citylove', 'bingoAbend', 'girlboss', 'employee', 'winelife', 'gujizone', 'gondola', 'tealove', 'guineapiglove', 'discover', 'girlspower', 'girlsout', 'hangloose', 'woodlove', 'redlove', 'Kinesiologie', 'kinesiologie', 'veganlove', 'styrialove', 'ciderlove']"
+k mean cluster 30,ifyoureabirdimabird,['meinvorhanghängtimbild']
+k mean cluster 31,sisi,"['musik', 'music', 'swedish', 'spirits', 'sunrise', 'spicy', 'sissy', 'müsli', 'keksi', 'eis', 'kiwi', 'sushi', 'suzuki', 'selfie', 'dimsum', 'sirup', 'guji', 'picnic', 'sexy', 'pisa', 'pics', 'mist', 'miami', 'spritzig', 'süffig', 'susegg', 'bigkid', 'fiba', 'signs', 'mission', 'nimmsmit', 'fisch', 'fish', 'sos', 'eisbox', 'stmk', 'bliss', 'ski', 'kitzski', 'miejski']"
+k mean cluster 32,handmadeaustria,"['handmadeinaustria', 'handmadewithlove', 'palmademallorca', 'wynwoodartdistrict', 'bestplaceaustria']"
+k mean cluster 33,justspеcialsunrisеs,[]
+k mean cluster 34,kallitheasprings,"['klassischeraperitiv', 'enjoythelittlethings', 'cooksclubcitybeachrhodes']"
+k mean cluster 35,collagen,"['soulmate', 'colorgrading', 'cornaten', 'tomaten', 'großepflanzen', 'chocolate', 'halloween', 'collab', 'vortragende', 'techfrauen', 'chocolatecake', 'kollagen', 'tricollagen', 'following', 'cologne', 'radlfahrn', 'vollfein', 'coldbrew', 'wohlfühlpaket', 'zellamsee', 'choclate', 'cyclades', 'relaxen', 'Blockaden', 'schlafen', 'loslassen', 'NEINsagen', 'Schlemmen', 'smallalley', 'norwegen']"
+k mean cluster 36,wedgeheels,"['swedishglögg', 'umabebedessa', 'weitergehts', 'wedontthinklimits', 'highheels', 'weekendplans', 'selfiequeens', 'wedges', 'wedgeshoes', 'wedgessneakers', 'wedgesneakers', 'wedgesshoesheels', 'yellowheels', 'yellowheel', 'yellowhighheels', 'newhighheels', 'niedagewesen', 'redheels', 'redhighheels', 'rotehighheels', 'heelerella']"
+k mean cluster 37,essentials,"['lifeinmiddleeast', 'sunnydays', 'easyrecipes', 'essentialoils', 'epigenetics', 'massentierhaltung', 'süssesbusiness', 'geschenkkarte', 'fermentiert', '30servings', 'esseninsalzburg', 'essengehen', 'omasfotoskills', 'innvestmentpunk', 'pioneersfestival2019', 'eventhighlight', 'wissenistmacht', 'veganfestivals', 'libertyale']"
+k mean cluster 38,shoppingday,"['yeshappyandenoughеnjoy', 'shopping', 'shoppingcityseiersberg', 'officeday', 'shoppingingraz', 'shoppinggraz', 'shoppingquotesoftheday', 'shoppingtime', 'shoppingtour', 'shootingday', 'schladmingplanai']"
+k mean cluster 39,leopoldmuseum,"['guggenheimmuseum', 'schokoladenmanufaktur']"
+k mean cluster 40,ginglebells,"['einmegaerlebnis', 'gincocktails', '15minutemeals', 'dankebeljo', 'hillspaythebills', 'haindlmuehle', 'bingosounds', 'ingredients', 'ringanapeople', 'hangloosebeach', 'cinderella', 'wiewirlebenwollen']"
+k mean cluster 41,vegans,"['lebanon', 'eventants', 'negroni', 'eggs', 'vegan', 'newgoals', 'melanzani', 'veganlife', 'vegetarisch', 'vegandrinks', 'omega3', 'omega6', 'pregnant', 'f52grams', 'yogapants', 'lignano', 'legends', 'beats', 'ringana', 'veggie', 'giveaways', 'ilexguayusa', 'Spaziergang', '25grams', 'vegandrink', 'vocals', 'veigan', 'bergmensch', 'jobgoals', 'lifegoals', 'lovecats', 'vegetables', 'england', 'vegtables', 'exitgames', 'vegane', 'veganeats', 'govegan', 'veganism', 'vegansofig', 'vegancheese', 'veganessen', 'vegansnack', 'veganda', 'vegangraz', 'vitamins', 'vegafest', 'eveningsky']"
+k mean cluster 42,whatiwear,"['hereweare', 'waitwhat', 'activewear', 'wettbewerb', 'withoutsugar', 'sportswear', 'whatsbetter', 'wohlfuhlatmosphare', 'nohamsterswereharmed', 'footwear']"
+k mean cluster 43,weihnachtsfeier,"['weihnachten', 'weihnachtsbaum', 'weihnachtsbäckerei', 'weihnachtsduft', 'visionmachtdichfreu', 'vorweihnachtenszeit', 'esweihnachtetbald', 'vorweihnachtszeit', 'weilichesmirwertbin', 'weihnachten2020', 'lesenmachtschlau']"
+k mean cluster 44,besseralskaffee,"['feuersalamander', 'kaffeekaffeekaffee', 'bloomspecialtycoffee', '25gramscoffee', 'suessmundkaffee', 'betterversionofme', 'absolutelysugarfree', 'familieschärfkaffee', 'familieschaerfkaffee']"
+k mean cluster 45,veganesfrühstück,['spontaneselfieattacke']
+k mean cluster 46,yogagirl,"['islandgirl', 'gypsygirl', 'tothegirls', 'enoughaugust', 'yogapractice', 'gaybrasil', 'yogachallenge', 'yogazuhause', 'yogavorort', 'yogaposen', 'yogareise', 'yogalife', 'excitedgirl', 'wolfgangikirche', 'farmgirl', 'shoedazzlegirl', 'nodairy']"
+k mean cluster 47,liveevents,"['springevenings', 'lovelymoments', 'livethelittlethings', 'triplesevensummits', 'eisteedesmonats', 'livekonzert', 'videoeffects', 'liveperformance', 'livemoments', 'liebevolleworte', 'weloveourclients', 'onlineevent']"
+k mean cluster 48,bringmeback,"['takemeback', 'bringon2018', 'teaonthebeach', 'lieblingsmensch', 'tryingnewways', 'lieblingsgetränk', 'chasingpeacock', 'welcomeback']"
+k mean cluster 49,gastro,"['history', 'roadtrip', 'cgistudio', 'ipadpro', 'pcsetup', 'gartln', 'lasko', 'gintastic', 'lostsoul', 'tesoro', 'gastronomie', 'garten', 'staystrong', 'Metro', 'gastgeber', 'besterjob', 'guayusatee', 'AIStyria', 'AIAustria', 'gopro', 'Nitro', 'nitro', 'yogastudio', 'yogaimstudio', 'citystroll', 'tattoo', 'dasgramm', 'gastrojobs', 'gastrojobsgraz', '7yearsago', 'gusegg', 'pastrami', 'casino']"
+k mean cluster 50,inhalieren,"['generaliopen', 'SinRopaEsQueTeQuieroVer', 'diemacherin', 'mainlyhardseltzer', 'einfachliebe', 'sanpellegrino', 'innereien', '11erChallenge21', 'individuellelieder', 'ausprobieren', 'chaiseven', 'Digitalisierung', 'digitalisierung', 'thinkdifferent', 'erhatdiehaareschön', 'influencer', 'michaeljackson', 'ichliebeyoga', 'drinkdifferent', 'itkarrieretag', 'itkarriere', 'tierhaarallergie']"
+k mean cluster 51,visitgraz,"['visitegypt', 'videography', 'vfbstuttgart', 'visitstyria', 'visitstockholm', 'visionskraft', 'stadtgraz', 'igergraz', 'visitcarinthia', 'mediterran', 'echtgraz', 'discovergraz', 'ansitzromani', 'musikgibtkraft', 'unicorngraz', 'visitsalzburg', 'wirliebengraz', 'livingmydream', 'dasgrammgraz', 'livingingraz', 'cityofgraz', 'visitlinz', 'visitzadar', 'visitcroatia', 'visitpag', 'unigraz', 'musicartsgraz', 'digitalart', 'klinikumgraz', 'ginkograz', 'veganingraz', 'allesfürgraz', 'airportgraz', 'visitschladming']"
+k mean cluster 52,halloweenfoodideas,"['halloweenfood', 'followforfollowback', 'pizzaisalwaysgoodidea', 'halloweencountdown', 'whhhooooooooosssssssshhhhhh']"
+k mean cluster 53,grazlend,"['krkisland', 'goallin', 'grillen', 'grazfood', 'grazerbergland', 'transgender', '11erChallenge', 'grapedudes', 'garlando', 'greatchallenges', 'grazliebe', 'grazvegan', 'grazundumgebung', 'grazfoodscene', 'radlen', 'wirschaffendas', 'graztrinkt', 'grazider']"
+k mean cluster 54,milk,"['omiš', 'milktea', 'unmilk', 'theunmilk', 'tiktok', 'milch', 'milram', 'minze', 'silk', 'munich', 'mucki', 'mia', 'mumok', 'millet']"
+k mean cluster 55,sandinthecity,"['audiotechnica', 'sanehnettejungs', 'panzanoinchianti', 'RunningTerritory', 'stuckinthemiddlewithyou', 'makingthevideo', 'hotinthecity', 'kardamintspritzer', 'natureinthecity', 'cleanthecity', 'standupagainstracism']"
+k mean cluster 56,hochwurzenschladming,['hochwurzenhütte']
+k mean cluster 57,healthyco,"['healthy', 'healthyfood', 'healthybreak', 'healthysnack', 'health', 'healthybaking', 'headfullofhoney', 'verysavеwithyou', 'heimdisco', 'healty', 'healtyfood', 'realtalk', 'healthysnacks', 'spreadtheword']"
+k mean cluster 58,morningslikethese,['momentslikethese']
+k mean cluster 59,lakeinaustria,"['igersaustria', 'meinausseerland', 'madeinaustria', 'westernaustralia', 'igersausteia', 'agileaustria', 'wakeboardaustria', 'wakeboardcup2020', 'inaustria', 'latinmusic', 'madeinstyria', 'veganaustria', 'upperaustria', 'viennaaustria', 'beautyofaustria', 'wienerneustadt', 'LifelikePRimGespräch', 'schladmingdachstein', 'designedinaustria', 'ideenaustausch', 'familienaufstellung', 'tsambikamountain', 'freedomaustria', 'travelinginaustria', 'flyinginaustria', 'travelinaustria', 'natureinaustria', 'lakeinstyria']"
+k mean cluster 60,grillabend,"['stillablondie', 'wärmebildkamera', 'rallyrebenland', 'grilledsalad', 'keramikladen', 'feierabend', 'grimaces', 'stillleben']"
+k mean cluster 61,traveling,"['travel', 'pccooling', 'hotsauceinmybag', 'gardening', 'travelandfood', 'princesinha', 'gusttavolima', 'erfüllung', 'urlaubsfeeling', 'mealplanning', 'grandopening', 'gathering', 'Traveller', 'TravelAddict', 'travelisrael', 'travelaround', 'travelling', 'travelgirls', 'travelshots', 'creativemind', 'autohauslingl', 'traveaddict', 'storytelling', 'tortellini', 'shavedice', 'travelgirl', 'modeling', 'travelbook', 'modelling', 'traveladdict', 'frühling', 'snorkeling', 'vorstellung', 'travelbuddy', 'empirestatebuilding', 'teambuilding', 'sprösslinge', 'problemsolving', 'creativethinking', 'buchhandlung', 'b2bmarketing', 'survivaltraining', 'passagelinz', 'fridayfeeling', 'catering', 'travelbug', 'travelingram', 'taveling', 'travelfriends', 'ralaxing', 'austriatraveling', 'lеtsstаrttuеsdаyеvеning']"
+k mean cluster 62,supportsmallbusiness,"['unfinishedbusiness', 'smallbusiness', 'supportyourlocalbusiness']"
+k mean cluster 63,finallysnow,"['zufallsfoto', 'finallyvacation']"
+k mean cluster 64,fotoderwochegraz,"['letztewochezist', 'hochdiehändewochenende', 'exittheroomgraz']"
+k mean cluster 65,ship,"['chipsy', 'sphinx', 'nhd15', 'setup', 'trvp', 'chef', 'zuheiß', 'chips', 'spicedup', 'nushuu', 'phlippi', 'bhfyp', 'schweiz', 'shots', 'chi', 'ethiopia', 'curryshrimp', 'shadow', 'shake', 'suitup', 'shape', 'stop', 'shop', 'sheep', 'shopnow', 'steps', 'sunup', 'ostia', 'shirt']"
+k mean cluster 66,raiseyouranchor,"['whatdoyouwanttobe', 'changeyourmindset', 'reisenfuerweltentdecker', 'rechargeyourmitochondria', 'rechargeyoursystems', 'bruisesbutmuchfun', 'thereisnooneanswer']"
+k mean cluster 67,bollywood,"['followfocus', 'spicyfood', 'mozzarellapomodoro', 'coupleworkout', 'rollsroyce']"
+k mean cluster 68,wegotworktodo,"['regularorgoofy', 'welovewhatwedo', 'angstvordiktatur']"
+k mean cluster 69,koffeinfrei,"['Dorfkinder', 'konditorei', 'coffeine', 'koffein', 'plastikfrei', 'koffeinbonbons', 'koffeinfreiemarry', 'officemanager', 'officecoffee']"
+k mean cluster 70,hotshots,"['antsboss', 'patriots', 'potatoes', 'hotsauce', 'hotsauces', 'hotstuff', 'hotsaucecompany', 'hottunes', 'hotnews', 'sheisnotlost', 'tfchotshots', 'letsdoit', 'honduras', 'snapshot', '6hourstogo', 'bosshomes', 'batshoes', 'dashoes', 'roteschuhe', 'thoughts']"
+k mean cluster 71,production,"['promotion', 'exhibition', 'productdesign', 'produktvideo', 'productcommercial', 'productshots', 'productioncompany', 'postproduction', 'productionoffice', 'preproduction', 'productive', 'postproductionstudio', 'videoproduction', 'animalprotection', 'tradition', 'localproduction', 'sprintnation', 'produkttest', 'produktneuheit', 'produktreview', 'extraction', 'productshot', 'producing', 'produciendo', 'vocalproduction', 'chefredaktion', 'rEVOLution']"
+k mean cluster 72,lend,"['kenya', 'weekend', 'clouds', 'read', 'london', 'gesund', 'lavendel', 'lernen', 'lendplatz', 'Island', 'lgbt', 'ente', 'lemon', 'spende', 'benakd', 'lendhafen', 'ready', 'abend', 'hund', 'linz', 'allesneu', 'kühlend', 'gewa', 'pets', 'red', 'island', 'dirndl', 'trend', 'hendl', 'lehre', 'selenium', 'lindos', 'needed', 'zelena', 'blond', 'doldendark']"
+k mean cluster 73,shoesofig,"['schokoriegel', 'suesstoffe', 'schönensonntag', 'shoesdaily', 'shoefashionista', 'shoes2021', 'shoes2020', 'shoesoftheweek', 'shoefie', 'shoesofinsta', 'shoeaholic', 'schokotiger', 'sachódsłońca']"
+k mean cluster 74,welovepr,"['cakelover', 'wildheart', 'recover', 'wertvoll', 'tealover', 'reload24', 'weloveourjob', 'lifelikepr', 'believer', 'gefülltepaprika', 'welovegraz']"
+k mean cluster 75,idealofswedencode,"['isrealstopkillingchildren', 'idealofsweden', 'kundenzufriedenheit', 'informationstechnologie']"
+k mean cluster 76,summervacation,"['birthdayvacation', 'summeredition', 'wuexecutiveacademy', 'summerfashion', 'sommercocktails', 'sommelierunion', 'feierlocation', 'hochzeitslocation', 'summermemories']"
+k mean cluster 77,flowerbouquet,"['followyourheart', 'naopercomeutempo', 'customerjourney']"
+k mean cluster 78,bloopers,"['rooftopviews', 'fkcojones', 'brothers', 'onlinkekurs', 'Olympics', 'blogpost', 'snooker', 'longlegs', 'maltesers', 'fluffsters', 'aufopfern', 'baloncesto']"
+k mean cluster 79,komminsteam,"['foodinsta', 'immunsystem', 'demacadamianutfarm', 'nieohnemeinteam', 'sorrynotvegan', 'bonussystem', 'rooibostea', 'blumenstrauß', 'modainsta']"
+k mean cluster 80,bestcostumeever,"['LoDeNosotrosEsUnSecreto', 'bestFoodFotoChallenge21', 'rhyhtmusinstrumentefürkinder', 'funtimestogether', 'bestteamever', 'bestcostume', 'verantwortungübernehmen']"
+k mean cluster 81,feltcutemightdeletelater,['frühstückistdiewichtigstemahlzeitdestages']
+k mean cluster 82,foodblogliebe,"['facebooklive', 'doorsofgreece']"
+k mean cluster 83,loveislove,"['hotsauceislife', 'pradeiserlove', 'lovelypeople', 'loveofmylife', 'lifewisdom', 'bakewithlove', 'flowerlove', 'lifestylemodel', 'liveshow', 'ilovemylife', 'conceptstore', 'lovetoshop', 'loveatthefirsttouch', 'ilovethiscity', 'popupstore', 'lifeischange', 'spreadlove', 'confiserie', 'lifeisgood', 'lovelyspot', 'forestlover', 'lifeislife', 'forestlove', 'lovelove']"
+k mean cluster 84,rolantrettl,"['roadtrippin', 'computersetup', 'asolasremix', 'airplanehotel', 'rocknroll', 'urlaubsgefühl', 'goldenretriever', 'urbanandstreet']"
+k mean cluster 85,motiondesign,"['3dmotiondesign', 'officedesign', 'studiodesign', 'motiondesigner', 'bosniaandherzegovina', 'motioncookingstudio', 'motioncookingontour', 'MotionKitchen', 'motionkitchen', 'interiordesign', 'recordingsession', 'lockdownbeschäftigung', 'footweardesign', 'costumedesign']"
+k mean cluster 86,usembassy,"['feedbacksystem', 'doublebass']"
+k mean cluster 87,zerowastebaby,"['zerogravitydubai', 'zerowaste', 'zahnpastatabs', 'metrocashandcarry', 'spaziergangmitbaby', 'verrücktnachbarry', 'zerowasteliving', 'zerowastevienna', 'zerowastegraz', 'turmwärterhaus']"
+k mean cluster 88,ginger,"['mindset', 'concert', 'winzer', 'winter', 'gönnen', 'burger', 'gingin', 'liquor', 'kaminfeuer', 'pinkgin', 'tigertiger', 'pioniere', 'hunger', 'dinkel', 'ingwer', 'gingershot', '1gsugar', 'heißhunger', 'pinscher', 'göneral', 'dinner', 'insel', 'kinder', 'Wieninger', 'weingut', 'wieninger', 'singen', 'gender', 'Winter', 'lingerie', 'vinyard', 'gymwear', 'singer', 'gönndir', 'winnetou', 'gleinkersee', 'inked', 'ottakringer', 'linsen', 'mingin', 'gingerbeer', 'gingerbrew', 'popsinger']"
+k mean cluster 89,shoesonfire,"['shorthairdontcare', 'espressomachine', 'eyebrowsonfleek', '14yearsonmyside', 'asiahausklagenfurt', 'selfconfidence', 'girlsonfire', 'changeyourvibe', 'großersonnstein', 'stringsonfire', 'stonesculpture', 'shoesofthefuture', 'heelsonfire', 'shoesforwomen', 'singersongwriter', 'WhereIsMyName']"
+k mean cluster 90,motheranddaughter,"['togetherwearestronger', 'motherhoodunplugged']"
+k mean cluster 91,wesolutions,"['constructiondays', 'thetoughquestions', 'jensonbutton', 'weingutjordan', 'bestlocation', 'selfisolation']"
+k mean cluster 92,pfeffersteak,"['wolfsrudelsportsteam', 'teufelstein', 'oeverseepark']"
+k mean cluster 93,socialmediaberatung,"['stoppsexuellebelästigung', 'socialmediamarketing', 'vollkommenunbezahltewerbung', 'itscalledpalestine', 'socialmediapause', 'socialmediaexperts', 'socialmediaagentur', 'socialmediabetreuung', 'socialmediatipps']"
+k mean cluster 94,socceraddict,"['successmindset', 'chocolateaddict', 'hotsauceaddict', 'styleaddicted', 'coffeeaddict', 'schauaufdich', 'winterlandschaft', 'sicheregastfreundschaft', 'dinnerandmusic', 'socialmedia', 'sanfrancisco']"
+k mean cluster 95,marmorschlössl,[]
+k mean cluster 96,mountaindiscover,"['whenisthispandemicover', 'mountainview', 'mountainlove', 'mountainbike', 'austriadiscover']"
+k mean cluster 97,beautifuldestinations,"['amazingdestinations', 'israelstopkillingpalestinainpeople', 'israelstealingpalestinainhomes', 'warumritualesowichtigsind', 'besutifuldestinations']"
+k mean cluster 98,toosexyforinstagram,[]
+k mean cluster 99,healthyicetea,"['schöckltrailarea', 'healthylifestyle', 'marryicetea', 'healthykitchen', 'ohhoneyicetea', 'endlichwiederda', 'togetherisbetter', 'carryicetea', 'sparmeetsmarryicetea', 'grazericetea', 'berriedicetea', 'strategicretreat', 'redheadsdoitbetter']"
+k mean cluster 100,satire,"['nature', 'safari', 'natur', 'spitalkirche', 'creative', 'desire', '19times', 'xmastime', 'teatime', 'bbqtime', 'spotify', 'imabird', 'ultimate', 'seminare', 'stärke', 'karriere', 'ask4more', 'patisserie', 'sugarfree', 'salatliebe', 'plasticfree', 'cutie', 'sushitime', 'sainttropez', 'onfire', 'mytime', 'patience', 'future', 'service', 'besttime', 'südafrika', 'safira', 'safiracode', 'stärker', 'stagetime', 'oltimer', 'seaside', 'snacktime', 'selfietime', 'datenkrake', 'sestrastore', 'patiserie', 'matetea', 'stadtpark', 'sellaskirt', 'fisalpine', 'catlife', 'sandwitch', 'sandsculpture', 'firsttime', 'statement', 'story', 'steirer', 'starre', 'tsambika', 'stairs', 'relaxtime', 'saftgibtkraft', 'latrappe', 'funtime']"
+k mean cluster 101,korneliaurkorn,['kirschbaumkraxln']
+k mean cluster 102,craneoperator,"['cannotbetamed', 'frauenempowerment', 'changetheratio', 'zahncremealternative', 'cellregeneration', 'tripleperform', 'schweizernatur', 'oneworldtradecenterobservatory', 'teamworkmakesthedreamwork']"
+k mean cluster 103,crafting,"['croatia', 'clubbing', 'cgartist', 'craftcocktails', 'handcrafted', 'coaching', 'podcasting', 'ermutigung', 'crowdfunding', 'consulting', 'painting', 'paintings', 'bratina', 'christinen', 'carinthia', 'earrings', 'coworking', 'roasting', 'marketing', 'carlossantana', 'exciting', 'curtainbangs', 'moderating', 'carting', 'racing', 'charming', 'graduating', 'craftfreunde', 'rating', 'craftbeerpics', 'craftbeer', 'craftbier', 'christtag', 'greetings', 'craftdrinkers']"
+k mean cluster 104,flüssigkeitszufuhr,['erfolgistkeinzufall']
+k mean cluster 105,gesundedrinks,"['zielundvisionskurs', 'kindundbusiness', 'gesundundlecker', 'gesundersnack', 'glutenfreedrinks']"
+k mean cluster 106,unique,"['update', 'urlaub', 'wunsche', 'universe', 'unispaß', 'uniquewomen', 'uniquewoman', 'sunfun']"
+k mean cluster 107,wko,"['wow', 'grow', 'ikea', 'kos', 'deko', 'wodka', 'eco', 'Snow', 'wimhof', 'uk', 'uknow']"
+k mean cluster 108,shoeshopping,"['onlineshopping', 'happyshopping', 'freeshipping', 'photoshooting', 'brooksrunning', 'zerowasteshopping', 'espressoorange', 'shoechallenge', 'latenightshopping']"
+k mean cluster 109,guabao,"['dubai', 'oprnabay', 'trabajo', 'guarana', 'guzman', 'guzinos', 'guocuon', 'xiajiao', 'gutpurbach', 'jumbo', 'guayusa', 'global', 'sunbath', 'yucatan', 'getaway', 'tugraz', 'gambas', 'grado', 'gulasch']"
+k mean cluster 110,wonderfultime,"['wonderfullife', 'powerfulwomen', 'wanderluster', 'arbeitenwoandereurlaubmachen', 'colorfullife', 'wonderfulplaces', 'onestepatatime', 'genderequality']"
+k mean cluster 111,thewaitisover,"['teamantirosinen', 'mutigdiewelteroberm', 'thejacksonsontour']"
+k mean cluster 112,dakommtwas,"['hardkombucha', 'farbloshatwas', 'dreamcometrue']"
+k mean cluster 113,grazlovers,"['1yearanniversary', 'grazgoals', 'chailover', 'chailovers', 'sealovers', 'glazedcarrots', 'carlovers', 'catlovers', 'grazcoffee', 'grazfoodspots', 'brunchlovers', 'colorcolourlovers', 'tealovers', 'grazermamas', 'icecreamlovers', 'travellovers', 'artlovers']"
+k mean cluster 114,europeanfootball,"['notoeuropeansuperleague', 'europeanleagueoffotball', 'europeanchampionship']"
+k mean cluster 115,legatorguitars,"['angosturabitters', 'bladeguitars', 'bestguitarist', 'newopportunities', 'eventorganisers']"
+k mean cluster 116,hm,"['tb', 'home', 'bf', 'dp', 'vw', 'bmw', 'hot', 'hob', 'hemp', '20', '200m', '100m', '60m', 'pham', 'DJ', 'LJ', 'gym', 'ti', 'bmx', '74', 'pr', 'hr', 'gg', 'bmw4', 'im70', 'dj', 'mom', 'hseq', 'mum', '3g', 'blm']"
+k mean cluster 117,breakfastingraz,"['breakfastideas', 'breakfastgoals', 'breakfastinbed', 'breakfastphotography', 'herrengassegraz', 'nieohnemeingraz', 'mariobarthtattoosalongraz', 'freizeitingraz', 'freeafghanistanpeople']"
+k mean cluster 118,AIPA,"['WAKEUPCALL', 'MIRUKfjL', 'GEWINNSPIEL', '25GRAMS', 'SPAR', 'IPA', 'AmericanIPA', 'VIENNA']"
+k mean cluster 119,meizeit,"['ameizing', 'spritzwein', 'icezeit', 'weinweltat', 'mermaid', 'weisheit', 'freiheit', 'mehrwert', 'seiduselbst', 'reiselust', 'mehlspeise', 'mahlzeit', 'teigrezept', 'eiweiß', 'trinkmahlzeit', 'bergzeit', 'rezepte', 'reelitfeelit', 'magazzin', 'rezept', 'süssigkeiten', 'checkitout', 'neuheit', 'veniceitaly', 'bleibdaheim', 'musikerin', 'zeitzuzweit', 'schenkdirzeit', 'freizeit', 'ferienzeit', 'dolcevita', 'wedidit', 'hochzeit', 'Freiheit', 'herbstzeit']"
+k mean cluster 120,hausberg,"['amberg', 'aufdenberg', 'eichberg', 'salzburg', 'hamburg', 'hausgemacht', 'Flugzeug', 'havehere', 'hautrein', 'hautpflege', 'meinhausbaugmbh', 'haushaltsgeräte', 'deutschlandsberg', 'ausflug', 'hofburg', 'stauballergie']"
+k mean cluster 121,puzzle,"['cpucooler', 'zutzga', 'pizzateig', 'pizza', 'bundle', 'pizzarecipe', 'lipizzaner', 'quelle', 'wuzzeln', 'wuzeln', 'puglia', 'upcycle', 'dunkles']"
+k mean cluster 122,motorsport,"['rooftopparty', 'monitorsetup', 'mentoringprogramm', 'kampfsport', 'motorcycle', 'interspar', 'musikalsbreitensport', 'lockstoffstore', 'proudtobepart', 'colorsplash', 'streetsport', 'stylereport', 'vogerlsalat', 'outdoorshoot', 'notoracism']"
+k mean cluster 123,pyhrnpriel,"['burnhardgrills', 'lehrbetrieb']"
+k mean cluster 124,sonnenuntergang,"['zumsonnenuntergang', 'winterwonderland', 'dontpanicitsorganic', 'stadtspaziergang', 'sonntagsspaziergang']"
+k mean cluster 125,emporioarmani,"['empowerment', 'espressomartini', 'certifiedorganic', 'extraordinaryview']"
+k mean cluster 126,europe,"['educate', 'heuvodka', 'alexrose', 'zefelipe', 'meulouca', 'bebrave', 'cherrypie', 'karaoke', 'grape', 'getränke', 'ourdoorsareopen', 'neuehomepage', 'murauer', 'keynote', 'neuewege', 'kuboapp', 'treueapp', 'bürotee', 'igerseurope', 'quadrupel']"
+k mean cluster 127,blondesandcookies,['bakingcookies']
+k mean cluster 128,tasty,"['happy', 'stadt', 'tlfa3000', 'party', 'teaparty', 'vacay', 'pasta', 'radatz', 'tacos', 'tarte', 'beauty', 'RunItFast', 'tesla', 'Party', 'tapeten', 'Taste', 'taste', 'test', 'teste', 'instastyle', 'classy', 'Barista', 'today', 'orsay', 'salty', 'namaste', 'bfast', 'tartu2018', 'loyalty', 'texte', 'feste', 'StarWarsDay', 'stpaulsbay', 'tavel', 'trappiste']"
+k mean cluster 129,donau,"['dynamo', 'nikolaus', 'lowfat', 'local', 'monday', 'donkey', 'dontquit', 'Sonne', 'honey', 'donuts', 'tongue', 'coronamusic', 'doggo', 'doggy', 'iongroup', 'dough', 'songs', 'drones', 'noway', 'norway', 'denmark', 'mcdonalds', 'donate', 'altedonau', 'donaustadt', 'donauinsel', 'neuedonau', 'noname']"
+k mean cluster 130,hobbybäcker,[]
+k mean cluster 131,hustle,"['little', 'australia', 'austin', 'eistee', 'sustainable', 'muscle', 'yourstyle', 'shirtless', 'hitze', 'Reusable', 'couplestyle', 'hundesitten', 'nährstoffe', 'kuschlige', 'justletmefly', 'hkbu2011', 'seggaucastle', 'historygeek', 'pusteblume', 'bottle', 'Angstgefühle', 'muster', 'bohostyle', 'lustig', 'tusche', 'aussie', 'buonnatale']"
+k mean cluster 132,viennacoffeelifestyle,"['drinkcoffeelikewine', 'makingcomplexitysimple']"
+k mean cluster 133,goodday,"['holiday', 'holidays', 'sunnyday', 'colddays', 'gowowcompany', 'lovelyday', 'niceday', 'gooddays', 'Holiday', 'foodgasm', 'covid19', 'goodluck', 'goodenergy', 'roséallday', 'snowyday', 'moodygram', 'foodgraz', 'coldday', 'workday', 'goodstart', 'prouddad', 'goodnews', 'footpain', 'humpday']"
+k mean cluster 134,zerowastebaby,[]
+k mean cluster 135,birkfeld,"['feedfeed', 'beigefeed', 'rcbirkfeld', 'bürohund', 'parkflair']"
+k mean cluster 136,forum1,"['forever', 'beforemytan', 'pwrwmn', 'kurkuma', 'Korcula', 'korcula', 'panorama']"
+k mean cluster 137,brunchhardorgohome,"['gohardorgohome', 'brunchpartnersincrime']"
+k mean cluster 138,bodypositivity,"['moodyportraits', 'positivity', 'staypositive', 'spreadpositivity', 'booomyourlimits']"
+k mean cluster 139,duft,"['luft360', 'gifts', 'dayoff', 'mut', 'buffet', 'diet', 'kunst', 'zukunft', 'saft', 'dart', 'brotduft', 'stuff', 'durst', 'dusk', 'duck', 'duften', 'nuts']"
+k mean cluster 140,fieldsofgold,"['pyramidsofgiza', 'oldbutgold', 'fightcoldwithcold', 'friendsnotfood', 'relaxedstateofmind']"
+k mean cluster 141,reeloqfeedback,"['thefeedfeedbaking', 'reeloqreview']"
+k mean cluster 142,downtowndubai,['youngandurban']
+k mean cluster 143,nutritionfirst,"['constructionwork', 'nutrition', 'internationalfriendship', 'inspirationalpost', 'nutrigenomics']"
+k mean cluster 144,medienhäuser,"['verenapausder', 'mediterranekueche', 'zeitzuhause', 'Medienhölle', 'seifenblasen', 'weddingmusic', 'medienundcorona']"
+k mean cluster 145,trennung,"['werbung', 'gönnung', 'greenjuice', 'awardwinning', 'fraueninführung', 'erektionsstoerung', 'entspannung', 'sportnahrung', 'großeeröffnung', 'Werbung', 'running', 'Eröffnung', 'trending', 'vorsichtigeöffnung', 'StreetArt', 'trendradar', 'opening', 'urbanjungle', 'entspannungpur', 'getrenntewege', 'kundenbindung', 'wiedereröffnung', 'treuepunkte', 'eröffnung', 'tretboot', 'neueröffnung', 'tarnanzug']"
+k mean cluster 146,valentinstag,"['valentinesday', 'happyvalentinesday', 'valentinstagsbrunch', 'valentinisstvegan', 'iamgettingold', 'newtoinsta', 'pausensindwichtig', 'vаlеntinеsеvеning']"
+k mean cluster 147,lovefotography,"['travelphotography', 'cinematograpgy', 'sophiagrabnerfotografie', 'stadtfotografie', 'livecolorfully', 'fotography', 'livecolourfully', 'lakephotography', 'productfotography']"
+k mean cluster 148,visionen,"['winwinwin', 'visitkärnten', 'bibione', 'vision', 'visionskurs', 'visionfinden', 'visionparis', 'visions', 'eisteeohneende', 'videodreh', 'dogcontent', 'visionnaire', 'decisions', 'heldinnen', 'saisonales', 'zischen', 'zirtronen', 'missiongame', 'missiongames', 'daslorenz', 'picknicken', 'Heldinnen', 'zitronen']"
+k mean cluster 149,OMotivoNaoEMaisVoce,[]
+k mean cluster 150,bierliebe,"['oberameise', 'ganzvielliebe', 'kaffeeliebe', 'biografiearbeit', 'ketoliebe', 'powerriegel', 'bergliebe', 'abenteuerleben', 'bergwiese', 'brotliebe', 'mehlliebe', 'likeforlikes', 'blutlimette', 'kinderlieder', 'teeliebe', 'wienliebe', 'altbauliebe', 'hoamatliebe', 'hamsterliebe', 'partnerbetriebe', 'hundeliebe', 'biermischgetränk', 'beerigesbier', 'verlieben', 'kinoliebe', 'sommerliebe', 'gaaaaanzvielliebe', 'wirliebenpr', 'verliebt', 'waldliebe', 'bittersweet', 'experience', 'bierfreunde', 'bierprobieren', 'bierfotos', 'bieredegarde', 'bierebrune', 'biertrinker', 'berlinvibes', 'berlinbreeze']"
+k mean cluster 151,niemogespac,"['onlinemodenschau', 'newmemoriestocome', 'wassermitgeschmack']"
+k mean cluster 152,redshift,"['redshift3d', 'berglandschaft', 'traumhaft', 'refreshing', 'trinkenhilft', 'kreativität', 'selbsthilfe', 'partnerschaft', 'kidslife', 'textkraft', 'leidenschaft', 'worldsfirst', 'redshoes', 'Freundschaft']"
+k mean cluster 153,textagentur,"['werbeagentur', 'textunsicher', 'visitklagenfurt', 'festamenina', 'fempreneur', 'rechargeyourdna', 'youngtalentscup', 'zeitindernatur', 'sentimental', 'techniccenter', 'gettogether', 'exittheroomklagenfurt', 'marketingagentur']"
+k mean cluster 154,spielraum,"['spielberg', 'raspberrysauce', 'spirituellercoach', 'spiegelglasur', 'spaziergang', 'ankerkraut', 'spitzkraut', 'spielsucht']"
+k mean cluster 155,mondaymotivation,"['hotsaucecollection', 'mittwochmotivation', 'businessmotivation', 'workoutmotivation', 'sportmotivation', '1minutemeditation', 'runningmotivation', 'tuesdaymotivation']"
+k mean cluster 156,projekt,"['hanfprojekt', 'tribeka', 'produkte']"
+k mean cluster 157,zerowastekitchen,"['mexikanischeküche', 'tastekitchen', 'garmischpartenkirchen', 'herzjesukirche', 'gerüchteküche', 'probiersmalmitgemütlichkeit']"
+k mean cluster 158,notserious,"['porterhouse', 'foodlicious', 'interieur', 'jetferros', 'netherlands', 'latteartlicious', 'whysoserious', 'concerttour', 'shoefielicious', 'angstvorvirus', 'echtsteirisch']"
+k mean cluster 159,stylishshoes,"['gschlodashower', 'bestneighborhood', 'shoesshoesshoes', 'stylingshoes', 'santamarinarhodes', 'streetsofrhodes']"
+k mean cluster 160,redsunset,"['sunset', 'growthmindset', 'moneymindset', 'coldsunnywheather', 'recommended', 'reisen2021', 'refinedsugarfree', 'wirfreuenunsaufeuch', 'needsummer', 'sunsset', 'vorstellungskraft', 'erfischungsgetränk', 'redcurrant']"
+k mean cluster 161,reparierenstattneukaufen,['reparierenistwertschätzen']
+k mean cluster 162,igersgrazontour,['igersvöcklabruck']
+k mean cluster 163,power,"['manpower', 'soccer', 'croword', 'sommer', 'tonicwater', 'october', 'powerwoman', 'powerwomxn', 'fempower', 'lowcarb', 'hotel', 'porto', 'Hotel', 'queer', 'pfizer', 'somer', 'pokebowl', 'poke', 'lofer', 'model', 'toes', 'opera', 'cover', 'toner', 'spider', 'elder', 'lowsugar', 'prater', 'powerteam', 'powerwomen', 'flower', 'prwork', 'glowup', 'ever', 'mother', 'powerful', 'radweg', 'porec', 'nowater', 'emmer', 'porter', 'popart', 'poster']"
+k mean cluster 164,solidaritywithafghanistan,['fullsolidaritywithafghanistan']
+k mean cluster 165,myseagullfriend,"['muscarisfrizzante', 'mysecretgardencafe']"
+k mean cluster 166,startupstory,"['writeyourstory', 'ownyourstory', 'startupkultur', 'startupcompany', 'startketo', 'startupspritzer', 'startupquotes', 'startuptipps', 'startuphelpingstartups', 'startuptips', 'startupaustria', 'startuppitch', 'fuckupstory', 'strumpfhose', 'startuplife', 'startupbusiness', 'startupscene', 'sparmeetscarry', 'startupflair', 'startupweek', 'startupjourney', 'markthartmannsdorf', 'starttoday']"
+k mean cluster 167,grancanaria,"['rafcamora', 'ibracadabra', 'grazaustria', 'sugarcanejuice', 'mitochondria', 'macadamia', 'parrotanafi', 'piazzasanmarco', 'bananabread']"
+k mean cluster 168,goodfood,"['foodporn', 'deliciousfood', 'seafood', 'soulfood', 'veggiefood', 'lookbook', 'foodschool', 'toogoodtogo', 'goodmood', 'lovefood', 'awesomefood', 'goodforthesoul', 'greatfood', 'GoodCoffee', 'velofood', 'notfood']"
+k mean cluster 169,rebe,"['blue', 'greece', 'nebel', 'incredible', 'relax', 'elbe', 'icetea', 'tee', 'texmex', 'Bebe', 'reggae', 'frisbee', 'liebe', 'gebäck', 'review', 'Icetea', 'hefe', 'memes', 'Grüße', 'recipe', 'recup', 'rewe', 'refresh', 'Brew', 'ruhe', 'gebäude', 'recipes', 'treue', 'kleber', 'rest', 'see', 'reset', 'tube', 'leben', 'ride', 'meme', 'schreiben', 'tree', 'concrete', 'wedge', 'größe', 'reis', 'grenze', 'tempeh', 'realbeauty', 'brews']"
+k mean cluster 170,livingthegoodlife,"['drivinghomeforchristmas', 'hikingtheglobe', 'schladmingrohrmoospichl']"
+k mean cluster 171,gründen,"['gmunden', 'greenscreen', 'bartender', 'gogreen', 'kärnten', 'gründer', 'gründung', 'gründerin', 'granola', 'trinken', 'grüntee', 'gedanken', 'garden', 'grandeblue']"
+k mean cluster 172,lecker,"['wetter', 'selce2k18', 'pancakes', 'leaves', 'applecider', 'icecream', 'megalecker', '1gzucker', 'bäcker', 'lohberger', 'blacktea', 'zucker', 'speaker', 'secret', 'teacher', 'lachen', 'leckerpizza', 'deuter', 'glücksgefühle', 'newcomer', 'leadersclub', 'texter', 'hecke', 'Blockade', 'likör', 'hockey']"
+k mean cluster 173,mamaundtochter,['rausausdemmuster']
+k mean cluster 174,hugo,"['choco', 'ouro', 'hello', 'auto', 'kubo', 'photo', 'humour', 'togo', 'zug', 'hygge']"
+k mean cluster 175,agentur,"['cleansetup', 'adventuretime', 'adventure', '7daysontour', 'allnatural', 'klagenfurt', 'mumpreneur', 'adventureblog', 'abenteuer', 'abenteurer', 'abenteuerlust', 'karriereturbo', 'hagebutte', 'alnatura', 'playpreneur', 'bassguitar', 'openair', 'agenturreindl', 'cafefotter', 'aperitif', 'agenturalltag', 'agenturleben', 'pragentur', 'agenturhund', 'arbeitswut']"
+k mean cluster 176,reel,"['green', 'dell', 'xeen', 'greed', 'sweet', 'beer', 'freesoul', 'feels', 'rolemodel', 'reels', 'mehl', 'riegel', 'butreal', 'israel', 'reeloq', 'Tesla', 'trettl', 'career', 'murelli', 'Travel', 'caramel', 'meer', 'deer', 'trees', 'cello', 'beef', 'Beef', 'Greek', 'yellow', 'gefühl', 'heels', 'ideen', 'noel']"
+k mean cluster 177,bestegäste,"['raststätte', 'wegotthetaste', 'besterkoch', 'bestmagazine', 'bestewahl', 'herrengasse', 'bestcousin', 'bestnephew', 'bestdrummer', 'bestergeschmack', 'esherbstelt']"
+k mean cluster 178,wonderful,"['7wondersoftheworld', 'woodentable', 'wanderlust', 'wohermusik', 'qualderwahl', 'weinviertel', 'wiederoffen', 'sunflowerfield', 'mindful', 'butdrivecarefully', 'colourful', 'waterfall', 'colorful', 'undercut']"
+k mean cluster 179,coelhinha,"['irmazinha', 'somethingnew', 'lovetheguinea', 'porcellana']"
+k mean cluster 180,tflers,"['colours', 'onlinekurs', 'tellers', 'fleisch', 'talents', 'tollepreise', 'tulips', 'effects', 'teledysk', 'tegelersee']"
+k mean cluster 181,reelsindia,"['rezeptidee', 'feeling22', 'reeloqselfie', 'charlesswindoll', 'bellaitalia', 'igersitalia', 'recordingstudio', 'acropolislindos', 'relajada']"
+k mean cluster 182,igersgrazontour,[]
+k mean cluster 183,droetker,"['kroatien', 'hardseltzer', 'godmother', 'shoemaker', 'together']"
+k mean cluster 184,foodphotography,"['photography', 'FoodPhotography', 'foodtography', 'foodtographyschool', 'monochromephotography', 'fashionphotography', 'canonphotography', 'outdoorphotography', 'photographer', 'foodphotographer', 'foodphotopraphy', 'cozumelphotographer', 'cityphotography', 'nightphotography', 'minimalphotography', 'animalphotography', 'castlephotography', 'flyingphotography', 'photpgraphy', 'productphotography', 'beerphotography']"
+k mean cluster 185,entrepreneurlife,"['machenistwiewollennurkrasser', 'sekundaerepflanzenstoffe', 'unseretürenstehenoffen', 'entrepreneurship', 'entrepreneur', 'underwaterlife', 'goldenretrieverlove']"
+k mean cluster 186,samstag,"['geburtstag', 'jahrestag', 'zahntabsl', 'snacktogo', 'carmushka', 'kapstadt', 'sansual', 'backstage', 'seastar', 'seiachtsam', 'sonntag', 'carryimspar', 'sonntags', 'earthismagic', 'vatertag', 'passage']"
+k mean cluster 187,fowers,"['flowers', 'noregrets', 'fkcojònes', 'flowergram', 'doers', 'fireworks', 'fromwhereistand', 'cofounders', 'flowerdress', 'models', 'jobwechsel', 'feiern', 'footwearnews']"
+k mean cluster 188,gymbassador,[]
+k mean cluster 189,horse,"['workspace', 'onset', 'sofresh', 'sofree', 'hoppl', 'torte', 'thcfree', 'herbst', 'homemade', 'horselove', 'asiahouse', 'ahorn', 'corgi', '25hours', '25hoursvienna', 'choose', '14hoursdone', 'hermes', 'hours', 'torten', 'hochwurzen', 'heroes']"
+k mean cluster 190,gesundfrühstücken,"['gesundsnacken', 'geschaeftentwickeln']"
+k mean cluster 191,leichtigkeit,"['placetovisit', 'grillzeitschönstezeit', 'achtsamkeit', 'sichtbarkeit', 'peinlichstermoment', 'tagdernachhaltigkeit', 'fakeittillumakeit', 'flüssigkeit', 'menschlichkeit', 'richtigerzeitpunkt', 'lorenzpicknickbox']"
+k mean cluster 192,anleitungen,"['appleipadpro', 'mussmanerlebthaben', 'wahrheitleben', 'belästigungvonfrauen', 'kleinunternehmen', 'apfelkuchen', 'zeitunglesen', 'Bestellungen', 'bedeutungvonnamen', 'wanderungen', 'anonymitätwahren', 'auszeitmitfreunden', 'brainisleseempfhelungen', 'feiernmitfreunden', 'feiernmitkindern']"
+k mean cluster 193,newadventures,"['catadventures', 'hikingadventures', 'adventuresahead', 'adventureseeker', 'reeloqadventure', 'traveladventure', 'traveladventures', 'newchallenges']"
+k mean cluster 194,village,"['vernissage', 'zuvielgegangen', 'fireplace', 'villach', 'vintage', 'airplane', 'billardcafe', 'billard', 'newpage', 'thirdplace', 'umfrage', 'timelapse', 'hilmwarte', 'metallallergie']"
+k mean cluster 195,inklusivesrestaurant,['inderruheliegtdiekraft']
+k mean cluster 196,guitarlover,"['Naturelover', 'ciderlover', 'spotifytakeover', 'mittelmeer', 'organichardseltzer', 'picturelover', 'guinessworldrecord', 'burgerlover', 'guitarist', 'guitarista', 'guitarrista', 'guitarsolo', 'guitarsolos', 'guitarlove', 'guitarlovers', 'guitarlife', 'femaleguitarplayer', 'naturelover', 'hinterstoder', 'gewitterwolken']"
+k mean cluster 197,strategy,"['strawberry1', 'sertanejo', 'strawberry', 'strategie', 'prstrategie', 'storyteller', 'austriatoday', 'austriatour', 'stradnerkogel']"
+k mean cluster 198,em,"['sea', 'tea', 'elf', 'germ', 'team', 'pet', 'atempo', 'epa']"
+k mean cluster 199,drinkstagram,"['bookstagram', 'drinkstarter', 'drinkstartup', 'meinestadtgraz', 'flowerstagram', 'drinksofinstagram', 'chinarestaurant', 'doitforthegram', 'drinkwasser', 'cloudstagram', 'drinkcraftnotcrap']"
+k mean cluster 200,anstossen,"['187strassenbande', 'ginstollen', 'zakynthosisland', 'abendessen', 'plantbased', 'skullandrosesenergy', 'bestofvegan', 'instrumente', 'dankbarsein', 'achtsamsein', 'placestovisit', 'spaßmusssein', 'lalehosmany']"
+k mean cluster 201,miraclesareeverywhere,[]
+k mean cluster 202,inthenews,"['findthemagic', 'awareness', 'mitmeinemädls', 'interview', 'mindfulness', 'igtvvideos', 'WithRefugees', 'igersthinkers', 'interessant', 'insiderockets', 'bytheocean', 'childoftheuniverse', 'marrynews', 'behindthescenes', 'idontgiveashit', 'ninewinewine', 'tüteneis', 'upinthesky']"
+k mean cluster 203,gutessen,"['delicatessen', 'bewusstessen', 'gesundessen', 'guess', 'gutenmorgen', 'gutscheineinlösen', 'mittagessen', 'gutelaunetee', 'gutessengraz', 'gitarrespielen', 'guteӏаunе', 'wirtesten']"
+k mean cluster 204,roggenbrot,"['dinkelbrot', 'vollkornbrot', 'butterbrot', 'lowcarbbrot', 'proteinbrot', 'logoutbrewon', 'rotweissrot']"
+k mean cluster 205,feminismus,"['hikingisfun', 'feminity', 'feminism', 'delicious', 'hibiskus', 'GemaltesHaus', 'skateboardingisfun', 'feminist', 'surrealismus', 'feiernmitmädels', 'schladmingtourismus']"
+k mean cluster 206,Topevent,"['1advent', 'xmaspresent', '3advent', '2advent', 'experiment', 'yogajedentag', 'kochenverbindet', 'announcement', 'kotelett']"
+k mean cluster 207,franzwimner,"['daswohnzimmer', 'frauenimbusiness', 'trinkwasser', 'friendsdinner', 'lorenzpicknick', 'fritzortner']"
+k mean cluster 208,veganbreakfast,"['instabreakfast', 'sweetbreakfast', 'latebreakfast', 'fotterbreakfastclub', 'bestbreakfast', 'veganfortheanimals', 'veganfortheplanet', 'riedenburgerbrauhaus']"
+k mean cluster 209,fridayvibes,"['springvibes', 'luxuryvibe', 'greecevibes', 'sundayvibes', 'morningvibes', 'italyvibes', 'thursdayvibes', 'fridayfeet']"
+k mean cluster 210,niemogespac,[]
+k mean cluster 211,streuselkuchen,"['joghurtkuchen', 'streetstyleluxe', 'wirliebenunserekunden', 'faschiertelaibchen']"
+k mean cluster 212,happytomeetyou,"['happyhalloween2020', 'happymoments']"
+k mean cluster 213,lookinggood,"['weekendmood', 'morningyogaflow', 'playingpool', 'lookingforward', 'lockdownmood', 'springmood', 'comingsoon', 'feelinggood', 'lookingmybest']"
+k mean cluster 214,skinproducts,"['execproducer', 'commercialproducer', 'hanfprodukte', 'hikinggadgets', 'femaleproducers', 'skinfluencer', 'saynotoracism']"
+k mean cluster 215,healthyco,[]
+k mean cluster 216,frauenrechte,"['frauennetzwerk', 'frauenfürfrauen', 'frauenpodcast', 'frauenunterstützenfrauen', 'frauensindschön', 'frauensindkeineobjekte', 'frauenkaffee', 'zitateundsprüche', 'frauenbusiness', 'frauenintechnik', 'frauenintech', 'frauenvorbilder', 'frauengeschichte', 'gefriergetrocknet', 'getrocknetefruechte', 'kreativegerichte', 'challengeaccepted', 'frauentag2020', 'rotefrüchte', 'öffnungsschritte', 'frankreich', 'warschauerbrücke']"
+k mean cluster 217,frohlichsein,"['herrlichejausen', 'köstlichkeiten', 'ehrlichkeit', 'herzlichkeit', 'pflanzlichesprotein', 'fabeltischdeckdich', 'prettylittleinspo', 'froheweihnachten', 'endlichfertig', 'frühlingsgefühle', 'frühlingsbeginn', 'frühlingsstimmung', 'frühlingserwachen', 'frühlingsblumen', 'frohlichkeit', 'glucklichsein', 'nachdenklichkeit', 'friedrichshafen', 'friedrichshain']"
+k mean cluster 218,hair,"['cairo', 'nairobi', 'flir', 'chai', 'hvar', 'hydra', 'hallein', 'rawr', 'nobehavior', 'lawif', 'hammer', 'longhair', 'haidi', 'haha', 'wavyhair', 'fair', 'nicehaircut', 'zadar', 'redhair', 'chaos', 'haut']"
+k mean cluster 219,learntoswim,['learnsomethingnew']
+k mean cluster 220,takecare,"['timeular', 'saltedcaramel', 'landscape', 'marketgarden', 'takeover', 'malozarace', 'datecake', 'cheesecake', 'starkefrauen', 'oralcare', 'mitocare', 'shakespeare', 'Supercharger', 'takeyourchance', 'wakepark', 'wakeboard', 'timetowake', 'selfcare', 'skincare', 'atmosphare', 'timesquare', 'takebreaks', 'neuekarte', 'warmcore', 'dankefüralles', 'justtakeapicture', 'taketime', 'takeabreak', 'tarteflambee', 'flamecake', 'secretcave', 'Dänemark', 'danemark', 'fakeleather', 'royaheydari']"
+k mean cluster 221,jhornig,"['networking', 'cozymorning', 'jumphigh', 'honig', 'jhornigcoffee', 'zitronig', 'wording', 'boholiving', 'morning']"
+k mean cluster 222,artinspiration,"['administration', 'inspiration', 'ginspiration', 'dailyinspiration', 'outfitinspiration', 'noartificialanything', 'boudoirinspiration', 'styleinspirations', 'aktiveregeneration', 'artistsintimesofcorona', 'artinstallation', 'artinspirations', 'interiorinspiration', 'travelinspiration', 'natureinspiration', 'againstdeportations', 'againstracism']"
+k mean cluster 223,city,"['diy', 'cine', 'cozy', 'fifty9', 'cute', 'cityview', 'nirto', 'panchito', 'citytrip', 'crazy', 'juicy', 'cats', 'itg', 'citybreak', 'kitty', 'society', 'comfy']"
+k mean cluster 224,birthday,"['beachdays', 'beachday', 'dirtythirty', 'birthdaybash', 'birthdaygirl', 'prebirthday', 'pretendbirthday', 'eliasbirthday', 'birthdaycake', 'happybirthdaytome', 'selfietoday', 'earthday', 'bisexual', 'bibimbap', 'cybermonday', 'balthasar', 'birthdaytrip', 'enjoyingmybirthday', 'ilovemybirthday', 'happybirthday', 'justtoday']"
+k mean cluster 225,autumn,"['autumncolors', 'lateautumn', 'autumnvibes', 'autorin', 'nutzhanf', 'august', 'capetown', 'mauntain', 'artemis', 'austrian']"
+k mean cluster 226,yogagirl,[]
+k mean cluster 227,hohoho,"['nohomo', 'alcohol', 'fofinho', 'howtodo', 'hothothot']"
+k mean cluster 228,österreichweit,"['österreichpodcast', 'aufstehenkronerichtenweitergehen', 'österreichischeküche', 'österreich', 'Aussergewöhnlich', '3sternemichelin', 'besterarbeitsplatz', 'Österreich', 'bittebeehrensiemichwieder', 'österreichischemedien', 'ruheundgemütlichkeit', 'öffentlicherreichbar', 'angstvorkrankheit', 'unverträglichkeit', 'meaterrabeachclub', 'österreichurlaub', 'österreichliebe', 'österreichtour', 'osterreichtrip']"
+k mean cluster 229,essenszitate,"['atptenniskitzbühel', 'essensfotografie', 'essenszitat', 'lifelessonswithnele', 'essensliebhaber', 'restingbitchface']"
+k mean cluster 230,athletics,"['withmybitches', 'authentisch', 'fabeltisch', 'authenticity', 'ksvathletics', 'austrianathletics', 'atletica', 'Paralympics', 'abholservice', 'southamerica', 'schreibtipps', 'cosmetics', 'Iamtheluckiestgirl', 'lastcallpitches', 'schreibtisch', 'statementpiece', 'applewine']"
+k mean cluster 231,wirtschaftskammer,"['bärenschützklamm', 'wissenistfürimmer', 'wirtschaftskammersalzburg', 'gesellschaftskritisch', 'warschauerstrasse']"
+k mean cluster 232,cocktailmixing,['cocktailbar']
+k mean cluster 233,schnappschuss,"['eisteemitschuss', 'schönebescherung', 'schnäppchen', 'Ursachenforschung', 'jvpmachtschule']"
+k mean cluster 234,goodoltimes,"['foodilicious', 'noadditives', 'aperoltime']"
+k mean cluster 235,novapark,"['nosugar', '2daysapart', 'murpark', 'centralpark', 'nowavailable']"
+k mean cluster 236,ifyoureabirdimabird,[]
+k mean cluster 237,girlie,"['gymlife', 'giraffe', 'girlstrip', 'vwgolf8rline', 'girls', 'girlcrush', 'getreide', 'biblife', 'girlswithbelt', 'gaylife', 'girl', 'girly', 'grimace', 'billie', 'paradies', 'violin', 'pirate', 'veggielife']"
+k mean cluster 238,workweekend,"['happyweekend', 'karriereundkind', 'Newworkwirbel']"
+k mean cluster 239,shoelovers,"['naturelovers', 'foodlovers', 'speechless', 'foodlover', 'booklover', 'theoneilovethemost', 'sushilovers', 'seafoodlover', 'winelovers', 'shoemakers', 'shoelover', 'shoeslover', 'shoelove', 'shoefilicious', 'shadeloops', 'castlelovers', 'lakelovers']"
+k mean cluster 240,foryou,"['sourdough', 'foryourlove', 'workout', 'follow', 'strymon', 'soyyogurt', 'gorgeous', 'followus', 'floracola']"
+k mean cluster 241,dalmatien,"['palmtrees', 'kalorien', 'kasematten', 'meliavienna', 'digitalnatives', 'sozialemedien']"
+k mean cluster 242,autumn,[]
+k mean cluster 243,newyear,"['happynewyear', 'newfamilymember', 'newchapter', 'newcar', '124years', 'hellyeah', 'newspaper', 'newweek', 'newWay', 'neuimregal', 'newyearseve', 'newyears', 'nestea', 'playhard', 'newtrick', 'newphew', 'newmusic', 'newmemories', 'thisyear', 'newvideo', 'newclient', 'webinar', 'newstart', 'newstory', 'neustart']"
+k mean cluster 244,competition,"['workstation', 'vwpoloedition', 'limitededition', 'fermentation', 'Fermentation', 'nocompetition', 'nocompetitionhere', 'baliedition', 'couplefashion', 'concentration', 'communication', 'kommunikation', 'couchpotatoe', 'b2bcommunication', 'worthamillion']"
+k mean cluster 245,redwine,"['rendering', 'redarmy', 'wedding', 'pudding', 'gewinne', 'gewinn', 'heroine', 'newin', 'redhairdontcare', 'freetime', 'tribuswinkel']"
+k mean cluster 246,believeandyouwillachieve,[]
+k mean cluster 247,bücherliebe,"['beachvolleyball', 'bucketlist', 'büchersüchtig', 'bücher2021', 'backenistliebe', 'backenmitliebe', 'kochenmitliebe', 'kuchenliebe', 'bucketlisthikes', 'kombuchafermented', 'bäckereiöfferl', 'schenkdirliebe', 'brotbackenmitliebe', 'brotbackenistliebe', 'auracherlöchl']"
+k mean cluster 248,goodoutfit,"['sourdoughpizza', 'foodneuheit', 'blackoutfit', 'topofthemountain', 'coldbutfun', 'winteroutfit', 'coupleoutfits', 'statementoutfit']"
+k mean cluster 249,localgrown,"['lockdown', 'podcastfrauen', 'Lockdown', 'botanicalgarden', 'lockdown2021', 'localhero']"
+k mean cluster 250,verlosung,"['advertising', 'berufung', 'vernetzung', 'beziehung', 'reservierung', 'veromoda', 'erfrischung', 'überraschungsbox', 'verlosungen', 'verlosen', 'überraschung', 'Verlosung', 'veranstaltung', 'lehrlingsausbildung', 'verpackung', 'everyblossomisablessing']"
+k mean cluster 251,monkseal,"['melodicmetal', 'monogramcc', 'cocktail', 'lookcasual', 'rankweil', 'hannakristall', 'mirwaiswakil']"
+k mean cluster 252,sortudo,"['cgstudio', 'filmstudio', 'vfxstudio', 'studio', 'soproudofyou', 'vortrag', 'jdsportsat', 'vorfreude', 'studo']"
+k mean cluster 253,gewinnspiel,"['gewinnspiel2021', 'Gewinnspiel', 'guineapigs']"
+k mean cluster 254,Unterbewusstsein,"['studentmussmansein', 'unterbewusstsein']"
+k mean cluster 255,inbloom,"['lightroom', 'lightroomcc', 'indoors', 'inselpag']"
+k mean cluster 256,nylons,"['falcons', 'nylonlegs', 'balloons', 'lyrics', 'funnydogs', 'ceylon']"
+k mean cluster 257,veranstaltungskommunikation,[]
+k mean cluster 258,zweibeiner,"['blumensteiner', 'cafébesitzer', 'weintrinken', 'vierbeiner', 'weintrinker', 'zeitmitkindern']"
+k mean cluster 259,vollgut,"['coconut', 'edlesgut', 'immervollgraz', 'rollout', 'vocalist', 'violinist', 'goldenlight']"
+k mean cluster 260,rhodes,"['cookies', 'barjokes', 'foodies', 'shadows', 'qrcodes', 'noodels', 'riddles', 'GoodNews', 'stones', 'shoes', 'rhodescity', 'rhodesoldtown', 'dryhopped']"
+k mean cluster 261,cupoftea,"['icedcoffee', 'ycuandoyotevi', 'bunacoffee', 'icecoffee', 'corporatePR', 'corporatepr']"
+k mean cluster 262,throwbackthursday,[]
+k mean cluster 263,riegersburg,"['icezeitsalzburg', 'igershamburg', 'igerssalzburg', 'seiersberg', 'stegersbach', 'ersteberührung', 'exittheroomsalzburg', 'krimiheldensalzburg', 'pragentursalzburg', 'dieriegersburg', 'riegersburgcastle', 'riegersburgblick']"
+k mean cluster 264,benq,"['best', 'benqsw270c', 'bbq', 'belt', 'berg', '2bear', 'xberg']"
+k mean cluster 265,asparagus,"['santaclaus', 'zitamartus', 'asiahaus', 'asiahauspackages', 'equalrights', 'washparkmandl', 'alwaysbusy']"
+k mean cluster 266,BabyYoSiempreMeVengoContigo,[]
+k mean cluster 267,spar,"['sports', 'spread', 'snack', 'snacks', 'skal', 'steak', 'sara', 'sport', 'sugar', 'spray', 'share', 'apps', 'pur', 'spaß', 'park', 'spass', 'splash', 'star', 'stars', 'spinat', 'sixpack', 'skrrt', 'super']"
+k mean cluster 268,catsday,"['cutecat', 'catgoals', 'pancakeday', 'saturday', 'happyday', 'wednesday', 'rainyday', 'hrvatska', 'cuatrobabys', 'chestday', 'mothersday', 'thesedays', 'carrymeetsspar', 'catsagram', 'alwayslazy', 'fathersday', 'fathersday2020']"
+k mean cluster 269,destinationhollywood,['theviperroomhollywood']
+k mean cluster 270,sammeln,"['summer', 'sommer21', 'Himmel', 'gaymen', 'semmel', 'sommelier', 'seashell', 'sandals', 'lacheln', 'stammkunden', 'schwimmen']"
+k mean cluster 271,chilis,"['chemists', 'czechrepublic', 'chillis', 'chailatte', 'chilisauce', 'chilisoße', 'chili', 'chilicocktail', 'chiquita', 'chefin', 'zucchini', 'nachspeise', 'cheflife', 'michelin', 'buildings', 'heimisch', 'chill', 'child', 'things', 'acropolis', 'critics']"
+k mean cluster 272,doggylove,"['dowhatyoulove', 'dogsofmylife', 'yogalove', 'corgilove', 'berrylove', 'doglove']"
+k mean cluster 273,steirischercider,"['steirischguad', 'sächsischeschweiz', 'steirischesbackhendl', 'italienischeküche', 'vegetarischerezepte', 'kulinarischereise', 'steirischewirtschaft', 'osterwochenende', 'familieschaerfcoffee', 'steirischerbodensee', 'ohnetierischeprodukte']"
+k mean cluster 274,beertasting,"['embarrassing', 'gintasting', 'beeftatar', 'geburtstagskind', '11errösti', 'beforequarantine', '1meterabstand', 'sweetestdog', 'multitasking', 'berichterstattung', 'cidertasting', 'weiberfastnаcht']"
+k mean cluster 275,Silvester2k16,['lakefestival2016']
+k mean cluster 276,lovenature,"['lovewhatwedo', 'lovewhatareyoudoing', 'lavendeltarte', 'TravelCaptures', 'florenceItaly', 'giveawaytime', 'companyculture', 'liveonstage', 'enjoynature', 'lovemynewbabe', 'neuermonatneuekarte', 'longexposure', 'lovemycamera', 'lovewhatido', 'lehrestattleere', 'respectnature', 'treesinnature']"
+k mean cluster 277,guabao,[]
+k mean cluster 278,formel1,"['formulae', 'formulaone', 'outdoormöbel', 'fairment', 'kosmetik', 'farmer', 'porcelain', 'farmerlife', 'formula1', 'forelle']"
+k mean cluster 279,blüten,"['bestes', 'oldtown', 'plätzchen', 'oliven', 'bratee', 'bratan', 'bleibtgesund', 'blues', 'blade', 'blumen', 'belohnen', 'bildein', 'kittens', 'kitten', 'biotee', 'blühen']"
+k mean cluster 280,jetztauchbeiuns,"['jetztistderrichtigezeitpunkt', 'letzteSchulwoche']"
+k mean cluster 281,dec,"['dxb', 'dji', 'ksc', 'delicy', 'detox', 'ytc21', 'decor', 'dog', 'fbc', 'pic', 'idea', 'check']"
+k mean cluster 282,luna,"['usa', 'sunday', 'ljubljana', 'ynwa', 'sunny', 'lunay', 'quinoa', 'Club', 'lunch', 'guya', 'funny', 'funday', 'launch', 'ljubac', 'aula', 'sunray', 'planai']"
+k mean cluster 283,strudel,"['kitzbühel', 'struktur', 'apfelstrudel', 'strudelteig', 'yanasteudel', 'dschungel', 'sprudel', 'student']"
+k mean cluster 284,mohntorte,"['3monitors', 'zahlentorte', 'mentorin', 'schokotorte', 'kochschürze', 'rooibostee', 'mountaintop', 'rosengarten', 'worthafortune', 'menükarte', 'dіnnеrtіme']"
+k mean cluster 285,cassis,"['nuncamais', 'maisgries', 'nussmus', 'canvas', 'passion', 'bassline', 'cacinspo', 'dnaanalysis', 'classic', 'oceanside', 'cessna']"
+k mean cluster 286,jan,[]
+k mean cluster 287,perfectfit,"['perfectmatch', 'notperfectbutperfect', 'perfectday', 'perfectmoment', 'aperitifcocktails', 'perfectwork', 'perfectevening']"
+k mean cluster 288,beerlovers,"['sevenworldwonders', 'beerporn', 'bbqlovers', 'beforeitgotmessy', 'femalefounders', '11erröstilovers', 'feetlovers', 'femalerolemodels', 'beerigbierig', 'heelslover', 'beveridgers', 'beerlove', 'beerblogger', 'beernerds', 'beerreview', 'beeradvocate', 'ciderlovers', 'beermates', 'genderdiversity']"
+k mean cluster 289,beersofinstagram,"['carsofinstagram', 'cocktailsofinstagram', 'catsofinstagram', 'readersofinstagram', 'podcastersofinstagram', 'reelsinstagram', 'foodiesofinstagram', 'guitaristsofinstagram', 'flowersofinstagram', 'meerschweinchenmama', 'goldenretrieversofinstagram', 'artistsoninstagram', 'shoesofinstagram', 'artofinstagram', 'vegansofinstagram', 'doorsofinstagram', 'reelsofinstagram', 'natureofinstagram', 'treesofinstagram', 'beerofinstagram']"
+k mean cluster 290,stronggirl,"['Coronavirus', 'justtwogirls', 'hikinggirl', 'strongerlabel', 'stronger', 'austriangirl', 'coronavirus', 'zitronigsüß', 'stringquintet', 'farmergirl']"
+k mean cluster 291,morningslikethis,['andjustlikethat']
+k mean cluster 292,publicrelationslife,"['quemtacomelatacomsorte', 'publicrelations', 'publicrealtionsagency']"
+k mean cluster 293,modernoffice,"['morningrunofficial', 'odereinfachalles', 'coldbrewcoffee', 'colorsofgreece']"
+k mean cluster 294,bestenkinderderwelt,['bestenkinderwelt']
+k mean cluster 295,favoriteplaceonearth,[]
+k mean cluster 296,cessna152pilot,"['cessna152', 'cessna152lovers', 'cessna152aerobat', 'cessna152flying']"
+k mean cluster 297,reiseblogger,"['curticebrothers', 'cheeseburger', 'munichblogger', 'fashionblogger', 'wienerblogger', 'viennablogger', 'fitnessblogger', 'Reisetbauer', 'reisetbauer', 'lifestyleblogger', 'kaerntenbloggt', 'styleblogger', 'bierblogger', 'drinkblogger']"
+k mean cluster 298,kommunikationsberater,"['communicationsmanager', 'kommunikationsarbeit', 'kommunikationsexperten', 'kommunikationsstrategie', 'kommunikationsberatung', 'kommunikationsagentur', 'kommunizierenaufaufaugenhöhe', 'kommunikationskonzept', 'kommunikationinderkrise', 'kommunikationistalles', 'kommunikationsbedarf']"
+k mean cluster 299,starmap,"['sorrymama', 'styria', 'barman', 'startup', 'dearmara', 'startups', 'shaomai', 'seascape', 'seacoast', 'textmap', 'schaumbad', 'startnow', 'starwars', 'staysafe']"
+k mean cluster 300,gegönnt,"['gegengewalt', 'gohanna']"
+k mean cluster 301,felizcumpleaños,['felizdiadosnamorados']
+k mean cluster 302,strongwomen,"['springiscoming', 'strongertogether', 'internationalwomensday', 'verwoehnmoment', 'veromodawomen', 'skitourengehen', 'strongercode', 'strongersweden', 'inspiringmoments', 'getrockneteblumen', 'trockenblumen', 'spritzigemomente', 'spritzigeMomente', 'gastronomieszene']"
+k mean cluster 303,biber,"['river', 'bleiburg', 'mybitches', 'uber', 'Bigbertha', 'library', 'bilder', 'beberhexa', 'gojiberry', 'bier', 'biketour', 'zider']"
+k mean cluster 304,umsetzung,"['aufstellung', 'wertschätzung', 'empfehlung', 'wertschatzung', 'mesmerizing', 'Waschzwang']"
+k mean cluster 305,christmastime,"['christbaum', 'christmasiscoming', 'christmastree', 'christmas2020', 'christmasathome', 'christmas', 'christstollen', 'jederistmusikalisch', 'christinenbrunnen', 'zischfrischamtisch', 'apéritiftime', 'schönsteaussicht', 'christmasday', 'whereismyname']"
+k mean cluster 306,dailylife,"['sailinglife', 'wildlife', 'citylife', 'mainlyseltzer', 'healtylife', 'dailypost', 'qualitytime', 'enjoylife', 'happylife', 'familytime', 'musicismylife', 'dailyroutine', 'earlybird', 'marrykida', 'tattoolife', 'officelife', 'dairyfree']"
+k mean cluster 307,wermouth,"['wienerroither', 'bergfuchs', 'wermut', 'wegotthis', 'wermuth']"
+k mean cluster 308,dontwannawaitinvain,[]
+k mean cluster 309,pearls,"['plants', 'playlist', 'pineapple', 'plexiglas', 'berrys', 'paros']"
+k mean cluster 310,wanderequipment,"['personaldevelopment', 'ehrenwortgenussmomente', 'hikingequipment', 'feeleverymoment', 'selfdevelopment']"
+k mean cluster 311,beauties,"['beautiful', 'beachwaves', 'xparticles', 'berries', 'brownies', 'cuties', 'bergsteiger', 'bestchefs', 'beachvibes', 'besties', 'kreatives', 'beautysalon']"
+k mean cluster 312,kooperation,"['collaboration', 'regeneration', 'konzentration', 'cooperation', 'loopstation', 'corporatewording', 'kooperationspartner', 'kooperationssuche', 'kuchenaktion']"
+k mean cluster 313,asianfoods,"['fermentedfoods', 'mexicanfood', 'asianfood', 'superfoods', 'germanfoods', 'asianfoodforlife', 'asianfusion', 'asiancuisine', 'unusualfood', 'diyfoodys']"
+k mean cluster 314,balconyconcert,"['fashioncontent', 'balkonkonzert', 'rockconcert']"
+k mean cluster 315,kempinski,"['teppanyaki', 'keepitsimple', 'okonomiyaki', 'gemeinsam']"
+k mean cluster 316,turewaji,"['throwback', 'surrealism', 'teriyaki']"
+k mean cluster 317,gaumenfreude,"['lebensfreude', 'glaubenssätze', 'herzensfreude', 'innerefreude', 'gewaltgegenfrauen', 'eisteefreunde', 'flauschigerfreund', 'cappuccinoforsure', 'gaumenfreuden', 'Gaumenfreude', 'glutenfree', 'zeitmitfreunden']"
+k mean cluster 318,Depotonline,"['timetoshine', 'thehotsideoflife', 'capetownlove', 'depotonline']"
+k mean cluster 319,salad,"['sandplatz', 'belgrad', 'salami', 'balkan', 'roastedsalad', 'falcao', 'bosslady', 'kanada', 'selfmade', 'elsalvador', 'sales', 'salat', '30grad', 'asalways']"
+k mean cluster 320,mentalhealth,"['stayhealthy', 'instahealth', 'heartaberherzlich', 'virtualreality', 'americanpaleale']"
+k mean cluster 321,neumann,"['feuerwehrmann', 'cinema4d', 'newlaunch', 'enemalpin', 'newsmagazine', 'germany', 'neuimladen', 'yingundyang', 'neukunden', 'consultant']"
+k mean cluster 322,beautifulsky,"['beautifulafrica', 'beautifulview', 'beautifulaustria', 'beautifullake']"
+k mean cluster 323,tomshotsauce,"['tomshotstuff', 'fortheloveofhotsauce', 'toohottohandle']"
+k mean cluster 324,desserts,"['desksetup', 'dresslikeparisian', 'dessertwagen', 'deutschrap', 'jdsports', 'desperate', 'getsomerest']"
+k mean cluster 325,foodpornography,"['foodspringfamily', 'dontworrybehappy']"
+k mean cluster 326,klarheit,"['wahrheit', 'danbarkeit', 'kreativarbeit', 'urlaubdaheim']"
+k mean cluster 327,munichfoodie,"['munichfood', 'grazerfoodie', 'myunicornlife', 'humanrightsforall']"
+k mean cluster 328,eatinghealthy,"['internationaleküche', 'asiatischeküche', 'excitingtimesahead']"
+k mean cluster 329,bahnhof,"['Zakynthos', 'nahrhaft', 'landhaushof', 'bauernhof', 'batshoe', 'bauchgefühl']"
+k mean cluster 330,wanderequipment,[]
+k mean cluster 331,kaufsucht,"['aufschlag', 'warumnicht', 'mehrfrucht', 'nikotinsucht', 'handysucht', 'kaffeesucht', 'arbeitssucht', 'calumscott']"
+k mean cluster 332,pressetext,"['premierepro', 'espressotonic', 'pressearbeit', 'freshstart']"
+k mean cluster 333,somuchlove,"['hotsaucelover', 'kombuchalovers', 'shotwithlove', 'somuchloveforthesepeople']"
+k mean cluster 334,zerowasteaustria,[]
+k mean cluster 335,sensualshots,['sonntagsmodus']
+k mean cluster 336,madeinitalyshoes,[]
+k mean cluster 337,wedgeheels,[]
+k mean cluster 338,veganpower,"['kernölpower', 'plantpower', 'veganprotein', 'headbrewer', 'knowledgeispower', 'veganepizza', 'veganpizza', 'veganslovenia', 'vegandessert']"
+k mean cluster 339,yogis,"['foggy', 'twogirls', 'yoga', 'exotisch', 'yogapraxis', 'yogini', 'yoni', 'comic', 'kages', 'noeggs']"
+k mean cluster 340,ginmarry,"['giveaway', 'bobmarley', 'verrücktnachmarry', 'somethingaboutmarry', 'drinkmarry', 'bemymarry', 'dinnerparty']"
+k mean cluster 341,finnish,"['tennis', 'fitness', 'pflanzlich', 'japanisch', 'fernweh', 'pfirsich', 'fairness', 'finneas', 'finisher', 'finedining', 'finemusic', 'finals', 'winning']"
+k mean cluster 342,instabeer,"['instamaterial', 'instafeast', 'instadayli', 'instamoment', 'instarunners', 'instavienna', 'instacovers', 'instasinger', 'instaphoto', 'instarunner', 'instatea', 'bestjobever', 'instacats', 'instashoes', 'fashionstatement', 'lightspeed', 'wildstrawberry', 'instabier', 'instabeers', 'instaliquor', 'instacider', 'germanbeer', 'danishbeer', 'festtagsbier']"
+k mean cluster 343,newyearscelebration,['newyearsresolution']
+k mean cluster 344,motivieren,"['musicvideo', 'meetingarea', 'mutmacherin', 'manifestieren', 'acaipueree', 'positivemindset', 'mutigdiewelterobern', 'fotografieren', 'dobiniherdogherihin', 'kommunizieren', 'mobilecranes', 'mobilecrane', 'bedifferent', 'nominierung']"
+k mean cluster 345,styling,"['sailing', 'smiling', 'healing', 'stunning', 'myking', 'styleinspo', 'schulung', 'stockings', 'recycling', 'scarlino', 'pitching', 'sting', 'dumplings', 'cooling', 'styriagram', 'flying', 'skyflying']"
+k mean cluster 346,slowmotion,"['slowdown', 'showkitchen', 'theshowmustgoon']"
+k mean cluster 347,liebeaufdenerstenschluck,[]
+k mean cluster 348,schloßberggraz,"['schloßberg', 'schubertkinograz', 'daslorenzgraz']"
+k mean cluster 349,shoesaddict,"['steaksandwich', 'musicaddict', 'shoearchitect', 'shoeaddict', 'shoestylist', 'shoesfashionista']"
+k mean cluster 350,businessmodelling,"['israelstopthekilling', 'guinessworldrecords', 'businessmodel', 'businesswriting', 'cutenessoverload']"
+k mean cluster 351,SafiraShine,['dariocecchini']
+k mean cluster 352,brathuhn,['breatheagain']
+k mean cluster 353,sparen,"['zugfahren', 'sweden', 'apron', 'sophialoren', 'speakerin', 'spices', 'sprint', 'spargel', 'farben', 'shaken', 'testpaket', 'spazierengehen', 'transparency', 'spazieren', 'geldsparen', 'entspannen', 'rosegarden', 'spacebuns', 'augarten', 'schatten', 'staygreen', 'skygarden', 'Skifahren']"
+k mean cluster 354,happyiris,"['happyme', 'happydunes', 'happyplace', 'onehappyiris', 'happiness', 'happygirl', 'happyfriday', 'happytimes', 'happypeppi', 'happyfall', 'happyface', 'happyholidays', 'hapaglloydcruises', 'happyvibes', 'happyus', 'happykid', 'apéritif', 'happyweek']"
+k mean cluster 355,ajdephotoshop,[]
+k mean cluster 356,nachhaltigleben,"['nachhaltigkeit', 'nachhaltig', 'eigenewahrheitleben', 'nachhaltigerschmuck', 'diestadtmeineslebens', 'nachhaltigkochen', 'nachhaltigimalltag', 'nachhaltigeinkaufen', 'nachhaltigingraz', 'nachhaltigeswirtschaften']"
+k mean cluster 357,sonnenschein,"['bienenschutz', 'guidemichelin', 'schminkenodernichtschminken', 'mundnasenschutz', 'ressourcenschonen', 'kochenmitwein', 'konsumentenschutz', 'sonntagsbeschäftigung', 'sonntagnachmittag']"
+k mean cluster 358,italianfood,"['indianfood', 'pearlupyourfood', 'italianstyle', 'qualityfood', 'takeawayfood', 'plantbasedfood']"
+k mean cluster 359,khcbrunch,"['rotbusch', 'lambrusco']"
+k mean cluster 360,sommerzeit,"['commercial', 'sommermotto', 'sommerdrink', 'summerdress', 'summeroutfit', 'sommelierlife', 'sommeliers', 'sommelerie', 'sommer2021', 'sommerdessert', 'sommergetränk', 'sommeraperitif', 'summerconcert', 'summernight', 'schönezeit', 'summernights', 'zusammenarbeit', 'somerset']"
+k mean cluster 361,bruckandermur,"['verrucktnachmarry', 'blackandwhite', 'trackandfield', 'verruecktnachmarry']"
+k mean cluster 362,blackinblack,"['blacklivesmatter', 'BlackGirlMagic', 'bestworkingplace', 'backontrack', 'pitchinglane', '5länderblick', 'blackisthenewblack', 'blackcatclub']"
+k mean cluster 363,lukeskywalker,[]
+k mean cluster 364,letsgooutout,"['trustyourgut', 'outdoorworkout']"
+k mean cluster 365,readyforaction,"['readyforsnow', 'environmentalprotection', 'ReadyForRestart', 'readyfortakeoff']"
+k mean cluster 366,awesomedrinks,[]
+k mean cluster 367,freiheitsweg,"['vogelgezwitscher', 'freizeitprogramm', 'freiheitgenießen']"
+k mean cluster 368,allegutendingesinddrei,[]
+k mean cluster 369,teamwork,"['teafarm', 'netzwerk', 'teamrosinen', 'teammito', 'artwork', 'homework', 'teamspirit', 'teamzitrone', 'newwork', 'teamhund', 'hardworkeasywork', 'wesualworld', 'teamgoals', 'breathwork', 'theemperor']"
+k mean cluster 370,valentinesday2021,"['allesneumacht2021', 'mothersday2021']"
+k mean cluster 371,uniquejewelry,[]
+k mean cluster 372,vfxsupervisor,[]
+k mean cluster 373,bayern,"['navygin', 'macherin', 'carporn', 'gayman', 'balkon', 'pattern', 'batman', 'bayarea']"
+k mean cluster 374,neuerabschnitt,['neuergastgarten']
+k mean cluster 375,letsgosomewhere,[]
+k mean cluster 376,orange,"['orfdrei', 'whiteandorange', 'em2016france', 'organic', 'sobrancelhas', 'vorträge', 'mayaangelou', 'ofengemüse', 'fotografie', 'performance', 'france', 'florence', 'outdoorgadget', 'bromance', 'losangeles', 'zrmanja', 'porrige', 'crane']"
+k mean cluster 377,inhalieren,[]
+k mean cluster 378,ciders,"['cineprimes', 'sisters', 'nicefrise', 'snackideas', 'cider', 'cidergram', 'wildesobst', 'middleeast', 'iceteas', 'cinema', 'ideas', 'cidre']"
+k mean cluster 379,solidaritywithafghanistan,[]
+k mean cluster 380,fotternonline,"['notjustapearlchallenge', 'exittheroomlinz', 'patternsofnature', 'footpainrelief', 'feiernplanen']"
+k mean cluster 381,murinsel,"['tulipansketo', 'maultrommel', 'marrymindset', 'mariazell', 'marinakastela', 'artinspo', 'murradweg', 'Murinsel']"
+k mean cluster 382,ideensammlerin,"['eigenekonzepteleben', 'ideentriebwerk']"
+k mean cluster 383,einfachgeniessen,"['mexikanischesessen', 'einfacherezepte', 'einbisschenspaßmusssein', 'einfachgenießen', 'einenmomentinnehalten', 'einbisschenentspannung', 'windischgarsten', 'feierabendgenießen', 'zeitmitdenliebsten', 'diemachtdergedanken']"
+k mean cluster 384,lama,"['lafamilia', 'clams', 'hoamat', 'gata', 'olympia', 'bawa', 'lime', 'lamate', 'game', 'padua', 'playa', 'fafga', 'games', 'lake', 'glass', 'trauma', 'mama', 'vaca', 'landmark', '19mai', 'yakima', 'fame', 'plakat']"
+k mean cluster 385,veranstaltungsorganisation,['veranstaltungsmanagement']
+k mean cluster 386,goprohero5,['gobroncos']
+k mean cluster 387,ohnehefe,"['riphughhefner', 'brotohnehefe', 'zahncreme', 'nochmehrsee', 'ohnetierleid', 'ohnefleisch', 'dankeanallehelfer']"
+k mean cluster 388,reflections,"['respectwomen', 'sections', 'electriclicious', 'recreationtime']"
+k mean cluster 389,achtsamkeitimalltag,"['achtsamkeitimmalltag', 'nachhaltigkeitimalltag']"
+k mean cluster 390,goodfood,[]
+k mean cluster 391,schlossberggraz,"['schlossberg', 'tischfussballingraz', 'schlossgreifenburg']"
+k mean cluster 392,quote,"['foodquotes', 'buyme', 'hikingquote', 'hikingquotes', 'qotd', 'quotes', 'vote', 'mumie', 'lifequotes']"
+k mean cluster 393,exploremore,"['exploretheworld', 'exploreasia', 'explorepage', 'exploretogether', 'exploreboston', 'explorehistory', 'zielgruppevonmorgen', 'explorerhodes']"
+k mean cluster 394,joyeuxnoel,[]
+k mean cluster 395,watercooling,"['saturdaymorning', 'skateboarding', 'wakeboarding', 'weiterbildung', 'rauerssprösslinge', 'gastroreopening', 'gastroreopening2021', 'waterchallenge', 'interiorstyling', 'hauserkaibling']"
+k mean cluster 396,kennedeinwofür,[]
+k mean cluster 397,goodtoknow,"['goodmorning', 'rooftopview']"
+k mean cluster 398,reparierenstattwegwerfen,[]
+k mean cluster 399,artofcart,"['noartificials', 'antioxidants', 'ketolowcarb', 'ketofabrik', 'partyhard', 'gartenparty', 'artsyfartsy', 'analogart']"
+k mean cluster 400,gelassenheit,"['diehassensichwirklich', 'genussmomente', 'ausgeglichenheit', 'geldsparenleichtgemacht', 'arbeitssicherheit', 'glasseschain']"
+k mean cluster 401,egypt,"['cairoegypt', 'ancientegypt', 'thisisegypt', 'egyptology', 'gypsy', 'Repost']"
+k mean cluster 402,hottingup,"['muttutgut', 'showtongue', 'comingup']"
+k mean cluster 403,Teezubereitung,"['sexuellebelästigung', 'abfallvermeidung', 'resteverwertung', 'gleichberechtigung', 'sportbekleidung', 'neukundengewinnung', 'entzugserscheinungen', 'meinebuchempfehlung']"
+k mean cluster 404,beijinho,"['beijinhopravocês', 'beijhinos', 'beijinhos', 'thiaguinho', 'kevinho', 'falcinho', 'benjaminbutton', 'bleibdahoam', 'belissimo']"
+k mean cluster 405,makersgonnamake,"['shakeshakeshake', 'hatersgonnahate']"
+k mean cluster 406,1,"['3', 'n', 'M', 'f', 'x', '2021', 'k', 'l', 'v', 'DM1M']"
+k mean cluster 407,shoefreak,"['chocolatecream', 'chocolatespread', 'vizefreitag', 'shoesfromheaven', 'shoefiequeen', 'shoefies']"
+k mean cluster 408,dirndldienstag,['nationalfeiertag']
+k mean cluster 409,halfpipe,"['hanfplanze', 'hanfsamen']"
+k mean cluster 410,selbermachen,"['hellskitchen', 'weitermachen', 'überbacken', 'schutzmaßnahmen', 'salzburgschmeckt', 'meeresrauschen', 'seelebaumelnlassen', 'felberschoko', 'elektrofachhandel', 'leatherjacket', 'sauberhalten']"
+k mean cluster 411,spinatstrudel,['silviawolfsgruber']
+k mean cluster 412,shoes4life,"['sweetlife', 'shoreline', 'sushiforlife', 'visualsoflife', 'studentlife', 'bosslife', 'shoesstyle', 'forestlife']"
+k mean cluster 413,lfc,"['life', 'vfx', 'nfl', 'bff', 'bfc']"
+k mean cluster 414,ocha,"['noctua', 'jocky', 'douchbags', 'matcha', 'tchau', 'lchf', 'kombucha', 'kochen', 'küche', 'woche', 'ocean', 'yacht']"
+k mean cluster 415,gesundeernaehrung,"['gesundeernährung', 'nahrungsergaenzung', 'leistungssteigerung', 'ketogeneernährung', 'ketogeneernaehrung', 'pflanzlicheernährung']"
+k mean cluster 416,bewusstheit,"['bewusstsein', 'lebedeinswahrheit', 'bewusstwerdung', 'bergweisheiten', 'bewusstshoppen', 'bewusstleben', 'upbeatsforthewin']"
+k mean cluster 417,backblog,"['backblogger', 'backflip', 'bachelor', 'beachclub', 'bierblog']"
+k mean cluster 418,femalefuturefestival,"['femalefuturefestivalgraz', 'femalefutureforce', 'fifteensecondsfestival']"
+k mean cluster 419,keepgoing,"['keepexploring', 'keepsmiling', 'reopening']"
+k mean cluster 420,socialmediastrategie,"['socialmediafürgastronomie', 'socialmediastrategy']"
+k mean cluster 421,weihnachtsgeschenk,"['weihnachtsgeschenke', 'geburtstagsgeschenk', 'erfrischungsgetraenk', 'dasperfektegeschenk', 'elektrofachgeschäft']"
+k mean cluster 422,skiing,"['fasching', 'nowhining', 'spring', 'musikbingo', 'Musikbingo', 'voting', 'mixing', 'swimming', 'uprising']"
+k mean cluster 423,sunsetlover,"['sunsetsaturday', 'sunflower', 'nuncamaiselevaiter', 'sushilover', 'musiclover', 'sunriselovers']"
+k mean cluster 424,solidarity,"['spirituality', 'holidayparty', 'socavalley', 'Hospitality', 'kulinarik', 'southafrica', 'salzburgcity', 'noidentity']"
+k mean cluster 425,illbeback,"['wantback', 'olivensnack', 'feedback', 'vollergeschmack', 'fillupthetank', 'iceicebaby', 'weareback']"
+k mean cluster 426,pancaketower,"['cannabrother', 'partnerbetrieb', 'plainawesome']"
+k mean cluster 427,whatanight,"['zlatanibrahimovic', 'savethenight', 'whataview', 'fuckupnights', 'sheertights', 'whatveganseat', 'latenight', 'humanrights', 'aboutlastnight']"
+k mean cluster 428,moon,"['town', 'pool', 'food', 'meow', 'morena', 'mohn', 'GoRun', 'cool', 'Cool', 'corona', 'mode', 'moody', 'moda', 'oodn', 'moresoon', 'mood', 'fullmoon', 'Corona', 'moinmoin', 'lagoon', 'neon', 'hood']"
+k mean cluster 429,picture,"['culture', 'pizzacaprese', 'guiltfree', 'spicewise', 'picturelove', 'pinterest', 'fitcouple', 'popculture', 'privatsphäre', 'victoria', 'foodpicture', 'architecture']"
+k mean cluster 430,fastfood,"['firststop', 'barefoot', 'smartfood', 'waitforit', 'fitfood', 'streetfood', 'bestfood', 'ınstagood', 'fastfoodporn', 'easyfood', 'rawfood']"
+k mean cluster 431,amazonas,"['amazing', 'encaracolados', 'ananas', 'tsambikamonastery']"
+k mean cluster 432,granatapfel,['süsskartoffel']
+k mean cluster 433,portraitshots,"['portraitvisuals', 'postcardshot', 'worldbestshotIG', 'positivethoughts', 'portraitmood', 'portraitart', 'footpainsucks']"
+k mean cluster 434,sour,"['soundhorn', 'soup', 'suv', 'soča', 'suçuk', 'sound', 'issue', 'proud', 'solo', 'touri', 'soul', 'sloul', 'colour', 'ontour', 'zur', 'radtour']"
+k mean cluster 435,laplaya,"['paprika', 'mallorca', 'capitalbra', 'workhardplayhard', 'parkplaza', 'rapunzelsalat']"
+k mean cluster 436,newproject,"['newproduct', 'newyorkcity', 'newprojects']"
+k mean cluster 437,hiddengems,"['ridderheims', 'weddingdress', 'haidenspass', 'hiddengem', 'hiddenplaces']"
+k mean cluster 438,besteschwester,"['logitechmxmaster', 'buschenschankgehtimmer', 'deinegeschichtezählt', 'benicetoeachother', 'bestemitarbeiter', 'besterarbeitgeber', 'tasteslikesummer', 'weilihreseuchwertseid', 'weltcuphinterstoder', 'texteschreiben', 'texteschreiber', 'deutschesbier']"
+k mean cluster 439,chillig,"['filmrig', 'challenge', 'newchallenge', 'chillmood', 'chillin', 'chillaxing']"
+k mean cluster 440,projekt,[]
+k mean cluster 441,triathlon,['krimihelden']
+k mean cluster 442,gedankenreise,"['geschmacksentdecker', 'lgvsonnengemüse', 'gehedeinenherzensweg', 'reisenreisenreisen', 'redcenterlime']"
+k mean cluster 443,eisenreichelebensmittel,[]
+k mean cluster 444,brytiago,['bratislava']
+k mean cluster 445,youremine,"['calmyourmind', 'followyourdesires', 'changeyourmind', 'eatyourveggies', 'homequarantine', 'countryside', 'youarenotalone']"
+k mean cluster 446,traveltime,"['traveltheworld', 'TravelIsLife', 'TravelWithMe', 'MyTravelStory', 'travelbucketlist', 'hammertime', 'bravissimo', 'israelleavepalestine', 'travelthroughtheworld', 'deinestimme', 'iceteatime', 'turracherhöhe', 'teeziehtimmer', 'traveldiaries', 'traveldeeper', 'travelawesome', 'travelmore', 'travelmoments', 'travelmemories', 'traveleurope', 'travellife']"
+k mean cluster 447,jacobson,"['thejacksons', 'jamesbond', 'racoonsquad']"
+k mean cluster 448,cakedesign,"['cinedesigner', 'scharfesessen', 'calzedonia', 'lacelessdesign', 'shopdesign', 'shopdesigns']"
+k mean cluster 449,austriavision,"['austrianradio', 'lebedeinevision', 'austrianalps', 'sustainability', 'austrianstartup', 'austriancouple', 'sustainablefashion', 'eventorganisation', 'industrialdesign', 'austriatrip', 'austrianature', 'austriareels', 'austriahiking', 'austriamountains', 'austriamountain']"
+k mean cluster 450,crystalclearwater,['burgstallerhöhe']
+k mean cluster 451,wunder,"['outdoor', 'sundowner', 'wunderweiber', 'holunder', 'ecuador', 'founder', 'sundown', 'fender', 'hunde', 'hungryspider', 'thunder', 'Sundowner', 'wonder', 'bundaberg', 'fundraiser', 'wiedeń']"
+k mean cluster 452,styriaisbeautiful,"['everywomanisbeautiful', 'austriaisbeautiful']"
+k mean cluster 453,breakfasttime,"['dreamcametrue', 'breakfastclub', 'breakfastbowls', 'breakfastfood', 'breakfast', 'breakfastlover', 'bürokaffeemaschine']"
+k mean cluster 454,accessories,"['lunchbreakstories', 'podcaststories', 'allesfürdieects', 'alikiskitchenstories', 'Bachelorreise']"
+k mean cluster 455,hansegruen,"['chancennutzen', 'hardseltzergermany', 'hundefrauchen', 'ausdemgarten', 'hauseigenergarten', 'sandskulpturen']"
+k mean cluster 456,dresden,"['3drendering', 'dressup', 'dezeen', 'Helden']"
+k mean cluster 457,vibes,"['view', 'vibe', 'vibey', 'fallvibes', 'olives', 'viral', 'likes', 'video', 'autvibes', 'süßes', 'violet']"
+k mean cluster 458,casualchic,['ladymechanic']
+k mean cluster 459,noanimalingredients,"['noanimalsharmed', 'animalsarefriends', 'noanimalcruelty']"
+k mean cluster 460,regionalereistee,"['regionaleprodukte', 'regionaleinkaufen', 'EuPrefiroMeuCafeQuente', 'rappenundeistee', 'rappermacheneistee', 'regionaleköstlichkeiten', 'regionalergenuss', 'regionaleraperitif', 'personaltrainerakademie', 'grieskochfürdieseele', 'regionaleunternehmen']"
+k mean cluster 461,träumen,"['träumeleben', 'törtchen', 'tramin', 'traumjob', 'trauer', 'tbsummer', 'trauben', 'kräuter', 'bäume', 'Prägungen']"
+k mean cluster 462,sonnenaufgang,"['sonntagsausflug', 'sonnenbankflavour']"
+k mean cluster 463,wineoclock,"['ginoclock', 'coffeeoclock', 'schminkenimlockdown']"
+k mean cluster 464,zweiteradvent,"['zeitersparnis', 'zeitvergeht', 'zeitfuerpflege']"
+k mean cluster 465,restartgastro,"['sistertattoo', 'gastgartensaison', 'mariobarthtattoo']"
+k mean cluster 466,covidaustria,"['visitaustria', 'cbdaustria', '365austria', 'lovesaustria', 'triaustria', 'loveaustria', 'coronaaustria', 'musicaustria']"
+k mean cluster 467,kresse,"['sekretöse', 'nuesse', 'preise', 'trieste', 'espresso', 'dress', 'messe', 'terrasse', 'cress', 'impressive']"
+k mean cluster 468,herzensweggehen,"['herzensweg', 'herzenswegfolgen', 'getrenntewegegehen']"
+k mean cluster 469,selbstbewusstsein,[]
+k mean cluster 470,heelsaddict,"['zeitfurdich', 'highheelsaddiction']"
+k mean cluster 471,localbrand,"['lowcarbfood', 'lowcarbdeutschland', 'globaltravel', 'personalbranding', 'localbusiness', 'femaleband', 'loyaltyapp']"
+k mean cluster 472,studiophotography,"['naturephotography', 'sunsetphotography', 'portraitphotography', 'studiofotografie', 'blackandwhitephotography', 'boudiorphotography', 'stagephotography', 'stilllifephotography', 'streetartphotography', 'austriaphotography']"
+k mean cluster 473,officiallysummer,"['lastdaysofsummer', 'officialteambossbabe']"
+k mean cluster 474,support,"['supporteachother', 'supportlocal', 'beesupportive', 'sushiporn', 'stuttgart', 'airport', 'bestsupport']"
+k mean cluster 475,cheers,"['cheersrost', 'cheesy', 'maschenwerksatt', 'cherry', 'cheese', 'sweets', 'cherries', 'sheesh']"
+k mean cluster 476,buylocal,"['spicycocktail', 'bottledcocktail', 'bhutjolokia', 'drinklocal', 'shoplocal']"
+k mean cluster 477,shoppinglust,"['spotifyplaylist', 'shoppingonline']"
+k mean cluster 478,kerze,"['kerzen', 'ferien', 'ketorezepte', 'keramik', 'ckerei', 'herz', 'Jetzt', 'jetzt', 'duftkerze', 'berge', 'Hermes', 'herzen', 'kernöl', 'cerveza']"
+k mean cluster 479,munichfoodie,[]
+k mean cluster 480,vulkanbrauerei,"['unionbrauerei', 'wildkaffeerösterei', 'ottakringerbrauerei', 'purkarthofereis', 'vulkanbier']"
+k mean cluster 481,emotional,"['international', 'Promotional', 'editions', 'emotionen', 'emotionaleworte', 'tegional', 'emotionalerstress', 'educationforall']"
+k mean cluster 482,mumokwien,"['brauwerkwien', 'pumpkin', 'mumokmuseum']"
+k mean cluster 483,instagram,"['instagood', 'instagin', 'ginstagram', 'instadrink', 'pizzagram', 'anittabrazil', 'igeragraz', 'Foodstagram', 'instagay', 'gaystagram', 'foodstagram', 'restaurant', 'instagame', 'wienstagram', 'instamusicians', 'instaguineas', 'petsgram', 'instagraz', 'dasdekagramm', 'cinemagraph', 'catstagram', 'instacat', 'instagramshoes', 'angstvorarmut', 'austriagram', 'artgram', 'bierstagram']"
+k mean cluster 484,frischesbrot,"['imfromthesouthbronx', 'erfrischungsgetränk', 'tischfussball', 'frischeluft', 'frischundsaisonal', 'zischfrischlarry', 'frischgekocht', 'frischvomfeld', 'frischeerdbeeren']"
+k mean cluster 485,grinsekatze,"['maintenance', 'gänsehautpur', 'grillschürze', 'organicseltzer', 'arbeitsplatz']"
+k mean cluster 486,steiermark,"['steirmark', 'südsteiermark', 'anniversary', 'antennesteiermark', 'igersgermany', 'steinerfood', 'supermarkt', 'dersteinerwirt', 'igerssteiermark', 'steirisch', 'steirerthaicurry', 'auftaktsteiermark', 'fernitzerpark', 'visitsteiermark', 'steiermarkfrühling', 'südoststeiermark', 'oststeiermark', 'stubenberghaus', 'Steiermark', 'madeindenmark']"
+k mean cluster 487,schnäppchenjäger,['schnäppchenalarm']
+k mean cluster 488,knusperhäuschen,"['knuspermüsli', 'glucklichemenschen']"
+k mean cluster 489,israeltour,"['atpworldtour', 'biohardseltzer', 'israeltravel', 'Distributors']"
+k mean cluster 490,loveallanimals,['bekindtoanimals']
+k mean cluster 491,blondie,"['islandlife', 'blondies', 'zucchiniblondies', 'foodie', 'blondgirl', 'blondhair', 'bowtie', 'londoneye', 'blonde']"
+k mean cluster 492,newphotos,"['notwithoutmydogs', 'newcustomer', 'neighbours', 'neweconomy', 'newshoes', 'newshoeintown']"
+k mean cluster 493,femaleartist,"['femaleempowerment', 'femaleleaders', 'femaleleadership', 'femaleleader', 'femalemastermind', 'femalemusicians', 'femaledrummer', 'femalebassist', 'femaleguitarist', 'femalemusician', 'femaleinstrumentalist', 'lifelonglearning', 'familienbetrieb', 'museumsquartier', 'femalebusiness', 'femaleproducer']"
+k mean cluster 494,editoftheday,"['photooftheday', 'besttimeoftheyear', 'RecipeOfTheDay', 'pictureoftheday', 'picoftheday', 'endoftheyear', 'quoteoftheday', 'lookoftheday', 'videooftheday', 'outfitoftheday', 'internatinalcoffeeday', 'laughoftheday', 'b2bsoftwaredays', 'catoftheday', 'shoesoftheday', 'artoftheday', 'moodoftheday', 'beeroftheday']"
+k mean cluster 495,berlin,"['igerslinz', 'aubergine', 'beekind', 'bergwelten', 'lesbian', '11ermini', 'verein', 'bealive', 'verdient', 'heavyrain', 'albertina', 'lehrling', 'rebellion', 'beerfan', 'beerart', 'beerselfie', 'belgium', 'berlinmusic', 'igersberlin', 'berlinmoabit']"
+k mean cluster 496,suzukiaustria,"['suzukivitara', 'salzburgaustria']"
+k mean cluster 497,foryou,[]
+k mean cluster 498,treeoftea,"['threemonitorsetup', 'themenbuffet', 'greentea', 'nitrocoffee', 'greencoffee', 'treeoflife', 'streetsofgreece']"
+k mean cluster 499,curls,"['curry', 'acerola', 'carla', 'couple', 'cars', 'pumps', 'couples', 'carlos', 'oculus']"
+k mean cluster 500,chicas,"['schöckl', 'clichè', 'podcast', 'musicians', 'ethical', 'chiaseed', 'gehtsichaus', 'cutecats', 'china', 'tschucksl']"
+k mean cluster 501,random,"['mrandmrs', 'rainonme', 'youcandoit', 'radon', 'freedom', 'stephansdom']"
+k mean cluster 502,inspire,"['sunshine', 'inspired', 'thinkpink', 'inspiring', 'inspiriti', 'miniskirt', 'inspo', 'firstprize', 'natureinspired']"
+k mean cluster 503,einkaufen,"['purerneidaufeuch', 'neinsagen', 'lernpause', 'kleinbauern', 'teigtaschen', 'weinwissen', 'weintrauben', 'bingoqueen', 'felixkaffee', 'wildkaffee', 'einfacher', 'drinkandfun', 'zeitschaffen', 'plastikfreieinkaufen', 'Bingoqueen', 'biokaffee']"
+k mean cluster 504,teamjalitsch,"['teampfirsich', 'teriyakitempeh']"
+k mean cluster 505,icedvanillalatte,['icedchailatte']
+k mean cluster 506,dasalzburger,"['steakburger', 'oklahomacheeseburger', 'smashedburger', 'sandraburgstaller', 'salzburgerland', 'salzburgfood', 'salzburgblogger', 'salzburggram', 'salzburgbeyondmozart', 'vegansalzburg', 'salzburgstadt', 'ubitsalzburg', 'dasalzburgerkaffee', 'wifisalzburg']"
+k mean cluster 507,sicily,"['simplyhappy', 'liqidmoly', 'musicdaily', 'elcielo', 'musician', 'officelady', 'basicbitch']"
+k mean cluster 508,motifmatters,"['mindsetmatters', 'moviemaker', 'naturepatterns']"
+k mean cluster 509,fashiongirl,"['fashionselfie', 'fasionhair', 'fashiongoals', 'fashionistas', 'fashiongram', 'fashionstyle', 'fashionista', 'fashiontrends', 'fashioninspo', 'fashionshot', 'fashionzine', 'fashionbloggerde', 'fashionistastyle', 'fashiondiaries', 'fashionbloggerat', 'fashionbloggersl', 'fashionshoot', 'familiengetränk', 'earthismagical', 'fashionshoes', 'fashionable']"
+k mean cluster 510,vacationmode,"['monogramcreativeconsole', 'vacationgoals', 'vacationmodeon', 'vacationtime', 'vacationvibes', 'vacationlife', 'vacationstyle', 'vacationmood', 'vacationtine', 'fachkräftevonmorgen']"
+k mean cluster 511,punkrock,"['gutkick', 'fußabdruck', 'innsbruck', 'picknickbox', 'picknick']"
+k mean cluster 512,beerstergram,"['lendhotelgraz', 'oetkergram', 'ideentriebwerkgraz', 'cafefottergraz', 'hamstergram', 'beerstagram', 'beersoftheworld']"
+k mean cluster 513,beertasting,[]
+k mean cluster 514,longdrink,"['gooddrinks', 'xmasdrink', 'thinkdrink', 'functionaldrink', 'powerdrink', 'mitodrink', 'bowlupdrink', 'likelouisdrink', 'snackingdrink', 'bawadrinks', 'bawadrink', 'mongolianbbq', 'longdress', 'deliciousdrink', 'cooldrinks', 'colddrink', 'colddrinks', 'gindrink', 'softdrink']"
+k mean cluster 515,meugarato,"['macchiato', 'reggaeton', 'meucoração', 'nosugaradded', 'illustrator']"
+k mean cluster 516,wien,"['ancient', 'win', 'women', 'wein', 'wine', 'indien', 'wiwt', 'medien', 'winwin']"
+k mean cluster 517,wandern,"['waldbeere', 'handwerk', 'landleben', 'dancers', 'wandmusic']"
+k mean cluster 518,kraftlieder,"['namenslieder', 'klangbruder', 'heimatlieder', 'schlaflieder', 'allejahrewieder', 'krafttanken', 'baldwieder']"
+k mean cluster 519,gratulation,"['geburtstagslocation', 'praesentationen', 'GreatBritain']"
+k mean cluster 520,genusspur,"['genuss', '11ergenusswelt', 'genusseistee', 'genussmensch', 'genussstück', 'genusstückgraz', 'ventureshipaula', 'genussreich', 'genussvoll']"
+k mean cluster 521,feelinglikeachild,"['feelingblessed', 'israelarekillinggazanchildren', 'findyourinnerchild']"
+k mean cluster 522,basteln,"['bestteam', 'kuscheln', 'besteleben', 'muscheln', 'barmstein', 'muskeln', 'badteinach', 'masken', 'mastermind', 'baustelle', 'mozartkugeln', 'basketball']"
+k mean cluster 523,lifeisbeautiful,[]
+k mean cluster 524,architecturedesign,"['richtigetouristenpics', 'achieverofunrealisticshit', 'arbeitssicherheitgoesdigital', 'architekturzentrumwien']"
+k mean cluster 525,nutritionfirst,[]
+k mean cluster 526,normalos,"['nopalmoil', 'jerktacos', 'workflow', 'normalitat', 'wynwoodwalls', 'informatik', 'workaholism']"
+k mean cluster 527,himbeere,"['himbeerkuchen', 'himbeertorte', 'erdbeeren', 'schlafbeere', 'erdbeere', 'blaubeere', 'himbeeren', 'limette', 'brombeere', 'cinqueterre', 'swimbikerun', 'erdbeereis']"
+k mean cluster 528,redwine,[]
+k mean cluster 529,numberten,"['nurheute', 'willernten', 'zahnputztabletten', 'muttertag', 'öffnungszeiten', 'Lohberger', 'robertdenk', 'neuigkeiten']"
+k mean cluster 530,typischwien,"['meerschweinchen', 'mehrtürkisfürwien']"
+k mean cluster 531,outfitgoals,"['squadgoals', 'couplegoals', 'familygoals', 'stylegoals', 'ootdgoals', 'cofoundergoals', 'outfitdetails', 'luxurygoals', 'outfitideas', 'reachingmygoals']"
+k mean cluster 532,warm,"['art', 'warme', 'work', 'farm', 'warsaw', 'dark']"
+k mean cluster 533,mare,"['cake', 'market', 'mealprep', 'marry', 'malen', 'topmate', 'mate', 'pure', 'marryKunde', 'püre', 'marryme', 'muse', 'nomore', 'maria', 'tomate', 'cave', 'ambree', 'amore']"
+k mean cluster 534,hamstern,"['amsterdam', 'froheostern', 'hamster', 'hamsterlove', 'hipster', 'herstory']"
+k mean cluster 535,blueeyes,"['blumenwiese', 'bigeyes', 'billieeilish', 'blueberry']"
+k mean cluster 536,zuckerfrei,"['türkisetürforthewin', 'dubistfrei', 'zuckerfreibacken', 'zuckerfreierezepte', 'projektzuckerfrei', 'zuckerrohr', 'zuckerrohrsaft', 'zuckerreduziert', 'zuckerbäcker']"
+k mean cluster 537,freshdrink,"['freshjuice', 'freshfruits', 'fitnessdrink', 'buttermilchdrink', 'grazerdrink', 'bestdrink', 'urbandrinks', 'freshpasta']"
+k mean cluster 538,highheelshoes,"['billieeilishvideos', 'highheelsneaker', 'highheelsneakers', 'highheelsfetish', 'highheellover', 'highheels2020', 'highheelslover', 'highheelsshoes', 'highheelsmurah', 'highheelmadness']"
+k mean cluster 539,shoestar,"['spotsnapr', 'streetart', 'silvester', 'schaufenster', 'shoestyles', 'shoestyle', 'shoesstagram', 'shoestartup', 'shoestagram', 'shoeswag', 'shoetingstar', 'shoesoftheyear', 'shoestagrammer', 'shoesday', 'shoeshop', 'shoediary', 'superstar']"
+k mean cluster 540,energieriegel,"['energeticorange', 'vollgasriegel', 'underwearmodel', 'petersielienpesto']"
+k mean cluster 541,biologisch,"['mischmasch', 'mixologist', 'mochoritsch', 'ökologisch', 'zischfrisch', 'biogulasch']"
+k mean cluster 542,unverpackt,"['unterdruckte', 'unverpackteinkaufen', 'unverpacktladen', 'genießerpackage', 'bissiverrückt']"
+k mean cluster 543,greecelovergr,[]
+k mean cluster 544,nightshooters,"['lightroomccmobile', 'weightwatchers', 'lightsinthedark', 'nightshot']"
+k mean cluster 545,instafoodie,"['liebstefotoblume', 'instafood', 'nostuffadded', '1minutefurdich', 'instashoestyle']"
+k mean cluster 546,fs17,"['2017', 'JPR17', 'fs18']"
+k mean cluster 547,filter,"['filmcrew', 'portafilter', 'faltaeu', 'femtech', 'fightsugar', 'nofilter', 'nofilterneeded', 'limited', 'Filter', 'malteser', 'fotter', 'sister', 'toiletpaper', 'unfiltered']"
+k mean cluster 548,italianfood,[]
+k mean cluster 549,dreamdestination,['unitedintonations']
+k mean cluster 550,classicstyle,"['catlifestyle', 'casualstyle', 'gaylifestyle', 'classicoutfit', 'glassbottle']"
+k mean cluster 551,männer,"['montenegro', 'pfanner']"
+k mean cluster 552,marstons,"['parabéns', 'paratodos', 'martini', 'milestones']"
+k mean cluster 553,shootingphoto,"['shotoniphone', 'ihavethisthingwithcolor']"
+k mean cluster 554,night,"['nacht', 'ligt', 'parlight', 'nightsky', 'nightout', 'nushu', 'tights', 'nightgown', 'bright', 'onenightout', 'lights', 'tonight', 'Moonlight', 'light', 'insight', 'insights', 'atnight', 'angst', 'twilight', 'sunlight', 'nizza', 'goodnight']"
+k mean cluster 555,loveyourself,"['loveyourselffirst', 'loveourjob', 'takecareofyourself', 'loveyourcountry', 'doityourself', 'beyourself', 'boostyourmetabolism', 'rechargeyoursef', 'loseyourself', 'loseyourselfkeepyourgear', 'loveyourdog', 'glowupyourlife', 'believeinyourself', 'challengeyourself']"
+k mean cluster 556,getstarted,"['bestfriend', 'letsparty', 'techstartup', 'geburtstagstorte', 'yogaistfurjeden', 'gastgarten', 'multitalented']"
+k mean cluster 557,sapatosfemininos,['willgoswimmingnow']
+k mean cluster 558,church,"['crunch', 'cklich', 'rauch', 'zeitfurmich']"
+k mean cluster 559,steinecker,"['unternehmer', 'stiernackenkommando', 'stadtmeineslebens', 'sternekoch', 'teinacher', 'wenigerzucker', 'keynotespeaker', 'steineckermoden', 'steviewonder', 'Kleinerberg']"
+k mean cluster 560,veghel,"['nephew', 'SeeTheWorld', 'highheel']"
+k mean cluster 561,perfectshot,"['streetshot', 'theperfectsizeforacoffeecup', 'perfectglow']"
+k mean cluster 562,chance,"['schnee', 'abundance', 'merchandise', 'bbqsauce', 'canejuice', 'chanel', 'character', 'champagne', 'shandy', 'chappi', 'schminken', 'recharge', 'fhjoanneum', 'dance']"
+k mean cluster 563,durstlöscher,"['baumwollsackerl', 'durstlöschen']"
+k mean cluster 564,sharmelsheikh,"['schwarzwälderkirsch', 'savesheikhjarrah']"
+k mean cluster 565,singersofinstagram,['guineapigsofinstagram']
+k mean cluster 566,mails,"['gains', 'braids']"
+k mean cluster 567,pastapasta,"['trüffelpasta', 'casaananda', 'zahnpasta', 'antipasti', 'carmushkapresets', 'waynapawiasek']"
+k mean cluster 568,designlover,"['fashionlover', 'designmonatgraz', 'designshoes', 'designforlife', 'designerwear', 'designboom']"
+k mean cluster 569,AIPA,[]
+k mean cluster 570,dragonballz,['drehfußball']
+k mean cluster 571,hugo,[]
+k mean cluster 572,highking,"['hiking', 'biohacking', 'kingofthebingo', 'sightseeing', 'highvibe', 'lightning', 'highlights', 'highquality']"
+k mean cluster 573,famous,"['flavours', 'timeout', 'fabulous5', 'glamour', 'ragout']"
+k mean cluster 574,strongwomenlifteachotherup,[]
+k mean cluster 575,mondaymood,"['saturdaymood', 'fridaymood', 'momanddadtobe', 'myorsaymoment', 'holidaymood', 'sundaymood', 'manonthemoon']"
+k mean cluster 576,madeingraz,"['masaimara', 'mondsteingrau', 'marinafrappa', 'cafésingraz', 'fraueningraz', 'esseningraz', 'madeingermany', 'kaufingraz', 'sommeringraz', 'kaffeeingraz', 'frühlinggraz', 'foodingraz', 'madeinitaly', 'südenvongraz', 'natureingraz', 'madeinhungary']"
+k mean cluster 577,royaldonuts,['dunkindonuts']
+k mean cluster 578,grazerstartup,"['germanfoodstartups', 'koelnerstartup', 'germanfoodstartup', 'germanstartup', 'germangoodstartups', 'grazerinnenstadt', 'grazerinnnestadt', 'grazerstarup', 'sportveranstaltung']"
+k mean cluster 579,intothewoods,"['sadkidstothefront', 'enjoythemoment']"
+k mean cluster 580,sunglasses,"['sunkissed', 'girlswithglasses', 'suezcanalmemes', 'skullandroses', 'RunPlanet', 'soundsystem', 'youngtalents', 'mineralwasser']"
+k mean cluster 581,gesundheitsschutz,['gesundheitsvorsorge']
+k mean cluster 582,daddysbirthdayweekend,[]
+k mean cluster 583,kaffeekultur,"['giraffesanctuary', 'radiokulturhaus', 'kaffeeersatz', 'kaffeegenuss', 'kaffeehauskultur', 'kaffeehausgraz', 'kaffeepause', 'kaffeepauseimbüro', 'coffeeculture', 'biokaffeerösterei']"
+k mean cluster 584,homegrown,"['hometown', 'homepagedone', 'homeyoga']"
+k mean cluster 585,khcbrunch,[]
+k mean cluster 586,ilovegin,"['alpenverein', 'ilovetea', 'loveit', 'ilovefashion', 'choosevegan', 'wienvegan']"
+k mean cluster 587,atemschutzgeräteträger,[]
+k mean cluster 588,surfskate,[]
+k mean cluster 589,maxon,"['magazin', 'Amador', 'amador', 'cajon', 'canon', 'naxos']"
+k mean cluster 590,happyhour,"['happyhappyhappy', 'happysaturday', 'gypsysoul', 'happyhalloween', 'happy4thofjuly', 'happysummer', 'happymonday']"
+k mean cluster 591,tomshotbowl,[]
+k mean cluster 592,gesundheit,"['verbundenheit', 'gesundkochen', 'gesundnaschen', 'besinnlichezeit', 'mentalegesundheit', 'steigeinundfliegmit']"
+k mean cluster 593,ratchethappybirthday,"['whatmademehappytoday', 'workoutclothesalldayeveryday']"
+k mean cluster 594,coronalifestyle,"['chemistrylifestyle', 'veganlifestyle', 'spowilifestyle', 'healtylifestyle', 'coronalife', 'coronacostume']"
+k mean cluster 595,laguna,"['tagung', 'banana', 'velaluka', 'farina', 'lasagna', 'lagoudale']"
+k mean cluster 596,ketogen,"['ketodeutschland', 'ketoküche', 'ketoonthego', 'gegoren', 'feiertagen', 'kitchen', 'käferbohnen']"
+k mean cluster 597,mainly,['heavenly']
+k mean cluster 598,rhodes,[]
+k mean cluster 599,drinkbythepool,['drinkcoffeedogood']
+k mean cluster 600,anchorsteam,['unicornsarereal']
+k mean cluster 601,fingerfoodbox,"['lingeriemodel', 'fenderhotroddeluxe', 'fingerfood', 'lorenzfingerfoobox', 'lorenzfingerfoodbox']"
+k mean cluster 602,mumsupport,"['missuuuuuu', 'womensupport']"
+k mean cluster 603,athome,"['athens', 'stayhome', 'atomos', 'anthocyane', 'awesome', 'pantyhose', 'bathtime', 'carrymehome', 'catchthemoment', 'stayathome', 'drinkathome', 'atomic']"
+k mean cluster 604,mitarbeiterbindung,"['vielarbeitdahinter', 'mitarbeiterathome', 'sonntagzeitfürbillard', 'mitarbeiterführung', 'mitarbeitermotivation']"
+k mean cluster 605,Travelgram,"['travelgram', 'Travelholic', 'Travelbook', 'TravelTheWorld', 'Travellingram', 'sfachlgraz']"
+k mean cluster 606,Sonnenaufgang,[]
+k mean cluster 607,rose,"['love', 'boss', 'bose700', 'bosa', 'repost', 'frosch', 'dose', 'rot', 'bos', 'prost', 'rost', 'post', 'frohe', 'eos60d', 'closeup']"
+k mean cluster 608,foodblog,"['foodblogger', 'foodblogat', 'football', 'foodpics', 'foodspring', 'foodprep', 'fortbildung']"
+k mean cluster 609,coffeelover,"['coffeetime', 'coffeelife', 'coffeeholic', 'spicyfoodlover', 'BagCoffeeMaker', 'coffeecocktail', 'coffeemixology', 'loferlover', 'chocolatelover', 'coffeevibes', 'coffeemood', 'coffeelovers', 'icecreamlover']"
+k mean cluster 610,WorldTraveler,"['worlderunners', 'WorldRefugeeDay', 'WorldClassMoments']"
+k mean cluster 611,dubailife,"['uaelife', 'expatlife', 'musiclife', 'musicianlife', 'aupairlife', 'moubtaibike', 'subauspiciis']"
+k mean cluster 612,trilife,"['unilife', 'bmwlife', 'tracklife', 'stagelife', 'farmlife', 'countrylife', 'petersilie', 'pralines', 'austrialife', 'naturelife', 'freelife', 'natureislife']"
+k mean cluster 613,italy,"['igdaily', 'avbaby', 'AVbaby', 'vitara', 'grazy', 'finally', 'rituale', 'italia', 'icebaby', 'nitrobaby', 'italytrip', 'igersitaly', 'itell', 'eiskalt']"
+k mean cluster 614,lugitschsteirerhuhn,['pyrotechnikistkeinverbrechen']
+k mean cluster 615,worklifebalance,"['wirbleibenzuhause', 'workwinebalance']"
+k mean cluster 616,veganereistee,"['gärtnereiblumensteiner', 'veganerezepte', 'veganrecipe', 'ohhoneyeistee', 'jägermeister', 'veganeduftkerze', 'zitroneneistee', 'grazereistee', 'Beereneistee', 'beereneistee', 'lieblingseistee', 'jagermeister', 'veganesessen', 'balanceisthekey', 'thefutureisfemale']"
+k mean cluster 617,italien,"['vitaminsea', 'metalvideo', 'stollen', 'meditation', 'mittagstief', 'vitaminc', 'italienisch', 'gitarristin', 'withaview', 'tulpen', 'italienvibes', 'bellaitalien', 'icetealemon', 'pistazien', 'digitalminds', 'digitaltwin']"
+k mean cluster 618,wintershooting,"['winteriscoming', 'vintageclothing', 'winterspaziergang', 'fotoshooting', 'wiedereroffnung', 'videoshooting']"
+k mean cluster 619,sonnenschein,[]
+k mean cluster 620,kohlenhydratarm,"['ohnekohlenhydrate', 'kühlenkopfbewahren']"
+k mean cluster 621,friends,"['artandfriends', 'experiences', 'friendship', 'frierss', 'friede', 'erfrischend', 'feminds', 'furryfriend', 'furryfriends', 'ecofriendly', 'newfriends', 'freunde', 'bestfriends', 'animalfriends', 'naturefriends']"
+k mean cluster 622,walkingaround,"['freewalkingtour', 'TravellingThroughTheWorld', 'goofingaround', 'washingtondc', 'runningaround', 'lyingaround', 'strollingaround']"
+k mean cluster 623,neverdone,"['feuertonne', 'neveragain', 'pepperoni', 'neverstop', 'niederlande', 'nevergiveup', 'beverage', 'enjoyeverymoment', 'nevertooold', 'weekendmode']"
+k mean cluster 624,bodensee,"['kundenservice', 'worthersee', 'Bodensee', 'expensive']"
+k mean cluster 625,everythingforthatmoment,"['einkleinerschrittfürmicheingroßerfürdiemenschheit', 'allthatcountsarethelittlemoments']"
+k mean cluster 626,pop,"['atp', 'boy', 'popmusic', 'tod', 'app', 'potd', 'popup', 'popuplab', 'prom', 'popmusik']"
+k mean cluster 627,architecturelovers,"['architecturephotography', 'architecturelover']"
+k mean cluster 628,details,"['heavycocktails', 'cocktails', 'nosetotail', 'rednails', 'hoteldetails']"
+k mean cluster 629,gemeinsamwachsen,"['klagenfurtamwörthersee', 'gemeinsamsindwirstark', 'gemeinsamschlemmen', 'gemeinsamwasbewegen', 'gemeinsamgenießen', 'gemeinsamlernen']"
+k mean cluster 630,whatanight,[]
+k mean cluster 631,chromaxblack,[]
+k mean cluster 632,bohodecor,['xmasdecor']
+k mean cluster 633,diejungsausKA,['pizzeraundjaus']
+k mean cluster 634,podcastgründerleben,"['podcastfürfrauen', 'tippsfürgründerinnen', 'podcastdeutschland']"
+k mean cluster 635,creamyaf,"['creamypasta', 'cerealbar', 'dreamy', 'icecreambox']"
+k mean cluster 636,visionen,[]
+k mean cluster 637,eatinghealthy,[]
+k mean cluster 638,vote2020,"['nye2021', 'Tokyo2020', 'ytc2021', 'muttertag2021', 'since2020', 'lockdown2020', 'reboot2020', 'vatertag2020', 'style2020', 'vegafest2020', 'goodbye2020']"
+k mean cluster 639,womensupportingwomen,"['frauensupportenfrauen', 'womansupportingwomen', 'womansupportingwoman']"
+k mean cluster 640,sozialemedienfürunternehmen,"['unternehmenhelfenunternehmen', 'socialmediafürunternehmen']"
+k mean cluster 641,lachaniabeach,"['carpediembeach', 'tropicanabeachclub', 'cocowhitebeach', 'stegnabeach', 'lachenistgesund']"
+k mean cluster 642,buna,"['bosnia', 'burrata', 'bunny', 'bra', 'bus']"
+k mean cluster 643,3danimation,"['prideandpassion', 'manifestation']"
+k mean cluster 644,hotinhere,"['folgedeinemherzen', 'whoruntheworld', 'gettingthere', 'hotellerie']"
+k mean cluster 645,endlesslove,"['smallbusinesslove', 'fitnesslove', 'IndiaPaleAle', 'englishpaleale']"
+k mean cluster 646,neu,"['nye', 'cpu', 'news', 'new', 'peru', 'neues']"
+k mean cluster 647,easteuropetrip,"['easterspecial', 'getfastordietrying', 'sisterrosettatharpe', 'sisterstrip']"
+k mean cluster 648,neueepisode,[]
+k mean cluster 649,yummy,"['yummi', 'mmmmh', 'yummyfood', 'mummy', 'yummie']"
+k mean cluster 650,alcoholfree,"['anajohnsonpreset', 'nitrocoldbrew']"
+k mean cluster 651,schonbrunnpalace,['schenkdiraufmerksamkeit']
+k mean cluster 652,italien,[]
+k mean cluster 653,unübertrefflich,[]
+k mean cluster 654,berlinbeinacht,"['wahrelieberostetnicht', 'schmetterlingeimbauch', 'wienbeinacht', 'teilenerwünscht', 'mitliebegemacht', 'mitliebegekocht', 'berlinbynight', 'berlindayandnight']"
+k mean cluster 655,designinterior,"['adventureinterview', 'musicagainstcorona']"
+k mean cluster 656,italylovers,"['italytravel', 'digitalerprozess', 'sapatilhalovers', 'animallovers']"
+k mean cluster 657,shaking,"['bulking', 'cashisking', 'shooting', 'baking', 'cooking', 'speaking', 'sparkling', 'schladming', 'meaning', 'walking', 'schladming2021', 'flamingo']"
+k mean cluster 658,collagen,[]
+k mean cluster 659,michelleobamaquotes,['motivationalquotes']
+k mean cluster 660,3sterne,"['osterfest', 'osterbier']"
+k mean cluster 661,viennamajor,"['viennacity', 'lignanosabbiadoro', 'viennafood', 'viennamusic', 'viennamusicians']"
+k mean cluster 662,vino,"['pivo', 'pins', 'ovini', '2min2mio', 'bingo', 'kino', 'veneto', 'ginko', 'fine']"
+k mean cluster 663,weltfrauentag,"['frauentag', 'internationalerfrauentag', 'kulturmontag']"
+k mean cluster 664,outfitpost,"['outfitlook', 'outfitinspo']"
+k mean cluster 665,vwpolo,['vwgolf']
+k mean cluster 666,maribor,"['magickeyboard', 'markfoster', 'carambol', 'acaibowl', 'marryvorrat', 'marzipan', 'darkbeer']"
+k mean cluster 667,egyptian,"['egiptologia', 'vegetarian', 'rezeptideen']"
+k mean cluster 668,almostsummeroderso,['thosesummernights']
+k mean cluster 669,innovation,"['drinkinnovation', 'innovativ', 'hikinginnovation', 'decoration', 'innovationAcademy', 'informatiker', 'informationstechnik', 'innovative', 'weddinglocation', 'vintagelocation', 'intuition']"
+k mean cluster 670,longboard,"['11guysonboard', 'bodyguard', 'visionsboard', 'jobsonboard', 'longboarding']"
+k mean cluster 671,ootddaily,"['instadaily', 'ootdgals', 'foodfails']"
+k mean cluster 672,noshoestoday,"['newshoesdaily', 'myshoestoday']"
+k mean cluster 673,mindsetiseverything,[]
+k mean cluster 674,austin420i,[]
+k mean cluster 675,moments,"['pccomponents', 'magicalmoments', 'mompreneur', 'polenta', 'mitomoment', 'luckymoment', 'magicmoment', 'comment', 'womentech', 'momente', 'preciousmoments', 'funnymoments', 'playfulmoments', 'ivents', 'nomeat', 'enjoyment', 'glücksmomente', 'moment']"
+k mean cluster 676,ahornsirup,['ahornsirupauskanada']
+k mean cluster 677,loverun,"['levelup', 'discoverunder5k', 'discoverunder10k', 'lovemusic', 'livemusic', 'lagerbauen', 'dicoverunder5k', 'lovely', 'morefun']"
+k mean cluster 678,oxytocinvibes,['fullyvacinnated']
+k mean cluster 679,beautifulday,"['blackouttuesday', 'beautifulnature', 'beautifulearth']"
+k mean cluster 680,motivatorin,"['motivation', 'motivationzummitnehmen', 'motivationssprüche', 'konditorin', 'motivationalmonday', 'notimetodie', 'notimetodie007', 'motivationmonday']"
+k mean cluster 681,berghain,"['nextrichpiana', 'burjkhalifa', 'bergruft', 'berglandschaften', 'bergsteigen', 'bernhardott', 'igersheaven']"
+k mean cluster 682,expensivelifestyle,['expensivelifestyles']
+k mean cluster 683,lavidaesuna,"['savameetsdunav', 'woamisdraussn']"
+k mean cluster 684,offseason,"['cafeeamor', 'preseason', 'officedog']"
+k mean cluster 685,Vienna,"['vienna', 'igersvienna', 'ViennaFood']"
+k mean cluster 686,sisi,[]
+k mean cluster 687,mohntorte,[]
+k mean cluster 688,bio,"['bts', 'brot', 'bjj', 'bye', 'blog', 'biobs', 'ubit', 'büro']"
+k mean cluster 689,Glück,['black']
+k mean cluster 690,gyoza,['giza']
+k mean cluster 691,muskelaufbau,[]
+k mean cluster 692,cliff,"['fuckoff', 'schiff', 'cooloff']"
+k mean cluster 693,toskana,"['posenkannich', 'toscana', 'company', 'tuscany', 'koskinou', 'piosenkarka']"
+k mean cluster 694,quédateencasa,[]
+k mean cluster 695,domoreadventure,"['outdoortadventure', 'domoreadventures', 'worldwideadventure']"
+k mean cluster 696,bierliebe,[]
+k mean cluster 697,littlegranny,"['littlebitcrazy', 'littlething']"
+k mean cluster 698,menu,"['mns', 'genug', 'meat', 'media', 'menü']"
+k mean cluster 699,pofesen,['probieren']
+k mean cluster 700,weltcup,"['welschlauf', 'CLUSEclub', 'delicous', 'feetup']"
+k mean cluster 701,ifyoureabirdimabird,[]
+k mean cluster 702,lovecooking,"['motioncooking', 'hobbycooking', 'livelooping', 'freestylecooking', 'leavenoonebehind']"
+k mean cluster 703,flyingintheclouds,['flyinginthesky']
+k mean cluster 704,signalcolor,"['25gramscoldbrew', 'skyismyfavoritecolor', 'signalfeuer']"
+k mean cluster 705,psychotherapie,"['psychokinesiologie', 'Physiotherapie', 'Viszeraltherapie', 'Craniosacraltherapie']"
+k mean cluster 706,peach,"['beach', 'merch', 'natch', 'beschte', 'Velich', 'seachefs', 'velich', 'pitch', 'research', 'path', 'feldbach']"
+k mean cluster 707,bloggerde,"['bloggerat', 'bloggerstyle', 'fitnessbloggerde', 'bierbloggerlife', 'brotherscider']"
+k mean cluster 708,natursee,"['naturpur', 'natürlich', 'saturdayfever', 'natural', 'naturelove', 'wallersee', 'naturdeo', 'natureistee', 'naturejewels', 'naturevideo', 'naturepic', 'naturel', 'naturjuwel', 'naturereels', 'naturefreedom', 'naturetravel', 'naturtrüb']"
+k mean cluster 709,communicationiskey,"['formulagastronomie', 'communicationskills', 'communicationsiskey']"
+k mean cluster 710,canalgrande,['canwegobackplease']
+k mean cluster 711,teig,"['steigauf', 'hefeteig', 'mutig', 'stevia', 'beige', 'zeit', 'weiz', 'totebag', 'cremig', 'witzig']"
+k mean cluster 712,special,"['suezcanal', 'speedcity', 'speedkills', 'soexcited', 'genial', 'specialfood', 'specialtycoffee', 'Specialty', 'spezialität']"
+k mean cluster 713,schneezauber,"['schneschuhwandern', 'schneeschuhwandern', 'windeltortenzauber', 'schnittlauchblüten', 'schwarzbier']"
+k mean cluster 714,frühstückingraz,"['frühstücksliebe', 'frühstückeningraz', 'frühstückengehen', 'frühstückzuzweit', 'frühstücken', 'frühlingingraz']"
+k mean cluster 715,amorzinho,"['earlymornings', 'imsorrywhat']"
+k mean cluster 716,recyclable,[]
+k mean cluster 717,abgrenzen,"['abnehmen', 'Abgrenzen', 'farbebekennen']"
+k mean cluster 718,newyearsparty,"['newyearsday', 'enjoyingnaturesbeauty']"
+k mean cluster 719,selbstwertstärken,"['selbstwertschätzung', 'selbstvertrauenstärken', 'selbstfürsorge', 'selbstwertgefuhl', 'selbstfursorge']"
+k mean cluster 720,songwriting,"['horseriding', 'songwriters', 'dogsitting', 'cookingwithwine', 'goneswimming']"
+k mean cluster 721,boyfriendofinstagram,[]
+k mean cluster 722,selbstgebacken,"['plätzchenbacken', 'selbstgemacht', 'releasethekraken']"
+k mean cluster 723,ronin,"['losinj', 'drygin', 'tonic', 'tolmin', 'mountain', 'rotwein', 'ironman', 'Croatia', 'sponsion', 'frontman']"
+k mean cluster 724,tablesoccer,"['tabelsoccer', 'teeimsommer', 'bossbabesociete', 'thebossbabesociete']"
+k mean cluster 725,workingmom,"['networkingqueen', 'wirkungvonmusik', 'coworkingspace']"
+k mean cluster 726,egitto,"['egipto', 'petitejoys', 'mittwoch', 'exited', 'exittheroom', 'renemagritte']"
+k mean cluster 727,Sonnenuntergang,[]
+k mean cluster 728,prgirlsrock,['prgirlsdoitbetter']
+k mean cluster 729,selbstständig,"['selbständigkeit', 'selbstundständig']"
+k mean cluster 730,loveiseverywhere,"['yogaisforeverybody', 'magiciseverywhere']"
+k mean cluster 731,bmwgang,['bmwgrancoupe']
+k mean cluster 732,trans,"['brand', 'tulipans', 'track', 'traum', 'treats', 'armani', 'gratis', 'thanks', 'traunsee', 'tragöss', 'Bratans', 'trapbeats', 'trap']"
+k mean cluster 733,maxstiegl,[]
+k mean cluster 734,ConEseCuerpazoYAcercateMasAMiaMi,[]
+k mean cluster 735,destinationhollywood,[]
+k mean cluster 736,naturediscovery,"['naturebrilliance', 'natureofourworld']"
+k mean cluster 737,lavabräu,"['lavabräumeetsmarry', 'lavarbräu', 'marrymeetslavabräu', 'rammlerbräu']"
+k mean cluster 738,em2020,"['30000', 'abnehmen2021', '4x200m', 'etch2019', 'season2020', '2020', 'zib2022', 'heels2020', 'hello2021']"
+k mean cluster 739,meltedchocolate,"['whitechocolate', 'hazelnutchocolate', 'hotchocolate', 'gesundeschokolade']"
+k mean cluster 740,helleslager,"['wesleysafadão', 'femalebassplayer', 'teeliebhaber', 'weinliebhaber', 'hellesbier', 'halogenstrahler']"
+k mean cluster 741,raffle,"['coffee', 'Coffee', 'radler', 'gefuhle', 'kaffee', 'bürokaffee', 'cornwaffles']"
+k mean cluster 742,fairtrade,"['fairytail', 'fairemode', 'fairytale', 'darthvader']"
+k mean cluster 743,apfel,"['arnfels', 'apfelbrot', 'apfelwein', 'aperol', 'mapiful', 'äpfel', 'rapunzel', 'opfer']"
+k mean cluster 744,OuCoisaParecida,[]
+k mean cluster 745,genießen,"['gewinnen', 'gemuese', 'einenimTeehaben', 'selfiequeen', 'lebengenießen', 'vorteilegenießen']"
+k mean cluster 746,fitnessgoals,"['mindsetgoals', 'friendshipgoals', 'fitnessfood', 'fitnesstips', 'fitnessessen', 'fitnessmodel', 'fitnessgirl']"
+k mean cluster 747,inhalieren,[]
+k mean cluster 748,MADEbyLINE,"['DEEPDIVE', 'OUTOFOFFICE']"
+k mean cluster 749,gewürze,"['gewuerze', 'gemüse']"
+k mean cluster 750,dahoamisamscheensten,['zuhauseistesamschönsten']
+k mean cluster 751,fall,"['falco', 'fülle', 'pfalz', 'toll', 'ball']"
+k mean cluster 752,waschbär,"['zuschauer', 'geschirr']"
+k mean cluster 753,quote,[]
+k mean cluster 754,daslebenversüßen,['profisgegenverrschwendung']
+k mean cluster 755,sharmelsheikh,[]
+k mean cluster 756,fairfashion,"['fallfashion', 'fairerschmuck', 'ootdfashion', 'igfashion', 'nakdfashion', 'luxuryfashion', 'oodtfashion', 'pantyhosefashion', 'classyfashion', 'blackfashion', 'ecofashion', 'veganfashion', 'fairtradefashion', 'designerfashion', 'footwearfashion', 'firstfashionista', 'firstfashioninfluencer']"
+k mean cluster 757,viena,"['sirena', 'siena', 'veja', 'viola']"
+k mean cluster 758,kunsthauscafegraz,['kunsthauscafémeetscarry']
+k mean cluster 759,testing,"['meeting', 'aeijstgin', 'abstimmung', 'mentoring', 'leitung', 'testen', 'tasting', 'testerin', 'eating', 'abendstimmung', 'gösting', 'Festival', 'zeitung', 'teetrinken', 'fitting', 'tastetesting']"
+k mean cluster 760,vfxsupervisor,[]
+k mean cluster 761,ichbindabei,"['ichwilleinrindvondir', 'ichbinwasser']"
+k mean cluster 762,blogger,"['blogging', 'mamablogger']"
+k mean cluster 763,winterschlussverkauf,['weinereiimbaderhaus']
+k mean cluster 764,bussibaba,"['bingobussibaba', 'bossbabe', 'bossbabeiga']"
+k mean cluster 765,hotpot,"['teapot', 'hotbox', 'hotbowl', 'hotdog', 'contest', 'holypit', 'shoutout']"
+k mean cluster 766,satin,"['slavin', 'kamin', 'oakgin', 'gatinha', 'maltit', 'Patent', 'stateofmind']"
+k mean cluster 767,xmas,[]
+k mean cluster 768,theplacetobe,['placetobe']
+k mean cluster 769,biere,"['weinerei', 'ziele', 'biene', 'niere', 'beeren', 'tiere', 'bierig', 'beerige', 'birra', 'biernerds']"
+k mean cluster 770,coffeerence,"['cozyfireplace', 'conference', 'globalconference', 'coffeedryingbeds', 'coffeetree', 'coffeecupcrime', 'academicexcellence', 'kaffeetrinken']"
+k mean cluster 771,cesarmezebar,['weraisethebars']
+k mean cluster 772,lebensmittelretten,"['lebensmittelvergiftung', 'vierbeinigermitarbeiter']"
+k mean cluster 773,homeoffice,[]
+k mean cluster 774,supplements,"['visualeffects', 'supplement']"
+k mean cluster 775,streetfoodvienna,"['hotelmeliavienna', 'prayforvienna']"
+k mean cluster 776,soon,"['snow', 'shoot', 'opensoon', 'sonne', 'seeyasoon', 'school']"
+k mean cluster 777,womensupportwomen,"['empoweredwomenempowerwomen', 'womansupportwoman']"
+k mean cluster 778,ontap,"['montag', 'Montag', 'ontv', 'oneway']"
+k mean cluster 779,businessman,"['sunshineonmymind', 'business', 'businessfrau', 'grazerbusinessmamas', 'businesslook', 'businesswoman', 'sunshineisfine', 'guindulman']"
+k mean cluster 780,lippizanerheimat,[]
+k mean cluster 781,Roaster,"['easter', 'podcastgespräch', 'stratocaster']"
+k mean cluster 782,falldecor,"['fallcolors', 'familieschärf']"
+k mean cluster 783,partydrink,"['fancydrinks', 'warmdrinks', 'spicydrink', 'antiwrinkle', 'eisteedrink', 'energydrink', 'easydrinking', 'partnerincrime', 'berrydrink', 'partneriscrime', 'marrymixing', 'earlymorning']"
+k mean cluster 784,derzerowasteladen,[]
+k mean cluster 785,animal,"['danielabt', 'animals', 'handmade', 'capital', 'kannwas', 'carnival', '2min2mil', 'magical']"
+k mean cluster 786,cats62pro,[]
+k mean cluster 787,thankful,"['thanksgurl', 'grateful']"
+k mean cluster 788,secondhand,"['stehendlichauf', 'secondtry']"
+k mean cluster 789,whenthesungoesdown,[]
+k mean cluster 790,goodtime,"['greattime', 'goodtimes', 'goodvibes', 'Derbytime', 'cozytime', 'grazfoodguide', 'nobodyshame', 'storytime', 'foodguide', 'Oldtimer', 'bowltime', 'lunchtime', 'goodlife', 'goodvibesonly', 'pooltime', 'poolside']"
+k mean cluster 791,redbull,"['redfellas', 'frenchbulldog', 'redbourbon', 'redbus', 'redbullring']"
+k mean cluster 792,fokus,"['kokos', 'kokosnuss', 'focus', 'foods', 'fotos', 'bonus']"
+k mean cluster 793,cutefamily,"['welcometothefamily', 'golffamily', 'minhafamilia', 'buttermilch', 'mapifulfamily', '1minutefurmich', 'ulzfamily', 'onebigfamily', 'zeitmitderfamilie', 'sheepfamily', 'Instafamily']"
+k mean cluster 794,igers,"['igersgraz', 'burgers', 'igersmunich', 'igerswien', 'igersbosnia', 'ingwershot', 'igersstyria']"
+k mean cluster 795,summerfun,"['summerbody', 'summermood', 'summer2021', 'summerdrink', 'sommerfigur', 'südamerika', 'summer21', 'summerhat', 'summerday', 'summer2019', 'funfunfun', 'summerfeeling', 'summer2020', 'summer20121']"
+k mean cluster 796,soapbubbles,[]
+k mean cluster 797,drink,"['drinkporn', 'drinkup', 'drinks', 'newdrink', 'drinkguya', 'drinksoft', 'drinking', 'drinkthis', 'SriLanka', 'adria', 'biodrink']"
+k mean cluster 798,motherofcats,['motherandbaby']
+k mean cluster 799,kunstinstallation,['palestineisforthepalestinainpeople']
+k mean cluster 800,marryaperitif,"['merrychristmas', 'marrymeetsbeer', 'beerigeraperitif', 'selfmadeaperitif', 'süßeraperitiv', 'bestaperitif', 'marrytheberriedicetea']"
+k mean cluster 801,babyiscomming,"['babyitscoldoutside', 'seasoniscoming']"
+k mean cluster 802,newyorkcheesecake,['nycheesecake']
+k mean cluster 803,costume,"['cozumel', 'batcostume', 'kostüm']"
+k mean cluster 804,wesolutions,[]
+k mean cluster 805,funatwork,"['womanatwork', 'sundaywork']"
+k mean cluster 806,dreaming,"['freezing', 'breadbaking', 'Dreamview', 'dreamjob', 'reading', 'relaxing']"
+k mean cluster 807,havefun,"['fabelbund', 'havingfun']"
+k mean cluster 808,championsofengland,[]
+k mean cluster 809,personalisiertenamenslieder,"['personaldevelopmentcoach', 'personalisiertelieder', 'personalisiertekinderlieder', 'personalisiertegeschenke', 'personalksiertenamenslieder', 'personalisierteNamenslieder']"
+k mean cluster 810,startuprungraz,"['startupfounder', 'startupscenegraz', 'Startupscenegraz', 'uhrturmgraz', 'startupgraz', 'gastroausbildunggraz']"
+k mean cluster 811,coach,['coracao']
+k mean cluster 812,monyo,['mango']
+k mean cluster 813,supportyourlocals,"['supportyourlocal', 'supportyourlocalcoffeeroaster', 'supportyourlocalhero', 'supportlocalartists']"
+k mean cluster 814,foodsupplement,[]
+k mean cluster 815,bridge,"['friday', 'pride', 'brioche', 'porridge', 'rialtobridge']"
+k mean cluster 816,aistammtisch,"['asiatisch', 'eisteepfirsich', 'stammtisch', 'gründerstammtisch', 'grunderstammtisch', 'missaustriasomuch', 'kaiservillabadischl', 'optimistisch']"
+k mean cluster 817,oberösterreich,"['immerwiederösterreich', 'podcastausösterreich', 'podcastösterreich', 'poscastösterreich', 'foodblogÖsterreich', 'lowcarboesterreich', 'hobbybäckerösterreich', 'wirbackenunsdurchösterreich', 'weinausösterreich', 'willkommenösterreich', 'SPARösterreich', 'sparösterreich', 'salzburgösterreich', 'ordentlicherschreibtisch', 'pragenturosterreich', 'lehrlingoesterreich', 'veganösterreich', 'naturinösterreich', 'igersösterreich']"
+k mean cluster 818,styleinspo2020,['steirerinawawards2020']
+k mean cluster 819,summersale,"['summervibes', 'summertime', 'oldjerusalem', 'immervoll', 'summerparty', 'aufmerksamkeit', 'sommerpause', 'summerspecial', 'summerschool', 'summervibe', 'summerresidence', 'comfortable', 'Computerspiele', 'summerdays', 'sunmertime', 'summerstyle', 'summerlove', 'amberale']"
+k mean cluster 820,churchillbar,['thefutureofchiliisnow']
+k mean cluster 821,blackberries,"['raspberries', 'blackcurrant', 'blackberry', 'blackhighheels', 'blacksneakers', 'wildstrawberries']"
+k mean cluster 822,classygirl,"['classywomen', 'cleansingoil', 'countrygirl']"
+k mean cluster 823,greatsunday,"['happysunday', 'greatpeople', 'workstartsmonday', 'greatday', 'haveaniceday']"
+k mean cluster 824,taufgeschenke,"['geschenke', 'taufgeschenk', 'strategieschmiede', 'hautpflegeprodukte', 'freudeschenken', 'badgleichenberg', 'kaffeeistchefsache', 'energetischedynamiken']"
+k mean cluster 825,breathtakingviews,['breathtakingview']
+k mean cluster 826,toohot,"['stockholm', 'studioshot', 'outdoorphoto', 'gayhot', 'justgoshoot']"
+k mean cluster 827,gründungstipps,['gründungsberatung']
+k mean cluster 828,hanflebensmittel,['nahrungsergaenzungsmittel']
+k mean cluster 829,verschärft,"['lgvgärtnergschäftl', 'unverschwendet', 'tierversuchsfrei', 'verrücktnachlarry']"
+k mean cluster 830,dubistwertvoll,"['dubistgutsowiedubist', 'dubistgutgenug', 'dibistwertvoll', 'dubistwrrtvoll']"
+k mean cluster 831,holidayvibes,['holidaymode']
+k mean cluster 832,inthenews,[]
+k mean cluster 833,hungryinhungary,[]
+k mean cluster 834,designer,"['dervierender', 'distillery', 'daseggenberg', 'design', 'qrcodescanner', 'shoesdesigner', 'designed', 'shopdesigner', 'designers', 'designmilk']"
+k mean cluster 835,welovegoodcoffee,"['welovecoffee', 'welovegreenhouse']"
+k mean cluster 836,regionalität,"['nationalpetday', 'feliznavidad', 'loyalität']"
+k mean cluster 837,nachmachen,"['nachdembiken', 'einfachmachen', 'einfachkochen', 'wachmacher', 'bachwasser', 'wachbleiben', 'nichtschlau', 'backenmachtgl', 'blackmagicwomen', 'lenahoschek', 'aufeuchkannichzählen', 'nachrichten', 'flammkuchen']"
+k mean cluster 838,gesundefette,"['gesuchtundgefunden', 'visualeffectsstudio', 'gesunderkuchen', 'gesunderezepte', 'gesundeküche', 'gesundekekse', 'gesuchtgefunden', 'gazaunderattack', 'besonderetiere', 'allesfürunserestadt']"
+k mean cluster 839,yogis,[]
+k mean cluster 840,brunchen,"['berufungleben', 'kuchen', 'obstkuchen', 'brotbacken', 'muenchen', 'bestchef', 'erfrischen', 'münchen', 'biszumnächstenmal', 'scrunchies', 'frenchie', 'brunchbox', 'brunchtime', 'beobachten', 'brunch', 'badnehmen', 'brunchhard', 'erfischend', 'kaninchen']"
+k mean cluster 841,drinkglobalactlocal,[]
+k mean cluster 842,austrianbloggers,"['austrianblogger', 'austrianfoodblogger', 'austrianmountains', 'carinthianblogger', 'fashionbloggersde', 'fashionbloggers', 'austrianstartups', 'austriablogger', 'austrialovers']"
+k mean cluster 843,southdownsnationalpark,[]
+k mean cluster 844,ashwagandha,[]
+k mean cluster 845,gayguy,['gayboy']
+k mean cluster 846,barefootgirl,"['herefortheview', 'salzburgfoodguide']"
+k mean cluster 847,foodanddrinks,"['foodandwine', 'forhomeandcommercialuse', 'foodandbeverage', 'youngandurbanbyspar']"
+k mean cluster 848,brainfood,"['amazingfood', 'thaifood']"
+k mean cluster 849,gemüseausdemgarten,['rapunzelsalatausdemgarten']
+k mean cluster 850,kalte,"['talente', 'skate', 'kalteade', 'parkplätze', 'kallithea']"
+k mean cluster 851,kasaboo,"['kaslabn', 'kasaboowhat', 'peekaboo']"
+k mean cluster 852,onlinevsprint,"['onlinemeetings', 'onlinemarketing', 'onlinewissen', 'onlineacademy', '100metersprinter']"
+k mean cluster 853,blueberrystrudel,[]
+k mean cluster 854,miracle,"['emirates', 'mirrorglaze', 'mirrorglazecake', 'miracles']"
+k mean cluster 855,photosho,"['photoshoot', 'photoraphy', 'photosession', 'photos']"
+k mean cluster 856,bondingtime,"['porridgegehtimmer', 'homeinnotime', 'bouncingcastle', 'bondingmoment', 'bondingmoments', 'shootingtime']"
+k mean cluster 857,rabattcode,[]
+k mean cluster 858,slovenija,"['sanDomenico', 'solopreneur', 'slovenia']"
+k mean cluster 859,bierkultur,"['wienkultur', 'orfkultur', 'betriebsurlaub']"
+k mean cluster 860,glitter,"['palettegear', 'latteart', 'gewitter', 'gewitterfront']"
+k mean cluster 861,veganlunch,"['veganeküche', 'veganerbrunch', 'diekroneundich', 'veganbrunch', 'vegandumplings', 'veganvienna']"
+k mean cluster 862,dessert,"['desert', 'selbstwert', 'lesenswert', 'homemadedessert']"
+k mean cluster 863,golddress,"['playdressup', 'minidress', 'reddress', 'pinkdress', 'kochprozess', 'timeforadress', 'goodbyeusa', 'goddess']"
+k mean cluster 864,nakdcode,"['malemodel', 'panicmode']"
+k mean cluster 865,backenmachtglücklich,"['essenmachtglücklich', 'brotbackenmitsauerteiginperfektion', 'laufenmachtglücklich', 'lesenmachtglücklich', 'radelnmachtglücklich']"
+k mean cluster 866,guineasofinsta,['modelsofinsta']
+k mean cluster 867,falstaff,"['falstafftasting', 'ballaststoffe', 'fabelhaft', 'falstaffprofi', 'falstaffprofiatwork', 'Falstaff', 'falstaffyoungtalents', 'falstaffytc', 'falstaffyoungtalentscup', 'süßstoff', 'lockstoff', 'falstaffmagazine']"
+k mean cluster 868,neu,[]
+k mean cluster 869,iphone,"['ohhoney', 'zitrone']"
+k mean cluster 870,hawara,"['rhubarb', 'hayati', 'manarola', 'makava', 'wienerhawara', 'samahawara']"
+k mean cluster 871,cidery,['celery']
+k mean cluster 872,millstättersee,['sallystortenwelt']
+k mean cluster 873,newjewelry,['jewelry']
+k mean cluster 874,savegaza,"['savegazachildren', 'spagetaway']"
+k mean cluster 875,Sample,['TeamTee']
+k mean cluster 876,meeris,"['memories', 'yeserima', 'meniskusriss', 'america', 'beerig', 'meets', 'meaterra', 'emmerbier']"
+k mean cluster 877,auszeit,"['austria', 'mussein', 'ausblick', 'urlaubszeit', 'ausgleich']"
+k mean cluster 878,escapegame,"['escapetheroom', 'exitthegame', 'therealescapegame', 'escapememe', 'easypaleale']"
+k mean cluster 879,greatstuff,['creativestudio']
+k mean cluster 880,original,"['regional', 'noartificial', 'ovinisnacks', 'totalregional', 'origintrip', 'arisanal', 'origin', 'digital']"
+k mean cluster 881,laufevent,"['elanorroosevelt', 'gutaufgelegt']"
+k mean cluster 882,Ärzte,['ernte']
+k mean cluster 883,klassik,"['bramusik', 'klassiker']"
+k mean cluster 884,öfferl,"['öfferlbrot', 'offer']"
+k mean cluster 885,metabo,"['metal', 'mexicano', 'potato', 'mexico', 'letsgo']"
+k mean cluster 886,lebendig,"['weekendtrip', 'glaubandich', 'lebensweg', 'lebeninfülle', 'humblebeginnings', 'schenkdir', 'lebenmitcorona', 'rebranding']"
+k mean cluster 887,whattodo,[]
+k mean cluster 888,hauptplatzgraz,['catcallsofgraz']
+k mean cluster 889,vacation,"['hydration', 'location', 'nasenaction']"
+k mean cluster 890,frommyoven,[]
+k mean cluster 891,motogp,"['mixology', 'motorrad', 'boxtogo']"
+k mean cluster 892,sommerküche,"['sommernachgespräche', 'herbstküche', 'innereienküche', 'gemüseküche', 'lohbergerküchen', 'hocheckhütte']"
+k mean cluster 893,novemberrain,"['november', 'housemountain', 'nopuedodormir']"
+k mean cluster 894,gizapyramids,"['pyramids', 'pizzapizzapizza']"
+k mean cluster 895,outfits,"['mountains', 'muffins', 'outfit', 'nolimits']"
+k mean cluster 896,apollon,"['gayfollow', 'eispavillon']"
+k mean cluster 897,streetfashion,"['womensfashion', 'tightsfashion', 'shoesfashion', 'streetwearfashion', 'natureperfection']"
+k mean cluster 898,proteinchips,"['proteinella', 'proteinpancakes', 'proteinsnack', 'potatochips', 'ortweinschule', 'proteincreme', 'protectminorities']"
+k mean cluster 899,allesgutezumgeburtstag,[]
+k mean cluster 900,lugitsch,"['logitech', 'glucklich', 'gatsch', 'plabutsch', 'landwirtschaft']"
+k mean cluster 901,inklusion,"['linkinbio', 'illusion', 'exclusive', 'inklusiv', 'gelebteinklusion']"
+k mean cluster 902,em2020,[]
+k mean cluster 903,beautifulplaces,"['beautifulmoments', 'beautifulplace', 'beautifulcuisines', 'beautifulcorner']"
+k mean cluster 904,höhenangst,"['existenzangst', 'dhodhekanisos']"
+k mean cluster 905,grazblogger,"['grazerblogger', 'germanbloggerde', 'travelblogger']"
+k mean cluster 906,aufbau,"['abbau', 'afba21', 'auflauf', 'afba', 'aufwand', 'altbau', 'auflug', 'kaffehaus']"
+k mean cluster 907,celebrate,"['timetocelebrate', 'celebration', 'letscelebrate', 'schweinsbraten', 'regenerate', 'celeryjuice']"
+k mean cluster 908,appentwicklung,"['wochenteilung', 'führungskräfteentwicklung']"
+k mean cluster 909,runninglife,"['enjoyinglife', 'stunningview', 'runningfervor', 'quarantinelife', 'musicianslife', 'drinkingwine', 'enyoinglife', 'campinglife', 'flyinglife']"
+k mean cluster 910,hirschkäferliebe,"['hirschkäfer', 'hirschkäfergeweih', 'hirschkäferontour']"
+k mean cluster 911,veganfoodie,"['spesautomobile', 'veganfood', 'grazfoodie', 'wecandothis', 'veganfoodshare', 'veganfoodlovers', 'veganfoodporn', 'veganfestival']"
+k mean cluster 912,homegrownfood,['homemadefood']
+k mean cluster 913,venezia,"['videoedit', 'venetianmask']"
+k mean cluster 914,coffeegram,"['coffegram', 'coffeeart', 'coffeebreak', 'selfiegram', 'coffeefarm', 'coffeeontap', 'Goodcoffeegoodday']"
+k mean cluster 915,kunsthauscafe,"['kunstausderdose', 'kunsthaus', 'wasserhaushalt', 'kunsthauscafé']"
+k mean cluster 916,veganbacken,"['jerkchicken', 'gesundbacken', 'vegannaschen', 'keksebacken', 'vegetablegarden', 'panikattacken', 'veganlasagna', 'veganramen', 'vegansnacks']"
+k mean cluster 917,Besuch,"['wesual', 'grieskoch']"
+k mean cluster 918,legslegslegs,[]
+k mean cluster 919,croatiatravel,"['croatia2017', 'girlpowertravel', 'croatiatime', 'adventuretravel', 'austriatravel', 'styriatravel']"
+k mean cluster 920,favoritepic,"['favouritebeachboy', 'favoriteplace', 'favoriteperson', 'favourite', 'favoritesongrightnow']"
+k mean cluster 921,beersofinstergram,['bergerfeinsteconfiserie']
+k mean cluster 922,apfelrezept,"['pizzarezept', 'zucchinirezepte', 'kuchenRezepte', 'brotrezept', 'schnellerezepte', 'drinkrezepte', 'bowlrezepte', 'aperitifrezept', 'apfelperlwein']"
+k mean cluster 923,womenpower,"['flowerpower', 'frauenpower', 'womenempowerment', 'womenswear', 'womeninpower', 'wochenpläne', 'womeninpr', 'wochenteiler', 'womanpower']"
+k mean cluster 924,elderflower,"['TeQuieroComer', 'driedflowers']"
+k mean cluster 925,sailingboat,"['waitinginvain', 'darlingescape', 'xiaolongbao', 'lieblingslokal', 'familienurlaub']"
+k mean cluster 926,asiahousekulinarikanderserleben,['asiatischekulinarikanderserleben']
+k mean cluster 927,unternehmerstory,"['unternehmerin', 'unternehmerinnen', 'underwatherworld', 'unternehmenssprache', 'unternehmensstrategie', 'unternehmensspirit', 'unternehmensphilosophie', 'cinderellastory']"
+k mean cluster 928,superbowl51,"['superbowl50', 'superbowlsunday', 'superfooddeli']"
+k mean cluster 929,foodmarket,"['foodstartup', 'camdenmarket', 'oxfordstreet']"
+k mean cluster 930,segeltörn2k18,[]
+k mean cluster 931,evergreen,"['goevergreen', 'evergiven', 'evergreenshipping', 'eventfürfrauen', 'igersbregenz', 'edlesgruen', 'eveningdress', 'advertisement', 'microgreens', 'igersgreece']"
+k mean cluster 932,essen,"['nissan', 'reisen', 'geschenk', 'essenunzo', 'Speisen', 'session', 'lesen', 'Museen']"
+k mean cluster 933,aufsteirern,"['aufstehen', 'steirerin', 'diesteirerin', 'bergsteigern', 'baldistwiederoffen']"
+k mean cluster 934,sauerteig,"['feuerwehr', 'blätterteig', 'sauerteigbrot', 'natursauerteig', 'schubertkino', 'sauberearbeit', 'sneakerhead']"
+k mean cluster 935,scharf,"['tschöggl', 'scharfessen', 'schwarztee', 'schurl', 'schönwars', 'schauenwirdrauf']"
+k mean cluster 936,myqueen,"['mydubai', 'dragqueen']"
+k mean cluster 937,sleepy,"['sleepycat', 'sleepydog', 'sleepless']"
+k mean cluster 938,coolshoes,"['vejashoes', 'coolshoesby', 'yellowshoes', 'coolshoe', 'cooksclubrhodes', 'cooksclubhotels', 'cooksclub']"
+k mean cluster 939,halloweenkostüm,"['halloweenparty', 'halloweencostume', 'halloween2020', 'halloweencorona']"
+k mean cluster 940,jonathangal,[]
+k mean cluster 941,steiermarktorte,"['schwarzwälderkirschtorte', 'steiermärkische', 'steiermarktourismus', 'steiermarkliebe']"
+k mean cluster 942,mutgewinnt,"['mittelpunkt', 'kundengewinnung', 'kundengewinnen']"
+k mean cluster 943,brazilianfunk,[]
+k mean cluster 944,mywardrobe,[]
+k mean cluster 945,Pandemie,"['haindlmühle', 'kindermode', 'knödelmitei', 'advancedselfie', 'pandemic', 'carpediem']"
+k mean cluster 946,15percentoff,[]
+k mean cluster 947,underwaterphotography,"['underwaterphotographer', 'landscapephotography']"
+k mean cluster 948,great,"['graz', 'dream', 'growth', 'cream', 'scream', 'break', 'breaky', 'bread', 'gewagt', 'greatness', 'greatview', 'heat', 'urkraft']"
+k mean cluster 949,pastalove,"['plantslover', 'pizzalover', 'pizzalove', 'pastalover', 'pastarecipe', 'matchalover', 'austrialove']"
+k mean cluster 950,philippines,"['chilipeppers', 'plumdumplings']"
+k mean cluster 951,socialdistancing,"['politicaldiscussion', 'marinadiscarlino']"
+k mean cluster 952,mobility,"['equality', 'mobydick', 'mobilität']"
+k mean cluster 953,spaßandersache,"['süssesodersaures', 'israelaremurdersandtheifs', 'alexandragorsche']"
+k mean cluster 954,babyiscomingsoon,[]
+k mean cluster 955,aktion,"['fashion', 'antics', 'Fashion', 'aktionen']"
+k mean cluster 956,pumpkinspice,"['surprisesurprise', 'pumpkins']"
+k mean cluster 957,grazkulturjahr2020,[]
+k mean cluster 958,designlovers,"['designyourworkspace', 'musiclovers']"
+k mean cluster 959,siesta,"['feiertag', 'insta', 'icedtea', 'heißesbad']"
+k mean cluster 960,usembassy,[]
+k mean cluster 961,swedenimages,"['schwedenplatz', 'neuesimaugust']"
+k mean cluster 962,glamgirls,"['tallgirls', 'inkedgirls']"
+k mean cluster 963,natureshot,"['natürlichnurgetestet', 'naturepattern', 'natureart', 'naturegram', 'natureshots', 'naturehome', 'natureinfocus', 'naturephoto']"
+k mean cluster 964,makingitinaustria,"['mountaininaustria', 'mixingandmastering']"
+k mean cluster 965,liefern,"['liebherz', 'liefernlassen']"
+k mean cluster 966,minimallove,"['minimalsetups', 'minipancakes', '2minuten2millionen', 'musikimalltag', 'findbalance', 'minimalism', 'minimalismus', 'minimalart', 'animallove']"
+k mean cluster 967,graffiti,"['35gradforthewin', 'gtx1080ti', 'Graffiti', 'grafitti', 'grazcity']"
+k mean cluster 968,horsaalf,['hörsaalf']
+k mean cluster 969,hungary,"['january2021', 'runhappy']"
+k mean cluster 970,lyngual,['sensual']
+k mean cluster 971,cloudslime,"['playoutside', 'cloudsurfing', 'cloudscape', 'cloudssurfing']"
+k mean cluster 972,menstyle,"['womenstyle', 'streetstyle', 'americanstyle', 'lifestyle', 'Compostable', 'bean2bottle', 'springstyles', 'melodyne', 'eatandstyle', 'newstyle', 'urbanstyle', 'freestyler', 'berlinstyle', 'mystyle']"
+k mean cluster 973,dogsofınstagram,"['corgisofinstagram', 'officedogsofinstagram', 'foodofinstagram']"
+k mean cluster 974,suppe,"['sumpf', 'skipper', 'surprise', 'success', 'suche']"
+k mean cluster 975,filmmaking,"['cidermaking', 'pizzabaking', 'filming', 'tourismusmarketing']"
+k mean cluster 976,friendsforlife,"['friendshiptime', 'bartenderlife', 'bartenderslife', 'rindsrouladen', 'officedoglife', 'freedomlife']"
+k mean cluster 977,swizzle,['rumswizzle']
+k mean cluster 978,callingallcreators,['palestinianlivesmatter']
+k mean cluster 979,cakestyling,['alwayssmiling']
+k mean cluster 980,agencylife,"['adventureofmylife', 'beachlife', 'changeyourlife']"
+k mean cluster 981,lowenmahne,[]
+k mean cluster 982,2k19,"['2k16', 'ik19vi', 'lt19']"
+k mean cluster 983,workfromhome,"['workingfromhome', 'worksmarternotharder', 'postcardfromtheworld']"
+k mean cluster 984,stayhydrated,[]
+k mean cluster 985,costume,[]
+k mean cluster 986,punktesammeln,['punktesammler']
+k mean cluster 987,montagabend,"['sonntagabend', 'sonntagsgefühl', 'mittagsmenü']"
+k mean cluster 988,eventpr,"['events', 'eventplanner']"
+k mean cluster 989,studioliebe,"['selbstliebe', 'altstadtliebe', 'rotweinliebe', 'instrumentenliebe', 'selstbliebe', 'musikliebe', 'rotwiedieliebe', 'studioherzfeld', 'schokoliebe', 'studioninprantner']"
+k mean cluster 990,badaussee,['urlaubsselfie']
+k mean cluster 991,eatclean,"['werteleben', 'femalelead', 'natchlabs', 'getlean', 'eatplants', 'estilourbano']"
+k mean cluster 992,michelleobamaquotes,[]
+k mean cluster 993,teamreeloq,['teamyellowitz']
+k mean cluster 994,valentine,"['vanillepudding', 'Freepalestine', 'savepalestine', 'freepalestine', 'leavepalestine', 'quarantäne', 'quarantine', 'valentines']"
+k mean cluster 995,schicksalsschlag,[]
+k mean cluster 996,gelato,"['gipfelfoto', 'icedlatte']"
+k mean cluster 997,sundaytunes,"['sandytoes', 'sundayfunday', 'staytuned', 'sunsoutbunsout', 'kundenbonus', 'tuesdaythoughts', 'gmundenamtraunsee']"
+k mean cluster 998,ostern,"['peterpan', 'fototermin', 'fottern', 'ostern2021', 'ostersonntag', 'Mustern', 'ordernow']"
+k mean cluster 999,solutionsforfuture,"['gelatoforfuture', 'lookingforthefuture']"
+k mean cluster 1000,mariahilferstraße23,[]
