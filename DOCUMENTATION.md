@@ -11,7 +11,7 @@ explain done_data folder!
 3. Twitter Scraper
    1. Important Files and Directories
    2. How to install and run it
-4. done_data Folder
+4. Done Data
    1. checklist
    2. personas_with_hashtags
    3. posts_data
@@ -29,6 +29,7 @@ getting details out of those profiles.
 Data management has been archived via CSV files.
 
 ## 2.) Instagram Scraper
+Folder instagram_scraper.
 This crawler is using scrapy and selenium. It is used for all purposes:
 - Crawling a company.
 - Crawling a user / consumer.
@@ -76,6 +77,7 @@ Arguments can be:
 
 
 ## 3.) Twitter Scraper
+Folder twitter_scraper.
 This crawler using scrapy and selenium to get usernames / profiles and a scweet_crawler for 
 getting details out of those profiles.
 
@@ -105,16 +107,16 @@ To run it in Pycharm with arguments:
 To run the scweet_crawler just execute the **scweetCrawler.py** file as any other python program.
 
 
-## 4.) done_data Folder
-This folder contains the representation of the first part of the bachelor thesis which are mainly the posts of Marry Icetea as well as user data. The most important files in those folders are the html files, which are the representation of our data.
+## 4.) Done Data
+The folder done_data contains the representation of the first part of the bachelor thesis which are mainly the posts of Marry Icetea as well as user data. The most important files in those folders are the html files, which are the representation of our data.
 ### 4.i) checklist
 Shows all users with the amount of liked posts and an URL to each post they liked.
-### 4.i) personas_with_hashtags
+### 4.ii) personas_with_hashtags
 persona_categorization: Shows all users with the likelyhood that they are one of the personas Marry has defined together with the hashtags they have used.
 used_hashtags: Shows all hashtags that the users have used, together with the number how often it got used and an checkmark if it already is getting used in any of Marry's defined personas.
-### 4.i) posts_data
+### 4.iii) posts_data
 Shows all the data of an post we have collected. 
-### 4.i) z_HTML Creator
+### 4.iv) z_HTML Creator
 csv_with_images: Is used to create a HTML document out of a CSV file and images for each row in the CSV file.
 normal_csv: Is used to create a HTML document out of a CSV file.
 
