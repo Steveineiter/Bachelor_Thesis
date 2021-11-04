@@ -107,7 +107,11 @@ To run the scweet_crawler just execute the **scweetCrawler.py** file as any othe
 
 
 ## 4.) done_data Folder
-1. checklist
-2. personas_with_hashtags
-3. posts_data
-4. z_HTML Creator
+This folder contains the representation of the first part of the bachelor thesis which are mainly the posts of Marry Icetea as well as user data. The most important files in those folders are the html files, which are the representation of our data.
+### 4.i) checklist
+Shows all users with the amount of liked posts and an URL to each post they liked.
+### 4.i) personas_with_hashtags
+persona_categorization: Shows all users with the likelyhood that they are one of the personas Marry has defined together with the hashtags they have used.
+used_hashtags: TODO HIER WEITER
+### 4.i) posts_data
+### 4.i) z_HTML Creator
