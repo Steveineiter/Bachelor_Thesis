@@ -93,7 +93,6 @@ The process to use the twitter_followers_spider is analogue to that of the Insta
 
 To run it in Pycharm with arguments:
 
-TODO insert image
-
+![Screenshot from 2021-11-04 15-44-21](https://user-images.githubusercontent.com/53307237/140335597-e3cf9cb6-1aa3-4287-8bb4-f660b74b0732.png)
 
 To run the scweet_crawler just execute the **scweetCrawler.py** file as any other python program.
