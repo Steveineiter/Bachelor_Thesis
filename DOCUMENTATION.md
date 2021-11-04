@@ -11,6 +11,11 @@ explain done_data folder!
 3. Twitter Scraper
    1. Important Files and Directories
    2. How to install and run it
+4. done_data Folder
+   1. checklist
+   2. personas_with_hashtags
+   3. posts_data
+   4. z_HTML Creator
 
 
 ## 1.) Overview
@@ -99,3 +104,10 @@ To run it in Pycharm with arguments:
 ![Screenshot from 2021-11-04 15-49-35](https://user-images.githubusercontent.com/53307237/140335992-1779b723-1d10-4286-9e3f-f4c108a7bd55.png)
 
 To run the scweet_crawler just execute the **scweetCrawler.py** file as any other python program.
+
+
+## 4.) done_data Folder
+1. checklist
+2. personas_with_hashtags
+3. posts_data
+4. z_HTML Creator
