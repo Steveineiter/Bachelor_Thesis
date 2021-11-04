@@ -19,8 +19,7 @@ explain done_data folder!
 
 
 ## 1.) Overview
-This documentation is focused on the Crawling part of the Bachelor-thesis. Other areas like machine learning and data 
-representation are treated separately with Jupyter notebooks.  
+This documentation is focused on the Crawling part of the Bachelor-thesis as well as the representation of the data from the first part of the bachelor thesis. Other areas like machine learning are treated separately with Jupyter notebooks.  
 
 There are two different crawlers: 
 - A instagram crawler using scrapy and selenium.
@@ -112,6 +111,19 @@ This folder contains the representation of the first part of the bachelor thesis
 Shows all users with the amount of liked posts and an URL to each post they liked.
 ### 4.i) personas_with_hashtags
 persona_categorization: Shows all users with the likelyhood that they are one of the personas Marry has defined together with the hashtags they have used.
-used_hashtags: TODO HIER WEITER
+used_hashtags: Shows all hashtags that the users have used, together with the number how often it got used and an checkmark if it already is getting used in any of Marry's defined personas.
 ### 4.i) posts_data
+Shows all the data of an post we have collected. 
 ### 4.i) z_HTML Creator
+csv_with_images: Is used to create a HTML document out of a CSV file and images for each row in the CSV file.
+normal_csv: Is used to create a HTML document out of a CSV file.
+
+
+
+
+
+
+
+
+
+
