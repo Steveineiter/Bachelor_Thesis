@@ -1,8 +1,5 @@
 # Bachelor-thesis documentation
 
-TODO:
-explain done_data folder! 
-
 ## Table of contents
 1. Overview
 2. Instagram Scraper
