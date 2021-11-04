@@ -46,8 +46,8 @@ class TwitterFollowersSpider(scrapy.Spider):
         username_field.clear()
         password_field.clear()
 
-        username_field.send_keys("steveineiter")
-        password_field.send_keys("!23Juli1996!")
+        username_field.send_keys(USERNAME)
+        password_field.send_keys(PASSWORD)
         sleep(2)
 
         login_field_xpath = '//*[@class="css-18t94o4 css-1dbjc4n r-42olwf r-sdzlij r-1phboty r-rs99b7 r-1fz3rvf r-usiww2 r-19yznuf r-64el8z r-1ny4l3l r-1dye5f7 r-o7ynqc r-6416eg r-lrvibr"]'

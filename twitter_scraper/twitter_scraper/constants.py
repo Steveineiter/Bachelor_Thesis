@@ -10,7 +10,10 @@ def random_double_generator(lower_limit, upper_limit):
     while True:
         yield round(random.uniform(lower_limit, upper_limit), 2)
 
+
 # Constants for followers spider:
+USERNAME = "foo"
+PASSWORD = "bar"
 TWITTER_START_PAGE = "https://twitter.com/login"
 TWITTER_LIPTON_PAGE = "https://www.twitter.com/lipton"
 MAXIMAL_FOLLOWERS = float('inf')
