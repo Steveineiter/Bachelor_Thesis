@@ -109,8 +109,8 @@ The folder done_data contains the representation of the first part of the bachel
 ### 4.i) checklist
 Shows all users with the amount of liked posts and an URL to each post they liked.
 ### 4.ii) personas_with_hashtags
-persona_categorization: Shows all users with the likelyhood that they are one of the personas Marry has defined together with the hashtags they have used.
-used_hashtags: Shows all hashtags that the users have used, together with the number how often it got used and an checkmark if it already is getting used in any of Marry's defined personas.
+- persona_categorization: Shows all users with the likelyhood that they are one of the personas Marry has defined together with the hashtags they have used.
+- used_hashtags: Shows all hashtags that the users have used, together with the number how often it got used and an checkmark if it already is getting used in any of Marry's defined personas.
 ### 4.iii) posts_data
 Shows all the data of an post we have collected. 
 ### 4.iv) z_HTML Creator
