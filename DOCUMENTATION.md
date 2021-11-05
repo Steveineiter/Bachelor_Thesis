@@ -114,8 +114,8 @@ Shows all users with the amount of liked posts and an URL to each post they like
 ### 4.iii) posts_data
 Shows all the data of an post we have collected. 
 ### 4.iv) z_HTML Creator
-csv_with_images: Is used to create a HTML document out of a CSV file and images for each row in the CSV file.
-normal_csv: Is used to create a HTML document out of a CSV file.
+- csv_with_images: Is used to create a HTML document out of a CSV file and images for each row in the CSV file.
+- normal_csv: Is used to create a HTML document out of a CSV file.
 
 
 
