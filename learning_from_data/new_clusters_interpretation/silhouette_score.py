@@ -1,6 +1,6 @@
 import csv
 import re
-from learning_from_data.z_machine_learning.cluster_analysis.leveshtein_cluster import (
+from learning_from_data.machine_learning.cluster_analysis.leveshtein_cluster import (
     levenshtein_distance_calculator,
 )
 

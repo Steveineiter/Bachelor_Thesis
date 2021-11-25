@@ -8,6 +8,9 @@
 3. Twitter Scraper
    1. Important Files and Directories
    2. How to install and run it
+5. Learning From Data !! TODO !!
+   1. Z Machine Learning
+   2. New Clusters Interpretation
 4. Done Data
    1. checklist
    2. personas_with_hashtags
@@ -16,7 +19,8 @@
 
 
 ## 1.) Overview
-This documentation is focused on the Crawling part of the Bachelor-thesis as well as the representation of the data from the first part of the bachelor thesis. Other areas like machine learning are treated separately with Jupyter notebooks.  
+This documentation is focused on the Crawling part of the Bachelor-thesis as well as the representation of the data from the first part of the bachelor thesis. 
+Also it descibes more complicated parts for example the machine learning and cluster interpretation. Other areas like the scripts that created the data for the first part are treated separately with Jupyter notebooks.  
 
 There are two different crawlers: 
 - A instagram crawler using scrapy and selenium.

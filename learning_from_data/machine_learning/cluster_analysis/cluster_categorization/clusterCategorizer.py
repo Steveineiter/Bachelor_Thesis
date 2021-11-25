@@ -1,7 +1,7 @@
 import csv
 
 # Input:
-CLUSTER_FILE = "/home/stefan/Knowledge/Bachelor-thesis/Learning from Data/z_machine_learning/cluster_analysis/cluster_categorization/levenshtein_clusters.csv"
+CLUSTER_FILE = "/home/stefan/Knowledge/Bachelor-thesis/Learning from Data/machine_learning/cluster_analysis/cluster_categorization/levenshtein_clusters.csv"
 
 # Constants
 HASHTAGS_LINDA = (

@@ -7,7 +7,7 @@ nltk.download('names')
 
 class PostsCSVDataCreator:
     def create_posts_csv_data(self):
-        id_of_post_to_data = posts_csv_data_creator.id_of_post_to_data()
+        id_of_post_to_data = self.id_of_post_to_data()
         csv_data_to_safe = self.csv_data_to_safe(
             id_of_post_to_data
         )
