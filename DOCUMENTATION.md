@@ -199,7 +199,16 @@ HASHTAGS_WITH_TOO_HIGH_USAGE with ("graz", "austira", "summer"): Because other w
 In the end this program calculates how well each cluster performs on the used hashtags given.
 - Input: csv files of community_clustering, k_mean_clustering, mst_clustering (aka levenshtein clustering) and the used
 hashtags. Please refer to the learning_from_data/new_clusters_interpretation/data folder.
-- Output: 
+- Output: a csv file with all the clusters, their according hashtags and the archived score. Also one column
+hold the 6 best clusters of all clusters. Please see learning_from_data/new_clusters_interpretation/
+clustering_interpretation_results.csv as example.
+
+silhouette_score.py: This program calculates the silhouette score, which is a metric for the quality of clusters. It
+is only calculating for the silhouette score of the community cluster ATM, since it was more of a POC. 
+- Input: the output csv file from the persona_interpreter.py program.
+- Output: A csv file with the community clusters in the format cluster name | hashtags | score of the cluster | 
+silhouette score of the cluster. Please see learning_from_data/new_clusters_interpretation/
+community_clusters_silhouette_score.csv as example.
 
 
 
