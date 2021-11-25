@@ -145,11 +145,61 @@ documentation is for the more complicated parts like the cluster generation.
 
 ### 4.i) machine_learning
 
-Here only the cluster_analysis folder is of interest. TODO Describe alle subfolders etc.
+Here only the cluster_analysis folder is of interest. In it there are all the clustering algorithms which are used
+for this thesis. 
+
+cluster_categorization:With the clusterCategorizer.py program we find out the likelihood of a cluster to predefined 
+personas. Those personas were defined from the marketing team of Marry Ice Tea. For that we are using hashtags the
+user has used and hashtags which the personas should use. 
+- Input: A csv file with format cluster name | hashtags. See 
+/learning_from_data/machine_learning/cluster_analysis/cluster_categorization/levenshtein_clusters.csv as example.
+- Output: A file stating how likely the cluster is to each predefined persona.
+
+enrica_cluster: named after Enrica because she had the idea for this cluster. Basically a social network clustering 
+approach, but with fine-tuning like max clusters. In a nutshell it is creating a graph if hashtags were used together.
+After creating the graph edges with weight less than a threshold are getting dropped, resulting in clusters. 
+This cluster performed best.
+- Input: a csv file with the categorization of personas. See /learning_from_data/machine_learning/cluster_analysis/
+enrica_cluster/persona_categorization.csv as example.
+- Output: a csv file with different cluster with format cluster name | hashtags.
+
+k_mean_clustering: a normal k mean clustering algorithm. As metric for the euclidean distance the levenshtein distance 
+of the hashtags where used. This cluster performed poorly, since there were many clusters with too many hashtags and 
+some with too little. 
+- Input: A csv with hashtags. See /learning_from_data/machine_learning/cluster_analysis/k_mean_clustering/
+used_hashtags_all.csv as example. 
+- Output: a csv file with different cluster with format cluster name | centroid | hashtags.
+
+levenshtein_cluster: in the end it is pretty similar to the enrica cluster, but with the difference that the weights
+of the edges are the levenshtein distance to each word. Since this results in a fully connected graph the runtime 
+was not possible on my machine if used with all hashtags. That's why only the most used 1500 hashtags are passed as
+parameter. After that we build a kruskal mst and again remove edges which are higher than a given threshold.
+- Input: A csv with hashtags. See learning_from_data/machine_learning/cluster_analysis/leveshtein_cluster/
+used_hashtags.csv as example. 
+- Output: a csv file with different cluster with format cluster name | hashtags.
+
+networkx_community_cluster: an implementation with the networkx framework. Unfortunately it had a similar weakness as 
+the k mean clustering which is that it created just a couple clusters with way too many hashtags.
+- Input: A csv with hashtags. See learning_from_data/machine_learning/cluster_analysis/networkx_community_cluster/
+persona_categorization.csv as example. 
+- Output: a csv file with different cluster with format cluster name | hashtags | silhouette score. Where the silhouette
+score is a metric to determine the quality of clusters. 
 
 ### 4.ii) new_clusters_interpretation
 
-TODO !!
+persona_interpreter.py: with this program we calculate the performance of all the clusters. There are couple constants
+to tweak, here a reasoning why we choose them as they are right now:
+
+NUMBER_OF_HASHTAGS_BASELINE of 8: Because the mena of marry personas was 7.8 => ~8 hashtags.  
+NUMBER_OF_HASHTAGS_FACTOR of 1 / NUMBER_OF_HASHTAGS_BASELINE: Because it should get more reward the fewer hashtags it used. This approach is nice because of mean.  
+MAXIMUM_SCORE_PER_HASHTAG of inf: "Bruteforce".  
+NUMBER_OF_BEST_CLUSTERS of 6: Because Marry also uses 6 personas.  
+HASHTAGS_WITH_TOO_HIGH_USAGE with ("graz", "austira", "summer"): Because other wise those values would appear in each of the best clusters.  
+
+In the end this program calculates how well each cluster performs on the used hashtags given.
+- Input: csv files of community_clustering, k_mean_clustering, mst_clustering (aka levenshtein clustering) and the used
+hashtags. Please refer to the learning_from_data/new_clusters_interpretation/data folder.
+- Output: 
 
 
 
